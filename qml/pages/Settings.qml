@@ -11,6 +11,22 @@ Page {
         PageHeader {
             title: "Settings"
         }
+
+        Slider {
+            minimumValue: 1
+            maximumValue: 10
+            stepSize: 1
+            value: proc.interval
+            valueText: value + 's'
+            label: "Update interval"
+            onValueChanged: proc.interval = value
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: Theme.paddingLarge
+            }
+        }
+
     }
 
 }

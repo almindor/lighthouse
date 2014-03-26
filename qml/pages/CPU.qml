@@ -35,10 +35,6 @@ import Sailfish.Silica 1.0
 Page {
     id: page
 
-    onStatusChanged: {
-        cpu.pageActive = (status === PageStatus.Active);
-    }
-
     Column {
         width: page.width
         spacing: Theme.paddingLarge
@@ -46,16 +42,36 @@ Page {
             title: "CPU Usage"
         }
 
+        ProgressCircleBase {
+            width: parent.width / 2
+            height: width
+            anchors.horizontalCenter: parent.horizontalCenter
+            value: cpu.summaryValue / 100
+            borderWidth: 2
+            progressColor: Theme.highlightColor
+
+            Text {
+                width: parent.width
+                anchors.centerIn: parent
+                color: Theme.highlightColor
+                font.pixelSize: Theme.fontSizeHuge
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                text: cpu.summaryValue + '%'
+            }
+
+        }
+
         Repeater {
-            model: cpu.usage.length
+            model: (cpu.usage.length - 1)
 
             ProgressBar {
                 minimumValue: 0
                 maximumValue: 100
-                value: cpu.usage[index]
+                value: cpu.usage[index + 1]
                 valueText: value + '%'
                 visible: (cpu.usage.length > 0)
-                label: index === 0 ? "All CPUs" : "CPU" + index;
+                label: "CPU" + (index + 1);
                 anchors {
                     left: parent.left
                     right: parent.right

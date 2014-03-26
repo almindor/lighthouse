@@ -35,23 +35,33 @@
 #include <sailfishapp.h>
 #include "proc.h"
 #include "cpu.h"
+#include "memory.h"
 
 using namespace Lighthouse;
 
 int main(int argc, char *argv[])
 {
     int result = 0;
+    QCoreApplication::setOrganizationName("Bistrecode");
+    QCoreApplication::setOrganizationDomain("bistrecode.com");
+    QCoreApplication::setApplicationName("Lighthouse");
 
     Proc proc;
     CPU cpu;
+    Memory memory;
+
     QObject::connect(&proc, &Proc::CPUUsageChanged,
                      &cpu, &CPU::setUsage);
+    QObject::connect(&proc, &Proc::memoryChanged,
+                     &memory, &Memory::setMemory);
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
     QQuickView *view = SailfishApp::createView();
 
     QString qml = QString("qml/%1.qml").arg("Lighthouse");
     view->rootContext()->setContextProperty("cpu", &cpu);
+    view->rootContext()->setContextProperty("memory", &memory);
+    view->rootContext()->setContextProperty("proc", &proc);
     view->setSource(SailfishApp::pathTo(qml));
     view->show();
 

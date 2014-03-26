@@ -10,22 +10,19 @@ namespace Lighthouse {
     {
         Q_OBJECT
         Q_PROPERTY(QVariantList usage READ getUsage NOTIFY usageChanged)
-        Q_PROPERTY(const QString coverInfo READ getCoverInfo NOTIFY coverInfoChanged)
-        Q_PROPERTY(bool pageActive READ getPageActive WRITE setPageActive)
+        Q_PROPERTY(int summaryValue READ getSummaryValue NOTIFY summaryValueChanged)
     public:
+        explicit CPU(QObject *parent = 0);
+
         QVariantList getUsage();
-        QString getCoverInfo();
-        void setPageActive(bool active);
-        bool getPageActive();
+        int getSummaryValue();
     private:
         QVariantList fUsage;
-        int fUsageLevel;
-        bool fPageActive;
     public slots:
         void setUsage(QVariantList usage);
     signals:
-        void usageChanged(QVariantList usage);
-        void coverInfoChanged(QString info);
+        void usageChanged();
+        void summaryValueChanged();
     };
 
 }

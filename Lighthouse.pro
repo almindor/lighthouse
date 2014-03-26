@@ -12,7 +12,8 @@ CONFIG += sailfishapp
 
 SOURCES += src/Lighthouse.cpp \
     src/cpu.cpp \
-    src/proc.cpp
+    src/proc.cpp \
+    src/memory.cpp
 
 OTHER_FILES += qml/Lighthouse.qml \
     qml/cover/CoverPage.qml \
@@ -21,8 +22,11 @@ OTHER_FILES += qml/Lighthouse.qml \
     Lighthouse.desktop \
     qml/pages/Summary.qml \
     qml/pages/CPU.qml \
-    qml/pages/Settings.qml
+    qml/pages/Settings.qml \
+    qml/pages/Memory.qml \
+    qml/pages/About.qml
 
 HEADERS += \
     src/cpu.h \
-    src/proc.h
+    src/proc.h \
+    src/memory.h
