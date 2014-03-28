@@ -9,7 +9,7 @@ namespace Lighthouse {
 
     }
 
-    QVariantList CPU::getUsage() {
+    IntList CPU::getUsage() {
         return fUsage;
     }
 
@@ -18,17 +18,13 @@ namespace Lighthouse {
             return 0;
         }
 
-        return fUsage[0].toInt();
+        return fUsage[0];
     }
 
-    void CPU::setUsage(QVariantList usage) {
+    void CPU::setUsage(IntList usage) {
         fUsage = usage;
         emit usageChanged();
         emit summaryValueChanged();
-
-        if ( fUsage.size() < 1 ) {
-            return;
-        }
     }
 
 }

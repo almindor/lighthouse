@@ -1,10 +1,10 @@
 #include "proc.h"
+#include <unistd.h>
 #include <iostream>
 #include <QtDebug>
 #include <QFile>
 #include <QTextStream>
 #include <QStringList>
-#include <QSettings>
 
 namespace Lighthouse {
 
@@ -13,11 +13,13 @@ namespace Lighthouse {
     const int CPU_PART_COUNT = 10;
     const int CPU_PART_DEF[CPU_PART_COUNT] = {0, 1, 1, 1, 2, 2, 0, 0, 0, 0};
 
-    Proc::Proc()
+    Proc::Proc() : fSettings("Bistrecode", "Lighthouse")
     {
-        QSettings settings;
-        fInterval = settings.value("proc/interval", 1).toInt();
+        fInterval = fSettings.value("proc/interval", 2).toInt();
+        fCoverPage = 0;
         fQuit = false;
+        fTicksPerSecond = sysconf(_SC_CLK_TCK);
+        fPaused = false;
         start();
     }
 
@@ -33,19 +35,43 @@ namespace Lighthouse {
     void Proc::setInterval(int interval) {
         if ( fInterval != interval ) {
             fInterval = interval;
-            QSettings settings;
-            settings.setValue("proc/interval", interval);
+            fSettings.setValue("proc/interval", interval);
 
             emit intervalChanged(interval);
         }
     }
 
-    QVariantList Proc::getCPUUsage() {
+    void Proc::setPaused(bool paused) {
+        fPaused = paused;
+    }
+
+    bool Proc::getPaused() {
+        return fPaused;
+    }
+
+    void Proc::setCoverPage(int page) {
+        if ( page < 0 ) {
+            page = 1;
+        } else if ( page > 1 ) {
+            page = 0;
+        }
+        if ( fCoverPage != page ) {
+            fCoverPage = page;
+            emit coverPageChanged(page);
+        }
+    }
+
+    int Proc::getCoverPage() {
+        return fCoverPage;
+    }
+
+    IntList Proc::getCPUUsage() {
         return fCPUUsage;
     }
 
     void Proc::run() Q_DECL_OVERRIDE {
         fCPUCount = getProcessorCount();
+        qDebug() << "CPU count: " << fCPUCount << "\n";
         fCPUActiveTicks.resize(fCPUCount + 1); // room for "total"
         fCPUTotalTicks.resize(fCPUCount + 1); // room for "total"
 
@@ -57,103 +83,31 @@ namespace Lighthouse {
         }
 
         while (!fQuit) {
-            procCPUActivity();
-            procMemory();
+            if ( !fPaused ) {
+                procCPUActivity();
+                procMemory();
+            }
 
             sleep(fInterval);
         }
     }
 
     int Proc::getProcessorCount() {
-        int count = 0;
-        QFile cpuInfoFile("/proc/cpuinfo");
-        if ( !cpuInfoFile.open(QIODevice::ReadOnly) ) {
-            qCritical() << "Unable to open proc file /proc/cpuinfo\n";
-            return 0;
+        CPUCountHandler handler;
+        QString path = QStringLiteral("/proc/cpuinfo");
+        if ( fProcReader.readProcFile(path, handler, 255) == 0 ) {
+            return handler.getCount();
         }
 
-        QTextStream stream(&cpuInfoFile);
-        QString line = stream.readLine(4096);
-        while ( !line.isNull() ) {
-            if ( line.contains("processor") ) {
-                count++;
-            }
-            line = stream.readLine(4096);
-        }
-
-        return count;
-    }
-
-    unsigned long long Proc::parseCPUParts(QStringList &parts, int flags) {
-        bool converted = true;
-        unsigned long long result = 0;
-
-        for ( int i = 1; i < CPU_PART_COUNT; i++ ) {
-            int flag = CPU_PART_DEF[i];
-            QString value = parts.at(i);
-            if ( flags < 0 || flag == flags ) {
-                result += value.toULongLong(&converted);
-            }
-            if ( !converted ) {
-                qCritical() << "Unable to convert " << value << " to unsigned long long\n";
-                return 0;
-            }
-        }
-
-        return result;
+        return 0;
     }
 
     void Proc::procCPUActivity() {
-        unsigned long long diffActiveTicks;
-        unsigned long long diffTotalTicks;
-        unsigned long long oldActiveTicks;
-        unsigned long long oldTotalTicks;
-        qreal usage;
-
-        QFile statFile("/proc/stat");
-        if ( !statFile.open(QIODevice::ReadOnly) ) {
-            qCritical() << "Unable to open proc file /proc/stat\n";
-            return;
+        CPUUsageHandler handler(fCPUUsage, fCPUActiveTicks, fCPUTotalTicks);
+        QString path = QStringLiteral("/proc/stat");
+        if ( fProcReader.readProcFile(path, handler, fCPUCount) == 0 ) {
+            emit CPUUsageChanged(fCPUUsage);
         }
-
-        QTextStream stream(&statFile);
-        QString line;
-        for ( int i = 0; i <= fCPUCount; i++ ) {
-            line = stream.readLine(4096);
-            if ( line.isNull() ) {
-                qCritical() << "Error reading line for CPU: " << i << "\n";
-                return;
-            }
-
-            QStringList parts = line.split(" ", QString::SkipEmptyParts);
-            if ( parts.size() < 8 ) {
-                qCritical() << "Not enough parts in CPU line: " << line << "\n";
-                return;
-            }
-
-            QString type = parts.at(0);
-            if ( !type.contains("cpu") ) {
-                qWarning() << "Invalid CPU type indicator encountered: " << type;
-                break;
-            }
-
-            oldActiveTicks = fCPUActiveTicks[i];
-            fCPUActiveTicks[i] = parseCPUParts(parts, CPU_FLAGS_ACTIVE);
-            diffActiveTicks = fCPUActiveTicks[i] - oldActiveTicks;
-
-            oldTotalTicks = fCPUTotalTicks[i];
-            fCPUTotalTicks[i] = parseCPUParts(parts, -1);
-            diffTotalTicks = fCPUTotalTicks[i] - oldTotalTicks;
-
-            usage = (qreal)diffActiveTicks / (qreal)diffTotalTicks * 100.0f;
-            int iUsage = qRound(usage);
-
-            if ( iUsage != fCPUUsage[i].toInt() ) {
-                fCPUUsage[i] = iUsage;
-            }
-        }
-
-        emit CPUUsageChanged(fCPUUsage);
     }
 
     void Proc::procMemory() {
@@ -167,6 +121,14 @@ namespace Lighthouse {
         int total = fSysInfo.totalram * fSysInfo.mem_unit;
         int free = fSysInfo.freeram * fSysInfo.mem_unit;
         emit memoryChanged(total, free);
+    }
+
+    void Proc::procUptime() {
+        UptimeHandler handler;
+        QString path = QStringLiteral("/proc/uptime");
+        if ( fProcReader.readProcFile(path, handler, 1) == 0 ) {
+            emit uptimeChanged(handler.getUptime(), handler.getUpidle());
+        }
     }
 
 }

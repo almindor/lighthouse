@@ -30,13 +30,31 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-//import Sailfish.Silica.theme 1.0
 
 CoverBackground {
-    Column {
+    Column {        
+        ProgressCircleBase {
+            width: parent.parent.width / 1.2
+            height: width
+            anchors.horizontalCenter: parent.horizontalCenter
+            value: proc.coverPage === 0 ? cpu.summaryValue / 100 : memory.summaryValue / 100
+            borderWidth: 2
+            progressColor: Theme.highlightColor
+
+            Text {
+                width: parent.width
+                anchors.centerIn: parent
+                color: Theme.highlightColor
+                font.pixelSize: Theme.fontSizeHuge
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                text: (proc.coverPage === 0 ? cpu.summaryValue : memory.summaryValue) + '%'
+            }
+        }
+
         Label {
-            id: labelMemory
-            text: "Memory: "
+            anchors.margins: Theme.paddingLarge
+            text: (proc.coverPage === 0) ? "CPU" : "Memory";
         }
 
         anchors.centerIn: parent
@@ -46,11 +64,13 @@ CoverBackground {
         id: coverAction
 
         CoverAction {
-            iconSource: "image://theme/icon-cover-previous"
+            iconSource: "../images/cover-image-cpu.png"
+            onTriggered: proc.coverPage = 0
         }
 
         CoverAction {
-            iconSource: "image://theme/icon-cover-next"
+            iconSource: "../images/cover-image-memory.png"
+            onTriggered: proc.coverPage = 1
         }
     }
 }

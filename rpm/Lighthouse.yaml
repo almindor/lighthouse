@@ -1,6 +1,6 @@
 Name: Lighthouse
 Summary: Lighthouse
-Version: 0.1
+Version: 0.5
 Release: 1
 Group: Qt/Qt
 URL: http://example.org/
@@ -27,3 +27,4 @@ Files:
 - '%{_datadir}/applications/%{name}.desktop'
 - '%{_datadir}/%{name}/qml'
 - '%{_bindir}'
+PkgBR: []

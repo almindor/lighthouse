@@ -33,6 +33,7 @@
 #endif
 
 #include <sailfishapp.h>
+#include "types.h"
 #include "proc.h"
 #include "cpu.h"
 #include "memory.h"
@@ -42,10 +43,7 @@ using namespace Lighthouse;
 int main(int argc, char *argv[])
 {
     int result = 0;
-    QCoreApplication::setOrganizationName("Bistrecode");
-    QCoreApplication::setOrganizationDomain("bistrecode.com");
-    QCoreApplication::setApplicationName("Lighthouse");
-
+    qRegisterMetaType< IntList >( "IntList" );
     Proc proc;
     CPU cpu;
     Memory memory;

@@ -31,7 +31,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-
 Page {
     id: page
 
@@ -50,15 +49,33 @@ Page {
             borderWidth: 2
             progressColor: Theme.highlightColor
 
-            Text {
-                width: parent.width
+            Column {
+                width: parent.width * 0.7
                 anchors.centerIn: parent
-                color: Theme.highlightColor
-                font.pixelSize: Theme.fontSizeHuge
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                text: memory.summaryValue + '%'
+
+                Text {
+                    width: parent.width
+                    color: Theme.highlightColor
+                    font.pixelSize: Theme.fontSizeExtraLarge
+                    horizontalAlignment: Text.AlignHCenter
+                    text: Math.round((memory.total - memory.free) / 1000) + " kB"
+                }
+                Rectangle {
+                    color: Theme.highlightColor
+                    width: parent.width
+                    height: 2
+                    opacity: 0.4
+                }
+                Text {
+                    width: parent.width
+                    color: Theme.highlightColor
+                    opacity: 0.6
+                    font.pixelSize: Theme.fontSizeExtraLarge
+                    horizontalAlignment: Text.AlignHCenter
+                    text: Math.round(memory.total / 1000) + " kB"
+                }
             }
+
 
         }
 
@@ -73,6 +90,5 @@ Page {
                 margins: Theme.paddingLarge
             }
         }
-
     }
 }

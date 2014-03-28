@@ -1,4 +1,5 @@
 #include "memory.h"
+#include <QDebug>
 
 namespace Lighthouse {
 

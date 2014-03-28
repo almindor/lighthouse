@@ -13,7 +13,9 @@ CONFIG += sailfishapp
 SOURCES += src/Lighthouse.cpp \
     src/cpu.cpp \
     src/proc.cpp \
-    src/memory.cpp
+    src/memory.cpp \
+    src/procreader.cpp \
+    src/linehandler.cpp
 
 OTHER_FILES += qml/Lighthouse.qml \
     qml/cover/CoverPage.qml \
@@ -24,9 +26,13 @@ OTHER_FILES += qml/Lighthouse.qml \
     qml/pages/CPU.qml \
     qml/pages/Settings.qml \
     qml/pages/Memory.qml \
-    qml/pages/About.qml
+    qml/pages/About.qml \
+    qml/pages/ProgressCircleMulti.qml
 
 HEADERS += \
     src/cpu.h \
     src/proc.h \
-    src/memory.h
+    src/memory.h \
+    src/procreader.h \
+    src/linehandler.h \
+    src/types.h
