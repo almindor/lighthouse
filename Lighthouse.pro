@@ -29,7 +29,6 @@ OTHER_FILES += qml/Lighthouse.qml \
     qml/pages/Settings.qml \
     qml/pages/Memory.qml \
     qml/pages/About.qml \
-    qml/pages/ProgressCircleMulti.qml \
     qml/pages/Process.qml
 
 HEADERS += \
