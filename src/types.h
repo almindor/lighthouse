@@ -12,21 +12,19 @@ namespace Lighthouse {
 
     class ProcInfo
     {
-        /*Q_OBJECT
-        Q_PROPERTY(qreal CPUUsage READ getCPUUsage)
-        Q_PROPERTY(pid_t PID READ getPID)
-        Q_PROPERTY(QString name READ getName)*/
     public:
         ProcInfo();
         void update(QString& stat, unsigned long long totalTicks);
         QString getName() const;
         pid_t getPID() const;
-        qreal getCPUUsage() const;
+        int getCPUUsage() const;
         QString toString() const;
+
+        bool operator ==(const ProcInfo& other) const;
     private:
         QString fName;
         pid_t fPID;
-        qreal fCPUUsage;
+        int fCPUUsage;
         QString fState;
         unsigned long fSysTime;
         unsigned long fUserTime;
@@ -42,6 +40,10 @@ namespace Lighthouse {
     {
         bool operator()(const ProcInfo & a, const ProcInfo & b) const
         {
+            if ( a.getCPUUsage() == b.getCPUUsage() ) {
+                return a.getPID() > b.getPID();
+            }
+
             return a.getCPUUsage() > b.getCPUUsage();
         }
     };
@@ -50,6 +52,10 @@ namespace Lighthouse {
     {
         bool operator()(const ProcInfo & a, const ProcInfo & b) const
         {
+            if ( a.getCPUUsage() == b.getCPUUsage() ) {
+                return a.getPID() > b.getPID();
+            }
+
             return a.getCPUUsage() > b.getCPUUsage();
         }
     };

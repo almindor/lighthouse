@@ -20,7 +20,7 @@ Page {
 
         anchors.fill: parent
         spacing: 2
-        model: processModel
+        model: process
         VerticalScrollDecorator {}
 
         delegate: Item {

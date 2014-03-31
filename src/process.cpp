@@ -1,24 +1,25 @@
 #include "process.h"
+#include <QDebug>
 
 namespace Lighthouse {
 
     // ProcessModel
 
-    ProcessModel::ProcessModel(ProcList& procList, QObject *parent) : QAbstractListModel(parent), fProcList(procList) {
-
+    Process::Process(QObject *parent) : QAbstractListModel(parent), fProcList() {
+        fSortBy = 0;
     }
 
-    QHash<int, QByteArray> ProcessModel::roleNames() const {
+    QHash<int, QByteArray> Process::roleNames() const {
         QHash<int, QByteArray> roles;
         roles[DescrRole] = "descr";
         return roles;
     }
 
-    Qt::ItemFlags ProcessModel::flags(const QModelIndex & index) const {
+    Qt::ItemFlags Process::flags(const QModelIndex & index) const {
         return Qt::ItemIsEnabled;
     }
 
-    QVariant ProcessModel::data(const QModelIndex & index, int role) const {
+    QVariant Process::data(const QModelIndex & index, int role) const {
         const int row = index.row();
         if ( row >= 0 && row < fProcList.size() ) {
             return fProcList[row].toString();
@@ -27,28 +28,73 @@ namespace Lighthouse {
         return "Data[" + QString::number(index.row()) + "," + QString::number(index.column()) + "]: " + QString::number(role);
     }
 
-    QVariant ProcessModel::headerData(int section, Qt::Orientation orientation, int role) const {
+    QVariant Process::headerData(int section, Qt::Orientation orientation, int role) const {
         return "Description";
     }
 
-    int ProcessModel::rowCount(const QModelIndex & parent) const {
+    int Process::rowCount(const QModelIndex & parent) const {
         return fProcList.size();
-    }
-
-    void ProcessModel::update() {
-        emit dataChanged(createIndex(0, 0), createIndex(fProcList.size(), 0));
-    }
-
-    // Process
-
-    Process::Process(QObject *parent) :
-        QObject(parent), fProcList(), fModel(fProcList, parent)
-    {
-        fSortBy = 0;
     }
 
     int Process::getSummaryValue() const {
         return fProcList.size();
+    }
+
+    void Process::setProcList(ProcMap* procMap) {
+        int oldSize = fProcList.size();
+        ProcList procList = procMap->values();
+        sort(procList);
+        int startRow;
+        int endRow;
+        diffProcLists(fProcList, procList, startRow, endRow);
+        fProcList = procList;
+        //qDebug() << "diff from " << startRow << " to " << endRow << "\n";
+
+        if ( startRow <= endRow ) {
+            emit dataChanged(createIndex(startRow, 0), createIndex(endRow, 0));
+        }
+
+        if ( oldSize != fProcList.size() ) {
+            emit summaryValueChanged();
+        }
+    }
+
+    void Process::sort(ProcList& list) {
+        switch ( fSortBy ) {
+            case 0: qSort(list.begin(), list.end(), CPUComparer()); break;
+            case 1: qSort(list.begin(), list.end(), MemoryComparer()); break;
+            case 2: qSort(list.begin(), list.end(), NameComparer()); break;
+        }
+    }
+
+    void Process::diffProcLists(const ProcList& oldList, const ProcList& newList, int& start, int& end) const {
+        const int newSize = newList.size();
+        const int oldSize = oldList.size();
+        const int size = newSize <= oldSize ? newSize : oldSize;
+        bool endDone = false;
+        bool startDone = false;
+        int x;
+        start = 0;
+        end = oldList.size() - 1;
+
+        for ( int i = 0; i < size; i++ ) {
+            x = size - i - 1;
+            if ( !startDone && oldList.at(i) == newList.at(i) ) {
+                start++;
+            } else {
+                startDone = true;
+            }
+
+            if ( !endDone && oldList.at(x) == newList.at(x) ) {
+                end--;
+            } else {
+                endDone = true;
+            }
+
+            if ( startDone && endDone || start > end ) {
+                return;
+            }
+        }
     }
 
     QString Process::getSortBy() const {
@@ -61,39 +107,15 @@ namespace Lighthouse {
         return "Unknown";
     }
 
-    ProcessModel& Process::getModel() {
-        return fModel;
-    }
-
-    void Process::setProcList(ProcMap* procMap) {
-        int oldCount = fProcList.size();
-        fProcList = procMap->values();
-
-        sort();
-        emit procListChanged();
-        if ( oldCount != fProcList.size() ) {
-            emit summaryValueChanged();
-        }
-    }
-
-    void Process::sort() {
-        switch ( fSortBy ) {
-            case 0: qSort(fProcList.begin(), fProcList.end(), CPUComparer()); break;
-            case 1: qSort(fProcList.begin(), fProcList.end(), MemoryComparer()); break;
-            case 2: qSort(fProcList.begin(), fProcList.end(), NameComparer()); break;
-        }
-        fModel.update();
-    }
-
     void Process::nextSortBy() {
         fSortBy++;
         if ( fSortBy > 2 ) {
             fSortBy = 0;
         }
-
-        sort();
-        emit summaryValueChanged();
         emit sortByChanged();
+
+        sort(fProcList);
+        emit dataChanged(createIndex(0, 0), createIndex(fProcList.size(), 0));
     }
 
 }

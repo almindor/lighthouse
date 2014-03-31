@@ -68,7 +68,6 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("memory", &memory);
     view->rootContext()->setContextProperty("monitor", &monitor);
     view->rootContext()->setContextProperty("process", &process);
-    view->rootContext()->setContextProperty("processModel", &process.getModel());
     view->setSource(SailfishApp::pathTo(qml));
     view->show();
 

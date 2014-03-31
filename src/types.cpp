@@ -38,7 +38,7 @@ namespace Lighthouse {
         return fPID;
     }
 
-    qreal ProcInfo::getCPUUsage() const {
+    int ProcInfo::getCPUUsage() const {
         return fCPUUsage;
     }
 
@@ -103,5 +103,8 @@ namespace Lighthouse {
         return parts.join(" ");
     }
 
+    bool ProcInfo::operator ==(const ProcInfo& other) const {
+        return ( fPID == other.getPID() && fCPUUsage == other.getCPUUsage() );
+    }
 
 }
