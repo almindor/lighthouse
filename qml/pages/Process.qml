@@ -24,15 +24,41 @@ Page {
         VerticalScrollDecorator {}
 
         delegate: Item {
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: Theme.paddingLarge
+            }
             height: Theme.itemSizeExtraSmall
             Label {
-                id: itemLabel
-                text: descr
                 anchors {
                     left: parent.left
-                    right: parent.right
-                    margins: Theme.paddingLarge
                 }
+
+                id: itemLabel
+                text: name
+            }
+
+            Rectangle {
+                anchors {
+                    right: parent.right
+                    verticalCenter: parent.verticalCenter
+                }
+
+                width: 200
+                height: 5
+                color: Theme.secondaryHighlightColor
+            }
+
+            Rectangle {
+                anchors {
+                    right: parent.right
+                    verticalCenter: parent.verticalCenter
+                }
+
+                width: cpuUsage * 2
+                height: 5
+                color: Theme.highlightColor
             }
         }
     }

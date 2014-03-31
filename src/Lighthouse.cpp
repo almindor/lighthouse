@@ -33,12 +33,16 @@
 #endif
 
 #include <sailfishapp.h>
+#include <QObject>
+#include <QString>
+#include <QQuickView>
+#include <QQmlContext>
+#include <QGuiApplication>
 #include "types.h"
 #include "monitor.h"
 #include "cpu.h"
 #include "memory.h"
 #include "process.h"
-#include <QDebug>
 
 using namespace Lighthouse;
 

@@ -11,7 +11,9 @@ namespace Lighthouse {
 
     QHash<int, QByteArray> Process::roleNames() const {
         QHash<int, QByteArray> roles;
-        roles[DescrRole] = "descr";
+        roles[NameRole] = "name";
+        roles[CPUUsageRole] = "cpuUsage";
+        roles[MemoryUsageRole] = "memoryUsage";
         return roles;
     }
 
@@ -22,7 +24,11 @@ namespace Lighthouse {
     QVariant Process::data(const QModelIndex & index, int role) const {
         const int row = index.row();
         if ( row >= 0 && row < fProcList.size() ) {
-            return fProcList[row].toString();
+            switch ( role ) {
+                case NameRole: return fProcList[row].getName();
+                case CPUUsageRole: return fProcList[row].getCPUUsage();
+                case MemoryUsageRole: return fProcList[row].getMemoryUsage();
+            }
         }
 
         return "Data[" + QString::number(index.row()) + "," + QString::number(index.column()) + "]: " + QString::number(role);
@@ -62,8 +68,7 @@ namespace Lighthouse {
     void Process::sort(ProcList& list) {
         switch ( fSortBy ) {
             case 0: qSort(list.begin(), list.end(), CPUComparer()); break;
-            case 1: qSort(list.begin(), list.end(), MemoryComparer()); break;
-            case 2: qSort(list.begin(), list.end(), NameComparer()); break;
+            case 1: qSort(list.begin(), list.end(), NameComparer()); break;
         }
     }
 
@@ -91,7 +96,7 @@ namespace Lighthouse {
                 endDone = true;
             }
 
-            if ( startDone && endDone || start > end ) {
+            if ( (startDone && endDone) || start > end ) {
                 return;
             }
         }
@@ -100,8 +105,7 @@ namespace Lighthouse {
     QString Process::getSortBy() const {
         switch ( fSortBy ) {
             case 0: return "CPU Usage";
-            case 1: return "Memory Usage";
-            case 2: return "Name";
+            case 1: return "Name";
         }
 
         return "Unknown";
@@ -109,7 +113,7 @@ namespace Lighthouse {
 
     void Process::nextSortBy() {
         fSortBy++;
-        if ( fSortBy > 2 ) {
+        if ( fSortBy > 1 ) {
             fSortBy = 0;
         }
         emit sortByChanged();

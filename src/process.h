@@ -15,7 +15,9 @@ namespace Lighthouse {
         Q_PROPERTY(QString sortBy READ getSortBy NOTIFY sortByChanged)
     public:
         enum ProcessRoles {
-            DescrRole = Qt::UserRole + 1
+            NameRole = Qt::UserRole + 1,
+            CPUUsageRole,
+            MemoryUsageRole
         };
 
         Process(QObject *parent = 0);

@@ -16,9 +16,11 @@ namespace Lighthouse {
     }
 
     void ProcInfo::update(QString& stat, unsigned long long totalTicks) {
+        const QRegularExpression regexp("[()]+");
         unsigned long oldCPUTime = fUserTime + fSysTime;
         int tmp;
         QTextStream(&stat) >> fPID >> fName >> fState >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> fUserTime >> fSysTime;
+        fName = fName.replace(regexp, "");
 
         if ( fTotalTicks > 0 ) {
             unsigned long newCPUTime = fUserTime + fSysTime;
@@ -42,10 +44,12 @@ namespace Lighthouse {
         return fCPUUsage;
     }
 
+    int ProcInfo::getMemoryUsage() const {
+        return 0; // TODO
+    }
+
     QString ProcInfo::toString() const {
-        const QRegularExpression regexp("[()]+");
-        QString name(fName);
-        QString result(name.replace(regexp, "") + " [" + fState + "] CPU: " + QString::number(fCPUUsage) + "\n");
+        QString result(fName + "\tCPU: " + QString::number(fCPUUsage) + "%\n");
         return result;
     }
 
