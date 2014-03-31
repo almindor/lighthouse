@@ -14,9 +14,9 @@ namespace Lighthouse {
     public:
         explicit Memory(QObject *parent = 0);
 
-        int getFree();
-        int getTotal();
-        int getSummaryValue();
+        int getFree() const;
+        int getTotal() const;
+        int getSummaryValue() const;
     private:
         int fFree;
         int fTotal;

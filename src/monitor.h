@@ -10,11 +10,11 @@
 
 namespace Lighthouse {
 
-    class Proc : public QThread
+    class Monitor : public QThread
     {
         public:
-            Proc();
-            ~Proc();
+            Monitor();
+            ~Monitor();
             Q_OBJECT
             IntList getCPUUsage();
             void setInterval(int interval);
@@ -22,10 +22,12 @@ namespace Lighthouse {
             bool getPaused();
             void setCoverPage(int page);
             int getCoverPage();
+            QString getUptime();
 
             Q_PROPERTY(int interval READ getInterval WRITE setInterval NOTIFY intervalChanged)
             Q_PROPERTY(bool paused READ getPaused WRITE setPaused NOTIFY pausedChanged)
             Q_PROPERTY(int coverPage READ getCoverPage WRITE setCoverPage NOTIFY coverPageChanged)
+            Q_PROPERTY(QString uptime READ getUptime NOTIFY uptimeChanged)
         private:
             bool fQuit;
             IntList fCPUUsage;
@@ -34,17 +36,22 @@ namespace Lighthouse {
             int fInterval;
             int fCPUCount;
             int fCoverPage;
+            qreal fUptime;
+            qreal fUpidle;
             long fTicksPerSecond;
             bool fPaused;
             QSettings fSettings;
+            ProcMap fProcMap;
             ProcReader fProcReader;
             struct sysinfo fSysInfo;
 
             void run() Q_DECL_OVERRIDE;
             void procCPUActivity();
             void procMemory();
+            void procProcesses();
+            QString getTimePart(QString key, int value);
             void procUptime();
-            int getProcessorCount();
+            void getProcessorCount();
             int getInterval();
         signals:
             void CPUUsageChanged(IntList usage);
@@ -52,7 +59,8 @@ namespace Lighthouse {
             void intervalChanged(int interval);
             void pausedChanged(bool paused);
             void coverPageChanged(int page);
-            void uptimeChanged(qreal uptime, qreal upidle);
+            void uptimeChanged(QString uptime);
+            void processChanged(ProcMap* procMap);
     };
 
 }

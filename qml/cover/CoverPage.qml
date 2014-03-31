@@ -37,7 +37,7 @@ CoverBackground {
             width: parent.parent.width / 1.2
             height: width
             anchors.horizontalCenter: parent.horizontalCenter
-            value: proc.coverPage === 0 ? cpu.summaryValue / 100 : memory.summaryValue / 100
+            value: monitor.coverPage === 0 ? cpu.summaryValue / 100 : memory.summaryValue / 100
             borderWidth: 2
             progressColor: Theme.highlightColor
 
@@ -48,13 +48,13 @@ CoverBackground {
                 font.pixelSize: Theme.fontSizeHuge
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                text: (proc.coverPage === 0 ? cpu.summaryValue : memory.summaryValue) + '%'
+                text: (monitor.coverPage === 0 ? cpu.summaryValue : memory.summaryValue) + '%'
             }
         }
 
         Label {
             anchors.margins: Theme.paddingLarge
-            text: (proc.coverPage === 0) ? "CPU" : "Memory";
+            text: (monitor.coverPage === 0) ? "CPU" : "Memory";
         }
 
         anchors.centerIn: parent
@@ -65,12 +65,12 @@ CoverBackground {
 
         CoverAction {
             iconSource: "../images/cover-image-cpu.png"
-            onTriggered: proc.coverPage = 0
+            onTriggered: monitor.coverPage = 0
         }
 
         CoverAction {
             iconSource: "../images/cover-image-memory.png"
-            onTriggered: proc.coverPage = 1
+            onTriggered: monitor.coverPage = 1
         }
     }
 }

@@ -10,15 +10,15 @@ namespace Lighthouse {
         fFree = 0;
     }
 
-    int Memory::getFree() {
+    int Memory::getFree() const {
         return fFree;
     }
 
-    int Memory::getTotal() {
+    int Memory::getTotal() const {
         return fTotal;
     }
 
-    int Memory::getSummaryValue() {
+    int Memory::getSummaryValue() const {
         return 100 - qRound((qreal)fFree / (qreal)fTotal * 100.0f);
     }
 

@@ -1,7 +1,9 @@
 #ifndef PROCREADER_H
 #define PROCREADER_H
 
+#include <QDir>
 #include <QString>
+#include <QStringList>
 #include "linehandler.h"
 
 namespace Lighthouse {
@@ -10,7 +12,11 @@ namespace Lighthouse {
     {
     public:
         ProcReader();
-        int readProcFile(QString& path, LineHandler& handler, int count);
+        int readProcFile(QString& path, LineHandler& handler, int count, int index) const;
+        QStringList getProcList();
+    private:
+        QStringList fProcNameFilter;
+        QDir fProcDir;
     };
 
 }

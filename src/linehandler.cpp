@@ -9,6 +9,10 @@ namespace Lighthouse {
     const int CPU_PART_COUNT = 10;
     const int CPU_PART_DEF[CPU_PART_COUNT] = {0, 1, 1, 1, 2, 2, 0, 0, 0, 0};
 
+    UptimeHandler::UptimeHandler(qreal &uptime, qreal &upidle) : fUptime(uptime), fUpidle(upidle) {
+
+    }
+
     int UptimeHandler::onLine(QString &line, int i) {
         QStringList parts = line.split(" ", QString::SkipEmptyParts);
         if ( parts.size() < 2 ) {
@@ -21,15 +25,7 @@ namespace Lighthouse {
         return 0;
     }
 
-    qreal UptimeHandler::getUptime() {
-        return fUptime;
-    }
-
-    qreal UptimeHandler::getUpidle() {
-        return fUpidle;
-    }
-
-    CPUCountHandler::CPUCountHandler() {
+    CPUCountHandler::CPUCountHandler(int& count) : fCount(count) {
         fCount = 0;
     }
 
@@ -42,10 +38,6 @@ namespace Lighthouse {
         }
 
         return 0;
-    }
-
-    int CPUCountHandler::getCount() {
-        return fCount;
     }
 
     CPUUsageHandler::CPUUsageHandler(IntList& usage, QLLVector& activeTicks, QLLVector& totalTicks)
@@ -109,5 +101,14 @@ namespace Lighthouse {
         return result;
     }
 
+    ProcessHandler::ProcessHandler(ProcMap& procMap, unsigned long long totalTicks) : fProcMap(procMap) {
+        fTotalTicks = totalTicks;
+    }
+
+    int ProcessHandler::onLine(QString &line, int i) {
+        pid_t index = i;
+        fProcMap[index].update(line, fTotalTicks);
+        return 0;
+    }
 
 }

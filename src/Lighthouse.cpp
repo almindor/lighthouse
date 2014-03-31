@@ -34,9 +34,11 @@
 
 #include <sailfishapp.h>
 #include "types.h"
-#include "proc.h"
+#include "monitor.h"
 #include "cpu.h"
 #include "memory.h"
+#include "process.h"
+#include <QDebug>
 
 using namespace Lighthouse;
 
@@ -44,14 +46,19 @@ int main(int argc, char *argv[])
 {
     int result = 0;
     qRegisterMetaType< IntList >( "IntList" );
-    Proc proc;
+    qRegisterMetaType< ProcMap >( "ProcMap" );
+    //qRegisterMetaType< ProcInfo >( "ProcInfo" );
+    Monitor monitor;
     CPU cpu;
+    Process process;
     Memory memory;
 
-    QObject::connect(&proc, &Proc::CPUUsageChanged,
+    QObject::connect(&monitor, &Monitor::CPUUsageChanged,
                      &cpu, &CPU::setUsage);
-    QObject::connect(&proc, &Proc::memoryChanged,
+    QObject::connect(&monitor, &Monitor::memoryChanged,
                      &memory, &Memory::setMemory);
+    QObject::connect(&monitor, &Monitor::processChanged,
+                     &process, &Process::setProcList);
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
     QQuickView *view = SailfishApp::createView();
@@ -59,7 +66,9 @@ int main(int argc, char *argv[])
     QString qml = QString("qml/%1.qml").arg("Lighthouse");
     view->rootContext()->setContextProperty("cpu", &cpu);
     view->rootContext()->setContextProperty("memory", &memory);
-    view->rootContext()->setContextProperty("proc", &proc);
+    view->rootContext()->setContextProperty("monitor", &monitor);
+    view->rootContext()->setContextProperty("process", &process);
+    view->rootContext()->setContextProperty("processModel", &process.getModel());
     view->setSource(SailfishApp::pathTo(qml));
     view->show();
 

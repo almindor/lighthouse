@@ -16,10 +16,10 @@ Page {
             minimumValue: 1
             maximumValue: 10
             stepSize: 1
-            value: proc.interval
+            value: monitor.interval
             valueText: value + 's'
             label: "Update interval"
-            onValueChanged: proc.interval = value
+            onValueChanged: monitor.interval = value
             anchors {
                 left: parent.left
                 right: parent.right

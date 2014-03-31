@@ -15,35 +15,43 @@ namespace Lighthouse {
     class UptimeHandler: public LineHandler
     {
     public:
-        virtual int onLine(QString& line, int i);
-        qreal getUptime();
-        qreal getUpidle();
+        UptimeHandler(qreal& uptime, qreal& upidle);
+        int onLine(QString& line, int i);
     private:
-        qreal fUptime;
-        qreal fUpidle;
+        qreal& fUptime;
+        qreal& fUpidle;
     };
 
     class CPUCountHandler: public LineHandler
     {
     public:
-        CPUCountHandler();
-        virtual int onLine(QString& line, int i);
-        int getCount();
+        CPUCountHandler(int& count);
+        int onLine(QString& line, int i);
     private:
-        int fCount;
+        int& fCount;
     };
 
     class CPUUsageHandler: public LineHandler
     {
     public:
         CPUUsageHandler(IntList& usage, QLLVector& activeTicks, QLLVector& totalTicks);
-        virtual int onLine(QString& line, int i);
+        int onLine(QString& line, int i);
     private:
         IntList& fCPUUsage;
         QLLVector& fCPUActiveTicks;
         QLLVector& fCPUTotalTicks;
 
         unsigned long long parseCPUParts(QStringList &parts, int flags);
+    };
+
+    class ProcessHandler: public LineHandler
+    {
+    public:
+        ProcessHandler(ProcMap& procMap, unsigned long long totalTicks);
+        int onLine(QString& line, int i);
+    private:
+        unsigned long long fTotalTicks;
+        ProcMap& fProcMap;
     };
 
 }

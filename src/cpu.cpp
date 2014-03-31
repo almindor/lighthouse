@@ -9,7 +9,7 @@ namespace Lighthouse {
 
     }
 
-    IntList CPU::getUsage() {
+    IntList CPU::getUsage() const {
         return fUsage;
     }
 
@@ -22,9 +22,11 @@ namespace Lighthouse {
     }
 
     void CPU::setUsage(IntList usage) {
-        fUsage = usage;
-        emit usageChanged();
-        emit summaryValueChanged();
+        if ( usage.size() != fUsage.size() || fUsage != usage ) {
+            fUsage = usage;
+            emit usageChanged();
+            emit summaryValueChanged();
+        }
     }
 
 }

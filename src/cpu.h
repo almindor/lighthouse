@@ -2,7 +2,7 @@
 #define CPU_H
 
 #include <QObject>
-#include "proc.h"
+#include "types.h"
 
 namespace Lighthouse {
 
@@ -14,7 +14,7 @@ namespace Lighthouse {
     public:
         explicit CPU(QObject *parent = 0);
 
-        IntList getUsage();
+        IntList getUsage() const;
         int getSummaryValue();
     private:
         IntList fUsage;
