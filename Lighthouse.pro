@@ -21,7 +21,6 @@ SOURCES += src/Lighthouse.cpp \
 
 OTHER_FILES += qml/Lighthouse.qml \
     qml/cover/CoverPage.qml \
-    rpm/Lighthouse.spec \
     rpm/Lighthouse.yaml \
     Lighthouse.desktop \
     qml/pages/Summary.qml \
@@ -29,7 +28,8 @@ OTHER_FILES += qml/Lighthouse.qml \
     qml/pages/Settings.qml \
     qml/pages/Memory.qml \
     qml/pages/About.qml \
-    qml/pages/Process.qml
+    qml/pages/Process.qml \
+    rpm/Lighthouse.spec
 
 HEADERS += \
     src/cpu.h \

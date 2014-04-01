@@ -6,7 +6,6 @@
 Name:       Lighthouse
 
 # >> macros
-%define debug_package %{nil}
 # << macros
 
 %{!?qtc_qmake:%define qtc_qmake %qmake}
@@ -15,7 +14,7 @@ Name:       Lighthouse
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Lighthouse
 Version:    0.6
-Release:    1
+Release:    2
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://example.org/

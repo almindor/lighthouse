@@ -47,7 +47,7 @@ Page {
 
                 width: 200
                 height: 5
-                color: Theme.secondaryHighlightColor
+                color: "dimgrey"
             }
 
             Rectangle {
