@@ -7,5 +7,3 @@ ApplicationWindow
     initialPage: Component { Summary { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 }
-
-
