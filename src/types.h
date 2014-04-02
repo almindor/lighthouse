@@ -82,7 +82,11 @@ namespace Lighthouse {
     {
         bool operator()(const ProcInfo & a, const ProcInfo & b) const
         {
-            return a.getName() < b.getName();
+            std::string tmp=a.getName().toUtf8().constData();
+            std::string tmp2=b.getName().toUtf8().constData();
+            transform(tmp.begin(), tmp.end(), tmp.begin(), ::tolower);
+            transform(tmp2.begin(), tmp2.end(), tmp2.begin(), ::tolower);
+            return  tmp  < tmp2;
         }
     };
 
