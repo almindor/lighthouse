@@ -52,7 +52,7 @@ Page {
                 Text {
                     text: cpuUsage+"%"
                     color: Theme.highlightColor
-                    font.pointSize: 12
+                    font.pointSize: 16
                     anchors {
                         horizontalCenter: parent.horizontalCenter
                         bottom: parent.top

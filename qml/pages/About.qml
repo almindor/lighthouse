@@ -12,18 +12,33 @@ Page {
             title: "About"
         }
 
-        TextArea {
-            readOnly: true
-            wrapMode: TextEdit.WordWrap
+
+        Label {
             anchors {
                 centerIn: parent.Center
-                margins: Theme.paddingLarge
+                horizontalCenter: parent.horizontalCenter
             }
-            width: parent.width / 1.3
-            height: parent.height / 1.5
-            text: "Copyright 2014 © by Aleš Katona. All rights reserved."
+            color: Theme.primaryColor
+            text: "Copyright 2014 © by Aleš Katona."
         }
-
+        Text {
+            anchors {
+                centerIn: parent.Center
+                horizontalCenter: parent.horizontalCenter
+            }
+            color: Theme.primaryColor
+            font.pointSize: theme.fontSizeMedium
+            text: "Small changes: Lavaux Gilles"
+            Text {
+                anchors {
+                    left: parent.left
+                    top: parent.bottom
+                }
+                color: Theme.primaryColor
+                font.pointSize: 16
+                text: "gl custom version: 0.5.0"
+            }
+        }
     }
 
 }
