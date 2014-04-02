@@ -31,7 +31,8 @@ namespace Lighthouse {
     {
     public:
         ProcInfo();
-        void update(QString& stat, unsigned long long totalTicks);
+        void updateStat(QString& stat, unsigned long long totalTicks);
+        void updateMemory(QString& mem, unsigned long long totalMemory);
         QString getName() const;
         pid_t getPID() const;
         int getCPUUsage() const;
@@ -43,7 +44,11 @@ namespace Lighthouse {
         QString fName;
         pid_t fPID;
         int fCPUUsage;
+        int fMemoryUsage;
         QString fState;
+        unsigned long fVmSize;
+        unsigned long fVmRSS;
+        unsigned long fSharedMem;
         unsigned long fSysTime;
         unsigned long fUserTime;
         unsigned long fTotalTicks;

@@ -85,7 +85,8 @@ namespace Lighthouse {
     void Process::sort(ProcList& list) {
         switch ( fSortBy ) {
             case 0: qSort(list.begin(), list.end(), CPUComparer()); break;
-            case 1: qSort(list.begin(), list.end(), NameComparer()); break;
+            case 1: qSort(list.begin(), list.end(), MemoryComparer()); break;
+            case 2: qSort(list.begin(), list.end(), NameComparer()); break;
         }
     }
 
@@ -122,7 +123,8 @@ namespace Lighthouse {
     QString Process::getSortBy() const {
         switch ( fSortBy ) {
             case 0: return "CPU Usage";
-            case 1: return "Name";
+            case 1: return "Memory Usage";
+            case 2: return "Name";
         }
 
         return "Unknown";
@@ -130,7 +132,7 @@ namespace Lighthouse {
 
     void Process::nextSortBy() {
         fSortBy++;
-        if ( fSortBy > 1 ) {
+        if ( fSortBy > 2 ) {
             fSortBy = 0;
         }
         emit sortByChanged();

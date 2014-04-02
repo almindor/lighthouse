@@ -118,13 +118,23 @@ namespace Lighthouse {
         return result;
     }
 
-    ProcessHandler::ProcessHandler(ProcMap& procMap, unsigned long long totalTicks) : fProcMap(procMap) {
+    ProcessStatHandler::ProcessStatHandler(ProcMap& procMap, unsigned long long totalTicks) : fProcMap(procMap) {
         fTotalTicks = totalTicks;
     }
 
-    int ProcessHandler::onLine(QString &line, int i) {
+    int ProcessStatHandler::onLine(QString &line, int i) {
         pid_t index = i;
-        fProcMap[index].update(line, fTotalTicks);
+        fProcMap[index].updateStat(line, fTotalTicks);
+        return 0;
+    }
+
+    ProcessStatMHandler::ProcessStatMHandler(ProcMap& procMap, unsigned long long totalMemory) : fProcMap(procMap) {
+        fTotalMemory = totalMemory;
+    }
+
+    int ProcessStatMHandler::onLine(QString &line, int i) {
+        pid_t index = i;
+        fProcMap[index].updateMemory(line, fTotalMemory);
         return 0;
     }
 

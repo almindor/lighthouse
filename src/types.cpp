@@ -20,23 +20,30 @@
 #include <QTextStream>
 #include <QRegularExpression>
 #include <math.h>
+#include <QDebug>
+
+#define PAGE_SIZE 4096 // TODO: find out dynamicallys
 
 namespace Lighthouse {
 
     bool CPUComparer::operator()(const ProcInfo & a, const ProcInfo & b) const {
-        if ( a.getCPUUsage() == b.getCPUUsage() ) {
+        int valA = a.getCPUUsage();
+        int valB = b.getCPUUsage();
+        if ( valA == valB ) {
             return a.getPID() > b.getPID();
         }
 
-        return a.getCPUUsage() > b.getCPUUsage();
+        return valA > valB;
     }
 
     bool MemoryComparer::operator()(const ProcInfo & a, const ProcInfo & b) const {
-        if ( a.getCPUUsage() == b.getCPUUsage() ) {
+        int valA = a.getMemoryUsage();
+        int valB = b.getMemoryUsage();
+        if ( valA == valB ) {
             return a.getPID() > b.getPID();
         }
 
-        return a.getCPUUsage() > b.getCPUUsage();
+        return valA > valB;
     }
 
     bool NameComparer::operator()(const ProcInfo & a, const ProcInfo & b) const {
@@ -48,13 +55,17 @@ namespace Lighthouse {
     ProcInfo::ProcInfo() : fName() {
         fPID = 0;
         fCPUUsage = 0;
+        fMemoryUsage = 0;
         fState = 'Q';
         fUserTime = 0;
         fSysTime = 0;
         fTotalTicks = 0;
+        fVmSize = 0;
+        fVmRSS = 0;
+        fSharedMem = 0;
     }
 
-    void ProcInfo::update(QString& stat, unsigned long long totalTicks) {
+    void ProcInfo::updateStat(QString& stat, unsigned long long totalTicks) {
         const QRegularExpression regexp("[()]+");
         unsigned long oldCPUTime = fUserTime + fSysTime;
         int tmp;
@@ -71,6 +82,15 @@ namespace Lighthouse {
         fTotalTicks = totalTicks;
     }
 
+    void ProcInfo::updateMemory(QString& mem, unsigned long long totalMemory) {
+        QTextStream(&mem) >> fVmSize >> fVmRSS >> fSharedMem;
+        fVmSize *= PAGE_SIZE;
+        fVmRSS *= PAGE_SIZE;
+        fSharedMem *= PAGE_SIZE;
+
+        fMemoryUsage = round((qreal)fVmRSS/ (qreal)totalMemory * 100.0f);
+    }
+
     QString ProcInfo::getName() const {
         return fName;
     }
@@ -84,7 +104,7 @@ namespace Lighthouse {
     }
 
     int ProcInfo::getMemoryUsage() const {
-        return 0; // TODO
+        return fMemoryUsage;
     }
 
     QString ProcInfo::toString() const {

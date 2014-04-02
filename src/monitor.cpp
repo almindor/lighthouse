@@ -64,7 +64,7 @@ namespace Lighthouse {
 
     bool Monitor::getPaused() {
         return fPaused;
-    }
+    }    
 
     void Monitor::setCoverPage(int page) {
         if ( page < 0 ) {
@@ -138,9 +138,9 @@ namespace Lighthouse {
             return;
         }
 
-        int total = fSysInfo.totalram * fSysInfo.mem_unit;
-        int free = fSysInfo.freeram * fSysInfo.mem_unit;
-        emit memoryChanged(total, free);
+        fTotalMemory = fSysInfo.totalram * fSysInfo.mem_unit;
+        unsigned long long free = fSysInfo.freeram * fSysInfo.mem_unit;
+        emit memoryChanged(fTotalMemory, free);
     }
 
     void Monitor::procUptime() {
@@ -168,18 +168,25 @@ namespace Lighthouse {
             }
         }
 
-        ProcessHandler handler(fProcMap, totalTicks);
+        ProcessStatHandler statHandler(fProcMap, totalTicks);
+        ProcessStatMHandler statMHandler(fProcMap, fTotalMemory);
         QMapIterator<pid_t, ProcInfo> iterator(fProcMap);
         IntList deletes;
 
         while ( iterator.hasNext() ) {
             iterator.next();
             pid_t pid = iterator.key();
-            QString path("/proc/" + QString::number(pid) + "/stat");
-            if ( !QFile::exists(path) ) {
+            QString pathStat("/proc/" + QString::number(pid) + "/stat");
+            QString pathStatM("/proc/" + QString::number(pid) + "/statm");
+            if ( !QFile::exists(pathStat) ) {
                 deletes.append(pid);
-            } else  if ( fProcReader.readProcFile(path, handler, 1, (int)pid) != 0 ) {
-                qCritical() << "Error reading process " << pid << "\n";
+            } else {
+                if ( fProcReader.readProcFile(pathStat, statHandler, 1, (int)pid) != 0 ) {
+                    qCritical() << "Error reading process stat file " << pid << "\n";
+                }
+                if ( fProcReader.readProcFile(pathStatM, statMHandler, 1, (int)pid) != 0 ) {
+                    qCritical() << "Error reading process mstat file " << pid << "\n";
+                }
             }
         }
 

@@ -61,13 +61,23 @@ namespace Lighthouse {
         unsigned long long parseCPUParts(QStringList &parts, int flags);
     };
 
-    class ProcessHandler: public LineHandler
+    class ProcessStatHandler: public LineHandler
     {
     public:
-        ProcessHandler(ProcMap& procMap, unsigned long long totalTicks);
+        ProcessStatHandler(ProcMap& procMap, unsigned long long totalTicks);
         int onLine(QString& line, int i);
     private:
         unsigned long long fTotalTicks;
+        ProcMap& fProcMap;
+    };
+
+    class ProcessStatMHandler: public LineHandler
+    {
+    public:
+        ProcessStatMHandler(ProcMap& procMap, unsigned long long totalMemory);
+        int onLine(QString& line, int i);
+    private:
+        unsigned long long fTotalMemory;
         ProcMap& fProcMap;
     };
 

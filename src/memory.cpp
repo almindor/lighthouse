@@ -27,11 +27,11 @@ namespace Lighthouse {
         fFree = 0;
     }
 
-    int Memory::getFree() const {
+    unsigned long long Memory::getFree() const {
         return fFree;
     }
 
-    int Memory::getTotal() const {
+    unsigned long long Memory::getTotal() const {
         return fTotal;
     }
 
@@ -39,7 +39,7 @@ namespace Lighthouse {
         return 100 - qRound((qreal)fFree / (qreal)fTotal * 100.0f);
     }
 
-    void Memory::setMemory(int total, int free) {
+    void Memory::setMemory(unsigned long long total, unsigned long long free) {
         int changed = 0;
         if ( fTotal != total ) {
             fTotal = total;

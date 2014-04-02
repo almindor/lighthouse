@@ -53,6 +53,7 @@ namespace Lighthouse {
             int fInterval;
             int fCPUCount;
             int fCoverPage;
+            unsigned long long fTotalMemory;
             qreal fUptime;
             qreal fUpidle;
             long fTicksPerSecond;
@@ -72,7 +73,7 @@ namespace Lighthouse {
             int getInterval();
         signals:
             void CPUUsageChanged(IntList usage);
-            void memoryChanged(int total, int free);
+            void memoryChanged(unsigned long long total, unsigned long long free);
             void intervalChanged(int interval);
             void pausedChanged(bool paused);
             void coverPageChanged(int page);

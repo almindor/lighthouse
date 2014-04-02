@@ -39,27 +39,66 @@ Page {
                 text: name
             }
 
+            Text {
+                id: cpuLabel
+                text: "cpu: " + cpuUsage + "%"
+                color: Theme.highlightColor
+                font.pointSize: 12
+                anchors {
+                    horizontalCenter: parent.horizontalCenter
+                    top: parent.top
+                }
+            }
+
+            Text {
+                id: memLabel
+                text: "mem: " + memoryUsage + "%"
+                color: Theme.secondaryHighlightColor
+                font.pointSize: 12
+                anchors {
+                    horizontalCenter: parent.horizontalCenter
+                    top: parent.top
+                    topMargin: cpuLabel.height + 1
+                }
+            }
+
             Rectangle {
+                id: greyBar
                 anchors {
                     right: parent.right
-                    verticalCenter: parent.verticalCenter
+                    top: parent.top
                 }
 
                 width: 200
-                height: 5
+                height: cpuLabel.height + memLabel.height + 1
                 color: "dimgrey"
             }
 
             Rectangle {
+                id: cpuBar
                 anchors {
                     right: parent.right
-                    verticalCenter: parent.verticalCenter
+                    top: parent.top
                 }
 
                 width: cpuUsage * 2
-                height: 5
+                height: cpuLabel.height
                 color: Theme.highlightColor
             }
+
+            Rectangle {
+                id: memBar
+                anchors {
+                    right: parent.right
+                    top: parent.top
+                    topMargin: cpuBar.height + 1
+                }
+
+                width: memoryUsage * 2
+                height: memLabel.height
+                color: Theme.secondaryHighlightColor
+            }
+
         }
     }
 }
