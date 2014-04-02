@@ -10,6 +10,8 @@ TARGET = Lighthouse
 
 CONFIG += sailfishapp
 
+QT += dbus
+
 SOURCES += src/Lighthouse.cpp \
     src/cpu.cpp \
     src/memory.cpp \
@@ -29,7 +31,8 @@ OTHER_FILES += qml/Lighthouse.qml \
     qml/pages/Memory.qml \
     qml/pages/About.qml \
     qml/pages/Process.qml \
-    rpm/Lighthouse.spec
+    rpm/Lighthouse.spec \
+    qml/pages/Phone.qml
 
 HEADERS += \
     src/cpu.h \

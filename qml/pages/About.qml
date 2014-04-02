@@ -5,25 +5,24 @@ import Sailfish.Silica 1.0
 Page {
     id: page
 
-    Column {
-        width: page.width
-        spacing: Theme.paddingLarge
-        PageHeader {
-            title: "About"
-        }
+    PageHeader {
+        id: header
+        title: "About"
+    }
 
-        TextArea {
-            readOnly: true
-            wrapMode: TextEdit.WordWrap
-            anchors {
-                centerIn: parent.Center
-                margins: Theme.paddingLarge
-            }
-            width: parent.width / 1.3
-            height: parent.height / 1.5
-            text: "Copyright 2014 © by Aleš Katona. All rights reserved."
+    Label {
+         textFormat: Text.RichText
+        wrapMode: TextEdit.WordWrap
+        anchors {
+            topMargin: header.height
+            centerIn: parent.Center
+            fill: parent
+            margins: Theme.paddingLarge
         }
-
+        text: "Copyright 2014 © by Aleš Katona. All rights reserved. Phone controls DBus code inspired by <a href='https://github.com/ejjoman/SailfishReboot'>SailfishReboot</a>"
+        onLinkActivated: {
+             Qt.openUrlExternally(link);
+        }
     }
 
 }

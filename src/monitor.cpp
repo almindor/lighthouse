@@ -17,7 +17,6 @@
 
 #include "monitor.h"
 #include <unistd.h>
-#include <iostream>
 #include <QtDebug>
 #include <QFile>
 #include <QTextStream>
@@ -31,6 +30,7 @@ namespace Lighthouse {
 
     Monitor::Monitor() : fSettings("Bistrecode", "Lighthouse"), fProcMap()
     {
+        fDBus = new QDBusInterface("com.nokia.dsme", "/com/nokia/dsme/request", "com.nokia.dsme.request", QDBusConnection::systemBus(), this);
         fInterval = fSettings.value("proc/interval", 2).toInt();
         fCoverPage = 0;
         fQuit = false;
@@ -41,11 +41,12 @@ namespace Lighthouse {
     }
 
     Monitor::~Monitor() {
+        delete fDBus;
         fQuit = true;
         wait(2000);
     }
 
-    int Monitor::getInterval() {
+    int Monitor::getInterval() const {
         return fInterval;
     }
 
@@ -62,7 +63,7 @@ namespace Lighthouse {
         fPaused = paused;
     }
 
-    bool Monitor::getPaused() {
+    bool Monitor::getPaused() const {
         return fPaused;
     }    
 
@@ -78,20 +79,28 @@ namespace Lighthouse {
         }
     }
 
-    int Monitor::getCoverPage() {
+    int Monitor::getCoverPage() const {
         return fCoverPage;
     }
 
-    QString Monitor::getUptime() {
+    QString Monitor::getUptime() const {
         return getUptimeString(fUptime);
     }
 
-    IntList Monitor::getCPUUsage() {
+    IntList Monitor::getCPUUsage() const {
         return fCPUUsage;
     }
 
+    void Monitor::reboot() {
+        fDBus->call("req_reboot");
+    }
+
+    void Monitor::shutdown() {
+        fDBus->call("req_shutdown");
+    }
+
     void Monitor::run() Q_DECL_OVERRIDE {
-        getProcessorCount();
+        procProcessorCount();
         fCPUActiveTicks.resize(fCPUCount + 1); // room for "total"
         fCPUTotalTicks.resize(fCPUCount + 1); // room for "total"
 
@@ -114,7 +123,7 @@ namespace Lighthouse {
         }
     }
 
-    void Monitor::getProcessorCount() {
+    void Monitor::procProcessorCount() {
         CPUCountHandler handler(fCPUCount);
         QString path = QStringLiteral("/proc/cpuinfo");
         if ( fProcReader.readProcFile(path, handler, 255, -1) != 0 ) {

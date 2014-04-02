@@ -14,6 +14,10 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
             }
             MenuItem {
+                text: "Phone Controls"
+                onClicked: pageStack.push(Qt.resolvedUrl("Phone.qml"))
+            }
+            MenuItem {
                 text: "Settings"
                 onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"))
             }
@@ -50,8 +54,7 @@ Page {
             Button {
                 text: "CPUs: " + cpu.summaryValue + "%"
                 anchors {
-                    left: parent.left
-                    right: parent.right
+                    horizontalCenter: parent.horizontalCenter
                     margins: Theme.paddingLarge
                 }
                 onClicked: pageStack.push(Qt.resolvedUrl("CPU.qml"))
@@ -61,8 +64,7 @@ Page {
             Button {
                 text: "Memory: " + memory.summaryValue + "%"
                 anchors {
-                    left: parent.left
-                    right: parent.right
+                    horizontalCenter: parent.horizontalCenter
                     margins: Theme.paddingLarge
                 }
                 onClicked: pageStack.push(Qt.resolvedUrl("Memory.qml"))
@@ -71,8 +73,7 @@ Page {
             Button {
                 text: "Processes: " + process.summaryValue
                 anchors {
-                    left: parent.left
-                    right: parent.right
+                    horizontalCenter: parent.horizontalCenter
                     margins: Theme.paddingLarge
                 }
                 onClicked: pageStack.push(Qt.resolvedUrl("Process.qml"))

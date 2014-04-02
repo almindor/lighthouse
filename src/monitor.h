@@ -22,6 +22,7 @@
 #include <QThread>
 #include <QVector>
 #include <QSettings>
+#include <QtDBus/QDBusInterface>
 #include "types.h"
 #include "procreader.h"
 
@@ -33,13 +34,15 @@ namespace Lighthouse {
             Monitor();
             ~Monitor();
             Q_OBJECT
-            IntList getCPUUsage();
+            IntList getCPUUsage() const;
             void setInterval(int interval);
             void setPaused(bool paused);
-            bool getPaused();
+            bool getPaused() const;
             void setCoverPage(int page);
-            int getCoverPage();
-            QString getUptime();
+            int getCoverPage() const;
+            QString getUptime() const;
+            Q_INVOKABLE void reboot();
+            Q_INVOKABLE void shutdown();
 
             Q_PROPERTY(int interval READ getInterval WRITE setInterval NOTIFY intervalChanged)
             Q_PROPERTY(bool paused READ getPaused WRITE setPaused NOTIFY pausedChanged)
@@ -62,15 +65,15 @@ namespace Lighthouse {
             ProcMap fProcMap;
             ProcReader fProcReader;
             struct sysinfo fSysInfo;
+            QDBusInterface* fDBus;
 
             void run() Q_DECL_OVERRIDE;
             void procCPUActivity();
             void procMemory();
             void procProcesses();
-            QString getTimePart(QString key, int value);
             void procUptime();
-            void getProcessorCount();
-            int getInterval();
+            void procProcessorCount();
+            int getInterval() const;
         signals:
             void CPUUsageChanged(IntList usage);
             void memoryChanged(unsigned long long total, unsigned long long free);
