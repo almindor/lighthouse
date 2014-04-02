@@ -56,34 +56,17 @@ namespace Lighthouse {
 
     struct CPUComparer
     {
-        bool operator()(const ProcInfo & a, const ProcInfo & b) const
-        {
-            if ( a.getCPUUsage() == b.getCPUUsage() ) {
-                return a.getPID() > b.getPID();
-            }
-
-            return a.getCPUUsage() > b.getCPUUsage();
-        }
+        bool operator()(const ProcInfo & a, const ProcInfo & b) const;
     };
 
     struct MemoryComparer
     {
-        bool operator()(const ProcInfo & a, const ProcInfo & b) const
-        {
-            if ( a.getCPUUsage() == b.getCPUUsage() ) {
-                return a.getPID() > b.getPID();
-            }
-
-            return a.getCPUUsage() > b.getCPUUsage();
-        }
+        bool operator()(const ProcInfo & a, const ProcInfo & b) const;
     };
 
     struct NameComparer
     {
-        bool operator()(const ProcInfo & a, const ProcInfo & b) const
-        {
-            return a.getName() < b.getName();
-        }
+        bool operator()(const ProcInfo & a, const ProcInfo & b) const;
     };
 
 }

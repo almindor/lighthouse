@@ -23,6 +23,28 @@
 
 namespace Lighthouse {
 
+    bool CPUComparer::operator()(const ProcInfo & a, const ProcInfo & b) const {
+        if ( a.getCPUUsage() == b.getCPUUsage() ) {
+            return a.getPID() > b.getPID();
+        }
+
+        return a.getCPUUsage() > b.getCPUUsage();
+    }
+
+    bool MemoryComparer::operator()(const ProcInfo & a, const ProcInfo & b) const {
+        if ( a.getCPUUsage() == b.getCPUUsage() ) {
+            return a.getPID() > b.getPID();
+        }
+
+        return a.getCPUUsage() > b.getCPUUsage();
+    }
+
+    bool NameComparer::operator()(const ProcInfo & a, const ProcInfo & b) const {
+        return (QString::compare(a.getName(), b.getName(), Qt::CaseInsensitive) < 0);
+    }
+
+    // ProcInfo
+
     ProcInfo::ProcInfo() : fName() {
         fPID = 0;
         fCPUUsage = 0;
