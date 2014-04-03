@@ -6,25 +6,25 @@
 #         - desktop icon filename must be changed
 #         - desktop filename must be changed
 #         - icon definition filename in desktop file must be changed
-TARGET = Lighthouse
+TARGET = lighthouse
 
 CONFIG += sailfishapp
 
 QT += dbus
 
-SOURCES += src/Lighthouse.cpp \
+SOURCES += \
     src/cpu.cpp \
     src/memory.cpp \
     src/procreader.cpp \
     src/linehandler.cpp \
     src/types.cpp \
     src/process.cpp \
-    src/monitor.cpp
+    src/monitor.cpp \
+    src/lighthouse.cpp
 
-OTHER_FILES += qml/Lighthouse.qml \
+OTHER_FILES += \
     qml/cover/CoverPage.qml \
     rpm/Lighthouse.yaml \
-    Lighthouse.desktop \
     qml/pages/Summary.qml \
     qml/pages/CPU.qml \
     qml/pages/Settings.qml \
@@ -32,7 +32,9 @@ OTHER_FILES += qml/Lighthouse.qml \
     qml/pages/About.qml \
     qml/pages/Process.qml \
     rpm/Lighthouse.spec \
-    qml/pages/Phone.qml
+    qml/pages/Phone.qml \
+    lighthouse.desktop \
+    qml/Lighthouse.qml
 
 HEADERS += \
     src/cpu.h \
