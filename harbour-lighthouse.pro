@@ -6,7 +6,7 @@
 #         - desktop icon filename must be changed
 #         - desktop filename must be changed
 #         - icon definition filename in desktop file must be changed
-TARGET = lighthouse
+TARGET = harbour-lighthouse
 
 CONFIG += sailfishapp
 
@@ -24,17 +24,17 @@ SOURCES += \
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
-    rpm/lighthouse.yaml \
     qml/pages/Summary.qml \
     qml/pages/CPU.qml \
     qml/pages/Settings.qml \
     qml/pages/Memory.qml \
     qml/pages/About.qml \
     qml/pages/Process.qml \
-    rpm/lighthouse.spec \
     qml/pages/Phone.qml \
     lighthouse.desktop \
-    qml/Lighthouse.qml
+    qml/Lighthouse.qml \
+    rpm/harbour-lighthouse.spec \
+    rpm/harbour-lighthouse.yaml
 
 HEADERS += \
     src/cpu.h \
