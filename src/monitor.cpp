@@ -135,7 +135,7 @@ namespace Lighthouse {
         CPUUsageHandler handler(fCPUUsage, fCPUActiveTicks, fCPUTotalTicks);
         QString path = QStringLiteral("/proc/stat");
         if ( fProcReader.readProcFile(path, handler, fCPUCount + 1, -1) == 0 ) {
-            emit CPUUsageChanged(fCPUUsage);
+            emit CPUUsageChanged(&fCPUUsage);
         }
     }
 

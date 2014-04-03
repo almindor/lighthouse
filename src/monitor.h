@@ -75,7 +75,7 @@ namespace Lighthouse {
             void procProcessorCount();
             int getInterval() const;
         signals:
-            void CPUUsageChanged(IntList usage);
+            void CPUUsageChanged(IntList* usage);
             void memoryChanged(unsigned long long total, unsigned long long free);
             void intervalChanged(int interval);
             void pausedChanged(bool paused);

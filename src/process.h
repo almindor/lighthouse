@@ -37,7 +37,7 @@ namespace Lighthouse {
             MemoryUsageRole
         };
 
-        Process(QObject *parent = 0);
+        explicit Process(QObject *parent = 0);
 
         QHash<int, QByteArray> roleNames() const;
         Qt::ItemFlags flags(const QModelIndex & index) const;

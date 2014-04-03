@@ -33,14 +33,13 @@ Page {
         }
 
         Repeater {
-            model: (cpu.usage.length - 1)
+            model: cpu
 
             ProgressBar {
                 minimumValue: 0
                 maximumValue: 100
-                value: cpu.usage[index + 1]
+                value: cpuUsage
                 valueText: value + '%'
-                visible: (cpu.usage.length > 0)
                 label: "CPU" + (index + 1);
                 anchors {
                     left: parent.left

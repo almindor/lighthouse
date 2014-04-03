@@ -19,24 +19,34 @@
 #define CPU_H
 
 #include <QObject>
+#include <QAbstractListModel>
 #include "types.h"
 
 namespace Lighthouse {
 
-    class CPU : public QObject
+    class CPU : public QAbstractListModel
     {
         Q_OBJECT
-        Q_PROPERTY(IntList usage READ getUsage NOTIFY usageChanged)
         Q_PROPERTY(int summaryValue READ getSummaryValue NOTIFY summaryValueChanged)
     public:
+        enum ProcessRoles {
+            CPUUsageRole = Qt::UserRole + 1
+        };
+
         explicit CPU(QObject *parent = 0);
 
-        IntList getUsage() const;
+        QHash<int, QByteArray> roleNames() const;
+        Qt::ItemFlags flags(const QModelIndex & index) const;
+        QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
+        QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
+        int rowCount(const QModelIndex & parent = QModelIndex()) const;
+
         int getSummaryValue();
     private:
-        IntList fUsage;
+        IntList* fUsage;
+        int fTotalUsage;
     public slots:
-        void setUsage(IntList usage);
+        void setUsage(IntList* usage);
     signals:
         void usageChanged();
         void summaryValueChanged();
