@@ -24,14 +24,14 @@ SOURCES += \
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
-    rpm/Lighthouse.yaml \
+    rpm/lighthouse.yaml \
     qml/pages/Summary.qml \
     qml/pages/CPU.qml \
     qml/pages/Settings.qml \
     qml/pages/Memory.qml \
     qml/pages/About.qml \
     qml/pages/Process.qml \
-    rpm/Lighthouse.spec \
+    rpm/lighthouse.spec \
     qml/pages/Phone.qml \
     lighthouse.desktop \
     qml/Lighthouse.qml
