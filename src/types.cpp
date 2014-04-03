@@ -72,6 +72,11 @@ namespace Lighthouse {
         QTextStream(&stat) >> fPID >> fName >> fState >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> fUserTime >> fSysTime;
         fName = fName.replace(regexp, "");
 
+        if ( fName.contains("harbour-") ) { // show name part and flag
+            fName = fName.replace("harbour-", "");
+            fName += "(h)";
+        }
+
         if ( fTotalTicks > 0 ) {
             unsigned long newCPUTime = fUserTime + fSysTime;
             unsigned long diffCPUTime = newCPUTime - oldCPUTime;
