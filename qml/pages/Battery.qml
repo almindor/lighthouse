@@ -27,7 +27,7 @@ Page {
                 Text {
                     width: parent.width
                     color: Theme.highlightColor
-                    opacity: 0.6
+                    //opacity: 0.9
                     font.pixelSize: Theme.fontSizeMedium
                     horizontalAlignment: Text.AlignHCenter
                     text: battery.status
@@ -41,7 +41,7 @@ Page {
                 Text {
                     width: parent.width
                     color: Theme.highlightColor
-                    opacity: 0.6
+                    //opacity: 0.9
                     font.pixelSize: Theme.fontSizeMedium
                     horizontalAlignment: Text.AlignHCenter
                     text: battery.level
