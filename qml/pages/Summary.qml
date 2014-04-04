@@ -78,6 +78,16 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("Process.qml"))
             }
 
+            Button {
+                text: "Battery: " + battery.summaryValue
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+                onClicked: pageStack.push(Qt.resolvedUrl("Battery.qml"))
+            }
+
         }
     }
 }

@@ -28,7 +28,7 @@ Page {
             }
             color: Theme.primaryColor
             font.pointSize: theme.fontSizeMedium
-            text: "Small changes: Lavaux Gilles"
+            text: "Battery changes: Lavaux Gilles"
             Text {
                 anchors {
                     left: parent.left
@@ -36,7 +36,7 @@ Page {
                 }
                 color: Theme.primaryColor
                 font.pointSize: 16
-                text: "gl custom version: 0.5.0"
+                text: "gl custom version: 0.5.5"
             }
         }
     }

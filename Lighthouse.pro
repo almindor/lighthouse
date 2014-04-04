@@ -17,7 +17,8 @@ SOURCES += src/Lighthouse.cpp \
     src/linehandler.cpp \
     src/types.cpp \
     src/process.cpp \
-    src/monitor.cpp
+    src/monitor.cpp \
+    src/battery.cpp
 
 OTHER_FILES += qml/Lighthouse.qml \
     qml/cover/CoverPage.qml \
@@ -29,7 +30,8 @@ OTHER_FILES += qml/Lighthouse.qml \
     qml/pages/Memory.qml \
     qml/pages/About.qml \
     qml/pages/Process.qml \
-    rpm/Lighthouse.spec
+    rpm/Lighthouse.spec \
+    qml/pages/Battery.qml
 
 HEADERS += \
     src/cpu.h \
@@ -38,4 +40,5 @@ HEADERS += \
     src/linehandler.h \
     src/types.h \
     src/process.h \
-    src/monitor.h
+    src/monitor.h \
+    src/battery.h
