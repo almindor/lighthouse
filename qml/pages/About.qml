@@ -36,7 +36,7 @@ Page {
                 }
                 color: Theme.primaryColor
                 font.pointSize: 16
-                text: "gl custom version: 0.5.5"
+                text: "gl custom version: 0.5.6"
             }
         }
     }

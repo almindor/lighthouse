@@ -14,6 +14,7 @@ namespace Lighthouse {
     void Battery::setStatus(QString charg) {
         if(charg!=fStatus){
             fStatus=charg;
+            emit statusChanged();
             emit summaryValueChanged(getSummaryValue());
         }else{
             return;
@@ -62,6 +63,7 @@ namespace Lighthouse {
         }
         
         if ( changed > 0 ) {
+            emit statusChanged();
             emit summaryValueChanged(getSummaryValue());
         }
     }

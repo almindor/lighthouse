@@ -33,8 +33,8 @@ namespace Lighthouse {
         void setStatus(QString charge);
 	signals:
         void healthChanged(QString value);
-        void levelChanged(int value);
-        void statusChanged(QString value);
+        void levelChanged(int level);
+        void statusChanged();
         void summaryValueChanged(QString value);
 	};
 }
