@@ -30,11 +30,14 @@ namespace Lighthouse {
         Q_OBJECT
         Q_PROPERTY(int summaryValue READ getSummaryValue NOTIFY summaryValueChanged)
         Q_PROPERTY(QString sortBy READ getSortBy NOTIFY sortByChanged)
+        Q_PROPERTY(int selectedPID READ getSelectedPID NOTIFY selectedPIDChanged)
     public:
         enum ProcessRoles {
-            NameRole = Qt::UserRole + 1,
+            PIDRole = Qt::UserRole + 1,
+            NameRole,
             CPUUsageRole,
-            MemoryUsageRole
+            MemoryUsageRole,
+            SelectedRole
         };
 
         explicit Process(QObject *parent = 0);
@@ -44,17 +47,24 @@ namespace Lighthouse {
         QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
         QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
         int rowCount(const QModelIndex & parent = QModelIndex()) const;
-        Q_INVOKABLE void nextSortBy();
         QString getSortBy() const;
         int getSummaryValue() const;
+        int getSelectedPID() const;
+        Q_INVOKABLE bool isKillable(int pid) const;
+        Q_INVOKABLE void nextSortBy();
+        Q_INVOKABLE void selectPID(int pid);
+        Q_INVOKABLE void killSelectedProcess();
     private:
         void sort(ProcList& list);
         void diffProcLists(const ProcList& oldList, const ProcList& newList, int& start, int& end) const;
+        uid_t fUID;
         int fSortBy;
+        int fSelectedPID;
         ProcList fProcList;
     signals:
         void summaryValueChanged();
         void sortByChanged();
+        void selectedPIDChanged();
     public slots:
         void setProcList(ProcMap* procMap);
     };

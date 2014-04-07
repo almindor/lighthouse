@@ -18,7 +18,6 @@
 #ifndef PROC_H
 #define PROC_H
 
-#include <sys/sysinfo.h>
 #include <QThread>
 #include <QVector>
 #include <QSettings>
@@ -56,7 +55,7 @@ namespace Lighthouse {
             int fInterval;
             int fCPUCount;
             int fCoverPage;
-            unsigned long long fTotalMemory;
+            unsigned long fTotalMemory;
             qreal fUptime;
             qreal fUpidle;
             long fTicksPerSecond;
@@ -64,7 +63,6 @@ namespace Lighthouse {
             QSettings fSettings;
             ProcMap fProcMap;
             ProcReader fProcReader;
-            struct sysinfo fSysInfo;
             QDBusInterface* fDBus;
 
             void run() Q_DECL_OVERRIDE;
@@ -76,7 +74,7 @@ namespace Lighthouse {
             int getInterval() const;
         signals:
             void CPUUsageChanged(IntList* usage);
-            void memoryChanged(unsigned long long total, unsigned long long free);
+            void memoryChanged(unsigned long total, unsigned long free);
             void intervalChanged(int interval);
             void pausedChanged(bool paused);
             void coverPageChanged(int page);

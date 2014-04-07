@@ -16,6 +16,12 @@
 */
 
 #include "process.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <signal.h>
+#include <errno.h>
+#include <string.h>
 #include <QDebug>
 
 namespace Lighthouse {
@@ -23,14 +29,18 @@ namespace Lighthouse {
     // ProcessModel
 
     Process::Process(QObject *parent) : QAbstractListModel(parent), fProcList() {
+        fUID = getuid();
         fSortBy = 0;
+        fSelectedPID = 0;
     }
 
     QHash<int, QByteArray> Process::roleNames() const {
         QHash<int, QByteArray> roles;
+        roles[PIDRole] = "processID";
         roles[NameRole] = "name";
         roles[CPUUsageRole] = "cpuUsage";
         roles[MemoryUsageRole] = "memoryUsage";
+        roles[SelectedRole] = "selected";
         return roles;
     }
 
@@ -42,9 +52,11 @@ namespace Lighthouse {
         const int row = index.row();
         if ( row >= 0 && row < fProcList.size() ) {
             switch ( role ) {
+                case PIDRole: return fProcList[row].getPID();
                 case NameRole: return fProcList[row].getName();
                 case CPUUsageRole: return fProcList[row].getCPUUsage();
                 case MemoryUsageRole: return fProcList[row].getMemoryUsage();
+                case SelectedRole: return (fSelectedPID == fProcList[row].getPID());
             }
         }
 
@@ -52,7 +64,7 @@ namespace Lighthouse {
     }
 
     QVariant Process::headerData(int section, Qt::Orientation orientation, int role) const {
-        return "Description";
+        return "Description: " + section + orientation + role;
     }
 
     int Process::rowCount(const QModelIndex & parent) const {
@@ -64,6 +76,10 @@ namespace Lighthouse {
     }
 
     void Process::setProcList(ProcMap* procMap) {
+        if ( fSelectedPID > 0 ) {
+            return; // don't update if we're selecting to kill
+        }
+
         int oldSize = fProcList.size();
         ProcList procList = procMap->values();
         sort(procList);
@@ -130,6 +146,25 @@ namespace Lighthouse {
         return "Unknown";
     }
 
+    bool Process::isKillable(int pid) const {
+        struct stat fStat;
+        QString path = "/proc/" + QString::number(pid) + "/stat";
+        if ( stat(path.toLocal8Bit().data(), &fStat) != 0 ) {
+            qCritical() << "Unable to stat file: " << path << ": " << strerror(errno) << "\n";
+            return false;
+        }
+
+        if ( fStat.st_uid == fUID ) {
+            return true;
+        }
+
+        return false;
+    }
+
+    int Process::getSelectedPID() const {
+        return fSelectedPID;
+    }
+
     void Process::nextSortBy() {
         fSortBy++;
         if ( fSortBy > 2 ) {
@@ -139,6 +174,30 @@ namespace Lighthouse {
 
         sort(fProcList);
         emit dataChanged(createIndex(0, 0), createIndex(fProcList.size(), 0));
+    }
+
+    void Process::selectPID(int pid) {
+        if ( fSelectedPID != pid ) {
+            fSelectedPID = pid;
+            emit selectedPIDChanged();
+
+            const int size = fProcList.size();
+
+            for ( int i = 0; i < size; i++ ) {
+                if ( fProcList[i].getPID() == pid ) {
+                    emit dataChanged(createIndex(i, 0), createIndex(i, 0));
+                    return;
+                }
+            }
+        }
+    }
+
+    void Process::killSelectedProcess() {
+        if ( fSelectedPID > 0 ) {
+            if ( kill(fSelectedPID, SIGKILL) != 0 ) {
+                qCritical() << "Unable to kill process: " << fSelectedPID << " error: " << strerror(errno) << "\n";
+            }
+        }
     }
 
 }

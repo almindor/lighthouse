@@ -16,7 +16,6 @@
 */
 
 #include "monitor.h"
-#include <unistd.h>
 #include <QtDebug>
 #include <QFile>
 #include <QTextStream>
@@ -140,16 +139,13 @@ namespace Lighthouse {
     }
 
     void Monitor::procMemory() {
-        int result = sysinfo(&fSysInfo);
+        unsigned long free = 0;
+        MemoryHandler handler(fTotalMemory, free);
 
-        if ( result != 0 ) {
-            qCritical() << "Unable to read sysinfo\n";
-            return;
+        QString path = QStringLiteral("/proc/meminfo");
+        if ( fProcReader.readProcFile(path, handler, 4, -1) == 0 ) {
+            emit memoryChanged(fTotalMemory, free);
         }
-
-        fTotalMemory = fSysInfo.totalram * fSysInfo.mem_unit;
-        unsigned long long free = fSysInfo.freeram * fSysInfo.mem_unit;
-        emit memoryChanged(fTotalMemory, free);
     }
 
     void Monitor::procUptime() {
@@ -158,7 +154,7 @@ namespace Lighthouse {
         if ( fProcReader.readProcFile(path, handler, 1, -1) == 0 ) {
             emit uptimeChanged(getUptime());
         } else {
-            qCritical() << "Unable to read uptime\n";
+            qCritical() << "Unable to read meminfo\n";
         }
     }
 

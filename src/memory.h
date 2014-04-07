@@ -25,8 +25,8 @@ namespace Lighthouse {
     class Memory : public QObject
     {
         Q_OBJECT
-        Q_PROPERTY(unsigned long long free READ getFree NOTIFY freeChanged)
-        Q_PROPERTY(unsigned long long total READ getTotal NOTIFY totalChanged)
+        Q_PROPERTY(unsigned long free READ getFree NOTIFY freeChanged)
+        Q_PROPERTY(unsigned long total READ getTotal NOTIFY totalChanged)
         Q_PROPERTY(int summaryValue READ getSummaryValue NOTIFY summaryValueChanged)
     public:
         explicit Memory(QObject *parent = 0);
@@ -35,14 +35,14 @@ namespace Lighthouse {
         unsigned long long getTotal() const;
         int getSummaryValue() const;
     private:
-        unsigned long long fFree;
-        unsigned long long fTotal;
+        unsigned long fFree;
+        unsigned long fTotal;
     signals:
         void freeChanged(int free);
         void totalChanged(int total);
         void summaryValueChanged(int value);
     public slots:
-        void setMemory(unsigned long long total, unsigned long long free);
+        void setMemory(unsigned long total, unsigned long free);
     };
 
 }

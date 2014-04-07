@@ -11,7 +11,7 @@ Page {
     }
 
     Label {
-         textFormat: Text.RichText
+        textFormat: Text.RichText
         wrapMode: TextEdit.WordWrap
         anchors {
             topMargin: header.height

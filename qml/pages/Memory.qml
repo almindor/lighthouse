@@ -29,7 +29,7 @@ Page {
                     color: Theme.highlightColor
                     font.pixelSize: Theme.fontSizeExtraLarge
                     horizontalAlignment: Text.AlignHCenter
-                    text: Math.round((memory.total - memory.free) / 1000) + " kB"
+                    text: (memory.total - memory.free) + " kB"
                 }
                 Rectangle {
                     color: Theme.highlightColor
@@ -43,7 +43,7 @@ Page {
                     opacity: 0.6
                     font.pixelSize: Theme.fontSizeExtraLarge
                     horizontalAlignment: Text.AlignHCenter
-                    text: Math.round(memory.total / 1000) + " kB"
+                    text: memory.total + " kB"
                 }
             }
 
@@ -52,9 +52,9 @@ Page {
 
         ProgressBar {
             minimumValue: 0
-            maximumValue: memory.total
-            value: memory.free
-            label: Math.round(memory.free / 1000) + " kB free out of " + Math.round(memory.total / 1000) + " kB total"
+            maximumValue: 100
+            value: (100 - memory.summaryValue)
+            label: memory.free + " kB free out of " + memory.total + " kB total"
             anchors {
                 left: parent.left
                 right: parent.right
