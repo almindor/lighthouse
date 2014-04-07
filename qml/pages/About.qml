@@ -5,40 +5,52 @@ import Sailfish.Silica 1.0
 Page {
     id: page
 
-    PageHeader {
-        id: header
-        title: "About"
-    }
+    Column {
+        width: page.width
+        spacing: Theme.paddingLarge
 
-    Label {
-        anchors {
-            centerIn: parent.Center
-            horizontalCenter: parent.horizontalCenter
+        PageHeader {
+            id: header
+            title: "About"
         }
-        color: Theme.primaryColor
-        text: "Copyright 2014 © by Aleš Katona. All rights reserved. Phone controls DBus code inspired by <a href='https://github.com/ejjoman/SailfishReboot'>SailfishReboot</a>"
-        onLinkActivated: {
-             Qt.openUrlExternally(link);
-        }
-    }
 
-    Text {
-        anchors {
-            centerIn: parent.Center
-            horizontalCenter: parent.horizontalCenter
+        Label {
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: Theme.paddingLarge
+            }
+            wrapMode: Text.WordWrap
+            color: Theme.primaryColor
+            text: "Copyright 2014 © by Aleš Katona. All rights reserved."
         }
-        color: Theme.primaryColor
-        font.pointSize: theme.fontSizeMedium
-        text: "Battery changes: Lavaux Gilles"
+
+        Label {
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: Theme.paddingLarge
+            }
+            wrapMode: Text.WordWrap
+            color: Theme.primaryColor
+            text: "Battery changes by Lavaux Gilles."
+        }
+
         Text {
             anchors {
                 left: parent.left
-                top: parent.bottom
+                right: parent.right
+                margins: Theme.paddingLarge
             }
-            color: Theme.primaryColor
+            color: Theme.secondaryColor
             font.pointSize: 16
-            text: "gl custom version: 0.5.6"
+            wrapMode: Text.WordWrap
+            text: "Lighthouse is free software licensed under the GPL v3 available at <a href='https://github.com/almindor/lighthouse'>github</a>. Phone controls DBus code inspired by <a href='https://github.com/ejjoman/SailfishReboot'>SailfishReboot</a>."
+            linkColor: Theme.secondaryHighlightColor
+            onLinkActivated: {
+                 Qt.openUrlExternally(link);
+            }
         }
-    }
 
+    }
 }

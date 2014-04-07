@@ -36,7 +36,7 @@ namespace Lighthouse {
         fUptime = 0;
         fTicksPerSecond = sysconf(_SC_CLK_TCK);
         fPaused = false;
-        fgotBatteryInfo = false;
+        fGotBatteryInfo = false;
         start();
     }
 
@@ -69,8 +69,8 @@ namespace Lighthouse {
 
     void Monitor::setCoverPage(int page) {
         if ( page < 0 ) {
-            page = 1;
-        } else if ( page > 1 ) {
+            page = 2;
+        } else if ( page > 2 ) {
             page = 0;
         }
         if ( fCoverPage != page ) {
@@ -81,6 +81,36 @@ namespace Lighthouse {
 
     int Monitor::getCoverPage() const {
         return fCoverPage;
+    }
+
+    QString Monitor::getCoverImageLeft() const {
+        switch ( fCoverPage ) {
+            case 0: return "battery";
+            case 1: return "cpu";
+            case 2: return "memory";
+        }
+
+        return "Unknown";
+    }
+
+    QString Monitor::getCoverImageRight() const {
+        switch ( fCoverPage ) {
+            case 0: return "memory";
+            case 1: return "battery";
+            case 2: return "cpu";
+        }
+
+        return "Unknown";
+    }
+
+    QString Monitor::getCoverLabel() const {
+        switch ( fCoverPage ) {
+            case 0: return "CPU";
+            case 1: return "Memory";
+            case 2: return "Battery";
+        }
+
+        return "Unknown";
     }
 
     QString Monitor::getUptime() const {
@@ -207,28 +237,27 @@ namespace Lighthouse {
 
 
     void Monitor::procBattery() {
-        if ( !fgotBatteryInfo ){
+        QString value;
+        if ( !fGotBatteryInfo ){
             QFile f("/sys/class/power_supply/battery/health");
-            //QFile f("/home/nemo/power_supply/health");
             if (f.open(QFile::ReadOnly)){
                 QByteArray content = f.readAll();
-                QString value=QString(content).replace(QString("\n"), QString(""));
+                value = QString(content).replace(QString("\n"), QString(""));
                 f.close();
                 emit batteryHealthChanged(value);
             }
 
             QFile f1("/sys/class/power_supply/battery/technology");
-            //QFile f1("/home/nemo/power_supply/technology");
             if (f1.open(QFile::ReadOnly)){
                 QByteArray content = f1.readAll();
-                QString value=QString(content).replace(QString("\n"), QString(""));
+                value = QString(content).replace(QString("\n"), QString(""));
                 f1.close();
-                emit batteryTechnoChanged(value);
+                emit batteryTechnologyChanged(value);
             }
-            fgotBatteryInfo=true;
+            fGotBatteryInfo = true;
         }
+
         QFile f2("/sys/class/power_supply/battery/capacity");
-        //QFile f2("/home/nemo/power_supply/capacity");
         if (f2.open(QFile::ReadOnly)){
             QByteArray content = f2.readAll();
             int v = QString(content).toInt();
@@ -236,10 +265,9 @@ namespace Lighthouse {
             emit batteryLevelChanged(v);
         }
         QFile f3("/sys/class/power_supply/battery/status");
-        //QFile f3("/home/nemo/power_supply/status");
         if (f3.open(QFile::ReadOnly)){
-            QByteArray content = f3.readAll();//.replace(QString("\n"), QString(""));
-            QString value=QString(content).replace(QString("\n"), QString(""));
+            QByteArray content = f3.readAll();
+            value = QString(content).replace(QString("\n"), QString(""));
             f3.close();
             emit batteryStatusChanged(value);
         }

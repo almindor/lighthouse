@@ -80,10 +80,9 @@ Page {
             }
 
             Button {
-                text: "Battery: " + battery.summaryValue
+                text: "Battery: " + battery.summaryValue + "%"
                 anchors {
-                    left: parent.left
-                    right: parent.right
+                    horizontalCenter: parent.horizontalCenter
                     margins: Theme.paddingLarge
                 }
                 onClicked: pageStack.push(Qt.resolvedUrl("Battery.qml"))

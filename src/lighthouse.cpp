@@ -54,8 +54,8 @@ int main(int argc, char *argv[])
                      &process, &Process::setProcList);
     QObject::connect(&monitor, &Monitor::batteryHealthChanged,
                      &battery, &Battery::setHealth);
-    QObject::connect(&monitor, &Monitor::batteryTechnoChanged,
-                     &battery, &Battery::setTechno);
+    QObject::connect(&monitor, &Monitor::batteryTechnologyChanged,
+                     &battery, &Battery::setTechnology);
     QObject::connect(&monitor, &Monitor::batteryLevelChanged,
                      &battery, &Battery::setLevel);
     QObject::connect(&monitor, &Monitor::batteryStatusChanged,

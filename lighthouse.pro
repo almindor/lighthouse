@@ -20,7 +20,8 @@ SOURCES += \
     src/types.cpp \
     src/process.cpp \
     src/monitor.cpp \
-    src/lighthouse.cpp
+    src/lighthouse.cpp \
+    src/battery.cpp
     src/battery.cpp
 
 OTHER_FILES += \
@@ -35,7 +36,8 @@ OTHER_FILES += \
     rpm/lighthouse.spec \
     qml/pages/Phone.qml \
     lighthouse.desktop \
-    qml/Lighthouse.qml
+    qml/Lighthouse.qml \
+    qml/pages/Battery.qml
     qml/pages/Battery.qml
 
 HEADERS += \

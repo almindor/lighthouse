@@ -55,7 +55,7 @@ Page {
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeSmall
             horizontalAlignment: Text.AlignHCenter
-            text: "Health: "+battery.health
+            text: "Health: " + battery.health
         }
 
         Text {
@@ -63,7 +63,7 @@ Page {
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeSmall
             horizontalAlignment: Text.AlignHCenter
-            text: "Techno: "+battery.techno
+            text: "Technology: " + battery.technology
         }
     }
 }

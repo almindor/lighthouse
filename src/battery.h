@@ -10,32 +10,33 @@ namespace Lighthouse {
 		Q_OBJECT
         Q_PROPERTY(int level READ getLevel NOTIFY levelChanged)
         Q_PROPERTY(QString status READ getStatus NOTIFY statusChanged)
-        Q_PROPERTY(QString summaryValue READ getSummaryValue NOTIFY summaryValueChanged)
+        Q_PROPERTY(int summaryValue READ getSummaryValue NOTIFY summaryValueChanged)
         Q_PROPERTY(QString health READ getHealth NOTIFY healthChanged)
-        Q_PROPERTY(QString techno READ getTechno)
+        Q_PROPERTY(QString technology READ getTechnology NOTIFY technologyChanged)
 	public:
 		explicit Battery(QObject *parent = 0);
 
         int getLevel() const;
         QString getStatus() const;
-        QString getSummaryValue() const;
+        int getSummaryValue() const;
         QString getHealth() const;
-        QString getTechno() const;
+        QString getTechnology() const;
 	private:
-        QString fhealth;
-        QString ftechno;
+        QString fHealth;
+        QString fTechnology;
         int fLevel;
         QString fStatus;
 	public slots:
         void setHealth(QString heal);
-        void setTechno(QString tech);
+        void setTechnology(QString tech);
         void setLevel(int level);
         void setStatus(QString charge);
 	signals:
-        void healthChanged(QString value);
-        void levelChanged(int level);
+        void healthChanged();
+        void levelChanged();
         void statusChanged();
-        void summaryValueChanged(QString value);
+        void technologyChanged();
+        void summaryValueChanged();
 	};
 }
 #endif // BATTERY_H

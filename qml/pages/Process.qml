@@ -13,7 +13,7 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: "Is sorted by: " + process.sortBy
+                text: "Sort by: " + process.sortBy
                 onClicked: process.nextSortBy()
             }
         }
@@ -70,19 +70,10 @@ Page {
                     top: parent.top
                 }
 
+                opacity: 0.5
                 width: 200
                 height: cpuLabel.height + memLabel.height + 1
                 color: "dimgrey"
-
-                Text {
-                    text: cpuUsage+"%"
-                    color: Theme.highlightColor
-                    font.pointSize: 16
-                    anchors {
-                        horizontalCenter: parent.horizontalCenter
-                        bottom: parent.top
-                    }
-                }
             }
 
             Rectangle {

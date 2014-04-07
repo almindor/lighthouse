@@ -1,0 +1,13 @@
+1.0 - add battery page by Lavaux Gilles. Report free memory as free + buffers + cached
+
+0.9 - add kill to processes
+
+0.8 - initial harbour release
+
+0.7-2 - add phone controls, minor button sizing adjustments
+
+0.7 - add memory info to process list, fix sort by name and add indicator gfx.
+
+0.6 - add basic processes view and uptime indicator
+
+0.5 - initial release

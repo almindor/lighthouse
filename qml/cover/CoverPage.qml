@@ -32,12 +32,23 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 CoverBackground {
+
+    function coverValue(cp) {
+        switch ( cp ) {
+            case 0: return cpu.summaryValue;
+            case 1: return memory.summaryValue;
+            case 2: return battery.summaryValue;
+        }
+
+        return -1;
+    }
+
     Column {        
         ProgressCircleBase {
             width: parent.parent.width / 1.2
             height: width
             anchors.horizontalCenter: parent.horizontalCenter
-            value: monitor.coverPage === 0 ? cpu.summaryValue / 100 : memory.summaryValue / 100
+            value: coverValue(monitor.coverPage) / 100.0
             borderWidth: 2
             progressColor: Theme.highlightColor
 
@@ -48,13 +59,13 @@ CoverBackground {
                 font.pixelSize: Theme.fontSizeHuge
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                text: (monitor.coverPage === 0 ? cpu.summaryValue : memory.summaryValue) + '%'
+                text: coverValue(monitor.coverPage) + '%'
             }
         }
 
         Label {
             anchors.margins: Theme.paddingLarge
-            text: (monitor.coverPage === 0) ? "CPU" : "Memory";
+            text: monitor.coverLabel
         }
 
         anchors.centerIn: parent
@@ -64,14 +75,14 @@ CoverBackground {
         id: coverAction
 
         CoverAction {
-            iconSource: "../images/cover-image-cpu.png"
-            onTriggered: monitor.coverPage = 0
+            iconSource: "../images/cover-image-" + monitor.coverImageLeft + ".png"
+            onTriggered: monitor.coverPage--
         }
 
         CoverAction {
-            iconSource: "../images/cover-image-memory.png"
-            onTriggered: monitor.coverPage = 1
-        }
+            iconSource: "../images/cover-image-" + monitor.coverImageRight + ".png"
+            onTriggered: monitor.coverPage++
+        }        
     }
 }
 

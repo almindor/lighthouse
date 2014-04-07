@@ -5,19 +5,17 @@ namespace Lighthouse {
     Battery::Battery(QObject *parent) :
         QObject(parent)
     {
-            fLevel=0;
-            fStatus="Not readed";
-            fhealth="Not readed";
-            ftechno="Not readed";
+            fLevel = 0;
+            fStatus = "Unavailable";
+            fHealth = "Unavailable";
+            fTechnology = "Unavailable";
     }
     
-    void Battery::setStatus(QString charg) {
-        if(charg!=fStatus){
-            fStatus=charg;
+    void Battery::setStatus(QString charge) {
+        if (charge != fStatus) {
+            fStatus = charge;
             emit statusChanged();
-            emit summaryValueChanged(getSummaryValue());
-        }else{
-            return;
+            emit summaryValueChanged();
         }
     }
 
@@ -30,26 +28,26 @@ namespace Lighthouse {
     }
 
     QString Battery::getHealth() const {
-        return fhealth;
+        return fHealth;
     }
 
     void Battery::setHealth(QString f) {
-        fhealth = f;
-        emit summaryValueChanged(getSummaryValue());
+        fHealth = f;
+        emit summaryValueChanged();
     }
 
-    QString Battery::getTechno() const {
-        return ftechno;
+    QString Battery::getTechnology() const {
+        return fTechnology;
     }
 
-    void Battery::setTechno(QString f) {
-        ftechno = f;
-        emit summaryValueChanged(getSummaryValue());
+    void Battery::setTechnology(QString technology) {
+        fTechnology = technology;
+        emit summaryValueChanged();
+        emit technologyChanged();
     }
     
-    QString Battery::getSummaryValue() const {
-        QString b = "health:"+fhealth + "; "+fStatus+":"+QString::number(fLevel)+"%";
-        return b;
+    int Battery::getSummaryValue() const {
+        return fLevel;
     }
     
 
@@ -58,13 +56,13 @@ namespace Lighthouse {
         
         if ( fLevel != level ) {
             fLevel = level;
-            emit levelChanged(level);
+            emit levelChanged();
             changed++;
         }
         
         if ( changed > 0 ) {
             emit statusChanged();
-            emit summaryValueChanged(getSummaryValue());
+            emit summaryValueChanged();
         }
     }
 
