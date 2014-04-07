@@ -47,8 +47,10 @@ namespace Lighthouse {
             }
 
             int n = handler.onLine(line, i);
-            if ( n != 0 ) {
+            if ( n < 0 ) {
                 return n;
+            } else if ( n == 100 ) { // skip rest, we're done
+                break;
             }
             line = stream.readLine(4096);
             c++;

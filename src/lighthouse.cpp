@@ -30,6 +30,7 @@
 #include "cpu.h"
 #include "memory.h"
 #include "process.h"
+#include "battery.h"
 
 using namespace Lighthouse;
 
@@ -43,6 +44,7 @@ int main(int argc, char *argv[])
     CPU cpu;
     Process process;
     Memory memory;
+    Battery battery;
 
     QObject::connect(&monitor, &Monitor::CPUUsageChanged,
                      &cpu, &CPU::setUsage);
@@ -50,6 +52,14 @@ int main(int argc, char *argv[])
                      &memory, &Memory::setMemory);
     QObject::connect(&monitor, &Monitor::processChanged,
                      &process, &Process::setProcList);
+    QObject::connect(&monitor, &Monitor::batteryHealthChanged,
+                     &battery, &Battery::setHealth);
+    QObject::connect(&monitor, &Monitor::batteryTechnologyChanged,
+                     &battery, &Battery::setTechnology);
+    QObject::connect(&monitor, &Monitor::batteryLevelChanged,
+                     &battery, &Battery::setLevel);
+    QObject::connect(&monitor, &Monitor::batteryStatusChanged,
+                     &battery, &Battery::setStatus);
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
     QQuickView *view = SailfishApp::createView();
@@ -59,6 +69,7 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("memory", &memory);
     view->rootContext()->setContextProperty("monitor", &monitor);
     view->rootContext()->setContextProperty("process", &process);
+    view->rootContext()->setContextProperty("battery", &battery);
     view->setSource(SailfishApp::pathTo(qml));
     view->show();
 

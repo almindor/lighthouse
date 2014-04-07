@@ -6,7 +6,7 @@ Page {
     id: page
 
     SilicaListView {
-
+        id: listView
         header: PageHeader {
             title: "Processes"
         }
@@ -23,13 +23,14 @@ Page {
         model: process
         VerticalScrollDecorator {}
 
-        delegate: Item {
+        delegate: BackgroundItem {
+            id: myListItem
             anchors {
                 left: parent.left
                 right: parent.right
                 margins: Theme.paddingLarge
             }
-            height: Theme.itemSizeExtraSmall
+            height: selected ? greyBar.height + killMenu.height : greyBar.height
             Label {
                 anchors {
                     left: parent.left
@@ -69,6 +70,7 @@ Page {
                     top: parent.top
                 }
 
+                opacity: 0.5
                 width: 200
                 height: cpuLabel.height + memLabel.height + 1
                 color: "dimgrey"
@@ -99,6 +101,28 @@ Page {
                 color: Theme.secondaryHighlightColor
             }
 
+            onPressAndHold: {
+                if ( process.isKillable(processID) ) {
+                    process.selectPID(processID) // pauses the list updates
+                    killMenu.show(myListItem)
+                } else {
+                    console.log("not killable");
+                }
+            }
+        }
+
+        ContextMenu {
+            id: killMenu
+            MenuItem {
+                text: "Kill"
+                onClicked: {
+                    process.killSelectedProcess()
+                }
+            }
+
+            onClosed: {
+                process.selectPID(0) // deselect/depause
+            }
         }
     }
 }

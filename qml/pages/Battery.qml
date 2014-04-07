@@ -1,22 +1,22 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-
 Page {
     id: page
+
 
     Column {
         width: page.width
         spacing: Theme.paddingLarge
         PageHeader {
-            title: "Memory Usage"
+            title: "Battery Usage"
         }
 
         ProgressCircleBase {
             width: parent.width / 2
             height: width
             anchors.horizontalCenter: parent.horizontalCenter
-            value: 1 - (memory.free / memory.total)
+            value: battery.level/100.1
             borderWidth: 2
             progressColor: Theme.highlightColor
 
@@ -27,9 +27,10 @@ Page {
                 Text {
                     width: parent.width
                     color: Theme.highlightColor
-                    font.pixelSize: Theme.fontSizeExtraLarge
+                    //opacity: 0.9
+                    font.pixelSize: Theme.fontSizeMedium
                     horizontalAlignment: Text.AlignHCenter
-                    text: (memory.total - memory.free) + " kB"
+                    text: battery.status
                 }
                 Rectangle {
                     color: Theme.highlightColor
@@ -40,26 +41,30 @@ Page {
                 Text {
                     width: parent.width
                     color: Theme.highlightColor
-                    opacity: 0.6
-                    font.pixelSize: Theme.fontSizeExtraLarge
+                    //opacity: 0.9
+                    font.pixelSize: Theme.fontSizeMedium
                     horizontalAlignment: Text.AlignHCenter
-                    text: memory.total + " kB"
+                    text: battery.level
                 }
             }
 
-
         }
 
-        ProgressBar {
-            minimumValue: 0
-            maximumValue: 100
-            value: (100 - memory.summaryValue)
-            label: memory.free + " kB free out of " + memory.total + " kB total"
-            anchors {
-                left: parent.left
-                right: parent.right
-                margins: Theme.paddingLarge
-            }
+        Text {
+            width: parent.width
+            color: Theme.highlightColor
+            font.pixelSize: Theme.fontSizeSmall
+            horizontalAlignment: Text.AlignHCenter
+            text: "Health: " + battery.health
+        }
+
+        Text {
+            width: parent.width
+            color: Theme.highlightColor
+            font.pixelSize: Theme.fontSizeSmall
+            horizontalAlignment: Text.AlignHCenter
+            text: "Technology: " + battery.technology
         }
     }
 }
+

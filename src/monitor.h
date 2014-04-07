@@ -18,7 +18,6 @@
 #ifndef PROC_H
 #define PROC_H
 
-#include <sys/sysinfo.h>
 #include <QThread>
 #include <QVector>
 #include <QSettings>
@@ -40,13 +39,19 @@ namespace Lighthouse {
             bool getPaused() const;
             void setCoverPage(int page);
             int getCoverPage() const;
+            QString getCoverLabel() const;
             QString getUptime() const;
+            QString getCoverImageLeft() const;
+            QString getCoverImageRight() const;
             Q_INVOKABLE void reboot();
             Q_INVOKABLE void shutdown();
 
             Q_PROPERTY(int interval READ getInterval WRITE setInterval NOTIFY intervalChanged)
             Q_PROPERTY(bool paused READ getPaused WRITE setPaused NOTIFY pausedChanged)
             Q_PROPERTY(int coverPage READ getCoverPage WRITE setCoverPage NOTIFY coverPageChanged)
+            Q_PROPERTY(QString coverLabel READ getCoverLabel NOTIFY coverPageChanged)
+            Q_PROPERTY(QString coverImageLeft READ getCoverImageLeft NOTIFY coverPageChanged)
+            Q_PROPERTY(QString coverImageRight READ getCoverImageRight NOTIFY coverPageChanged)
             Q_PROPERTY(QString uptime READ getUptime NOTIFY uptimeChanged)
         private:
             bool fQuit;
@@ -56,32 +61,37 @@ namespace Lighthouse {
             int fInterval;
             int fCPUCount;
             int fCoverPage;
-            unsigned long long fTotalMemory;
+            unsigned long fTotalMemory;
             qreal fUptime;
             qreal fUpidle;
             long fTicksPerSecond;
             bool fPaused;
+            bool fGotBatteryInfo;
             QSettings fSettings;
             ProcMap fProcMap;
             ProcReader fProcReader;
-            struct sysinfo fSysInfo;
             QDBusInterface* fDBus;
 
             void run() Q_DECL_OVERRIDE;
             void procCPUActivity();
             void procMemory();
+            void procBattery();
             void procProcesses();
             void procUptime();
             void procProcessorCount();
             int getInterval() const;
         signals:
-            void CPUUsageChanged(IntList usage);
-            void memoryChanged(unsigned long long total, unsigned long long free);
+            void CPUUsageChanged(IntList* usage);
+            void memoryChanged(unsigned long total, unsigned long free);
             void intervalChanged(int interval);
             void pausedChanged(bool paused);
             void coverPageChanged(int page);
             void uptimeChanged(QString uptime);
             void processChanged(ProcMap* procMap);
+            void batteryHealthChanged(QString heal);
+            void batteryTechnologyChanged(QString tech);
+            void batteryLevelChanged(int level);
+            void batteryStatusChanged(QString stat);
     };
 
 }

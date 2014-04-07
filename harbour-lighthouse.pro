@@ -20,7 +20,9 @@ SOURCES += \
     src/types.cpp \
     src/process.cpp \
     src/monitor.cpp \
-    src/lighthouse.cpp
+    src/lighthouse.cpp \
+    src/battery.cpp
+    src/battery.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
@@ -35,6 +37,9 @@ OTHER_FILES += \
     qml/Lighthouse.qml \
     rpm/harbour-lighthouse.spec \
     rpm/harbour-lighthouse.yaml
+    qml/pages/Battery.qml
+    qml/pages/Battery.qml
+    harbour-lighthouse.pro
 
 HEADERS += \
     src/cpu.h \
@@ -43,4 +48,5 @@ HEADERS += \
     src/linehandler.h \
     src/types.h \
     src/process.h \
-    src/monitor.h
+    src/monitor.h \
+    src/battery.h

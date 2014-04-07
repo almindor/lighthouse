@@ -39,7 +39,7 @@ namespace Lighthouse {
         return 100 - qRound((qreal)fFree / (qreal)fTotal * 100.0f);
     }
 
-    void Memory::setMemory(unsigned long long total, unsigned long long free) {
+    void Memory::setMemory(unsigned long total, unsigned long free) {
         int changed = 0;
         if ( fTotal != total ) {
             fTotal = total;

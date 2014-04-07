@@ -32,7 +32,7 @@ namespace Lighthouse {
     public:
         ProcInfo();
         void updateStat(QString& stat, unsigned long long totalTicks);
-        void updateMemory(QString& mem, unsigned long long totalMemory);
+        void updateMemory(QString& mem, unsigned long totalMemory);
         QString getName() const;
         pid_t getPID() const;
         int getCPUUsage() const;

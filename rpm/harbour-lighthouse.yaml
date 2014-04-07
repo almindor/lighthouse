@@ -1,7 +1,7 @@
 Name: harbour-lighthouse
 Summary: Lighthouse System Monitor
-Version: 0.8
-Release: 2
+Version: 1.0
+Release: 1
 Group: Qt/Qt
 URL: https://github.com/almindor/lighthouse
 License: LICENSE
@@ -19,12 +19,11 @@ PkgConfigBR:
 Requires:
 - sailfishsilica-qt5 >= 0.10.9
 Files:
-- /usr/share/harbour-lighthouse
-- /usr/share/icons/hicolor/86x86/apps
-- /usr/share/applications
-- /usr/bin
-- '%{_datadir}/icons/hicolor/86x86/apps/%{name}.png'
-- '%{_datadir}/applications/%{name}.desktop'
 - '%{_datadir}/%{name}/qml'
-- '%{_bindir}'
+- '%{_datadir}/applications/%{name}.desktop'
+- '%{_datadir}/icons/hicolor/86x86/apps/%{name}.png'
+- /usr/bin
+- /usr/share/applications
+- /usr/share/icons/hicolor/86x86/apps
+- /usr/share/harbour-lighthouse
 PkgBR: []

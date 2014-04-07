@@ -20,30 +20,52 @@
 
 namespace Lighthouse {
 
-    CPU::CPU(QObject *parent) :
-        QObject(parent)
-    {
-
+    CPU::CPU(QObject *parent) : QAbstractListModel(parent), fUsage() {
+        fTotalUsage = 0;
     }
 
-    IntList CPU::getUsage() const {
-        return fUsage;
+    QHash<int, QByteArray> CPU::roleNames() const {
+        QHash<int, QByteArray> roles;
+        roles[CPUUsageRole] = "cpuUsage";
+        return roles;
+    }
+
+    Qt::ItemFlags CPU::flags(const QModelIndex & index) const {
+        return Qt::ItemIsEnabled;
+    }
+
+    QVariant CPU::data(const QModelIndex & index, int role) const {
+        const int row = index.row();
+        if ( row >= 0 && (row + 1) < fUsage->size() ) {
+            switch ( role ) {
+                case CPUUsageRole: return fUsage->at(row + 1);
+            }
+        }
+
+        return "Data[" + QString::number(index.row()) + "," + QString::number(index.column()) + "]: " + QString::number(role);
+    }
+
+    QVariant CPU::headerData(int section, Qt::Orientation orientation, int role) const {
+        return "Description";
+    }
+
+    int CPU::rowCount(const QModelIndex & parent) const {
+        return fUsage->size() > 0 ? fUsage->size() - 1 : 0;
     }
 
     int CPU::getSummaryValue() {
-        if ( fUsage.size() < 1 ) {
-            return 0;
-        }
-
-        return fUsage[0];
+       return fTotalUsage;
     }
 
-    void CPU::setUsage(IntList usage) {
-        if ( usage.size() != fUsage.size() || fUsage != usage ) {
-            fUsage = usage;
-            emit usageChanged();
+    void CPU::setUsage(IntList* usage) {
+        int usize = usage->size();
+        if ( usize > 0 && fTotalUsage != usage->at(0) ) {
+            fTotalUsage = usage->at(0);
             emit summaryValueChanged();
         }
+
+        fUsage = usage;
+        emit dataChanged(createIndex(0, 0), createIndex(usize - 1, 0));
     }
 
 }

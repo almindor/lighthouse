@@ -87,13 +87,13 @@ namespace Lighthouse {
         fTotalTicks = totalTicks;
     }
 
-    void ProcInfo::updateMemory(QString& mem, unsigned long long totalMemory) {
+    void ProcInfo::updateMemory(QString& mem, unsigned long totalMemory) {
         QTextStream(&mem) >> fVmSize >> fVmRSS >> fSharedMem;
         fVmSize *= PAGE_SIZE;
         fVmRSS *= PAGE_SIZE;
         fSharedMem *= PAGE_SIZE;
 
-        fMemoryUsage = round((qreal)fVmRSS/ (qreal)totalMemory * 100.0f);
+        fMemoryUsage = round((qreal)fVmRSS / ((qreal)totalMemory * 1000.0f) * 100.0f);
     }
 
     QString ProcInfo::getName() const {

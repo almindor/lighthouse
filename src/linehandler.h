@@ -39,6 +39,16 @@ namespace Lighthouse {
         qreal& fUpidle;
     };
 
+    class MemoryHandler: public LineHandler
+    {
+    public:
+        MemoryHandler(unsigned long& total, unsigned long& free);
+        int onLine(QString& line, int i);
+    private:
+        unsigned long& fTotal;
+        unsigned long& fFree;
+    };
+
     class CPUCountHandler: public LineHandler
     {
     public:
@@ -74,10 +84,10 @@ namespace Lighthouse {
     class ProcessStatMHandler: public LineHandler
     {
     public:
-        ProcessStatMHandler(ProcMap& procMap, unsigned long long totalMemory);
+        ProcessStatMHandler(ProcMap& procMap, unsigned long totalMemory);
         int onLine(QString& line, int i);
     private:
-        unsigned long long fTotalMemory;
+        unsigned long fTotalMemory;
         ProcMap& fProcMap;
     };
 

@@ -16,7 +16,6 @@
 */
 
 #include "monitor.h"
-#include <unistd.h>
 #include <QtDebug>
 #include <QFile>
 #include <QTextStream>
@@ -37,6 +36,7 @@ namespace Lighthouse {
         fUptime = 0;
         fTicksPerSecond = sysconf(_SC_CLK_TCK);
         fPaused = false;
+        fGotBatteryInfo = false;
         start();
     }
 
@@ -69,8 +69,8 @@ namespace Lighthouse {
 
     void Monitor::setCoverPage(int page) {
         if ( page < 0 ) {
-            page = 1;
-        } else if ( page > 1 ) {
+            page = 2;
+        } else if ( page > 2 ) {
             page = 0;
         }
         if ( fCoverPage != page ) {
@@ -81,6 +81,36 @@ namespace Lighthouse {
 
     int Monitor::getCoverPage() const {
         return fCoverPage;
+    }
+
+    QString Monitor::getCoverImageLeft() const {
+        switch ( fCoverPage ) {
+            case 0: return "battery";
+            case 1: return "cpu";
+            case 2: return "memory";
+        }
+
+        return "Unknown";
+    }
+
+    QString Monitor::getCoverImageRight() const {
+        switch ( fCoverPage ) {
+            case 0: return "memory";
+            case 1: return "battery";
+            case 2: return "cpu";
+        }
+
+        return "Unknown";
+    }
+
+    QString Monitor::getCoverLabel() const {
+        switch ( fCoverPage ) {
+            case 0: return "CPU";
+            case 1: return "Memory";
+            case 2: return "Battery";
+        }
+
+        return "Unknown";
     }
 
     QString Monitor::getUptime() const {
@@ -117,6 +147,7 @@ namespace Lighthouse {
                 procCPUActivity();
                 procProcesses();
                 procMemory();
+                procBattery();
             }
 
             sleep(fInterval);
@@ -135,21 +166,18 @@ namespace Lighthouse {
         CPUUsageHandler handler(fCPUUsage, fCPUActiveTicks, fCPUTotalTicks);
         QString path = QStringLiteral("/proc/stat");
         if ( fProcReader.readProcFile(path, handler, fCPUCount + 1, -1) == 0 ) {
-            emit CPUUsageChanged(fCPUUsage);
+            emit CPUUsageChanged(&fCPUUsage);
         }
     }
 
     void Monitor::procMemory() {
-        int result = sysinfo(&fSysInfo);
+        unsigned long free = 0;
+        MemoryHandler handler(fTotalMemory, free);
 
-        if ( result != 0 ) {
-            qCritical() << "Unable to read sysinfo\n";
-            return;
+        QString path = QStringLiteral("/proc/meminfo");
+        if ( fProcReader.readProcFile(path, handler, 4, -1) == 0 ) {
+            emit memoryChanged(fTotalMemory, free);
         }
-
-        fTotalMemory = fSysInfo.totalram * fSysInfo.mem_unit;
-        unsigned long long free = fSysInfo.freeram * fSysInfo.mem_unit;
-        emit memoryChanged(fTotalMemory, free);
     }
 
     void Monitor::procUptime() {
@@ -158,7 +186,7 @@ namespace Lighthouse {
         if ( fProcReader.readProcFile(path, handler, 1, -1) == 0 ) {
             emit uptimeChanged(getUptime());
         } else {
-            qCritical() << "Unable to read uptime\n";
+            qCritical() << "Unable to read meminfo\n";
         }
     }
 
@@ -205,6 +233,44 @@ namespace Lighthouse {
         }
 
         emit processChanged(&fProcMap);
+    }
+
+
+    void Monitor::procBattery() {
+        QString value;
+        if ( !fGotBatteryInfo ){
+            QFile f("/sys/class/power_supply/battery/health");
+            if (f.open(QFile::ReadOnly)){
+                QByteArray content = f.readAll();
+                value = QString(content).replace(QString("\n"), QString(""));
+                f.close();
+                emit batteryHealthChanged(value);
+            }
+
+            QFile f1("/sys/class/power_supply/battery/technology");
+            if (f1.open(QFile::ReadOnly)){
+                QByteArray content = f1.readAll();
+                value = QString(content).replace(QString("\n"), QString(""));
+                f1.close();
+                emit batteryTechnologyChanged(value);
+            }
+            fGotBatteryInfo = true;
+        }
+
+        QFile f2("/sys/class/power_supply/battery/capacity");
+        if (f2.open(QFile::ReadOnly)){
+            QByteArray content = f2.readAll();
+            int v = QString(content).toInt();
+            f2.close();
+            emit batteryLevelChanged(v);
+        }
+        QFile f3("/sys/class/power_supply/battery/status");
+        if (f3.open(QFile::ReadOnly)){
+            QByteArray content = f3.readAll();
+            value = QString(content).replace(QString("\n"), QString(""));
+            f3.close();
+            emit batteryStatusChanged(value);
+        }
     }
 
 }

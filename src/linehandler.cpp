@@ -42,6 +42,32 @@ namespace Lighthouse {
         return 0;
     }
 
+    MemoryHandler::MemoryHandler(unsigned long& total, unsigned long& free) : fTotal(total), fFree(free) {
+        total = 0;
+        free = 0;
+    }
+
+    int MemoryHandler::onLine(QString &line, int i) {
+        if ( i > 4 ) {
+            return 100; // don't do anything for the rest
+        }
+
+        QStringList parts = line.split(" ", QString::SkipEmptyParts);
+        if ( parts.size() < 2 ) {
+            qCritical() << "Contents of /proc/meminfo invalid on line " << i << "\n";
+            return -1;
+        }
+
+        switch ( i ) {
+            case 0: fTotal = parts[1].toULong(); break;
+            case 1: fFree = parts[1].toULong(); break; // free
+            case 2: fFree += parts[1].toULong(); break; // buffers
+            case 3: fFree += parts[1].toULong(); break; // cached
+        }
+
+        return 0;
+    }
+
     CPUCountHandler::CPUCountHandler(int& count) : fCount(count) {
         fCount = 0;
     }
@@ -128,7 +154,7 @@ namespace Lighthouse {
         return 0;
     }
 
-    ProcessStatMHandler::ProcessStatMHandler(ProcMap& procMap, unsigned long long totalMemory) : fProcMap(procMap) {
+    ProcessStatMHandler::ProcessStatMHandler(ProcMap& procMap, unsigned long totalMemory) : fProcMap(procMap) {
         fTotalMemory = totalMemory;
     }
 
