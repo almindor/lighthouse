@@ -21,6 +21,7 @@ SOURCES += \
     src/process.cpp \
     src/monitor.cpp \
     src/lighthouse.cpp
+    src/battery.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
@@ -35,6 +36,7 @@ OTHER_FILES += \
     qml/pages/Phone.qml \
     lighthouse.desktop \
     qml/Lighthouse.qml
+    qml/pages/Battery.qml
 
 HEADERS += \
     src/cpu.h \
@@ -43,4 +45,5 @@ HEADERS += \
     src/linehandler.h \
     src/types.h \
     src/process.h \
-    src/monitor.h
+    src/monitor.h \
+    src/battery.h

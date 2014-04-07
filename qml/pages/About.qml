@@ -11,17 +11,33 @@ Page {
     }
 
     Label {
-        textFormat: Text.RichText
-        wrapMode: TextEdit.WordWrap
         anchors {
-            topMargin: header.height
             centerIn: parent.Center
-            fill: parent
-            margins: Theme.paddingLarge
+            horizontalCenter: parent.horizontalCenter
         }
+        color: Theme.primaryColor
         text: "Copyright 2014 © by Aleš Katona. All rights reserved. Phone controls DBus code inspired by <a href='https://github.com/ejjoman/SailfishReboot'>SailfishReboot</a>"
         onLinkActivated: {
              Qt.openUrlExternally(link);
+        }
+    }
+
+    Text {
+        anchors {
+            centerIn: parent.Center
+            horizontalCenter: parent.horizontalCenter
+        }
+        color: Theme.primaryColor
+        font.pointSize: theme.fontSizeMedium
+        text: "Battery changes: Lavaux Gilles"
+        Text {
+            anchors {
+                left: parent.left
+                top: parent.bottom
+            }
+            color: Theme.primaryColor
+            font.pointSize: 16
+            text: "gl custom version: 0.5.6"
         }
     }
 

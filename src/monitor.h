@@ -60,6 +60,7 @@ namespace Lighthouse {
             qreal fUpidle;
             long fTicksPerSecond;
             bool fPaused;
+            bool fgotBatteryInfo;
             QSettings fSettings;
             ProcMap fProcMap;
             ProcReader fProcReader;
@@ -68,6 +69,7 @@ namespace Lighthouse {
             void run() Q_DECL_OVERRIDE;
             void procCPUActivity();
             void procMemory();
+            void procBattery();
             void procProcesses();
             void procUptime();
             void procProcessorCount();
@@ -80,6 +82,10 @@ namespace Lighthouse {
             void coverPageChanged(int page);
             void uptimeChanged(QString uptime);
             void processChanged(ProcMap* procMap);
+            void batteryHealthChanged(QString heal);
+            void batteryTechnoChanged(QString tech);
+            void batteryLevelChanged(int level);
+            void batteryStatusChanged(QString stat);
     };
 
 }

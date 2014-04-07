@@ -36,6 +36,7 @@ namespace Lighthouse {
         fUptime = 0;
         fTicksPerSecond = sysconf(_SC_CLK_TCK);
         fPaused = false;
+        fgotBatteryInfo = false;
         start();
     }
 
@@ -116,6 +117,7 @@ namespace Lighthouse {
                 procCPUActivity();
                 procProcesses();
                 procMemory();
+                procBattery();
             }
 
             sleep(fInterval);
@@ -201,6 +203,46 @@ namespace Lighthouse {
         }
 
         emit processChanged(&fProcMap);
+    }
+
+
+    void Monitor::procBattery() {
+        if ( !fgotBatteryInfo ){
+            QFile f("/sys/class/power_supply/battery/health");
+            //QFile f("/home/nemo/power_supply/health");
+            if (f.open(QFile::ReadOnly)){
+                QByteArray content = f.readAll();
+                QString value=QString(content).replace(QString("\n"), QString(""));
+                f.close();
+                emit batteryHealthChanged(value);
+            }
+
+            QFile f1("/sys/class/power_supply/battery/technology");
+            //QFile f1("/home/nemo/power_supply/technology");
+            if (f1.open(QFile::ReadOnly)){
+                QByteArray content = f1.readAll();
+                QString value=QString(content).replace(QString("\n"), QString(""));
+                f1.close();
+                emit batteryTechnoChanged(value);
+            }
+            fgotBatteryInfo=true;
+        }
+        QFile f2("/sys/class/power_supply/battery/capacity");
+        //QFile f2("/home/nemo/power_supply/capacity");
+        if (f2.open(QFile::ReadOnly)){
+            QByteArray content = f2.readAll();
+            int v = QString(content).toInt();
+            f2.close();
+            emit batteryLevelChanged(v);
+        }
+        QFile f3("/sys/class/power_supply/battery/status");
+        //QFile f3("/home/nemo/power_supply/status");
+        if (f3.open(QFile::ReadOnly)){
+            QByteArray content = f3.readAll();//.replace(QString("\n"), QString(""));
+            QString value=QString(content).replace(QString("\n"), QString(""));
+            f3.close();
+            emit batteryStatusChanged(value);
+        }
     }
 
 }
