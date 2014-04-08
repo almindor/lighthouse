@@ -19,7 +19,7 @@
 #include <QtQuick>
 #endif
 
-#include <sailfishapp.h>
+#include "sailfishapp.h"
 #include <QObject>
 #include <QString>
 #include <QQuickView>
@@ -39,7 +39,10 @@ int main(int argc, char *argv[])
     int result = 0;
     qRegisterMetaType< IntList >( "IntList" );
     qRegisterMetaType< ProcMap >( "ProcMap" );
-    //qRegisterMetaType< ProcInfo >( "ProcInfo" );
+
+    QGuiApplication *app = SailfishApp::application(argc, argv);
+    QQuickView *view = SailfishApp::createView();
+
     Monitor monitor;
     CPU cpu;
     Process process;
@@ -48,6 +51,8 @@ int main(int argc, char *argv[])
 
     QObject::connect(&monitor, &Monitor::CPUUsageChanged,
                      &cpu, &CPU::setUsage);
+    QObject::connect(&monitor, &Monitor::temperatureChanged,
+                     &cpu, &CPU::setTemperature);
     QObject::connect(&monitor, &Monitor::memoryChanged,
                      &memory, &Memory::setMemory);
     QObject::connect(&monitor, &Monitor::processChanged,
@@ -60,9 +65,6 @@ int main(int argc, char *argv[])
                      &battery, &Battery::setLevel);
     QObject::connect(&monitor, &Monitor::batteryStatusChanged,
                      &battery, &Battery::setStatus);
-
-    QGuiApplication *app = SailfishApp::application(argc, argv);
-    QQuickView *view = SailfishApp::createView();
 
     QString qml = QString("qml/%1.qml").arg("Lighthouse");
     view->rootContext()->setContextProperty("cpu", &cpu);

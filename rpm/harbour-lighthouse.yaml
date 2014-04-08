@@ -1,7 +1,7 @@
 Name: harbour-lighthouse
 Summary: Lighthouse System Monitor
 Version: 1.0
-Release: 1
+Release: 3
 Group: Qt/Qt
 URL: https://github.com/almindor/lighthouse
 License: LICENSE
@@ -26,4 +26,5 @@ Files:
 - /usr/share/applications
 - /usr/share/icons/hicolor/86x86/apps
 - /usr/share/harbour-lighthouse
+- '%{_bindir}'
 PkgBR: []

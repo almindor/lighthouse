@@ -78,6 +78,7 @@ namespace Lighthouse {
             void procBattery();
             void procProcesses();
             void procUptime();
+            void procTemperature();
             void procProcessorCount();
             int getInterval() const;
         signals:
@@ -91,6 +92,7 @@ namespace Lighthouse {
             void batteryHealthChanged(QString heal);
             void batteryTechnologyChanged(QString tech);
             void batteryLevelChanged(int level);
+            void temperatureChanged(int degrees);
             void batteryStatusChanged(QString stat);
     };
 

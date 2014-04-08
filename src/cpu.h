@@ -28,6 +28,7 @@ namespace Lighthouse {
     {
         Q_OBJECT
         Q_PROPERTY(int summaryValue READ getSummaryValue NOTIFY summaryValueChanged)
+        Q_PROPERTY(int temperature READ getTemperature NOTIFY temperatureChanged)
     public:
         enum ProcessRoles {
             CPUUsageRole = Qt::UserRole + 1
@@ -41,15 +42,19 @@ namespace Lighthouse {
         QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
         int rowCount(const QModelIndex & parent = QModelIndex()) const;
 
-        int getSummaryValue();
+        int getSummaryValue() const;
+        int getTemperature() const;
     private:
         IntList* fUsage;
         int fTotalUsage;
+        int fTemperature;
     public slots:
         void setUsage(IntList* usage);
+        void setTemperature(int degrees);
     signals:
         void usageChanged();
         void summaryValueChanged();
+        void temperatureChanged();
     };
 
 }

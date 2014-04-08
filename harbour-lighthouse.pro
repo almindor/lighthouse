@@ -36,7 +36,8 @@ OTHER_FILES += \
     lighthouse.desktop \
     qml/Lighthouse.qml \
     rpm/harbour-lighthouse.spec \
-    rpm/harbour-lighthouse.yaml
+    rpm/harbour-lighthouse.yaml \
+    rpm/harbour-lighthouse.spec
     qml/pages/Battery.qml
     qml/pages/Battery.qml
     harbour-lighthouse.pro

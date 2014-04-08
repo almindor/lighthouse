@@ -43,32 +43,44 @@ CoverBackground {
         return -1;
     }
 
-    Column {        
-        ProgressCircleBase {
-            width: parent.parent.width / 1.2
-            height: width
-            anchors.horizontalCenter: parent.horizontalCenter
-            value: coverValue(monitor.coverPage) / 100.0
-            borderWidth: 2
-            progressColor: Theme.highlightColor
+    Image {
+        id: bgimg
+        source: "../images/cover.png"
+        anchors.horizontalCenter: parent.horizontalCenter
+        width: parent.width
+        height: sourceSize.height * width / sourceSize.width
+    }
 
-            Text {
-                width: parent.width
-                anchors.centerIn: parent
-                color: Theme.highlightColor
-                font.pixelSize: Theme.fontSizeHuge
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                text: coverValue(monitor.coverPage) + '%'
-            }
+    Label {
+        anchors.top: parent.top
+        anchors.margins: Theme.paddingLarge
+        anchors.horizontalCenter: parent.horizontalCenter
+        font.pixelSize: Theme.fontSizeLarge
+        horizontalAlignment: Text.AlignHCenter
+        color: Theme.highlightColor
+        text: monitor.coverLabel
+    }
+
+    ProgressCircleBase {
+        width: parent.parent.width / 1.2
+        height: width
+        anchors {
+            horizontalCenter: parent.horizontalCenter
+            centerIn: parent
         }
+        value: coverValue(monitor.coverPage) / 100.0
+        borderWidth: 2
+        progressColor: Theme.highlightColor
 
-        Label {
-            anchors.margins: Theme.paddingLarge
-            text: monitor.coverLabel
+        Text {
+            width: parent.width
+            anchors.centerIn: parent
+            color: Theme.highlightColor
+            font.pixelSize: Theme.fontSizeHuge
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            text: coverValue(monitor.coverPage) + '%'
         }
-
-        anchors.centerIn: parent
     }
 
     CoverActionList {
