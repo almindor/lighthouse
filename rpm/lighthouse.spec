@@ -14,7 +14,7 @@ Name:       lighthouse
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Lighthouse System Monitor
 Version:    1.0
-Release:    2
+Release:    3
 Group:      Qt/Qt
 License:    LICENSE
 URL:        https://github.com/almindor/lighthouse

@@ -16,7 +16,7 @@
 */
 
 #include "monitor.h"
-#include <QtDebug>
+#include <QDebug>
 #include <QFile>
 #include <QTextStream>
 #include <QStringList>
@@ -27,7 +27,7 @@ namespace Lighthouse {
     const int CPU_PART_COUNT = 10;
     const int CPU_PART_DEF[CPU_PART_COUNT] = {0, 1, 1, 1, 2, 2, 0, 0, 0, 0};
 
-    Monitor::Monitor() : fSettings("Bistrecode", "Lighthouse"), fProcMap()
+    Monitor::Monitor() : fSettings(), fProcMap()
     {
         fDBus = new QDBusInterface("com.nokia.dsme", "/com/nokia/dsme/request", "com.nokia.dsme.request", QDBusConnection::systemBus(), this);
         fInterval = fSettings.value("proc/interval", 2).toInt();
