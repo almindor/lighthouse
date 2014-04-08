@@ -48,6 +48,8 @@ int main(int argc, char *argv[])
 
     QObject::connect(&monitor, &Monitor::CPUUsageChanged,
                      &cpu, &CPU::setUsage);
+    QObject::connect(&monitor, &Monitor::temperatureChanged,
+                     &cpu, &CPU::setTemperature);
     QObject::connect(&monitor, &Monitor::memoryChanged,
                      &memory, &Memory::setMemory);
     QObject::connect(&monitor, &Monitor::processChanged,

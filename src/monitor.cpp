@@ -148,6 +148,7 @@ namespace Lighthouse {
                 procProcesses();
                 procMemory();
                 procBattery();
+                procTemperature();
             }
 
             sleep(fInterval);
@@ -270,6 +271,15 @@ namespace Lighthouse {
             value = QString(content).replace(QString("\n"), QString(""));
             f3.close();
             emit batteryStatusChanged(value);
+        }
+    }
+
+    void Monitor::procTemperature() {
+        QFile f("/sys/class/thermal/thermal_zone0/temp");
+        if ( f.open(QFile::ReadOnly) ) {
+            QByteArray content = f.readAll();
+            QString value = QString(content).replace("\n", "");
+            emit temperatureChanged(value.toInt());
         }
     }
 

@@ -22,6 +22,7 @@ namespace Lighthouse {
 
     CPU::CPU(QObject *parent) : QAbstractListModel(parent), fUsage() {
         fTotalUsage = 0;
+        fTemperature = 0;
     }
 
     QHash<int, QByteArray> CPU::roleNames() const {
@@ -53,8 +54,12 @@ namespace Lighthouse {
         return fUsage->size() > 0 ? fUsage->size() - 1 : 0;
     }
 
-    int CPU::getSummaryValue() {
+    int CPU::getSummaryValue() const {
        return fTotalUsage;
+    }
+
+    int CPU::getTemperature() const {
+        return fTemperature;
     }
 
     void CPU::setUsage(IntList* usage) {
@@ -66,6 +71,13 @@ namespace Lighthouse {
 
         fUsage = usage;
         emit dataChanged(createIndex(0, 0), createIndex(usize - 1, 0));
+    }
+
+    void CPU::setTemperature(int degrees) {
+        if ( fTemperature != degrees ) {
+            fTemperature = degrees;
+            emit temperatureChanged();
+        }
     }
 
 }
