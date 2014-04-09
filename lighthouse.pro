@@ -37,7 +37,8 @@ OTHER_FILES += \
     qml/pages/Phone.qml \
     lighthouse.desktop \
     qml/Lighthouse.qml \
-    qml/pages/Battery.qml
+    qml/pages/Battery.qml \
+    qml/InfoPopup.qml
     qml/pages/Battery.qml
 
 HEADERS += \

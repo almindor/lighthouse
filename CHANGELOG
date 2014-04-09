@@ -1,3 +1,5 @@
+1.1 - add permission denied notification for process kill attempts on non-owned processes. Pause on press on process list.
+
 1.0-2 - add temperature indicator to CPU page, new cover background image + bigger label
 
 1.0 - add battery page by Lavaux Gilles. Report free memory as free + buffers + cached
