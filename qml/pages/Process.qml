@@ -33,6 +33,10 @@ Page {
                 text: "Sort by: " + process.sortBy
                 onClicked: process.nextSortBy()
             }
+
+            onActiveChanged: {
+                process.selectPID(0); // deselect and unpause
+            }
         }
 
         anchors.fill: parent
