@@ -39,7 +39,7 @@ Page {
             }
             wrapMode: Text.WordWrap
             color: Theme.primaryColor
-            text: "Copyright 2014 © by Aleš Katona. All rights reserved."
+            text: "Copyright 2014 © by Aleš Katona.."
         }
 
         Label {
