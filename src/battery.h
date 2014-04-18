@@ -17,10 +17,10 @@ namespace Lighthouse {
 		explicit Battery(QObject *parent = 0);
 
         int getLevel() const;
-        QString getStatus() const;
+        const QString& getStatus() const;
         int getSummaryValue() const;
-        QString getHealth() const;
-        QString getTechnology() const;
+        const QString& getHealth() const;
+        const QString& getTechnology() const;
 	private:
         QString fHealth;
         QString fTechnology;

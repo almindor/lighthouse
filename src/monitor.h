@@ -39,10 +39,10 @@ namespace Lighthouse {
             bool getPaused() const;
             void setCoverPage(int page);
             int getCoverPage() const;
-            QString getCoverLabel() const;
+            const QString& getCoverLabel() const;
             QString getUptime() const;
-            QString getCoverImageLeft() const;
-            QString getCoverImageRight() const;
+            const QString& getCoverImageLeft() const;
+            const QString& getCoverImageRight() const;
             Q_INVOKABLE void reboot();
             Q_INVOKABLE void shutdown();
 

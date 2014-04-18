@@ -33,15 +33,16 @@ namespace Lighthouse {
         ProcInfo();
         void updateStat(QString& stat, unsigned long long totalTicks);
         void updateMemory(QString& mem, unsigned long totalMemory);
-        QString getName() const;
+        const QString& getName() const;
+        const QString& getApplicationName() const;
         pid_t getPID() const;
         int getCPUUsage() const;
         int getMemoryUsage() const;
-        QString toString() const;
 
         bool operator ==(const ProcInfo& other) const;
     private:
         QString fName;
+        QString fApplicationName;
         pid_t fPID;
         int fCPUUsage;
         int fMemoryUsage;

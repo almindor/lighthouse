@@ -52,7 +52,7 @@ namespace Lighthouse {
 
     // ProcInfo
 
-    ProcInfo::ProcInfo() : fName() {
+    ProcInfo::ProcInfo() : fName(), fApplicationName() {
         fPID = 0;
         fCPUUsage = 0;
         fMemoryUsage = 0;
@@ -96,8 +96,12 @@ namespace Lighthouse {
         fMemoryUsage = round((qreal)fVmRSS / ((qreal)totalMemory * 1000.0f) * 100.0f);
     }
 
-    QString ProcInfo::getName() const {
+    const QString& ProcInfo::getName() const {
         return fName;
+    }
+
+    const QString& ProcInfo::getApplicationName() const {
+        return fApplicationName;
     }
 
     pid_t ProcInfo::getPID() const {
@@ -110,11 +114,6 @@ namespace Lighthouse {
 
     int ProcInfo::getMemoryUsage() const {
         return fMemoryUsage;
-    }
-
-    QString ProcInfo::toString() const {
-        QString result(fName + "\tCPU: " + QString::number(fCPUUsage) + "%\n");
-        return result;
     }
 
     QString getTimePart(QString key, int value) {

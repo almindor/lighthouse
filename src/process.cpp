@@ -136,14 +136,19 @@ namespace Lighthouse {
         }
     }
 
-    QString Process::getSortBy() const {
+    static const QString SORTBY_CPU = QStringLiteral("CPU Usage");
+    static const QString SORTBY_MEMORY = QStringLiteral("Memory Usage");
+    static const QString SORTBY_NAME = QStringLiteral("Name");
+    static const QString SORTBY_UNKNOWN = QStringLiteral("Unknown");
+
+    const QString& Process::getSortBy() const {
         switch ( fSortBy ) {
-            case 0: return "CPU Usage";
-            case 1: return "Memory Usage";
-            case 2: return "Name";
+            case 0: return SORTBY_CPU;
+            case 1: return SORTBY_MEMORY;
+            case 2: return SORTBY_NAME;
         }
 
-        return "Unknown";
+        return SORTBY_UNKNOWN;
     }
 
     bool Process::isKillable(int pid) const {

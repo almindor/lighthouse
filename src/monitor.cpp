@@ -83,34 +83,44 @@ namespace Lighthouse {
         return fCoverPage;
     }
 
-    QString Monitor::getCoverImageLeft() const {
+    static const QString COVER_IMAGE_CPU = QStringLiteral("cpu");
+    static const QString COVER_IMAGE_MEMORY = QStringLiteral("memory");
+    static const QString COVER_IMAGE_BATTERY = QStringLiteral("battery");
+    static const QString COVER_IMAGE_UNKNOWN = QStringLiteral("unknown");
+
+    const QString& Monitor::getCoverImageLeft() const {
         switch ( fCoverPage ) {
-            case 0: return "battery";
-            case 1: return "cpu";
-            case 2: return "memory";
+            case 0: return COVER_IMAGE_BATTERY;
+            case 1: return COVER_IMAGE_CPU;
+            case 2: return COVER_IMAGE_MEMORY;
         }
 
-        return "Unknown";
+        return COVER_IMAGE_UNKNOWN;
     }
 
-    QString Monitor::getCoverImageRight() const {
+    const QString& Monitor::getCoverImageRight() const {
         switch ( fCoverPage ) {
-            case 0: return "memory";
-            case 1: return "battery";
-            case 2: return "cpu";
+            case 0: return COVER_IMAGE_MEMORY;
+            case 1: return COVER_IMAGE_BATTERY;
+            case 2: return COVER_IMAGE_CPU;
         }
 
-        return "Unknown";
+        return COVER_IMAGE_UNKNOWN;
     }
 
-    QString Monitor::getCoverLabel() const {
+    static const QString COVER_LABEL_CPU = QStringLiteral("CPU");
+    static const QString COVER_LABEL_MEMORY = QStringLiteral("Memory");
+    static const QString COVER_LABEL_BATTERY = QStringLiteral("Battery");
+    static const QString COVER_LABEL_UNKNOWN = QStringLiteral("Unknown");
+
+    const QString& Monitor::getCoverLabel() const {
         switch ( fCoverPage ) {
-            case 0: return "CPU";
-            case 1: return "Memory";
-            case 2: return "Battery";
+            case 0: return COVER_LABEL_CPU;
+            case 1: return COVER_LABEL_MEMORY;
+            case 2: return COVER_LABEL_BATTERY;
         }
 
-        return "Unknown";
+        return COVER_LABEL_UNKNOWN;
     }
 
     QString Monitor::getUptime() const {

@@ -47,7 +47,7 @@ namespace Lighthouse {
         QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
         QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
         int rowCount(const QModelIndex & parent = QModelIndex()) const;
-        QString getSortBy() const;
+        const QString& getSortBy() const;
         int getSummaryValue() const;
         int getSelectedPID() const;
         Q_INVOKABLE bool isKillable(int pid) const;
