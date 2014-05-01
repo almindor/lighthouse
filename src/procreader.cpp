@@ -16,17 +16,16 @@
 */
 
 #include "procreader.h"
+#include <QDir>
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
 
 namespace Lighthouse {
 
-    ProcReader::ProcReader() : fProcNameFilter(), fProcDir("/proc")
+    ProcReader::ProcReader() : fProcNameFilter()
     {
         fProcNameFilter << "[0-9]*";
-        fProcDir.setFilter(QDir::Dirs);
-        fProcDir.setNameFilters(fProcNameFilter);
     }
 
     int ProcReader::readProcFile(QString& path, LineHandler& handler, int count, int index) const {
@@ -59,8 +58,21 @@ namespace Lighthouse {
         return 0;
     }
 
-    QStringList ProcReader::getProcList() {
-        return fProcDir.entryList();
+    int ProcReader::getProcCount() const {
+        QDir dir("/proc");
+        dir.setFilter(QDir::Dirs);
+        dir.setNameFilters(fProcNameFilter);
+
+        return dir.count();
+    }
+
+    const QStringList ProcReader::getProcList() const {
+        QDir dir("/proc");
+        dir.setSorting(QDir::Name);
+        dir.setFilter(QDir::Dirs);
+        dir.setNameFilters(fProcNameFilter);
+
+        return dir.entryList();
     }
 
 }

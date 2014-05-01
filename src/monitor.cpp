@@ -20,6 +20,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QStringList>
+#include <QDir>
 
 namespace Lighthouse {
     const int CPU_FLAGS_ACTIVE = 1;
@@ -27,7 +28,7 @@ namespace Lighthouse {
     const int CPU_PART_COUNT = 10;
     const int CPU_PART_DEF[CPU_PART_COUNT] = {0, 1, 1, 1, 2, 2, 0, 0, 0, 0};
 
-    Monitor::Monitor() : fSettings(), fProcMap()
+    Monitor::Monitor() : fSettings(), fProcMap(), fAppNameMap()
     {
         fDBus = new QDBusInterface("com.nokia.dsme", "/com/nokia/dsme/request", "com.nokia.dsme.request", QDBusConnection::systemBus(), this);
         fInterval = fSettings.value("proc/interval", 2).toInt();
@@ -37,6 +38,8 @@ namespace Lighthouse {
         fTicksPerSecond = sysconf(_SC_CLK_TCK);
         fPaused = false;
         fGotBatteryInfo = false;
+        fApplicationActive = false;
+        fProcessDetails = false;
         start();
     }
 
@@ -139,7 +142,16 @@ namespace Lighthouse {
         fDBus->call("req_shutdown");
     }
 
+    void Monitor::setProcessDetails(bool active) {
+        fProcessDetails = active;
+    }
+
+    void Monitor::setApplicationActive(bool active) {
+        fApplicationActive = active;
+    }
+
     void Monitor::run() Q_DECL_OVERRIDE {
+        updateApplicationMap("/usr/share/applications");
         procProcessorCount();
         fCPUActiveTicks.resize(fCPUCount + 1); // room for "total"
         fCPUTotalTicks.resize(fCPUCount + 1); // room for "total"
@@ -151,17 +163,26 @@ namespace Lighthouse {
             fCPUUsage.append(0.0f);
         }
 
+        unsigned long iteration = 0;
         while (!fQuit) {
             if ( !fPaused ) {
-                procUptime();
                 procCPUActivity();
-                procProcesses();
                 procMemory();
                 procBattery();
-                procTemperature();
+
+                if ( fApplicationActive || iteration == 0 ) {
+                    procUptime();
+                    if ( fProcessDetails || iteration == 0 ) {
+                        procProcesses();
+                    } else {
+                        procProcessCount();
+                    }
+                    procTemperature();
+                }
             }
 
             sleep(fInterval);
+            iteration++;
         }
     }
 
@@ -201,33 +222,25 @@ namespace Lighthouse {
         }
     }
 
-    void Monitor::procProcesses() {
+    void Monitor::fillProcMap(ProcMap& procMap, IntList* deletes) {
         unsigned long long totalTicks = 0;
         if ( fCPUTotalTicks.size() > 0 ) {
             totalTicks = fCPUTotalTicks[0];
         }
 
-        QStringList procList = fProcReader.getProcList();
-        QStringListIterator slIterator(procList);
-        while ( slIterator.hasNext() ) {
-            int key = slIterator.next().toInt();
-            if ( !fProcMap.contains(key) ) {
-                fProcMap[key]; // make sure our map has all keys first
-            }
-        }
-
-        ProcessStatHandler statHandler(fProcMap, totalTicks);
-        ProcessStatMHandler statMHandler(fProcMap, fTotalMemory);
-        QMapIterator<pid_t, ProcInfo> iterator(fProcMap);
-        IntList deletes;
+        ProcessStatHandler statHandler(procMap, totalTicks);
+        ProcessStatMHandler statMHandler(procMap, fTotalMemory);
+        ProcessCmdLineHandler cmdLineHandler(procMap, fAppNameMap);
+        QMapIterator<pid_t, ProcInfo> iterator(procMap);
 
         while ( iterator.hasNext() ) {
             iterator.next();
             pid_t pid = iterator.key();
             QString pathStat("/proc/" + QString::number(pid) + "/stat");
             QString pathStatM("/proc/" + QString::number(pid) + "/statm");
-            if ( !QFile::exists(pathStat) ) {
-                deletes.append(pid);
+            QString pathCmdLine("/proc/" + QString::number(pid) + "/cmdline");
+            if ( !QFile::exists(pathStat) && deletes != NULL ) {
+                deletes->append(pid);
             } else {
                 if ( fProcReader.readProcFile(pathStat, statHandler, 1, (int)pid) != 0 ) {
                     qCritical() << "Error reading process stat file " << pid << "\n";
@@ -235,17 +248,43 @@ namespace Lighthouse {
                 if ( fProcReader.readProcFile(pathStatM, statMHandler, 1, (int)pid) != 0 ) {
                     qCritical() << "Error reading process mstat file " << pid << "\n";
                 }
+
+                if ( iterator.value().getNameState() == 0 ) {
+                    if ( fProcReader.readProcFile(pathCmdLine, cmdLineHandler, 1, (int)pid) != 0 ) {
+                        qCritical() << "Error reading process cmdline file " << pid << "\n";
+                    }
+                }
+            }
+        }
+    }
+
+    void Monitor::procProcessCount() {
+        const int count = fProcReader.getProcList().size();
+        emit processCountChanged(count);
+    }
+
+    void Monitor::procProcesses() {
+        IntList deletes;
+        QStringList procList = fProcReader.getProcList();
+        QStringListIterator slIterator(procList);
+        while ( slIterator.hasNext() ) {
+            int key = slIterator.next().toInt();
+            if ( !fProcMap.contains(key) ) {
+                // ADDED PID: key
+                fProcMap[key]; // make sure our map has all keys first
             }
         }
 
+        fillProcMap(fProcMap, &deletes);
+
         QListIterator<int> delIterator(deletes);
         while ( delIterator.hasNext() ) {
+            // REMOVED PID: key
             fProcMap.remove( delIterator.next() );
         }
 
         emit processChanged(&fProcMap);
     }
-
 
     void Monitor::procBattery() {
         QString value;
@@ -290,6 +329,44 @@ namespace Lighthouse {
             QByteArray content = f.readAll();
             QString value = QString(content).replace("\n", "");
             emit temperatureChanged(value.toInt());
+        }
+    }
+
+    QString Monitor::getAppName(const QString& fileName) const {
+        const QString fullName = "/usr/share/applications/" + fileName;
+        if ( !QFile::exists(fullName) ) {
+            qWarning() << "File not found: " << fullName << "\n";
+            return QString();
+        }
+
+        QSettings desktop(fullName, QSettings::IniFormat);
+        desktop.setIniCodec("UTF-8");
+        const QString name = desktop.value("Desktop Entry/Name", "Unknown").toString();
+        if ( name == "Unknown" ) {
+            qWarning() << "App name not found: " << fullName << "\n";
+            return QString();
+        }
+        return name;
+    }
+
+    void Monitor::updateApplicationMap(const QString& path) {
+        //qDebug() << "Update app map called " << path << "\n";
+        QDir apps(path); // "/usr/share/applications"
+        QStringList filters;
+        filters << "*.desktop";
+        apps.setNameFilters(filters);
+
+        const QStringList files = apps.entryList();
+        QStringListIterator iterator(files);
+        fAppNameMap.clear();
+        while ( iterator.hasNext() ) {
+            const QString& fileName = iterator.next();
+            QString baseName(fileName);
+            baseName.replace(".desktop", "");
+            const QString appName = getAppName(fileName);
+            if ( !appName.isEmpty() ) {
+                fAppNameMap[baseName] = appName;
+            }
         }
     }
 

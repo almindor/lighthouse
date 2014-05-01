@@ -21,17 +21,36 @@ import Sailfish.Silica 1.0
 
 Page {
     id: page
+    onStatusChanged: monitor.setProcessDetails( status !== 0 )
 
     SilicaListView {
         id: listView
         header: PageHeader {
-            title: "Processes"
+            title: process.applicationsOnly ? "Applications" : "Processes"
         }
 
         PullDownMenu {
             MenuItem {
-                text: "Sort by: " + process.sortBy
-                onClicked: process.nextSortBy()
+                text: (process.applicationsOnly ? "Show Processes" : "Show Applications")
+                onClicked: process.nextApplicationsOnly();
+            }
+
+            MenuItem {
+                text: "Sort by Name"
+                onClicked: process.setSortBy(2)
+                visible: (process.sortBy !== 2)
+            }
+
+            MenuItem {
+                text: "Sort by Memory Usage"
+                onClicked: process.setSortBy(1)
+                visible: (process.sortBy !== 1)
+            }
+
+            MenuItem {
+                text: "Sort by CPU Usage"
+                onClicked: process.setSortBy(0)
+                visible: (process.sortBy !== 0)
             }
 
             onActiveChanged: {

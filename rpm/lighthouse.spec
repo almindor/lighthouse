@@ -13,7 +13,7 @@ Name:       lighthouse
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Lighthouse System Monitor
-Version:    1.1
+Version:    1.2
 Release:    1
 Group:      Qt/Qt
 License:    LICENSE
@@ -67,9 +67,5 @@ desktop-file-install --delete-original       \
 %{_datadir}/%{name}/qml
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png
-/usr/bin
-/usr/share/lighthouse
-/usr/share/applications
-/usr/share/icons/hicolor/86x86/apps
 # >> files
 # << files

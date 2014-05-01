@@ -22,16 +22,22 @@
 #include <signal.h>
 #include <errno.h>
 #include <string.h>
+#include <QDir>
+#include <QSettings>
 #include <QDebug>
 
 namespace Lighthouse {
 
     // ProcessModel
 
-    Process::Process(QObject *parent) : QAbstractListModel(parent), fProcList() {
+    Process::Process(QObject *parent) : QAbstractListModel(parent), fProcList(), fAppList() {
         fUID = getuid();
         fSortBy = 0;
         fSelectedPID = 0;
+        fApplicationsOnly = false;
+        fPageStatus = 0;
+        fApplicationActive = false;
+        fProcCount = 0;
     }
 
     QHash<int, QByteArray> Process::roleNames() const {
@@ -49,18 +55,27 @@ namespace Lighthouse {
     }
 
     QVariant Process::data(const QModelIndex & index, int role) const {
+        const ProcList& list = getList();
         const int row = index.row();
-        if ( row >= 0 && row < fProcList.size() ) {
+        if ( row >= 0 && row < list.size() ) {
             switch ( role ) {
-                case PIDRole: return fProcList[row].getPID();
-                case NameRole: return fProcList[row].getName();
-                case CPUUsageRole: return fProcList[row].getCPUUsage();
-                case MemoryUsageRole: return fProcList[row].getMemoryUsage();
-                case SelectedRole: return (fSelectedPID == fProcList[row].getPID());
+                case PIDRole: return list.at(row).getPID();
+                case NameRole: return list.at(row).getName();
+                case CPUUsageRole: return list.at(row).getCPUUsage();
+                case MemoryUsageRole: return list.at(row).getMemoryUsage();
+                case SelectedRole: return (fSelectedPID == list.at(row).getPID());
             }
         }
 
-        return "Data[" + QString::number(index.row()) + "," + QString::number(index.column()) + "]: " + QString::number(role);
+        switch ( role ) {
+            case PIDRole: return 0;
+            case NameRole: return "Unknown";
+            case CPUUsageRole: return 0;
+            case MemoryUsageRole: return 0;
+            case SelectedRole: return false;
+        }
+
+        return QVariant();
     }
 
     QVariant Process::headerData(int section, Qt::Orientation orientation, int role) const {
@@ -68,33 +83,67 @@ namespace Lighthouse {
     }
 
     int Process::rowCount(const QModelIndex & parent) const {
-        return fProcList.size();
+        return getList().size();
     }
 
     int Process::getSummaryValue() const {
-        return fProcList.size();
+        return fProcCount;
     }
 
-    void Process::setProcList(ProcMap* procMap) {
+    void Process::setProcesses(ProcMap* procMap) {
         if ( fSelectedPID > 0 ) {
             return; // don't update if we're selecting to kill
         }
 
-        int oldSize = fProcList.size();
-        ProcList procList = procMap->values();
-        sort(procList);
-        int startRow;
-        int endRow;
-        diffProcLists(fProcList, procList, startRow, endRow);
-        fProcList = procList;
-        //qDebug() << "diff from " << startRow << " to " << endRow << "\n";
-
-        if ( startRow <= endRow ) {
-            emit dataChanged(createIndex(startRow, 0), createIndex(endRow, 0));
+        const ProcList sourceList = procMap->values();
+        ProcList procList;
+        ProcList appList;
+        foreach ( ProcInfo item, sourceList ) {
+            if ( item.isApplication() ) {
+                appList.append(item);
+            }
+            procList.append(item);
         }
 
-        if ( oldSize != fProcList.size() ) {
+        updateList(fProcList, procList);
+        updateList(fAppList, appList);
+
+        if ( fProcCount != fProcList.size() ) {
+            fProcCount = fProcList.size();
             emit summaryValueChanged();
+        }
+    }
+
+    void Process::setProcessCount(int count) {
+        if ( count != fProcCount ) {
+            fProcCount = count;
+            emit summaryValueChanged();
+        }
+    }
+
+    void Process::updateList(ProcList& dest, ProcList& source) {
+        if ( dest == getList() ) {
+            const int oldSize = dest.size();
+            const int sourceSize = source.size();
+
+            if ( oldSize > sourceSize ) { // removed process
+                beginRemoveRows(QModelIndex(), sourceSize, oldSize - 1);
+                dest = source;
+                //qDebug() << "Removed process at index range: " << sourceSize << " - " << (oldSize - 1) << "\n";
+                endRemoveRows();
+            } else if ( oldSize < sourceSize) { // added process
+                beginInsertRows(QModelIndex(), oldSize, sourceSize - 1);
+                dest = source;
+                //qDebug() << "Added process at index range: " << oldSize << " - " << (sourceSize - 1) << "\n";
+                endInsertRows();
+            } else {
+                dest = source;
+            }
+            sort(dest);
+
+            emit dataChanged(createIndex(0, 0), createIndex(dest.size(), 0));
+        } else {
+            dest = source;
         }
     }
 
@@ -106,49 +155,12 @@ namespace Lighthouse {
         }
     }
 
-    void Process::diffProcLists(const ProcList& oldList, const ProcList& newList, int& start, int& end) const {
-        const int newSize = newList.size();
-        const int oldSize = oldList.size();
-        const int size = newSize <= oldSize ? newSize : oldSize;
-        bool endDone = false;
-        bool startDone = false;
-        int x;
-        start = 0;
-        end = oldList.size() - 1;
-
-        for ( int i = 0; i < size; i++ ) {
-            x = size - i - 1;
-            if ( !startDone && oldList.at(i) == newList.at(i) ) {
-                start++;
-            } else {
-                startDone = true;
-            }
-
-            if ( !endDone && oldList.at(x) == newList.at(x) ) {
-                end--;
-            } else {
-                endDone = true;
-            }
-
-            if ( (startDone && endDone) || start > end ) {
-                return;
-            }
-        }
+    const ProcList& Process::getList() const {
+        return fApplicationsOnly ? fAppList : fProcList;
     }
 
-    static const QString SORTBY_CPU = QStringLiteral("CPU Usage");
-    static const QString SORTBY_MEMORY = QStringLiteral("Memory Usage");
-    static const QString SORTBY_NAME = QStringLiteral("Name");
-    static const QString SORTBY_UNKNOWN = QStringLiteral("Unknown");
-
-    const QString& Process::getSortBy() const {
-        switch ( fSortBy ) {
-            case 0: return SORTBY_CPU;
-            case 1: return SORTBY_MEMORY;
-            case 2: return SORTBY_NAME;
-        }
-
-        return SORTBY_UNKNOWN;
+    int Process::getSortBy() const {
+        return fSortBy;
     }
 
     bool Process::isKillable(int pid) const {
@@ -170,15 +182,27 @@ namespace Lighthouse {
         return fSelectedPID;
     }
 
-    void Process::nextSortBy() {
-        fSortBy++;
-        if ( fSortBy > 2 ) {
-            fSortBy = 0;
-        }
-        emit sortByChanged();
+    bool Process::getApplicationsOnly() const {
+        return fApplicationsOnly;
+    }
 
-        sort(fProcList);
-        emit dataChanged(createIndex(0, 0), createIndex(fProcList.size(), 0));
+    void Process::setSortBy(int sb) {
+        if ( sb != fSortBy && sb >= 0 && sb < 3 ) {
+            fSortBy = sb;
+            emit sortByChanged();
+
+            ProcList& list = fApplicationsOnly ? fAppList : fProcList;
+            sort(list);
+            emit dataChanged(createIndex(0, 0), createIndex(list.size(), 0));
+        }
+    }
+
+    void Process::nextApplicationsOnly() {
+        beginResetModel();
+        fApplicationsOnly = !fApplicationsOnly;
+        sort(fApplicationsOnly ? fAppList : fProcList);
+        endResetModel();
+        emit applicationsOnlyChanged();
     }
 
     void Process::selectPID(int pid) {
@@ -186,10 +210,11 @@ namespace Lighthouse {
             fSelectedPID = pid;
             emit selectedPIDChanged();
 
-            const int size = fProcList.size();
+            const ProcList& list = getList();
+            const int size = list.size();
 
             for ( int i = 0; i < size; i++ ) {
-                if ( fProcList[i].getPID() == pid ) {
+                if ( list[i].getPID() == pid ) {
                     emit dataChanged(createIndex(i, 0), createIndex(i, 0));
                     return;
                 }

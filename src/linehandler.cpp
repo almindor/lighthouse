@@ -164,4 +164,39 @@ namespace Lighthouse {
         return 0;
     }
 
+    ProcessCmdLineHandler::ProcessCmdLineHandler(ProcMap& procMap, AppNameMap& appNameMap) : fProcMap(procMap), fAppNameMap(appNameMap) {
+
+    }
+
+    static const QChar ZERO_CHAR('\0');
+    static const QChar SLASH_CHAR('/');
+
+    int ProcessCmdLineHandler::onLine(QString &line, int i) {
+        pid_t index = i;
+        QString baseName;
+
+        // get filename part of cmdline
+        int n = line.indexOf(ZERO_CHAR);
+        if ( n > 0 ) {
+            baseName = line.left(n);
+        } else {
+            baseName = line;
+        }
+
+        // get basename out of the filename
+        n = baseName.lastIndexOf(SLASH_CHAR);
+        if ( n >= 0 ) {
+            n = baseName.size() - n - 1;
+            baseName = baseName.right(n);
+        }
+
+        if ( fAppNameMap.contains(baseName) ) {
+            QString appName = fAppNameMap.value(baseName, baseName);
+            fProcMap[index].updateApplicationName(appName);
+        } else {
+            fProcMap[index].updateName(baseName);
+        }
+        return 0;
+    }
+
 }

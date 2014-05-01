@@ -29,8 +29,9 @@ namespace Lighthouse {
     {
         Q_OBJECT
         Q_PROPERTY(int summaryValue READ getSummaryValue NOTIFY summaryValueChanged)
-        Q_PROPERTY(QString sortBy READ getSortBy NOTIFY sortByChanged)
+        Q_PROPERTY(int sortBy READ getSortBy NOTIFY sortByChanged)
         Q_PROPERTY(int selectedPID READ getSelectedPID NOTIFY selectedPIDChanged)
+        Q_PROPERTY(bool applicationsOnly READ getApplicationsOnly NOTIFY applicationsOnlyChanged)
     public:
         enum ProcessRoles {
             PIDRole = Qt::UserRole + 1,
@@ -47,26 +48,37 @@ namespace Lighthouse {
         QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
         QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
         int rowCount(const QModelIndex & parent = QModelIndex()) const;
-        const QString& getSortBy() const;
+        int getSortBy() const;
         int getSummaryValue() const;
         int getSelectedPID() const;
+        bool getApplicationsOnly() const;
         Q_INVOKABLE bool isKillable(int pid) const;
-        Q_INVOKABLE void nextSortBy();
+        Q_INVOKABLE void setSortBy(int sb);
+        Q_INVOKABLE void nextApplicationsOnly();
         Q_INVOKABLE void selectPID(int pid);
         Q_INVOKABLE void killSelectedProcess();
     private:
-        void sort(ProcList& list);
-        void diffProcLists(const ProcList& oldList, const ProcList& newList, int& start, int& end) const;
         uid_t fUID;
         int fSortBy;
         int fSelectedPID;
         ProcList fProcList;
+        ProcList fAppList;
+        bool fApplicationsOnly;
+        int fPageStatus;
+        bool fApplicationActive;
+        int fProcCount;
+
+        void sort(ProcList& list);
+        const ProcList& getList() const;
+        void updateList(ProcList& dest, ProcList& source);
     signals:
         void summaryValueChanged();
         void sortByChanged();
         void selectedPIDChanged();
+        void applicationsOnlyChanged();
     public slots:
-        void setProcList(ProcMap* procMap);
+        void setProcesses(ProcMap* procMap);
+        void setProcessCount(int count);
     };
 
 }

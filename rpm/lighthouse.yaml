@@ -1,6 +1,6 @@
 Name: lighthouse
 Summary: Lighthouse System Monitor
-Version: 1.1
+Version: 1.2
 Release: 1
 Group: Qt/Qt
 URL: https://github.com/almindor/lighthouse
@@ -23,8 +23,4 @@ Files:
 - '%{_datadir}/%{name}/qml'
 - '%{_datadir}/applications/%{name}.desktop'
 - '%{_datadir}/icons/hicolor/86x86/apps/%{name}.png'
-- /usr/bin
-- /usr/share/lighthouse
-- /usr/share/applications
-- /usr/share/icons/hicolor/86x86/apps
 PkgBR: []

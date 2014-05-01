@@ -26,33 +26,45 @@ namespace Lighthouse {
 
     typedef QList<int> IntList;
     typedef QVector<unsigned long long> QLLVector;
+    typedef QMap<QString, QString> AppNameMap;
 
     class ProcInfo
     {
     public:
         ProcInfo();
+        void updateBegin();
         void updateStat(QString& stat, unsigned long long totalTicks);
         void updateMemory(QString& mem, unsigned long totalMemory);
+        void updateApplicationName(QString& appName);
+        void updateName(QString& appName);
+
         const QString& getName() const;
-        const QString& getApplicationName() const;
         pid_t getPID() const;
         int getCPUUsage() const;
         int getMemoryUsage() const;
+        int getNameState() const;
+        bool getChanged() const;
+        bool isApplication() const;
 
         bool operator ==(const ProcInfo& other) const;
     private:
-        QString fName;
         QString fApplicationName;
+        QString fStatName;
+        QString fShowName;
         pid_t fPID;
         int fCPUUsage;
         int fMemoryUsage;
         QString fState;
+        int fNameState;
+        bool fChanged;
         unsigned long fVmSize;
         unsigned long fVmRSS;
         unsigned long fSharedMem;
         unsigned long fSysTime;
         unsigned long fUserTime;
         unsigned long fTotalTicks;
+
+        void setShowName(QString& source, int nameState);
     };
 
     typedef QMap<pid_t, ProcInfo> ProcMap;

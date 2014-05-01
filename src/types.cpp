@@ -52,7 +52,7 @@ namespace Lighthouse {
 
     // ProcInfo
 
-    ProcInfo::ProcInfo() : fName(), fApplicationName() {
+    ProcInfo::ProcInfo() : fApplicationName(), fStatName(), fShowName() {
         fPID = 0;
         fCPUUsage = 0;
         fMemoryUsage = 0;
@@ -63,19 +63,23 @@ namespace Lighthouse {
         fVmSize = 0;
         fVmRSS = 0;
         fSharedMem = 0;
+        fNameState = 0;
+        fChanged = false;
+    }
+
+    void ProcInfo::updateBegin() {
+        fChanged = false;
     }
 
     void ProcInfo::updateStat(QString& stat, unsigned long long totalTicks) {
-        const QRegularExpression regexp("[()]+");
         unsigned long oldCPUTime = fUserTime + fSysTime;
         int tmp;
-        QTextStream(&stat) >> fPID >> fName >> fState >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> fUserTime >> fSysTime;
-        fName = fName.replace(regexp, "");
+        const pid_t oldPid = fPID;
+        const QString oldState = fState;
+        const int oldCPUUsage = fCPUUsage;
 
-        if ( fName.contains("harbour-") ) { // show name part and flag
-            fName = fName.replace("harbour-", "");
-            fName += "(h)";
-        }
+        QTextStream(&stat) >> fPID >> fStatName >> fState >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> fUserTime >> fSysTime;
+        setShowName(fStatName, 0);
 
         if ( fTotalTicks > 0 ) {
             unsigned long newCPUTime = fUserTime + fSysTime;
@@ -84,24 +88,64 @@ namespace Lighthouse {
             fCPUUsage = round((qreal)diffCPUTime / (qreal)diffTotalTicks * 100.0f);
         }
 
+        if ( oldCPUUsage != fCPUUsage || oldState != fState || oldPid != fPID ) {
+            fChanged = true;
+        }
+
         fTotalTicks = totalTicks;
     }
 
     void ProcInfo::updateMemory(QString& mem, unsigned long totalMemory) {
+        const int oldMemoryUsage = fMemoryUsage;
+
         QTextStream(&mem) >> fVmSize >> fVmRSS >> fSharedMem;
         fVmSize *= PAGE_SIZE;
         fVmRSS *= PAGE_SIZE;
         fSharedMem *= PAGE_SIZE;
 
         fMemoryUsage = round((qreal)fVmRSS / ((qreal)totalMemory * 1000.0f) * 100.0f);
+
+        if ( oldMemoryUsage != fMemoryUsage ) {
+            fChanged = true;
+        }
+    }
+
+    void ProcInfo::updateApplicationName(QString& appName) {
+        fApplicationName = appName;
+
+        setShowName(appName, 2);
+    }
+
+    void ProcInfo::updateName(QString& appName) {
+        setShowName(appName, 1);
+    }
+
+    static const QRegExp BRACES_REGEXP("[()]*");
+    static const int MAX_SHOW_NAME_SIZE = 13;
+
+    void ProcInfo::setShowName(QString& source, int nameState) {
+        if ( fNameState > nameState ) {
+            return; // we have a name now
+        }
+
+        const QString oldName = fShowName;
+        fNameState = nameState;
+        fShowName = source;
+        if ( fShowName[0] == '(' ) {
+            fShowName.replace(BRACES_REGEXP, "");
+        }
+
+        if ( fShowName.size() > MAX_SHOW_NAME_SIZE ) {
+            fShowName = fShowName.left(MAX_SHOW_NAME_SIZE);
+        }
+
+        if ( oldName != fShowName ) { // name change
+            fChanged = true;
+        }
     }
 
     const QString& ProcInfo::getName() const {
-        return fName;
-    }
-
-    const QString& ProcInfo::getApplicationName() const {
-        return fApplicationName;
+        return fShowName;
     }
 
     pid_t ProcInfo::getPID() const {
@@ -114,6 +158,18 @@ namespace Lighthouse {
 
     int ProcInfo::getMemoryUsage() const {
         return fMemoryUsage;
+    }
+
+    int ProcInfo::getNameState() const {
+        return fNameState;
+    }
+
+    bool ProcInfo::getChanged() const {
+        return fChanged;
+    }
+
+    bool ProcInfo::isApplication() const {
+        return !fApplicationName.isEmpty();
     }
 
     QString getTimePart(QString key, int value) {
@@ -171,7 +227,7 @@ namespace Lighthouse {
     }
 
     bool ProcInfo::operator ==(const ProcInfo& other) const {
-        return ( fPID == other.getPID() && fCPUUsage == other.getCPUUsage() );
+        return ( fPID == other.getPID() && fCPUUsage == other.getCPUUsage() && fMemoryUsage == other.getMemoryUsage() );
     }
 
 }
