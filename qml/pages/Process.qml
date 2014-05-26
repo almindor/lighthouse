@@ -154,8 +154,8 @@ Page {
                 process.selectPID(processID) // pauses the list updates
             }
 
-            onReleased: {
-                if ( !killMenu.active ) {
+            onPressedChanged: {
+                if ( !pressed && !killMenu.active ) {
                     process.selectPID(0) // unpauses
                 }
             }

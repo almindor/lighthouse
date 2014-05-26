@@ -93,14 +93,14 @@ namespace Lighthouse {
         public slots:
             void updateApplicationMap(const QString& path);
         signals:
-            void CPUUsageChanged(IntList* usage);
+            void CPUUsageChanged(const IntList& usage);
             void memoryChanged(unsigned long total, unsigned long free);
             void intervalChanged(int interval);
             void pausedChanged(bool paused);
             void coverPageChanged(int page);
             void uptimeChanged(QString uptime);
             void processCountChanged(int count);
-            void processChanged(ProcMap* procMap);
+            void processChanged(const ProcMap& procMap, const PIDList& adds, const PIDList& deletes);
             void batteryHealthChanged(QString heal);
             void batteryTechnologyChanged(QString tech);
             void batteryLevelChanged(int level);

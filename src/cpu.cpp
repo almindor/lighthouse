@@ -37,9 +37,9 @@ namespace Lighthouse {
 
     QVariant CPU::data(const QModelIndex & index, int role) const {
         const int row = index.row();
-        if ( row >= 0 && (row + 1) < fUsage->size() ) {
+        if ( row >= 0 && (row + 1) < fUsage.size() ) {
             switch ( role ) {
-                case CPUUsageRole: return fUsage->at(row + 1);
+                case CPUUsageRole: return fUsage.at(row + 1);
             }
         }
 
@@ -51,7 +51,7 @@ namespace Lighthouse {
     }
 
     int CPU::rowCount(const QModelIndex & parent) const {
-        return fUsage->size() > 0 ? fUsage->size() - 1 : 0;
+        return fUsage.size() > 0 ? fUsage.size() - 1 : 0;
     }
 
     int CPU::getSummaryValue() const {
@@ -62,10 +62,10 @@ namespace Lighthouse {
         return fTemperature;
     }
 
-    void CPU::setUsage(IntList* usage) {
-        int usize = usage->size();
-        if ( usize > 0 && fTotalUsage != usage->at(0) ) {
-            fTotalUsage = usage->at(0);
+    void CPU::setUsage(const IntList& usage) {
+        int usize = usage.size();
+        if ( usize > 0 && fTotalUsage != usage.at(0) ) {
+            fTotalUsage = usage.at(0);
             emit summaryValueChanged();
         }
 

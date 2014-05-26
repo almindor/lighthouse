@@ -26,28 +26,32 @@
 
 namespace Lighthouse {
 
-    bool CPUComparer::operator()(const ProcInfo & a, const ProcInfo & b) const {
-        int valA = a.getCPUUsage();
-        int valB = b.getCPUUsage();
+    BaseComparer::BaseComparer(const ProcMap &procMap) : fProcMap(procMap) {
+
+    }
+
+    bool CPUComparer::operator()(const pid_t a, const pid_t b) const {
+        int valA = fProcMap.value(a).getCPUUsage();
+        int valB = fProcMap.value(b).getCPUUsage();
         if ( valA == valB ) {
-            return a.getPID() > b.getPID();
+            return fProcMap.value(a).getPID() > fProcMap.value(b).getPID();
         }
 
         return valA > valB;
     }
 
-    bool MemoryComparer::operator()(const ProcInfo & a, const ProcInfo & b) const {
-        int valA = a.getMemoryUsage();
-        int valB = b.getMemoryUsage();
+    bool MemoryComparer::operator()(const pid_t a, const pid_t b) const {
+        int valA = fProcMap.value(a).getMemoryUsage();
+        int valB = fProcMap.value(b).getMemoryUsage();
         if ( valA == valB ) {
-            return a.getPID() > b.getPID();
+            return fProcMap.value(a).getPID() > fProcMap.value(b).getPID();
         }
 
         return valA > valB;
     }
 
-    bool NameComparer::operator()(const ProcInfo & a, const ProcInfo & b) const {
-        return (QString::compare(a.getName(), b.getName(), Qt::CaseInsensitive) < 0);
+    bool NameComparer::operator()(const pid_t a, const pid_t b) const {
+        return (QString::compare(fProcMap.value(a).getName(), fProcMap.value(b).getName(), Qt::CaseInsensitive) < 0);
     }
 
     // ProcInfo
@@ -64,19 +68,11 @@ namespace Lighthouse {
         fVmRSS = 0;
         fSharedMem = 0;
         fNameState = 0;
-        fChanged = false;
-    }
-
-    void ProcInfo::updateBegin() {
-        fChanged = false;
     }
 
     void ProcInfo::updateStat(QString& stat, unsigned long long totalTicks) {
         unsigned long oldCPUTime = fUserTime + fSysTime;
         int tmp;
-        const pid_t oldPid = fPID;
-        const QString oldState = fState;
-        const int oldCPUUsage = fCPUUsage;
 
         QTextStream(&stat) >> fPID >> fStatName >> fState >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> tmp >> fUserTime >> fSysTime;
         setShowName(fStatName, 0);
@@ -88,26 +84,16 @@ namespace Lighthouse {
             fCPUUsage = round((qreal)diffCPUTime / (qreal)diffTotalTicks * 100.0f);
         }
 
-        if ( oldCPUUsage != fCPUUsage || oldState != fState || oldPid != fPID ) {
-            fChanged = true;
-        }
-
         fTotalTicks = totalTicks;
     }
 
     void ProcInfo::updateMemory(QString& mem, unsigned long totalMemory) {
-        const int oldMemoryUsage = fMemoryUsage;
-
         QTextStream(&mem) >> fVmSize >> fVmRSS >> fSharedMem;
         fVmSize *= PAGE_SIZE;
         fVmRSS *= PAGE_SIZE;
         fSharedMem *= PAGE_SIZE;
 
         fMemoryUsage = round((qreal)fVmRSS / ((qreal)totalMemory * 1000.0f) * 100.0f);
-
-        if ( oldMemoryUsage != fMemoryUsage ) {
-            fChanged = true;
-        }
     }
 
     void ProcInfo::updateApplicationName(QString& appName) {
@@ -128,7 +114,6 @@ namespace Lighthouse {
             return; // we have a name now
         }
 
-        const QString oldName = fShowName;
         fNameState = nameState;
         fShowName = source;
         if ( fShowName[0] == '(' ) {
@@ -137,10 +122,6 @@ namespace Lighthouse {
 
         if ( fShowName.size() > MAX_SHOW_NAME_SIZE ) {
             fShowName = fShowName.left(MAX_SHOW_NAME_SIZE);
-        }
-
-        if ( oldName != fShowName ) { // name change
-            fChanged = true;
         }
     }
 
@@ -162,10 +143,6 @@ namespace Lighthouse {
 
     int ProcInfo::getNameState() const {
         return fNameState;
-    }
-
-    bool ProcInfo::getChanged() const {
-        return fChanged;
     }
 
     bool ProcInfo::isApplication() const {

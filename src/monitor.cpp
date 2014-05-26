@@ -198,7 +198,7 @@ namespace Lighthouse {
         CPUUsageHandler handler(fCPUUsage, fCPUActiveTicks, fCPUTotalTicks);
         QString path = QStringLiteral("/proc/stat");
         if ( fProcReader.readProcFile(path, handler, fCPUCount + 1, -1) == 0 ) {
-            emit CPUUsageChanged(&fCPUUsage);
+            emit CPUUsageChanged(fCPUUsage);
         }
     }
 
@@ -222,68 +222,63 @@ namespace Lighthouse {
         }
     }
 
-    void Monitor::fillProcMap(ProcMap& procMap, IntList* deletes) {
-        unsigned long long totalTicks = 0;
-        if ( fCPUTotalTicks.size() > 0 ) {
-            totalTicks = fCPUTotalTicks[0];
-        }
-
-        ProcessStatHandler statHandler(procMap, totalTicks);
-        ProcessStatMHandler statMHandler(procMap, fTotalMemory);
-        ProcessCmdLineHandler cmdLineHandler(procMap, fAppNameMap);
-        QMapIterator<pid_t, ProcInfo> iterator(procMap);
-
-        while ( iterator.hasNext() ) {
-            iterator.next();
-            pid_t pid = iterator.key();
-            QString pathStat("/proc/" + QString::number(pid) + "/stat");
-            QString pathStatM("/proc/" + QString::number(pid) + "/statm");
-            QString pathCmdLine("/proc/" + QString::number(pid) + "/cmdline");
-            if ( !QFile::exists(pathStat) && deletes != NULL ) {
-                deletes->append(pid);
-            } else {
-                if ( fProcReader.readProcFile(pathStat, statHandler, 1, (int)pid) != 0 ) {
-                    qCritical() << "Error reading process stat file " << pid << "\n";
-                }
-                if ( fProcReader.readProcFile(pathStatM, statMHandler, 1, (int)pid) != 0 ) {
-                    qCritical() << "Error reading process mstat file " << pid << "\n";
-                }
-
-                if ( iterator.value().getNameState() == 0 ) {
-                    if ( fProcReader.readProcFile(pathCmdLine, cmdLineHandler, 1, (int)pid) != 0 ) {
-                        qCritical() << "Error reading process cmdline file " << pid << "\n";
-                    }
-                }
-            }
-        }
-    }
-
     void Monitor::procProcessCount() {
         const int count = fProcReader.getProcList().size();
         emit processCountChanged(count);
     }
 
     void Monitor::procProcesses() {
-        IntList deletes;
+        PIDList deletes;
+        PIDList adds;
+        unsigned long long totalTicks = 0;
+
+        if ( fCPUTotalTicks.size() > 0 ) {
+            totalTicks = fCPUTotalTicks[0];
+        }
+
+        ProcessStatHandler statHandler(fProcMap, totalTicks);
+        ProcessStatMHandler statMHandler(fProcMap, fTotalMemory);
+        ProcessCmdLineHandler cmdLineHandler(fProcMap, fAppNameMap);
+
         QStringList procList = fProcReader.getProcList();
         QStringListIterator slIterator(procList);
         while ( slIterator.hasNext() ) {
-            int key = slIterator.next().toInt();
-            if ( !fProcMap.contains(key) ) {
-                // ADDED PID: key
-                fProcMap[key]; // make sure our map has all keys first
+            const pid_t pid = slIterator.next().toInt();
+            if ( !fProcMap.contains(pid) ) {
+                fProcMap[pid];
+                adds.append(pid);
             }
         }
 
-        fillProcMap(fProcMap, &deletes);
+        QMapIterator<pid_t, ProcInfo> iterator(fProcMap);
+        while ( iterator.hasNext() ) {
+            iterator.next();
+            const pid_t pid = iterator.key();
+            const QString pidStr = QString::number(pid);
+            QString pathStat("/proc/" + pidStr + "/stat");
+            QString pathStatM("/proc/" + pidStr + "/statm");
+            QString pathCmdLine("/proc/" + pidStr + "/cmdline");
 
-        QListIterator<int> delIterator(deletes);
-        while ( delIterator.hasNext() ) {
-            // REMOVED PID: key
-            fProcMap.remove( delIterator.next() );
+            if ( !QFile::exists(pathStat) ) {
+                deletes.append(pid);
+                fProcMap.remove(pid);
+            } else {
+                if ( fProcReader.readProcFile(pathStat, statHandler, 1, pid) != 0 ) {
+                    qCritical() << "Error reading process stat file " << pid << "\n";
+                }
+                if ( fProcReader.readProcFile(pathStatM, statMHandler, 1, pid) != 0 ) {
+                    qCritical() << "Error reading process mstat file " << pid << "\n";
+                }
+
+                if ( iterator.value().getNameState() == 0 ) {
+                    if ( fProcReader.readProcFile(pathCmdLine, cmdLineHandler, 1, pid) != 0 ) {
+                        qCritical() << "Error reading process cmdline file " << pid << "\n";
+                    }
+                }
+            }
         }
 
-        emit processChanged(&fProcMap);
+        emit processChanged(fProcMap, adds, deletes);
     }
 
     void Monitor::procBattery() {
@@ -343,7 +338,7 @@ namespace Lighthouse {
         desktop.setIniCodec("UTF-8");
         const QString name = desktop.value("Desktop Entry/Name", "Unknown").toString();
         if ( name == "Unknown" ) {
-            qWarning() << "App name not found: " << fullName << "\n";
+            //qWarning() << "App name not found: " << fullName << "\n";
             return QString();
         }
         return name;

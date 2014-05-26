@@ -45,11 +45,11 @@ namespace Lighthouse {
         int getSummaryValue() const;
         int getTemperature() const;
     private:
-        IntList* fUsage;
+        IntList fUsage;
         int fTotalUsage;
         int fTemperature;
     public slots:
-        void setUsage(IntList* usage);
+        void setUsage(const IntList& usage);
         void setTemperature(int degrees);
     signals:
         void usageChanged();

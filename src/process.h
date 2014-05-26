@@ -61,23 +61,27 @@ namespace Lighthouse {
         uid_t fUID;
         int fSortBy;
         int fSelectedPID;
-        ProcList fProcList;
-        ProcList fAppList;
+        ProcMap fProcMap;
+        PIDList fProcKeys;
+        PIDList fAppKeys;
         bool fApplicationsOnly;
         int fPageStatus;
         bool fApplicationActive;
         int fProcCount;
+        CPUComparer fCPUComparer;
+        MemoryComparer fMemoryComparer;
+        NameComparer fNameComparer;
 
-        void sort(ProcList& list);
-        const ProcList& getList() const;
-        void updateList(ProcList& dest, ProcList& source);
+        void sort(PIDList& list);
+        const PIDList& getKeys() const;
+        const BaseComparer* getComparer() const;
     signals:
         void summaryValueChanged();
         void sortByChanged();
         void selectedPIDChanged();
         void applicationsOnlyChanged();
     public slots:
-        void setProcesses(ProcMap* procMap);
+        void setProcesses(const ProcMap& procMap, const PIDList& adds, const PIDList& deletes);
         void setProcessCount(int count);
     };
 

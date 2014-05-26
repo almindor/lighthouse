@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
 {
     int result = 0;
     qRegisterMetaType< IntList >( "IntList" );
+    qRegisterMetaType< PIDList >( "PIDList" );
     qRegisterMetaType< ProcMap >( "ProcMap" );
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
