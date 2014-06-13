@@ -100,7 +100,7 @@ namespace Lighthouse {
             void coverPageChanged(int page);
             void uptimeChanged(QString uptime);
             void processCountChanged(int count);
-            void processChanged(const ProcMap& procMap, const PIDList& adds, const PIDList& deletes);
+            void processChanged(const ProcMap* procMap, const PIDList& adds, const PIDList& deletes);
             void batteryHealthChanged(QString heal);
             void batteryTechnologyChanged(QString tech);
             void batteryLevelChanged(int level);

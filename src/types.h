@@ -71,30 +71,27 @@ namespace Lighthouse {
 
     class BaseComparer {
     protected:
-        BaseComparer(const ProcMap& procMap);
-        const ProcMap& fProcMap;
+        const ProcMap* fProcMap;
     public:
+        void setProcMap(const ProcMap* procMap);
         virtual bool operator()(const pid_t a, const pid_t b) const { return (a > b); }
     };
 
     class CPUComparer : public BaseComparer
     {
     public:
-        CPUComparer(const ProcMap& procMap) : BaseComparer(procMap) {}
         bool operator()(const pid_t a, const pid_t b) const;
     };
 
     class MemoryComparer : public BaseComparer
     {
     public:
-        MemoryComparer(const ProcMap& procMap) : BaseComparer(procMap) {}
         bool operator()(const pid_t a, const pid_t b) const;
     };
 
     class NameComparer : public BaseComparer
     {
     public:
-        NameComparer(const ProcMap& procMap) : BaseComparer(procMap) {}
         bool operator()(const pid_t a, const pid_t b) const;
     };
 

@@ -26,32 +26,32 @@
 
 namespace Lighthouse {
 
-    BaseComparer::BaseComparer(const ProcMap &procMap) : fProcMap(procMap) {
-
+    void BaseComparer::setProcMap(const ProcMap* procMap) {
+        fProcMap = procMap;
     }
 
     bool CPUComparer::operator()(const pid_t a, const pid_t b) const {
-        int valA = fProcMap.value(a).getCPUUsage();
-        int valB = fProcMap.value(b).getCPUUsage();
+        int valA = fProcMap->value(a).getCPUUsage();
+        int valB = fProcMap->value(b).getCPUUsage();
         if ( valA == valB ) {
-            return fProcMap.value(a).getPID() > fProcMap.value(b).getPID();
+            return fProcMap->value(a).getPID() > fProcMap->value(b).getPID();
         }
 
         return valA > valB;
     }
 
     bool MemoryComparer::operator()(const pid_t a, const pid_t b) const {
-        int valA = fProcMap.value(a).getMemoryUsage();
-        int valB = fProcMap.value(b).getMemoryUsage();
+        int valA = fProcMap->value(a).getMemoryUsage();
+        int valB = fProcMap->value(b).getMemoryUsage();
         if ( valA == valB ) {
-            return fProcMap.value(a).getPID() > fProcMap.value(b).getPID();
+            return fProcMap->value(a).getPID() > fProcMap->value(b).getPID();
         }
 
         return valA > valB;
     }
 
     bool NameComparer::operator()(const pid_t a, const pid_t b) const {
-        return (QString::compare(fProcMap.value(a).getName(), fProcMap.value(b).getName(), Qt::CaseInsensitive) < 0);
+        return (QString::compare(fProcMap->value(a).getName(), fProcMap->value(b).getName(), Qt::CaseInsensitive) < 0);
     }
 
     // ProcInfo

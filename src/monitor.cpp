@@ -227,7 +227,7 @@ namespace Lighthouse {
         emit processCountChanged(count);
     }
 
-    void Monitor::procProcesses() {
+    void Monitor::procProcesses() {       
         PIDList deletes;
         PIDList adds;
         unsigned long long totalTicks = 0;
@@ -278,7 +278,8 @@ namespace Lighthouse {
             }
         }
 
-        emit processChanged(fProcMap, adds, deletes);
+        qDebug() << "fProcMap: " << (unsigned long)(&fProcMap) << "\n";
+        emit processChanged(&fProcMap, adds, deletes);
     }
 
     void Monitor::procBattery() {
@@ -345,7 +346,6 @@ namespace Lighthouse {
     }
 
     void Monitor::updateApplicationMap(const QString& path) {
-        //qDebug() << "Update app map called " << path << "\n";
         QDir apps(path); // "/usr/share/applications"
         QStringList filters;
         filters << "*.desktop";
