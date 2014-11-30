@@ -26,7 +26,7 @@ Page {
         width: page.width
         spacing: Theme.paddingLarge
         PageHeader {
-            title: "Memory Usage"
+            title: qsTr("Memory Usage")
         }
 
         ProgressCircleBase {
@@ -71,7 +71,7 @@ Page {
             minimumValue: 0
             maximumValue: 100
             value: (100 - memory.summaryValue)
-            label: memory.free + " kB free out of " + memory.total + " kB total"
+            label: memory.free + qsTr(" kB free out of ") + memory.total + qsTr(" kB total")
             anchors {
                 left: parent.left
                 right: parent.right

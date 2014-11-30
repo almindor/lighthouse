@@ -43,11 +43,11 @@ namespace Lighthouse {
             }
         }
 
-        return "Data[" + QString::number(index.row()) + "," + QString::number(index.column()) + "]: " + QString::number(role);
+        return tr("Data") + "[" + QString::number(index.row()) + "," + QString::number(index.column()) + "]: " + QString::number(role);
     }
 
     QVariant CPU::headerData(int section, Qt::Orientation orientation, int role) const {
-        return "Description";
+        return tr("Description");
     }
 
     int CPU::rowCount(const QModelIndex & parent) const {

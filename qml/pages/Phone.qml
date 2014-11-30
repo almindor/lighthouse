@@ -24,7 +24,7 @@ Page {
 
     PageHeader {
         id: header
-        title: "Phone Controls"
+        title: qsTr("Phone Controls")
     }
 
     Column {
@@ -33,7 +33,7 @@ Page {
         anchors.verticalCenter: parent.verticalCenter
 
         Button {
-            text: "Reboot"
+            text: qsTr("Reboot")
             anchors {
                 horizontalCenter: parent.horizontalCenter
                 margins: Theme.paddingLarge
@@ -42,7 +42,7 @@ Page {
         }
 
         Button {
-            text: "Shutdown"
+            text: qsTr("Shutdown")
             anchors {
                 horizontalCenter: parent.horizontalCenter
                 margins: Theme.paddingLarge

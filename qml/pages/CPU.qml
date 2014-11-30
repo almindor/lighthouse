@@ -26,7 +26,7 @@ Page {
         width: page.width
         spacing: Theme.paddingLarge
         PageHeader {
-            title: "CPU Usage"
+            title: qsTr("CPU Usage")
         }
 
         ProgressCircleBase {
@@ -75,7 +75,7 @@ Page {
                 maximumValue: 100
                 value: cpuUsage
                 valueText: value + '%'
-                label: "CPU" + (index + 1);
+                label: qsTr("CPU") + (index + 1);
                 anchors {
                     left: parent.left
                     right: parent.right

@@ -26,29 +26,29 @@ Page {
     SilicaListView {
         id: listView
         header: PageHeader {
-            title: process.applicationsOnly ? "Applications" : "Processes"
+            title: process.applicationsOnly ? qsTr("Applications") : qsTr("Processes")
         }
 
         PullDownMenu {
             MenuItem {
-                text: (process.applicationsOnly ? "Show Processes" : "Show Applications")
+                text: (process.applicationsOnly ? qsTr("Show Processes") : qsTr("Show Applications"))
                 onClicked: process.nextApplicationsOnly();
             }
 
             MenuItem {
-                text: "Sort by Name"
+                text: qsTr("Sort by Name")
                 onClicked: process.setSortBy(2)
                 visible: (process.sortBy !== 2)
             }
 
             MenuItem {
-                text: "Sort by Memory Usage"
+                text: qsTr("Sort by Memory Usage")
                 onClicked: process.setSortBy(1)
                 visible: (process.sortBy !== 1)
             }
 
             MenuItem {
-                text: "Sort by CPU Usage"
+                text: qsTr("Sort by CPU Usage")
                 onClicked: process.setSortBy(0)
                 visible: (process.sortBy !== 0)
             }
@@ -82,7 +82,7 @@ Page {
 
             Text {
                 id: cpuLabel
-                text: "cpu: " + cpuUsage + "%"
+                text: qsTr("cpu: ") + cpuUsage + "%"
                 color: Theme.highlightColor
                 font.pointSize: 12
                 anchors {
@@ -93,7 +93,7 @@ Page {
 
             Text {
                 id: memLabel
-                text: "mem: " + memoryUsage + "%"
+                text: qsTr("mem: ") + memoryUsage + "%"
                 color: Theme.secondaryHighlightColor
                 font.pointSize: 12
                 anchors {
@@ -164,7 +164,7 @@ Page {
         ContextMenu {
             id: killMenu
             MenuItem {
-                text: "Kill"
+                text: qsTr("Kill")
                 onClicked: {
                     process.killSelectedProcess()
                 }

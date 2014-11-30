@@ -27,15 +27,15 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: "About"
+                text: qsTr("About")
                 onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
             }
             MenuItem {
-                text: "Phone Controls"
+                text: qsTr("Phone Controls")
                 onClicked: pageStack.push(Qt.resolvedUrl("Phone.qml"))
             }
             MenuItem {
-                text: "Settings"
+                text: qsTr("Settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"))
             }
         }
@@ -48,7 +48,7 @@ Page {
             width: page.width
             spacing: Theme.paddingLarge
             PageHeader {
-                title: "Summary"
+                title: qsTr("Summary")
             }
 
             Row {
@@ -59,7 +59,7 @@ Page {
 
                 Label {
                     color: Theme.primaryColor
-                    text: "Uptime: "
+                    text: qsTr("Uptime: ")
                 }
 
                 Label {
@@ -69,7 +69,7 @@ Page {
             }
 
             Button {
-                text: "CPUs: " + cpu.summaryValue + "%"
+                text: qsTr("CPUs: ") + cpu.summaryValue + "%"
                 anchors {
                     horizontalCenter: parent.horizontalCenter
                     margins: Theme.paddingLarge
@@ -79,7 +79,7 @@ Page {
 
 
             Button {
-                text: "Memory: " + memory.summaryValue + "%"
+                text: qsTr("Memory: ") + memory.summaryValue + "%"
                 anchors {
                     horizontalCenter: parent.horizontalCenter
                     margins: Theme.paddingLarge
@@ -88,7 +88,7 @@ Page {
             }
 
             Button {
-                text: "Processes: " + process.summaryValue
+                text: qsTr("Processes: ") + process.summaryValue
                 anchors {
                     horizontalCenter: parent.horizontalCenter
                     margins: Theme.paddingLarge
@@ -97,7 +97,7 @@ Page {
             }
 
             Button {
-                text: "Battery: " + battery.summaryValue + "%"
+                text: qsTr("Battery: ") + battery.summaryValue + "%"
                 anchors {
                     horizontalCenter: parent.horizontalCenter
                     margins: Theme.paddingLarge

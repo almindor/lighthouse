@@ -12,6 +12,8 @@ CONFIG += sailfishapp
 
 QT += dbus
 
+TRANSLATIONS = i18n/lighthouse_zh.ts
+
 SOURCES += \
     src/cpu.cpp \
     src/memory.cpp \
@@ -50,3 +52,19 @@ HEADERS += \
     src/process.h \
     src/monitor.h \
     src/battery.h
+
+lupdate_only {
+SOURCES += \
+    qml/cover/CoverPage.qml \
+    qml/pages/Summary.qml \
+    qml/pages/CPU.qml \
+    qml/pages/Settings.qml \
+    qml/pages/Memory.qml \
+    qml/pages/About.qml \
+    qml/pages/Process.qml \
+    qml/pages/Phone.qml \
+    qml/Lighthouse.qml \
+    qml/pages/Battery.qml \
+    qml/InfoPopup.qml \
+    qml/pages/Battery.qml \
+}

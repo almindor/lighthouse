@@ -112,10 +112,10 @@ namespace Lighthouse {
         return COVER_IMAGE_UNKNOWN;
     }
 
-    static const QString COVER_LABEL_CPU = QStringLiteral("CPU");
-    static const QString COVER_LABEL_MEMORY = QStringLiteral("Memory");
-    static const QString COVER_LABEL_BATTERY = QStringLiteral("Battery");
-    static const QString COVER_LABEL_UNKNOWN = QStringLiteral("Unknown");
+    static const QString COVER_LABEL_CPU = Monitor::tr("CPU");
+    static const QString COVER_LABEL_MEMORY = Monitor::tr("Memory");
+    static const QString COVER_LABEL_BATTERY = Monitor::tr("Battery");
+    static const QString COVER_LABEL_UNKNOWN = Monitor::tr("Unknown");
 
     const QString& Monitor::getCoverLabel() const {
         switch ( fCoverPage ) {

@@ -22,6 +22,7 @@
 #include "sailfishapp.h"
 #include <QObject>
 #include <QString>
+#include <QTranslator>
 #include <QQuickView>
 #include <QQmlContext>
 #include <QGuiApplication>
@@ -43,6 +44,11 @@ int main(int argc, char *argv[])
     qRegisterMetaType< ProcMap >( "ProcMap" );
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
+
+    QTranslator translator;
+    translator.load("lighthouse_zh");
+    app->installTranslator(&translator);
+
     QQuickView *view = SailfishApp::createView();
 
     Monitor monitor;
@@ -74,7 +80,7 @@ int main(int argc, char *argv[])
     QObject::connect(&appsWatch, &QFileSystemWatcher::directoryChanged,
                      &monitor, &Monitor::updateApplicationMap);
 
-    QString qml = QString("qml/%1.qml").arg("Lighthouse");
+    QString qml = QString("qml/%1.qml").arg(QGuiApplication::tr("Lighthouse"));
     view->rootContext()->setContextProperty("cpu", &cpu);
     view->rootContext()->setContextProperty("memory", &memory);
     view->rootContext()->setContextProperty("monitor", &monitor);

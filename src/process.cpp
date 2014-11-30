@@ -72,7 +72,7 @@ namespace Lighthouse {
 
         switch ( role ) {
             case PIDRole: return 0;
-            case NameRole: return "Unknown";
+            case NameRole: return tr("Unknown");
             case CPUUsageRole: return 0;
             case MemoryUsageRole: return 0;
             case SelectedRole: return false;

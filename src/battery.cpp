@@ -6,9 +6,9 @@ namespace Lighthouse {
         QObject(parent)
     {
             fLevel = 0;
-            fStatus = "Unavailable";
-            fHealth = "Unavailable";
-            fTechnology = "Unavailable";
+            fStatus = tr("Unavailable", "battery status");
+            fHealth = tr("Unavailable", "battery status");
+            fTechnology = tr("Unavailable", "battery status");
     }
     
     void Battery::setStatus(QString charge) {

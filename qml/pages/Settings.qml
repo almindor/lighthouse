@@ -26,7 +26,7 @@ Page {
         width: page.width
         spacing: Theme.paddingLarge
         PageHeader {
-            title: "Settings"
+            title: qsTr("Settings")
         }
 
         Slider {
@@ -35,7 +35,7 @@ Page {
             stepSize: 1
             value: monitor.interval
             valueText: value + 's'
-            label: "Update interval"
+            label: qsTr("Update interval")
             onValueChanged: monitor.interval = value
             anchors {
                 left: parent.left

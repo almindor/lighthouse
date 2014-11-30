@@ -28,7 +28,7 @@ Page {
 
         PageHeader {
             id: header
-            title: "About"
+            title: qsTr("About")
         }
 
         Label {
@@ -39,7 +39,7 @@ Page {
             }
             wrapMode: Text.WordWrap
             color: Theme.primaryColor
-            text: "Copyright 2014 © by Aleš Katona.."
+            text: qsTr("Copyright 2014 © by Aleš Katona..")
         }
 
         Label {
@@ -50,7 +50,7 @@ Page {
             }
             wrapMode: Text.WordWrap
             color: Theme.primaryColor
-            text: "Battery changes by Lavaux Gilles."
+            text: qsTr("Battery changes by Lavaux Gilles.")
         }
 
         Text {
@@ -62,9 +62,9 @@ Page {
             color: Theme.secondaryColor
             font.pointSize: 16
             wrapMode: Text.WordWrap
-            text: "Lighthouse is free software licensed under the GPL v3 available at <a href='https://github.com/almindor/lighthouse'>github</a>.\
+            text: qsTr("Lighthouse is free software licensed under the GPL v3 available at <a href='https://github.com/almindor/lighthouse'>github</a>.\
  Phone controls DBus code inspired by <a href='https://github.com/ejjoman/SailfishReboot'>SailfishReboot</a>.\
- InfoPopup component taken from <a href='https://github.com/jobe-m/ownkeepass'>ownKeepass</a> by Marko Koschak."
+ InfoPopup component taken from <a href='https://github.com/jobe-m/ownkeepass'>ownKeepass</a> by Marko Koschak.")
             linkColor: Theme.secondaryHighlightColor
             onLinkActivated: {
                  Qt.openUrlExternally(link);

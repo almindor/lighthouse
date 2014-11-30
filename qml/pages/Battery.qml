@@ -26,7 +26,7 @@ Page {
         width: page.width
         spacing: Theme.paddingLarge
         PageHeader {
-            title: "Battery Usage"
+            title: qsTr("Battery Usage")
         }
 
         ProgressCircleBase {
@@ -72,7 +72,7 @@ Page {
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeSmall
             horizontalAlignment: Text.AlignHCenter
-            text: "Health: " + battery.health
+            text: qsTr("Health: ") + battery.health
         }
 
         Text {
@@ -80,7 +80,7 @@ Page {
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeSmall
             horizontalAlignment: Text.AlignHCenter
-            text: "Technology: " + battery.technology
+            text: qsTr("Technology: ") + battery.technology
         }
     }
 }
