@@ -40,6 +40,7 @@ namespace Lighthouse {
         fGotBatteryInfo = false;
         fApplicationActive = false;
         fProcessDetails = false;
+        fBadTicks = false; // work around for bug introduced in Jolla/SailfishOS 1.0.7.16
         start();
     }
 
@@ -195,7 +196,7 @@ namespace Lighthouse {
     }
 
     void Monitor::procCPUActivity() {
-        CPUUsageHandler handler(fCPUUsage, fCPUActiveTicks, fCPUTotalTicks);
+        CPUUsageHandler handler(fCPUUsage, fCPUActiveTicks, fCPUTotalTicks, fBadTicks);
         QString path = QStringLiteral("/proc/stat");
         if ( fProcReader.readProcFile(path, handler, fCPUCount + 1, -1) == 0 ) {
             emit CPUUsageChanged(fCPUUsage);
@@ -231,6 +232,11 @@ namespace Lighthouse {
         PIDList deletes;
         PIDList adds;
         unsigned long long totalTicks = 0;
+
+        if ( fBadTicks ) {
+            qWarning() << "Skipping processess due to bad ticks from /proc/stat\n";
+            return;
+        }
 
         if ( fCPUTotalTicks.size() > 0 ) {
             totalTicks = fCPUTotalTicks[0];
@@ -278,7 +284,6 @@ namespace Lighthouse {
             }
         }
 
-        qDebug() << "fProcMap: " << (unsigned long)(&fProcMap) << "\n";
         emit processChanged(&fProcMap, adds, deletes);
     }
 

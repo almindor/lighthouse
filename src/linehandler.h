@@ -61,12 +61,13 @@ namespace Lighthouse {
     class CPUUsageHandler: public LineHandler
     {
     public:
-        CPUUsageHandler(IntList& usage, QLLVector& activeTicks, QLLVector& totalTicks);
+        CPUUsageHandler(IntList& usage, QLLVector& activeTicks, QLLVector& totalTicks, bool& badTicks);
         int onLine(QString& line, int i);
     private:
         IntList& fCPUUsage;
         QLLVector& fCPUActiveTicks;
         QLLVector& fCPUTotalTicks;
+        bool& fBadTicks;
 
         unsigned long long parseCPUParts(QStringList &parts, int flags);
     };

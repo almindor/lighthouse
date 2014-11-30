@@ -153,7 +153,6 @@ namespace Lighthouse {
         fCPUComparer.setProcMap(fProcMap);
         fMemoryComparer.setProcMap(fProcMap);
         fNameComparer.setProcMap(fProcMap);
-        qDebug() << "Original ADDR: " << (unsigned long)(&procMap) << " NEW: " << (unsigned long)fProcMap;
 
         removeKeys(deletes, fProcKeys, !fApplicationsOnly, false);
         removeKeys(deletes, fAppKeys, fApplicationsOnly, true);

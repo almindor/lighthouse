@@ -22,6 +22,9 @@
 #include <math.h>
 #include <QDebug>
 
+#include <sys/types.h>
+#include <unistd.h>
+
 #define PAGE_SIZE 4096 // TODO: find out dynamicallys
 
 namespace Lighthouse {

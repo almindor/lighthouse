@@ -83,8 +83,8 @@ namespace Lighthouse {
         return 0;
     }
 
-    CPUUsageHandler::CPUUsageHandler(IntList& usage, QLLVector& activeTicks, QLLVector& totalTicks)
-                                    : fCPUUsage(usage), fCPUActiveTicks(activeTicks), fCPUTotalTicks(totalTicks) {
+    CPUUsageHandler::CPUUsageHandler(IntList& usage, QLLVector& activeTicks, QLLVector& totalTicks, bool& badTicks)
+        : fCPUUsage(usage), fCPUActiveTicks(activeTicks), fCPUTotalTicks(totalTicks), fBadTicks(badTicks) {
 
     }
 
@@ -93,7 +93,9 @@ namespace Lighthouse {
         unsigned long long diffTotalTicks;
         unsigned long long oldActiveTicks;
         unsigned long long oldTotalTicks;
+        unsigned long long tmp;
         qreal usage;
+        fBadTicks = false;
 
         QStringList parts = line.split(" ", QString::SkipEmptyParts);
         if ( parts.size() < 8 ) {
@@ -107,13 +109,20 @@ namespace Lighthouse {
             return -1;
         }
 
+        oldTotalTicks = fCPUTotalTicks[i];
+        tmp = parseCPUParts(parts, -1);
+        if ( tmp < oldTotalTicks ) { // bug introduced in Sailfish OS/Jolla 1.0.7.16
+            qWarning() << "Work around with old ticks: " << fCPUTotalTicks[i] << " source: " << line << "\n";
+            fBadTicks = true;
+            return 100;
+        } else {
+            fCPUTotalTicks[i] = tmp;
+            diffTotalTicks = fCPUTotalTicks[i] - oldTotalTicks;
+        }
+
         oldActiveTicks = fCPUActiveTicks[i];
         fCPUActiveTicks[i] = parseCPUParts(parts, CPU_FLAGS_ACTIVE);
         diffActiveTicks = fCPUActiveTicks[i] - oldActiveTicks;
-
-        oldTotalTicks = fCPUTotalTicks[i];
-        fCPUTotalTicks[i] = parseCPUParts(parts, -1);
-        diffTotalTicks = fCPUTotalTicks[i] - oldTotalTicks;
 
         usage = (qreal)diffActiveTicks / (qreal)diffTotalTicks * 100.0f;
         int iUsage = qRound(usage);

@@ -76,6 +76,7 @@ namespace Lighthouse {
             AppNameMap fAppNameMap;
             bool fApplicationActive;
             bool fProcessDetails;
+            bool fBadTicks;
 
             QString getAppName(const QString& fileName) const;
             void fillApplicationMap();
