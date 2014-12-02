@@ -115,7 +115,7 @@ namespace Lighthouse {
     static const QString COVER_LABEL_CPU = Monitor::tr("CPU");
     static const QString COVER_LABEL_MEMORY = Monitor::tr("Memory");
     static const QString COVER_LABEL_BATTERY = Monitor::tr("Battery");
-    static const QString COVER_LABEL_UNKNOWN = Monitor::tr("Unknown");
+    static const QString COVER_LABEL_UNKNOWN = Monitor::tr("Unknown", "Cover label in summary page");
 
     const QString& Monitor::getCoverLabel() const {
         switch ( fCoverPage ) {

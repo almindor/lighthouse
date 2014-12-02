@@ -39,7 +39,7 @@ Page {
             }
             wrapMode: Text.WordWrap
             color: Theme.primaryColor
-            text: qsTr("Copyright 2014 © by Aleš Katona..")
+            text: qsTr("Copyright 2014 © by Aleš Katona.")
         }
 
         Label {
@@ -50,7 +50,7 @@ Page {
             }
             wrapMode: Text.WordWrap
             color: Theme.primaryColor
-            text: qsTr("Battery changes by Lavaux Gilles.")
+            text: qsTr("Battery monitoring code by Lavaux Gilles.")
         }
 
         Text {

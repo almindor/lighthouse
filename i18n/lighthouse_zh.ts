@@ -10,12 +10,12 @@
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="42"/>
-        <source>Copyright 2014 © by Aleš Katona..</source>
+        <source>Copyright 2014 © by Aleš Katona.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
-        <source>Battery changes by Lavaux Gilles.</source>
+        <source>Battery monitoring code by Lavaux Gilles.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -99,6 +99,7 @@
     <message>
         <location filename="../src/monitor.cpp" line="118"/>
         <source>Unknown</source>
+        <comment>Cover label in summary page</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -107,6 +108,7 @@
     <message>
         <location filename="../src/process.cpp" line="75"/>
         <source>Unknown</source>
+        <comment>Process name</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>
