@@ -21,10 +21,12 @@
 
 namespace Lighthouse {
 
+    //static QString fLines[3]; // debug
+
     const int CPU_FLAGS_ACTIVE = 1;
     const int CPU_FLAGS_INACTIVE = 2;
     const int CPU_PART_COUNT = 10;
-    const int CPU_PART_DEF[CPU_PART_COUNT] = {0, 1, 1, 1, 2, 2, 0, 0, 0, 0};
+    const int CPU_PART_DEF[CPU_PART_COUNT] = {0, 1, 1, 1, 2, 0, 0, 0, 0, 0};
 
     UptimeHandler::UptimeHandler(qreal &uptime, qreal &upidle) : fUptime(uptime), fUpidle(upidle) {
 
@@ -83,9 +85,8 @@ namespace Lighthouse {
         return 0;
     }
 
-    CPUUsageHandler::CPUUsageHandler(IntList& usage, QLLVector& activeTicks, QLLVector& totalTicks, bool& badTicks)
-        : fCPUUsage(usage), fCPUActiveTicks(activeTicks), fCPUTotalTicks(totalTicks), fBadTicks(badTicks) {
-
+    CPUUsageHandler::CPUUsageHandler(IntList& usage, QLLVector& activeTicks, QLLVector& totalTicks)
+        : fCPUUsage(usage), fCPUActiveTicks(activeTicks), fCPUTotalTicks(totalTicks) {
     }
 
     int CPUUsageHandler::onLine(QString &line, int i) {
@@ -95,7 +96,6 @@ namespace Lighthouse {
         unsigned long long oldTotalTicks;
         unsigned long long tmp;
         qreal usage;
-        fBadTicks = false;
 
         QStringList parts = line.split(" ", QString::SkipEmptyParts);
         if ( parts.size() < 8 ) {
@@ -111,20 +111,30 @@ namespace Lighthouse {
 
         oldTotalTicks = fCPUTotalTicks[i];
         tmp = parseCPUParts(parts, -1);
-        if ( tmp < oldTotalTicks ) { // bug introduced in Sailfish OS/Jolla 1.0.7.16
-            qWarning() << "Work around with old ticks: " << fCPUTotalTicks[i] << " source: " << line << "\n";
-            fBadTicks = true;
-            return 100;
-        } else {
-            fCPUTotalTicks[i] = tmp;
-            diffTotalTicks = fCPUTotalTicks[i] - oldTotalTicks;
+
+        // debug
+        /*if ( tmp < oldTotalTicks ) { // bug introduced in Sailfish OS/Jolla 1.0.7.16 presumably fixed in update 9/10
+            qWarning() << "Bad total ticks:" << tmp << " < " << fCPUTotalTicks[i] << "\n";
+            qWarning() << "old: " << fLines[i] << "\n";
+            qWarning() << "new: " << line << "\n";
         }
+        fLines[i] = line;*/
+
+        fCPUTotalTicks[i] = tmp;
+        diffTotalTicks = fCPUTotalTicks[i] - oldTotalTicks;
 
         oldActiveTicks = fCPUActiveTicks[i];
         fCPUActiveTicks[i] = parseCPUParts(parts, CPU_FLAGS_ACTIVE);
         diffActiveTicks = fCPUActiveTicks[i] - oldActiveTicks;
+        if ( diffTotalTicks <= 0 ) {
+            diffTotalTicks = 1;
+        }
 
         usage = (qreal)diffActiveTicks / (qreal)diffTotalTicks * 100.0f;
+        if ( usage > 100.0f ) {
+            usage = 100.0f;
+        }
+
         int iUsage = qRound(usage);
 
         if ( iUsage != fCPUUsage[i] ) {
@@ -141,7 +151,7 @@ namespace Lighthouse {
         for ( int i = 1; i < CPU_PART_COUNT; i++ ) {
             int flag = CPU_PART_DEF[i];
             QString value = parts.at(i);
-            if ( flags < 0 || flag == flags ) {
+            if ( flag == flags || ( flags < 0 && flag > 0 ) ) {
                 result += value.toULongLong(&converted);
             }
             if ( !converted ) {
