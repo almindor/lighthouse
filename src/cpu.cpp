@@ -31,7 +31,7 @@ namespace Lighthouse {
         return roles;
     }
 
-    Qt::ItemFlags CPU::flags(const QModelIndex & index) const {
+    Qt::ItemFlags CPU::flags(const QModelIndex & index __attribute__ ((unused)) ) const {
         return Qt::ItemIsEnabled;
     }
 
@@ -46,11 +46,11 @@ namespace Lighthouse {
         return tr("Data") + "[" + QString::number(index.row()) + "," + QString::number(index.column()) + "]: " + QString::number(role);
     }
 
-    QVariant CPU::headerData(int section, Qt::Orientation orientation, int role) const {
+    QVariant CPU::headerData(int section __attribute__ ((unused)), Qt::Orientation orientation __attribute__ ((unused)), int role __attribute__ ((unused)) ) const {
         return tr("Description");
     }
 
-    int CPU::rowCount(const QModelIndex & parent) const {
+    int CPU::rowCount(const QModelIndex & parent __attribute__ ((unused)) ) const {
         return fUsage.size() > 0 ? fUsage.size() - 1 : 0;
     }
 

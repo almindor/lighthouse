@@ -52,7 +52,7 @@ namespace Lighthouse {
         return roles;
     }
 
-    Qt::ItemFlags Process::flags(const QModelIndex & index) const {
+    Qt::ItemFlags Process::flags(const QModelIndex & index __attribute__ ((unused)) ) const {
         return Qt::ItemIsEnabled;
     }
 
@@ -85,7 +85,7 @@ namespace Lighthouse {
         return "Description: " + section + orientation + role;
     }
 
-    int Process::rowCount(const QModelIndex & parent) const {
+    int Process::rowCount(const QModelIndex & parent __attribute__ ((unused)) ) const {
         return getKeys().size();
     }
 
