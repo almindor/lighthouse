@@ -12,7 +12,11 @@ CONFIG += sailfishapp
 
 QT += dbus
 
-TRANSLATIONS = i18n/lighthouse_zh.ts
+TRANSLATIONS = \
+    i18n/lighthouse.ts \
+    i18n/lighthouse_ru.ts \
+    i18n/lighthouse_es.ts \
+    i18n/lighthouse_es_ar.ts
 
 SOURCES += \
     src/cpu.cpp \
