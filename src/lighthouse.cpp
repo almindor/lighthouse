@@ -22,7 +22,6 @@
 #include "sailfishapp.h"
 #include <QObject>
 #include <QString>
-#include <QTranslator>
 #include <QQuickView>
 #include <QQmlContext>
 #include <QGuiApplication>
@@ -44,11 +43,6 @@ int main(int argc, char *argv[])
     qRegisterMetaType< ProcMap >( "ProcMap" );
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
-
-    QTranslator translator;
-    translator.load("lighthouse_zh");
-    app->installTranslator(&translator);
-
     QQuickView *view = SailfishApp::createView();
 
     Monitor monitor;

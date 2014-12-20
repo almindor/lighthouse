@@ -8,15 +8,17 @@
 #         - icon definition filename in desktop file must be changed
 TARGET = lighthouse
 
-CONFIG += sailfishapp
+TRANSLATIONS = \
+    translations/lighthouse.ts \
+    translations/lighthouse-ru.ts \
+    translations/lighthouse-es.ts \
+    translations/lighthouse-es_AR.ts
+
+CONFIG += \
+    sailfishapp \
+    sailfishapp_i18n
 
 QT += dbus
-
-TRANSLATIONS = \
-    i18n/lighthouse.ts \
-    i18n/lighthouse_ru.ts \
-    i18n/lighthouse_es.ts \
-    i18n/lighthouse_es_ar.ts
 
 SOURCES += \
     src/cpu.cpp \
