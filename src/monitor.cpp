@@ -31,6 +31,9 @@ namespace Lighthouse {
     Monitor::Monitor() : fSettings(), fProcMap(), fAppNameMap()
     {
         fDBus = new QDBusInterface("com.nokia.dsme", "/com/nokia/dsme/request", "com.nokia.dsme.request", QDBusConnection::systemBus(), this);
+        static QDBusConnection mceSignalconn = QDBusConnection::systemBus();
+        mceSignalconn.connect("com.nokia.mce", "/com/nokia/mce/signal", "com.nokia.mce.signal", "display_status_ind", this, SLOT(handleDisplayStatus(const QDBusMessage&)));
+
         fInterval = fSettings.value("proc/interval", 2).toInt();
         fCoverPage = 0;
         fQuit = false;
@@ -179,10 +182,10 @@ namespace Lighthouse {
                     }
                     procTemperature();
                 }
+                iteration++;
             }
 
             sleep(fInterval);
-            iteration++;
         }
     }
 
@@ -362,6 +365,14 @@ namespace Lighthouse {
                 fAppNameMap[baseName] = appName;
             }
         }
+    }
+
+
+    void Monitor::handleDisplayStatus(const QDBusMessage& msg)
+    {
+        QList<QVariant> args = msg.arguments();
+        const QString status = args.at(0).toString();
+        fPaused = (status == "off");
     }
 
 }

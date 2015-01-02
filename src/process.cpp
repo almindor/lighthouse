@@ -97,6 +97,7 @@ namespace Lighthouse {
         if ( deletes.size() > 0 ) {
             foreach ( pid_t pid, deletes ) {
                 const ProcInfo info = fProcMap->value(pid);
+                qDebug() << "Removed: " << info.getName() << "\n";
                 if ( appsOnly && !info.isApplication() ) {
                     continue;
                 }
@@ -118,6 +119,7 @@ namespace Lighthouse {
             const BaseComparer* compare = getComparer();
             foreach ( pid_t pid, adds ) {
                 const ProcInfo info = fProcMap->value(pid);
+                qDebug() << "Added: " << info.getName() << "\n";
                 if ( appsOnly && !info.isApplication() ) {
                     continue;
                 }

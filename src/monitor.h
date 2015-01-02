@@ -92,6 +92,7 @@ namespace Lighthouse {
             int getInterval() const;
         public slots:
             void updateApplicationMap(const QString& path);
+            void handleDisplayStatus(const QDBusMessage& msg);
         signals:
             void CPUUsageChanged(const IntList& usage);
             void memoryChanged(unsigned long total, unsigned long free);
