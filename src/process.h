@@ -72,7 +72,7 @@ namespace Lighthouse {
         MemoryComparer fMemoryComparer;
         NameComparer fNameComparer;
 
-        void removeKeys(const PIDList &deletes, PIDList& list, bool really, bool appsOnly);
+        void removeKeys(const PIDList &deletes, PIDList& list, bool really);
         void appendKeys(const PIDList &adds, PIDList& list, bool really, bool appsOnly);
         void sort(PIDList& list);
         const PIDList& getKeys() const;

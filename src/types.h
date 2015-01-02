@@ -39,6 +39,7 @@ namespace Lighthouse {
         void updateName(QString& appName);
 
         const QString& getName() const;
+        const QString& getStatName() const;
         pid_t getPID() const;
         int getCPUUsage() const;
         int getMemoryUsage() const;

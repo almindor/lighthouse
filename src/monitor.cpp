@@ -247,9 +247,43 @@ namespace Lighthouse {
         QStringListIterator slIterator(procList);
         while ( slIterator.hasNext() ) {
             const pid_t pid = slIterator.next().toInt();
+            const QString pidStr = QString::number(pid);
+            QString pathStatM("/proc/" + pidStr + "/statm");
+            QString pathCmdLine("/proc/" + pidStr + "/cmdline");
+            QString pathStat("/proc/" + pidStr + "/stat");
+
             if ( !fProcMap.contains(pid) ) {
                 fProcMap[pid];
                 adds.append(pid);
+            }
+
+            const QString oldName = fProcMap.value(pid).getStatName();
+            if ( fProcReader.readProcFile(pathStat, statHandler, 1, pid) != 0 ) {
+                qCritical() << "Error reading process stat file " << pid << "\n";
+                continue;
+            }
+
+            if ( !oldName.isEmpty() && oldName != fProcMap.value(pid).getStatName() ) {
+                fProcMap.remove(pid);
+                fProcMap[pid];
+                deletes.append(pid);
+                adds.append(pid);
+                if ( fProcReader.readProcFile(pathStat, statHandler, 1, pid) != 0 ) {
+                    qCritical() << "Error reading process stat file " << pid << "\n";
+                    continue;
+                }
+            }
+
+            if ( fProcReader.readProcFile(pathStatM, statMHandler, 1, pid) != 0 ) {
+                qCritical() << "Error reading process mstat file " << pid << "\n";
+                continue;
+            }
+
+            if ( fProcMap.value(pid).getNameState() == 0 ) {
+                if ( fProcReader.readProcFile(pathCmdLine, cmdLineHandler, 1, pid) != 0 ) {
+                    qCritical() << "Error reading process cmdline file " << pid << "\n";
+                    continue;
+                }
             }
         }
 
@@ -259,25 +293,10 @@ namespace Lighthouse {
             const pid_t pid = iterator.key();
             const QString pidStr = QString::number(pid);
             QString pathStat("/proc/" + pidStr + "/stat");
-            QString pathStatM("/proc/" + pidStr + "/statm");
-            QString pathCmdLine("/proc/" + pidStr + "/cmdline");
 
             if ( !QFile::exists(pathStat) ) {
-                deletes.append(pid);
                 fProcMap.remove(pid);
-            } else {
-                if ( fProcReader.readProcFile(pathStat, statHandler, 1, pid) != 0 ) {
-                    qCritical() << "Error reading process stat file " << pid << "\n";
-                }
-                if ( fProcReader.readProcFile(pathStatM, statMHandler, 1, pid) != 0 ) {
-                    qCritical() << "Error reading process mstat file " << pid << "\n";
-                }
-
-                if ( iterator.value().getNameState() == 0 ) {
-                    if ( fProcReader.readProcFile(pathCmdLine, cmdLineHandler, 1, pid) != 0 ) {
-                        qCritical() << "Error reading process cmdline file " << pid << "\n";
-                    }
-                }
+                deletes.append(pid);
             }
         }
 

@@ -25,7 +25,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#define PAGE_SIZE 4096 // TODO: find out dynamicallys
+#define PAGE_SIZE 4096 // TODO: find out dynamically
 
 namespace Lighthouse {
 
@@ -130,6 +130,10 @@ namespace Lighthouse {
 
     const QString& ProcInfo::getName() const {
         return fShowName;
+    }
+
+    const QString& ProcInfo::getStatName() const {
+        return fStatName;
     }
 
     pid_t ProcInfo::getPID() const {

@@ -133,6 +133,8 @@ namespace Lighthouse {
         usage = (qreal)diffActiveTicks / (qreal)diffTotalTicks * 100.0f;
         if ( usage > 100.0f ) {
             usage = 100.0f;
+        } else if ( usage < 0.0f ) {
+            usage = 0.0f;
         }
 
         int iUsage = qRound(usage);

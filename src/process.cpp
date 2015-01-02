@@ -93,14 +93,10 @@ namespace Lighthouse {
         return fProcCount;
     }
 
-    void Process::removeKeys(const PIDList &deletes, PIDList& list, bool really, bool appsOnly) {
+    void Process::removeKeys(const PIDList &deletes, PIDList& list, bool really) {
         if ( deletes.size() > 0 ) {
             foreach ( pid_t pid, deletes ) {
                 const ProcInfo info = fProcMap->value(pid);
-                qDebug() << "Removed: " << info.getName() << "\n";
-                if ( appsOnly && !info.isApplication() ) {
-                    continue;
-                }
                 for ( int i = 0; i < list.size(); i++ ) {
                     const pid_t key = list.at(i);
                     if ( key == pid ) {
@@ -119,7 +115,6 @@ namespace Lighthouse {
             const BaseComparer* compare = getComparer();
             foreach ( pid_t pid, adds ) {
                 const ProcInfo info = fProcMap->value(pid);
-                qDebug() << "Added: " << info.getName() << "\n";
                 if ( appsOnly && !info.isApplication() ) {
                     continue;
                 }
@@ -156,8 +151,8 @@ namespace Lighthouse {
         fMemoryComparer.setProcMap(fProcMap);
         fNameComparer.setProcMap(fProcMap);
 
-        removeKeys(deletes, fProcKeys, !fApplicationsOnly, false);
-        removeKeys(deletes, fAppKeys, fApplicationsOnly, true);
+        removeKeys(deletes, fProcKeys, !fApplicationsOnly);
+        removeKeys(deletes, fAppKeys, fApplicationsOnly);
         appendKeys(adds, fProcKeys, !fApplicationsOnly, false);
         appendKeys(adds, fAppKeys, fApplicationsOnly, true);
 
