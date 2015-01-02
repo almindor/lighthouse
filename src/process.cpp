@@ -22,16 +22,24 @@
 #include <signal.h>
 #include <errno.h>
 #include <string.h>
+#include <QDir>
+#include <QSettings>
 #include <QDebug>
 
 namespace Lighthouse {
 
     // ProcessModel
 
-    Process::Process(QObject *parent) : QAbstractListModel(parent), fProcList() {
+    Process::Process(QObject *parent) : QAbstractListModel(parent), fProcKeys(), fAppKeys(),
+                     fCPUComparer(), fMemoryComparer(), fNameComparer() {
         fUID = getuid();
+        fProcMap = 0;
         fSortBy = 0;
         fSelectedPID = 0;
+        fApplicationsOnly = false;
+        fPageStatus = 0;
+        fApplicationActive = false;
+        fProcCount = 0;
     }
 
     QHash<int, QByteArray> Process::roleNames() const {
@@ -44,106 +52,175 @@ namespace Lighthouse {
         return roles;
     }
 
-    Qt::ItemFlags Process::flags(const QModelIndex & index) const {
+    Qt::ItemFlags Process::flags(const QModelIndex & index __attribute__ ((unused)) ) const {
         return Qt::ItemIsEnabled;
     }
 
     QVariant Process::data(const QModelIndex & index, int role) const {
+        const PIDList& keys = getKeys();
         const int row = index.row();
-        if ( row >= 0 && row < fProcList.size() ) {
+        const pid_t key = keys.at(row);
+        if ( fProcMap->contains(key) ) {
             switch ( role ) {
-                case PIDRole: return fProcList[row].getPID();
-                case NameRole: return fProcList[row].getName();
-                case CPUUsageRole: return fProcList[row].getCPUUsage();
-                case MemoryUsageRole: return fProcList[row].getMemoryUsage();
-                case SelectedRole: return (fSelectedPID == fProcList[row].getPID());
+                case PIDRole: return fProcMap->value(key).getPID();
+                case NameRole: return fProcMap->value(key).getName();
+                case CPUUsageRole: return fProcMap->value(key).getCPUUsage();
+                case MemoryUsageRole: return fProcMap->value(key).getMemoryUsage();
+                case SelectedRole: return (fSelectedPID == fProcMap->value(key).getPID());
             }
         }
 
-        return "Data[" + QString::number(index.row()) + "," + QString::number(index.column()) + "]: " + QString::number(role);
+        switch ( role ) {
+            case PIDRole: return 0;
+            case NameRole: return tr("Unknown", "Process name");
+            case CPUUsageRole: return 0;
+            case MemoryUsageRole: return 0;
+            case SelectedRole: return false;
+        }
+
+        return 0;
     }
 
     QVariant Process::headerData(int section, Qt::Orientation orientation, int role) const {
         return "Description: " + section + orientation + role;
     }
 
-    int Process::rowCount(const QModelIndex & parent) const {
-        return fProcList.size();
+    int Process::rowCount(const QModelIndex & parent __attribute__ ((unused)) ) const {
+        return getKeys().size();
     }
 
     int Process::getSummaryValue() const {
-        return fProcList.size();
+        return fProcCount;
     }
 
-    void Process::setProcList(ProcMap* procMap) {
+    void Process::removeKeys(const PIDList &deletes, PIDList& list, bool really) {
+        if ( deletes.size() > 0 ) {
+            foreach ( pid_t pid, deletes ) {
+                const ProcInfo info = fProcMap->value(pid);
+                for ( int i = 0; i < list.size(); i++ ) {
+                    const pid_t key = list.at(i);
+                    if ( key == pid ) {
+                        beginRR(really, i, i);
+                        list.removeAt(i);
+                        endRR(really);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    void Process::appendKeys(const PIDList &adds, PIDList& list, bool really, bool appsOnly) {
+        if ( adds.size() > 0 ) {
+            const BaseComparer* compare = getComparer();
+            foreach ( pid_t pid, adds ) {
+                const ProcInfo info = fProcMap->value(pid);
+                if ( appsOnly && !info.isApplication() ) {
+                    continue;
+                }
+                bool done = false;
+                int i;
+                for ( i = 0; i < list.size(); i++ ) {
+                    const pid_t key = list.at(i);
+                    if ( compare->operator ()(key, pid) ) {
+                        beginIR(really, i, i);
+                        list.insert(i, pid);
+                        endIR(really);
+                        done = true;
+                        break;
+                    }
+                }
+
+                if ( !done ) {
+                    beginIR(really, i, i);
+                    list.insert(i, pid);
+                    endIR(really);
+                }
+            }
+        }
+
+    }
+
+    void Process::setProcesses(const ProcMap* procMap, const PIDList& adds, const PIDList& deletes) {
         if ( fSelectedPID > 0 ) {
             return; // don't update if we're selecting to kill
         }
 
-        int oldSize = fProcList.size();
-        ProcList procList = procMap->values();
-        sort(procList);
-        int startRow;
-        int endRow;
-        diffProcLists(fProcList, procList, startRow, endRow);
-        fProcList = procList;
-        //qDebug() << "diff from " << startRow << " to " << endRow << "\n";
+        fProcMap = procMap;
+        fCPUComparer.setProcMap(fProcMap);
+        fMemoryComparer.setProcMap(fProcMap);
+        fNameComparer.setProcMap(fProcMap);
 
-        if ( startRow <= endRow ) {
-            emit dataChanged(createIndex(startRow, 0), createIndex(endRow, 0));
-        }
+        removeKeys(deletes, fProcKeys, !fApplicationsOnly);
+        removeKeys(deletes, fAppKeys, fApplicationsOnly);
+        appendKeys(adds, fProcKeys, !fApplicationsOnly, false);
+        appendKeys(adds, fAppKeys, fApplicationsOnly, true);
 
-        if ( oldSize != fProcList.size() ) {
+        sort(fProcKeys);
+        sort(fAppKeys);
+        emit dataChanged(createIndex(0, 0), createIndex(getKeys().size(), 0));
+
+        if ( fProcCount != getKeys().size() ) {
+            fProcCount = getKeys().size();
             emit summaryValueChanged();
         }
     }
 
-    void Process::sort(ProcList& list) {
-        switch ( fSortBy ) {
-            case 0: qSort(list.begin(), list.end(), CPUComparer()); break;
-            case 1: qSort(list.begin(), list.end(), MemoryComparer()); break;
-            case 2: qSort(list.begin(), list.end(), NameComparer()); break;
+    void Process::setProcessCount(int count) {
+        if ( count != fProcCount ) {
+            fProcCount = count;
+            emit summaryValueChanged();
         }
     }
 
-    void Process::diffProcLists(const ProcList& oldList, const ProcList& newList, int& start, int& end) const {
-        const int newSize = newList.size();
-        const int oldSize = oldList.size();
-        const int size = newSize <= oldSize ? newSize : oldSize;
-        bool endDone = false;
-        bool startDone = false;
-        int x;
-        start = 0;
-        end = oldList.size() - 1;
-
-        for ( int i = 0; i < size; i++ ) {
-            x = size - i - 1;
-            if ( !startDone && oldList.at(i) == newList.at(i) ) {
-                start++;
-            } else {
-                startDone = true;
-            }
-
-            if ( !endDone && oldList.at(x) == newList.at(x) ) {
-                end--;
-            } else {
-                endDone = true;
-            }
-
-            if ( (startDone && endDone) || start > end ) {
-                return;
-            }
+    void Process::sort(PIDList& list) {
+        switch ( fSortBy ) {
+            case 0: qSort(list.begin(), list.end(), fCPUComparer); break;
+            case 1: qSort(list.begin(), list.end(), fMemoryComparer); break;
+            case 2: qSort(list.begin(), list.end(), fNameComparer); break;
         }
     }
 
-    QString Process::getSortBy() const {
+    const BaseComparer* Process::getComparer() const {
         switch ( fSortBy ) {
-            case 0: return "CPU Usage";
-            case 1: return "Memory Usage";
-            case 2: return "Name";
+            case 0: return &fCPUComparer; break;
+            case 1: return &fMemoryComparer; break;
+            case 2: return &fNameComparer; break;
         }
 
-        return "Unknown";
+        return &fCPUComparer;
+    }
+
+    void Process::beginRR(bool really, int first, int last) {
+        if ( really ) {
+            beginRemoveRows(QModelIndex(), first, last);
+        }
+    }
+
+    void Process::endRR(bool really) {
+        if ( really ) {
+            endRemoveRows();
+        }
+    }
+
+    void Process::beginIR(bool really, int first, int last) {
+        if ( really ) {
+            beginInsertRows(QModelIndex(), first, last);
+        }
+    }
+
+    void Process::endIR(bool really) {
+        if ( really ) {
+            endInsertRows();
+        }
+    }
+
+    const PIDList& Process::getKeys() const {
+        return fApplicationsOnly ? fAppKeys : fProcKeys;
+    }
+
+    int Process::getSortBy() const {
+        return fSortBy;
     }
 
     bool Process::isKillable(int pid) const {
@@ -165,15 +242,26 @@ namespace Lighthouse {
         return fSelectedPID;
     }
 
-    void Process::nextSortBy() {
-        fSortBy++;
-        if ( fSortBy > 2 ) {
-            fSortBy = 0;
-        }
-        emit sortByChanged();
+    bool Process::getApplicationsOnly() const {
+        return fApplicationsOnly;
+    }
 
-        sort(fProcList);
-        emit dataChanged(createIndex(0, 0), createIndex(fProcList.size(), 0));
+    void Process::setSortBy(int sb) {
+        if ( sb != fSortBy && sb >= 0 && sb < 3 ) {
+            fSortBy = sb;
+            emit sortByChanged();
+
+            PIDList& keys = fApplicationsOnly ? fAppKeys : fProcKeys;
+            sort(keys);
+            emit dataChanged(createIndex(0, 0), createIndex(keys.size(), 0));
+        }
+    }
+
+    void Process::nextApplicationsOnly() {
+        beginResetModel();
+        fApplicationsOnly = !fApplicationsOnly;
+        endResetModel();
+        emit applicationsOnlyChanged();
     }
 
     void Process::selectPID(int pid) {
@@ -181,10 +269,11 @@ namespace Lighthouse {
             fSelectedPID = pid;
             emit selectedPIDChanged();
 
-            const int size = fProcList.size();
+            const PIDList& keys = getKeys();
+            const int size = keys.size();
 
             for ( int i = 0; i < size; i++ ) {
-                if ( fProcList[i].getPID() == pid ) {
+                if ( fProcMap->value(keys.at(i)).getPID() == pid ) {
                     emit dataChanged(createIndex(i, 0), createIndex(i, 0));
                     return;
                 }

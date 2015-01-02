@@ -91,6 +91,17 @@ namespace Lighthouse {
         ProcMap& fProcMap;
     };
 
+    class ProcessCmdLineHandler: public LineHandler
+    {
+    public:
+        ProcessCmdLineHandler(ProcMap& procMap, AppNameMap& appNameMap);
+        int onLine(QString& line, int i);
+    private:
+        ProcMap& fProcMap;
+        AppNameMap& fAppNameMap;
+    };
+
+
 }
 
 #endif // LINEHANDLER_H

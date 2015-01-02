@@ -25,7 +25,9 @@
 namespace Lighthouse {
 
     typedef QList<int> IntList;
+    typedef QList<pid_t> PIDList;
     typedef QVector<unsigned long long> QLLVector;
+    typedef QMap<QString, QString> AppNameMap;
 
     class ProcInfo
     {
@@ -33,45 +35,65 @@ namespace Lighthouse {
         ProcInfo();
         void updateStat(QString& stat, unsigned long long totalTicks);
         void updateMemory(QString& mem, unsigned long totalMemory);
-        QString getName() const;
+        void updateApplicationName(QString& appName);
+        void updateName(QString& appName);
+
+        const QString& getName() const;
+        const QString& getStatName() const;
         pid_t getPID() const;
         int getCPUUsage() const;
         int getMemoryUsage() const;
-        QString toString() const;
+        int getNameState() const;
+        bool isApplication() const;
 
         bool operator ==(const ProcInfo& other) const;
     private:
-        QString fName;
+        QString fApplicationName;
+        QString fStatName;
+        QString fShowName;
         pid_t fPID;
         int fCPUUsage;
         int fMemoryUsage;
         QString fState;
+        int fNameState;
         unsigned long fVmSize;
         unsigned long fVmRSS;
         unsigned long fSharedMem;
         unsigned long fSysTime;
         unsigned long fUserTime;
         unsigned long fTotalTicks;
+
+        void setShowName(QString& source, int nameState);
     };
 
     typedef QMap<pid_t, ProcInfo> ProcMap;
-    typedef QList<ProcInfo> ProcList;
 
     QString getUptimeString(qreal uptime);
 
-    struct CPUComparer
-    {
-        bool operator()(const ProcInfo & a, const ProcInfo & b) const;
+    class BaseComparer {
+    protected:
+        const ProcMap* fProcMap;
+    public:
+        void setProcMap(const ProcMap* procMap);
+        virtual bool operator()(const pid_t a, const pid_t b) const { return (a > b); }
     };
 
-    struct MemoryComparer
+    class CPUComparer : public BaseComparer
     {
-        bool operator()(const ProcInfo & a, const ProcInfo & b) const;
+    public:
+        bool operator()(const pid_t a, const pid_t b) const;
     };
 
-    struct NameComparer
+    class MemoryComparer : public BaseComparer
     {
-        bool operator()(const ProcInfo & a, const ProcInfo & b) const;
+    public:
+        bool operator()(const pid_t a, const pid_t b) const;
+    };
+
+    class NameComparer : public BaseComparer
+    {
+    public:
+        bool operator()(const pid_t a, const pid_t b) const;
     };
 
 }

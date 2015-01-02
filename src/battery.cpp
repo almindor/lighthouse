@@ -6,9 +6,9 @@ namespace Lighthouse {
         QObject(parent)
     {
             fLevel = 0;
-            fStatus = "Unavailable";
-            fHealth = "Unavailable";
-            fTechnology = "Unavailable";
+            fStatus = tr("Unavailable", "battery status");
+            fHealth = tr("Unavailable", "battery status");
+            fTechnology = tr("Unavailable", "battery status");
     }
     
     void Battery::setStatus(QString charge) {
@@ -19,7 +19,7 @@ namespace Lighthouse {
         }
     }
 
-    QString Battery::getStatus() const {
+    const QString& Battery::getStatus() const {
         return fStatus;
     }
 
@@ -27,7 +27,7 @@ namespace Lighthouse {
         return fLevel;
     }
 
-    QString Battery::getHealth() const {
+    const QString& Battery::getHealth() const {
         return fHealth;
     }
 
@@ -36,7 +36,7 @@ namespace Lighthouse {
         emit summaryValueChanged();
     }
 
-    QString Battery::getTechnology() const {
+    const QString& Battery::getTechnology() const {
         return fTechnology;
     }
 

@@ -1,20 +1,60 @@
+/*
+    Copyright (C) 2014 Ales Katona.
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 
 Page {
     id: page
+    onStatusChanged: monitor.setProcessDetails( status !== 0 )
 
     SilicaListView {
         id: listView
         header: PageHeader {
-            title: "Processes"
+            title: process.applicationsOnly ? qsTr("Applications") : qsTr("Processes")
         }
 
         PullDownMenu {
             MenuItem {
-                text: "Sort by: " + process.sortBy
-                onClicked: process.nextSortBy()
+                text: (process.applicationsOnly ? qsTr("Show Processes") : qsTr("Show Applications"))
+                onClicked: process.nextApplicationsOnly();
+            }
+
+            MenuItem {
+                text: qsTr("Sort by Name")
+                onClicked: process.setSortBy(2)
+                visible: (process.sortBy !== 2)
+            }
+
+            MenuItem {
+                text: qsTr("Sort by Memory Usage")
+                onClicked: process.setSortBy(1)
+                visible: (process.sortBy !== 1)
+            }
+
+            MenuItem {
+                text: qsTr("Sort by CPU Usage")
+                onClicked: process.setSortBy(0)
+                visible: (process.sortBy !== 0)
+            }
+
+            onActiveChanged: {
+                process.selectPID(0); // deselect and unpause
             }
         }
 
@@ -42,7 +82,7 @@ Page {
 
             Text {
                 id: cpuLabel
-                text: "cpu: " + cpuUsage + "%"
+                text: qsTr("cpu: ") + cpuUsage + "%"
                 color: Theme.highlightColor
                 font.pointSize: 12
                 anchors {
@@ -53,7 +93,7 @@ Page {
 
             Text {
                 id: memLabel
-                text: "mem: " + memoryUsage + "%"
+                text: qsTr("mem: ") + memoryUsage + "%"
                 color: Theme.secondaryHighlightColor
                 font.pointSize: 12
                 anchors {
@@ -103,10 +143,20 @@ Page {
 
             onPressAndHold: {
                 if ( process.isKillable(processID) ) {
-                    process.selectPID(processID) // pauses the list updates
+                    process.selectPID(processID) // just in case it somehow sliped since onPressed
                     killMenu.show(myListItem)
                 } else {
-                    console.log("not killable");
+                    applicationWindow.infoPopupRef.show("Info", "Permission denied", 2000, true)
+                }
+            }
+
+            onPressed: {
+                process.selectPID(processID) // pauses the list updates
+            }
+
+            onPressedChanged: {
+                if ( !pressed && !killMenu.active ) {
+                    process.selectPID(0) // unpauses
                 }
             }
         }
@@ -114,7 +164,7 @@ Page {
         ContextMenu {
             id: killMenu
             MenuItem {
-                text: "Kill"
+                text: qsTr("Kill")
                 onClicked: {
                     process.killSelectedProcess()
                 }

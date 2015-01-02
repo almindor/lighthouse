@@ -8,7 +8,15 @@
 #         - icon definition filename in desktop file must be changed
 TARGET = harbour-lighthouse
 
-CONFIG += sailfishapp
+TRANSLATIONS = \
+    translations/harbour-lighthouse.ts \
+    translations/harbour-lighthouse-ru.ts \
+    translations/harbour-lighthouse-es.ts \
+    translations/harbour-lighthouse-es_AR.ts
+
+CONFIG += \
+    sailfishapp \
+    sailfishapp_i18n
 
 QT += dbus
 
@@ -22,25 +30,22 @@ SOURCES += \
     src/monitor.cpp \
     src/lighthouse.cpp \
     src/battery.cpp
-    src/battery.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
+    rpm/harbour-lighthouse.yaml \
     qml/pages/Summary.qml \
     qml/pages/CPU.qml \
     qml/pages/Settings.qml \
     qml/pages/Memory.qml \
     qml/pages/About.qml \
     qml/pages/Process.qml \
-    qml/pages/Phone.qml \
-    lighthouse.desktop \
-    qml/Lighthouse.qml \
     rpm/harbour-lighthouse.spec \
-    rpm/harbour-lighthouse.yaml \
-    rpm/harbour-lighthouse.spec
-    qml/pages/Battery.qml
-    qml/pages/Battery.qml
-    harbour-lighthouse.pro
+    qml/pages/Phone.qml \
+    harbour-lighthouse.desktop \
+    qml/Lighthouse.qml \
+    qml/pages/Battery.qml \
+    qml/InfoPopup.qml
 
 HEADERS += \
     src/cpu.h \
@@ -51,3 +56,18 @@ HEADERS += \
     src/process.h \
     src/monitor.h \
     src/battery.h
+
+lupdate_only {
+SOURCES += \
+    qml/cover/CoverPage.qml \
+    qml/pages/Summary.qml \
+    qml/pages/CPU.qml \
+    qml/pages/Settings.qml \
+    qml/pages/Memory.qml \
+    qml/pages/About.qml \
+    qml/pages/Process.qml \
+    qml/pages/Phone.qml \
+    qml/Lighthouse.qml \
+    qml/pages/Battery.qml \
+    qml/InfoPopup.qml
+}

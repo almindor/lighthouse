@@ -13,8 +13,8 @@ Name:       harbour-lighthouse
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Lighthouse System Monitor
-Version:    1.0
-Release:    3
+Version:    1.3
+Release:    1
 Group:      Qt/Qt
 License:    LICENSE
 URL:        https://github.com/almindor/lighthouse
@@ -64,12 +64,9 @@ desktop-file-install --delete-original       \
 %files
 %defattr(-,root,root,-)
 %{_bindir}
-/usr/share/harbour-lighthouse
-/usr/share/icons/hicolor/86x86/apps
-/usr/share/applications
-/usr/bin
-%{_datadir}/icons/hicolor/86x86/apps/%{name}.png
-%{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/qml
+%{_datadir}/%{name}/translations
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/icons/hicolor/86x86/apps/%{name}.png
 # >> files
 # << files

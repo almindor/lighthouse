@@ -39,12 +39,14 @@ namespace Lighthouse {
             bool getPaused() const;
             void setCoverPage(int page);
             int getCoverPage() const;
-            QString getCoverLabel() const;
+            const QString& getCoverLabel() const;
             QString getUptime() const;
-            QString getCoverImageLeft() const;
-            QString getCoverImageRight() const;
+            const QString& getCoverImageLeft() const;
+            const QString& getCoverImageRight() const;
             Q_INVOKABLE void reboot();
             Q_INVOKABLE void shutdown();
+            Q_INVOKABLE void setProcessDetails(bool active);
+            Q_INVOKABLE void setApplicationActive(bool active);
 
             Q_PROPERTY(int interval READ getInterval WRITE setInterval NOTIFY intervalChanged)
             Q_PROPERTY(bool paused READ getPaused WRITE setPaused NOTIFY pausedChanged)
@@ -71,24 +73,35 @@ namespace Lighthouse {
             ProcMap fProcMap;
             ProcReader fProcReader;
             QDBusInterface* fDBus;
+            AppNameMap fAppNameMap;
+            bool fApplicationActive;
+            bool fProcessDetails;
 
+            QString getAppName(const QString& fileName) const;
+            void fillApplicationMap();
             void run() Q_DECL_OVERRIDE;
             void procCPUActivity();
             void procMemory();
             void procBattery();
+            void procProcessCount();
             void procProcesses();
             void procUptime();
             void procTemperature();
             void procProcessorCount();
+            void fillProcMap(ProcMap& procMap, IntList* deletes);
             int getInterval() const;
+        public slots:
+            void updateApplicationMap(const QString& path);
+            void handleDisplayStatus(const QDBusMessage& msg);
         signals:
-            void CPUUsageChanged(IntList* usage);
+            void CPUUsageChanged(const IntList& usage);
             void memoryChanged(unsigned long total, unsigned long free);
             void intervalChanged(int interval);
             void pausedChanged(bool paused);
             void coverPageChanged(int page);
             void uptimeChanged(QString uptime);
-            void processChanged(ProcMap* procMap);
+            void processCountChanged(int count);
+            void processChanged(const ProcMap* procMap, const PIDList& adds, const PIDList& deletes);
             void batteryHealthChanged(QString heal);
             void batteryTechnologyChanged(QString tech);
             void batteryLevelChanged(int level);

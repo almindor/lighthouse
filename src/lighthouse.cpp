@@ -25,6 +25,7 @@
 #include <QQuickView>
 #include <QQmlContext>
 #include <QGuiApplication>
+#include <QFileSystemWatcher>
 #include "types.h"
 #include "monitor.h"
 #include "cpu.h"
@@ -38,6 +39,7 @@ int main(int argc, char *argv[])
 {
     int result = 0;
     qRegisterMetaType< IntList >( "IntList" );
+    qRegisterMetaType< PIDList >( "PIDList" );
     qRegisterMetaType< ProcMap >( "ProcMap" );
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
@@ -48,6 +50,8 @@ int main(int argc, char *argv[])
     Process process;
     Memory memory;
     Battery battery;
+    QFileSystemWatcher appsWatch;
+    appsWatch.addPath("/usr/share/applications");
 
     QObject::connect(&monitor, &Monitor::CPUUsageChanged,
                      &cpu, &CPU::setUsage);
@@ -56,7 +60,9 @@ int main(int argc, char *argv[])
     QObject::connect(&monitor, &Monitor::memoryChanged,
                      &memory, &Memory::setMemory);
     QObject::connect(&monitor, &Monitor::processChanged,
-                     &process, &Process::setProcList);
+                     &process, &Process::setProcesses);
+    QObject::connect(&monitor, &Monitor::processCountChanged,
+                     &process, &Process::setProcessCount);
     QObject::connect(&monitor, &Monitor::batteryHealthChanged,
                      &battery, &Battery::setHealth);
     QObject::connect(&monitor, &Monitor::batteryTechnologyChanged,
@@ -65,8 +71,10 @@ int main(int argc, char *argv[])
                      &battery, &Battery::setLevel);
     QObject::connect(&monitor, &Monitor::batteryStatusChanged,
                      &battery, &Battery::setStatus);
+    QObject::connect(&appsWatch, &QFileSystemWatcher::directoryChanged,
+                     &monitor, &Monitor::updateApplicationMap);
 
-    QString qml = QString("qml/%1.qml").arg("Lighthouse");
+    QString qml = QString("qml/%1.qml").arg(QGuiApplication::tr("Lighthouse"));
     view->rootContext()->setContextProperty("cpu", &cpu);
     view->rootContext()->setContextProperty("memory", &memory);
     view->rootContext()->setContextProperty("monitor", &monitor);
