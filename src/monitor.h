@@ -19,6 +19,8 @@
 #define PROC_H
 
 #include <QThread>
+#include <QMutex>
+#include <QWaitCondition>
 #include <QVector>
 #include <QSettings>
 #include <QtDBus/QDBusInterface>
@@ -76,6 +78,8 @@ namespace Lighthouse {
             AppNameMap fAppNameMap;
             bool fApplicationActive;
             bool fProcessDetails;
+            QWaitCondition fPauser;
+            QMutex fMutex;
 
             QString getAppName(const QString& fileName) const;
             void fillApplicationMap();

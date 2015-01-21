@@ -82,22 +82,22 @@
 <context>
     <name>Lighthouse::Monitor</name>
     <message>
-        <location filename="../src/monitor.cpp" line="117"/>
+        <location filename="../src/monitor.cpp" line="120"/>
         <source>CPU</source>
         <translation>Procesador</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="118"/>
+        <location filename="../src/monitor.cpp" line="121"/>
         <source>Memory</source>
         <translation>Memoria</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="119"/>
+        <location filename="../src/monitor.cpp" line="122"/>
         <source>Battery</source>
         <translation>Batería</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="120"/>
+        <location filename="../src/monitor.cpp" line="123"/>
         <source>Unknown</source>
         <comment>Cover label in summary page</comment>
         <translation type="unfinished"></translation>
@@ -225,19 +225,16 @@
 <context>
     <name>Summary</name>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="30"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation type="vanished">Acerca de</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="34"/>
         <source>Phone Controls</source>
-        <translation>Controles de teléfono</translation>
+        <translation type="vanished">Controles de teléfono</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="38"/>
         <source>Settings</source>
-        <translation>Ajustes</translation>
+        <translation type="vanished">Ajustes</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="51"/>

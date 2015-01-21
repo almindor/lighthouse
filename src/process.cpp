@@ -160,8 +160,9 @@ namespace Lighthouse {
         sort(fAppKeys);
         emit dataChanged(createIndex(0, 0), createIndex(getKeys().size(), 0));
 
-        if ( fProcCount != getKeys().size() ) {
-            fProcCount = getKeys().size();
+        const int keySize = fProcKeys.size();
+        if ( fProcCount != keySize ) {
+            fProcCount = keySize;
             emit summaryValueChanged();
         }
     }
