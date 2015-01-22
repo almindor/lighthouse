@@ -9,19 +9,42 @@
         <translation>Acerca de</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="42"/>
         <source>Copyright 2014 © by Aleš Katona.</source>
-        <translation>Copyright 2014 © por Aleš Katona.</translation>
+        <translation type="vanished">Copyright 2014 © por Aleš Katona.</translation>
+    </message>
+    <message>
+        <source>Battery monitoring code by Lavaux Gilles.</source>
+        <translation type="vanished">Código de monitoreo de batería por Lavaux Gilles.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="113"/>
+        <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</source>
+        <translation>Lighthouse es software libre licensiado bajo la GPL v3 disponible en &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Código de los controles de teléfono inspirado por &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Componente InfoPopup sacado de &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; por Marko Koschak.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
-        <source>Battery monitoring code by Lavaux Gilles.</source>
-        <translation>Código de monitoreo de batería por Lavaux Gilles.</translation>
+        <source>Translators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="42"/>
+        <source>Lighthouse v1.4 by Aleš Katona and Lavaux Gilles.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
-        <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</source>
-        <translation>Lighthouse es software libre licensiado bajo la GPL v3 disponible en &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Código de los controles de teléfono inspirado por &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Componente InfoPopup sacado de &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; por Marko Koschak.</translation>
+        <source>Czech translation by by &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="81"/>
+        <source>Russian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="97"/>
+        <source>Spanish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -82,22 +105,22 @@
 <context>
     <name>Lighthouse::Monitor</name>
     <message>
-        <location filename="../src/monitor.cpp" line="117"/>
+        <location filename="../src/monitor.cpp" line="120"/>
         <source>CPU</source>
         <translation>CPU</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="118"/>
+        <location filename="../src/monitor.cpp" line="121"/>
         <source>Memory</source>
         <translation>Memoria</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="119"/>
+        <location filename="../src/monitor.cpp" line="122"/>
         <source>Battery</source>
         <translation>Batería</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="120"/>
+        <location filename="../src/monitor.cpp" line="123"/>
         <source>Unknown</source>
         <comment>Cover label in summary page</comment>
         <translation type="unfinished"></translation>

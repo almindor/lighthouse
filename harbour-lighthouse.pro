@@ -10,6 +10,7 @@ TARGET = harbour-lighthouse
 
 TRANSLATIONS = \
     translations/harbour-lighthouse.ts \
+    translations/harbour-lighthouse-cz.ts \
     translations/harbour-lighthouse-ru.ts \
     translations/harbour-lighthouse-es.ts \
     translations/harbour-lighthouse-es_AR.ts

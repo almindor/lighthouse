@@ -67,6 +67,9 @@ namespace Lighthouse {
 
     void Monitor::setPaused(bool paused) {
         fPaused = paused;
+        if ( !fPaused ) {
+            fPauser.wakeAll();
+        }
     }
 
     bool Monitor::getPaused() const {
@@ -183,9 +186,10 @@ namespace Lighthouse {
                     procTemperature();
                 }
                 iteration++;
+                sleep(fInterval);
+            } else {
+                fPauser.wait(&fMutex);
             }
-
-            sleep(fInterval);
         }
     }
 
@@ -391,7 +395,7 @@ namespace Lighthouse {
     {
         QList<QVariant> args = msg.arguments();
         const QString status = args.at(0).toString();
-        fPaused = (status == "off");
+        setPaused(status == "off");
     }
 
 }
