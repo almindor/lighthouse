@@ -353,21 +353,31 @@ namespace Lighthouse {
         }
     }
 
-    QString Monitor::getAppName(const QString& fileName) const {
+    void Monitor::updateAppName(const QString& fileName) {
         const QString fullName = "/usr/share/applications/" + fileName;
         if ( !QFile::exists(fullName) ) {
             qWarning() << "File not found: " << fullName << "\n";
-            return QString();
+            return;
         }
 
         QSettings desktop(fullName, QSettings::IniFormat);
         desktop.setIniCodec("UTF-8");
-        const QString name = desktop.value("Desktop Entry/Name", "Unknown").toString();
-        if ( name == "Unknown" ) {
-            //qWarning() << "App name not found: " << fullName << "\n";
-            return QString();
+        const QString appName = desktop.value("Desktop Entry/Name", "Unknown").toString();
+        if ( appName == "Unknown" ) {
+            return;
         }
-        return name;
+
+        QString baseName(fileName);
+        if ( fileName.startsWith("apkd_launcher") ) { // android name needs cleanup
+            baseName.replace("apkd_launcher_", "");
+            const int n = baseName.indexOf('-');
+            baseName.remove(n, baseName.length() - n);
+            baseName.replace("_", ".");
+        } else { // sailfish just has .desktop at the end
+            baseName.replace(".desktop", "");
+        }
+
+        fAppNameMap[baseName] = appName;
     }
 
     void Monitor::updateApplicationMap(const QString& path) {
@@ -381,12 +391,7 @@ namespace Lighthouse {
         fAppNameMap.clear();
         while ( iterator.hasNext() ) {
             const QString& fileName = iterator.next();
-            QString baseName(fileName);
-            baseName.replace(".desktop", "");
-            const QString appName = getAppName(fileName);
-            if ( !appName.isEmpty() ) {
-                fAppNameMap[baseName] = appName;
-            }
+            updateAppName(fileName);
         }
     }
 

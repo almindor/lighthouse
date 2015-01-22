@@ -81,7 +81,6 @@ namespace Lighthouse {
             QWaitCondition fPauser;
             QMutex fMutex;
 
-            QString getAppName(const QString& fileName) const;
             void run() Q_DECL_OVERRIDE;
             void procCPUActivity();
             void procMemory();
@@ -92,6 +91,7 @@ namespace Lighthouse {
             void procTemperature();
             void procProcessorCount();
             void fillProcMap(ProcMap& procMap, IntList* deletes);
+            void updateAppName(const QString& fileName);
             int getInterval() const;
         public slots:
             void updateApplicationMap(const QString& path);
