@@ -31,12 +31,12 @@ namespace Lighthouse {
     // ProcessModel
 
     Process::Process(QObject *parent) : QAbstractListModel(parent), fProcKeys(), fAppKeys(),
-                     fCPUComparer(), fMemoryComparer(), fNameComparer() {
+                     fCPUComparer(), fMemoryComparer(), fNameComparer(), fSettings() {
         fUID = getuid();
         fProcMap = 0;
         fSortBy = 0;
         fSelectedPID = 0;
-        fApplicationsOnly = false;
+        fApplicationsOnly = fSettings.value("proc/apponly", false).toBool();
         fPageStatus = 0;
         fApplicationActive = false;
         fProcCount = 0;
@@ -261,6 +261,7 @@ namespace Lighthouse {
     void Process::nextApplicationsOnly() {
         beginResetModel();
         fApplicationsOnly = !fApplicationsOnly;
+        fSettings.setValue("proc/apponly", fApplicationsOnly);
         endResetModel();
         emit applicationsOnlyChanged();
     }

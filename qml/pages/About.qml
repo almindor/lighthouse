@@ -39,7 +39,7 @@ Page {
             }
             wrapMode: Text.WordWrap
             color: Theme.primaryColor
-            text: qsTr("Copyright 2014 © by Aleš Katona.")
+            text: qsTr("Lighthouse v1.4 by Aleš Katona and Lavaux Gilles.")
         }
 
         Label {
@@ -50,7 +50,55 @@ Page {
             }
             wrapMode: Text.WordWrap
             color: Theme.primaryColor
-            text: qsTr("Battery monitoring code by Lavaux Gilles.")
+            text: qsTr("Translators")
+        }
+
+        Text {
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: Theme.paddingLarge
+            }
+            color: Theme.secondaryColor
+            font.pointSize: 16
+            wrapMode: Text.WordWrap
+            text: qsTr("Czech translation by by <a href='https://www.transifex.com/accounts/profile/fri/'>fri</a>.")
+            linkColor: Theme.secondaryHighlightColor
+            onLinkActivated: {
+                 Qt.openUrlExternally(link);
+            }
+        }
+
+        Text {
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: Theme.paddingLarge
+            }
+            color: Theme.secondaryColor
+            font.pointSize: 16
+            wrapMode: Text.WordWrap
+            text: qsTr("Russian translation by <a href='https://www.transifex.com/accounts/profile/lewa/'>Alexey (lewa)</a>.")
+            linkColor: Theme.secondaryHighlightColor
+            onLinkActivated: {
+                 Qt.openUrlExternally(link);
+            }
+        }
+
+        Text {
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: Theme.paddingLarge
+            }
+            color: Theme.secondaryColor
+            font.pointSize: 16
+            wrapMode: Text.WordWrap
+            text: qsTr("Spanish translation by <a href='https://www.transifex.com/accounts/profile/hobarrera/'>Hugo Osvaldo Barrera (hobarrera)</a>.")
+            linkColor: Theme.secondaryHighlightColor
+            onLinkActivated: {
+                 Qt.openUrlExternally(link);
+            }
         }
 
         Text {

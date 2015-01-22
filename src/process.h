@@ -21,6 +21,7 @@
 #include <QObject>
 #include <QVariantList>
 #include <QAbstractListModel>
+#include <QSettings>
 #include "types.h"
 
 namespace Lighthouse {
@@ -71,6 +72,7 @@ namespace Lighthouse {
         CPUComparer fCPUComparer;
         MemoryComparer fMemoryComparer;
         NameComparer fNameComparer;
+        QSettings fSettings;
 
         void removeKeys(const PIDList &deletes, PIDList& list, bool really);
         void appendKeys(const PIDList &adds, PIDList& list, bool really, bool appsOnly);
