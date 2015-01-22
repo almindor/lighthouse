@@ -82,7 +82,6 @@ namespace Lighthouse {
             QMutex fMutex;
 
             QString getAppName(const QString& fileName) const;
-            void fillApplicationMap();
             void run() Q_DECL_OVERRIDE;
             void procCPUActivity();
             void procMemory();
