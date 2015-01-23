@@ -1,3 +1,7 @@
+1.4 - fix thread sleeping using QWaitLock (saves battery), add czech translation and translators credits.
+
+1.3 - fix process update bugs + lower CPU usage improve sleep mode + add applications filter
+
 1.2 - add Applications filter to process list. Optimize monitor thread to be more idle when details not needed.
 
 1.1 - add permission denied notification for process kill attempts on non-owned processes. Pause on press on process list.
