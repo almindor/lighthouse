@@ -137,7 +137,7 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="74"/>
         <source> kB free out of </source>
-        <translation>KB未使用；</translation>
+        <translation>kB未使用；</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="74"/>
