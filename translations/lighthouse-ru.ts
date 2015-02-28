@@ -9,14 +9,6 @@
         <translation>О программе</translation>
     </message>
     <message>
-        <source>Copyright 2014 © by Aleš Katona.</source>
-        <translation type="vanished">Copyright 2014 © by Aleš Katona.</translation>
-    </message>
-    <message>
-        <source>Battery monitoring code by Lavaux Gilles.</source>
-        <translation type="vanished">Battery monitoring code by Lavaux Gilles.</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/About.qml" line="113"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</source>
         <translation>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</translation>
@@ -24,27 +16,27 @@
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
         <source>Translators</source>
-        <translation type="unfinished"></translation>
+        <translation>Переводчики</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="42"/>
         <source>Lighthouse v1.4 by Aleš Katona and Lavaux Gilles.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lighthouse v1.4 by Aleš Katona and Lavaux Gilles.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
         <source>Czech translation by by &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Чешский перевод &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="81"/>
         <source>Russian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Русский перевод &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="97"/>
         <source>Spanish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Испанский перевод &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -57,12 +49,12 @@
     <message>
         <location filename="../qml/pages/Battery.qml" line="75"/>
         <source>Health: </source>
-        <translation>Состояние:</translation>
+        <translation>Состояние: </translation>
     </message>
     <message>
         <location filename="../qml/pages/Battery.qml" line="83"/>
         <source>Technology: </source>
-        <translation>Технология:</translation>
+        <translation>Технология: </translation>
     </message>
 </context>
 <context>
@@ -145,12 +137,12 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="74"/>
         <source> kB free out of </source>
-        <translation>kB свободно из</translation>
+        <translation> kB свободно из </translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="74"/>
         <source> kB total</source>
-        <translation>kB всего</translation>
+        <translation> kB всего</translation>
     </message>
 </context>
 <context>
@@ -211,12 +203,12 @@
     <message>
         <location filename="../qml/pages/Process.qml" line="85"/>
         <source>cpu: </source>
-        <translation>процессор:</translation>
+        <translation>процессор: </translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="96"/>
         <source>mem: </source>
-        <translation>память:</translation>
+        <translation>память: </translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="167"/>
@@ -270,27 +262,27 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="62"/>
         <source>Uptime: </source>
-        <translation>Время работы:</translation>
+        <translation>Время работы: </translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="72"/>
         <source>CPUs: </source>
-        <translation>Процессоры:</translation>
+        <translation>Процессоры: </translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="82"/>
         <source>Memory: </source>
-        <translation>Память:</translation>
+        <translation>Память: </translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="91"/>
         <source>Processes: </source>
-        <translation>Процессы:</translation>
+        <translation>Процессы: </translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="100"/>
         <source>Battery: </source>
-        <translation>Батарея:</translation>
+        <translation>Батарея: </translation>
     </message>
 </context>
 </TS>

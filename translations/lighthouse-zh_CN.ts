@@ -1,42 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es_AR">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh_CN" version="2.1">
 <context>
     <name>About</name>
     <message>
         <location filename="../qml/pages/About.qml" line="31"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation>关于</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="113"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</source>
-        <translation>Lighthouse es software libre licensiado bajo la GPL v3 disponible en &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Código de los controles de teléfono inspirado por &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Componente InfoPopup sacado de &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; por Marko Koschak.</translation>
+        <translation>Lighthouse属于免费软件，使用GPL v3协议。你可以在 &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt; 找到。手机控制代码DBus受益于 &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;。 InfoPopup 组件来自Marko Koschak的 &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; 。</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
         <source>Translators</source>
-        <translation type="unfinished"></translation>
+        <translation>翻译</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="42"/>
         <source>Lighthouse v1.4 by Aleš Katona and Lavaux Gilles.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lighthouse v1.4作者Aleš Katona和Lavaux Gilles。</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
         <source>Czech translation by by &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>捷克语由&lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;翻译。</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="81"/>
         <source>Russian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>俄语由&lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;翻译。</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="97"/>
         <source>Spanish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>西班牙语由&lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;翻译。</translation>
     </message>
 </context>
 <context>
@@ -44,17 +42,17 @@
     <message>
         <location filename="../qml/pages/Battery.qml" line="29"/>
         <source>Battery Usage</source>
-        <translation>Uso de batería</translation>
+        <translation>电池使用情况</translation>
     </message>
     <message>
         <location filename="../qml/pages/Battery.qml" line="75"/>
         <source>Health: </source>
-        <translation>Salud:</translation>
+        <translation>健康状况：</translation>
     </message>
     <message>
         <location filename="../qml/pages/Battery.qml" line="83"/>
         <source>Technology: </source>
-        <translation>Tecnología</translation>
+        <translation>技术：</translation>
     </message>
 </context>
 <context>
@@ -62,7 +60,7 @@
     <message>
         <location filename="../qml/pages/CPU.qml" line="29"/>
         <source>CPU Usage</source>
-        <translation>Uso de CPU</translation>
+        <translation>CPU使用情况</translation>
     </message>
     <message>
         <location filename="../qml/pages/CPU.qml" line="78"/>
@@ -78,7 +76,7 @@
         <location filename="../src/battery.cpp" line="11"/>
         <source>Unavailable</source>
         <comment>battery status</comment>
-        <translation>No disponible</translation>
+        <translation>不可用</translation>
     </message>
 </context>
 <context>
@@ -86,12 +84,12 @@
     <message>
         <location filename="../src/cpu.cpp" line="46"/>
         <source>Data</source>
-        <translation>Datos</translation>
+        <translation>数据</translation>
     </message>
     <message>
         <location filename="../src/cpu.cpp" line="50"/>
         <source>Description</source>
-        <translation>Descripción</translation>
+        <translation>描述</translation>
     </message>
 </context>
 <context>
@@ -104,18 +102,18 @@
     <message>
         <location filename="../src/monitor.cpp" line="121"/>
         <source>Memory</source>
-        <translation>Memoria</translation>
+        <translation>内存</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="122"/>
         <source>Battery</source>
-        <translation>Batería</translation>
+        <translation>电池</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="123"/>
         <source>Unknown</source>
         <comment>Cover label in summary page</comment>
-        <translation type="unfinished"></translation>
+        <translation>未知</translation>
     </message>
 </context>
 <context>
@@ -124,7 +122,7 @@
         <location filename="../src/process.cpp" line="75"/>
         <source>Unknown</source>
         <comment>Process name</comment>
-        <translation type="unfinished"></translation>
+        <translation>未知</translation>
     </message>
 </context>
 <context>
@@ -132,17 +130,17 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="29"/>
         <source>Memory Usage</source>
-        <translation>Uso de memoria</translation>
+        <translation>内存使用情况</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="74"/>
         <source> kB free out of </source>
-        <translation>kB disponible de</translation>
+        <translation>kB未使用；</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="74"/>
         <source> kB total</source>
-        <translation>kB total</translation>
+        <translation>kB总共</translation>
     </message>
 </context>
 <context>
@@ -150,17 +148,17 @@
     <message>
         <location filename="../qml/pages/Phone.qml" line="27"/>
         <source>Phone Controls</source>
-        <translation>Controles del teléfono</translation>
+        <translation>控制</translation>
     </message>
     <message>
         <location filename="../qml/pages/Phone.qml" line="36"/>
         <source>Reboot</source>
-        <translation>Reiniciar</translation>
+        <translation>重启</translation>
     </message>
     <message>
         <location filename="../qml/pages/Phone.qml" line="45"/>
         <source>Shutdown</source>
-        <translation>Apagar</translation>
+        <translation>关机</translation>
     </message>
 </context>
 <context>
@@ -168,52 +166,52 @@
     <message>
         <location filename="../qml/pages/Process.qml" line="29"/>
         <source>Applications</source>
-        <translation>Aplicaciones</translation>
+        <translation>应用</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="29"/>
         <source>Processes</source>
-        <translation>Procesos</translation>
+        <translation>进程</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="34"/>
         <source>Show Processes</source>
-        <translation>Mostrar Procesos</translation>
+        <translation>显示进程</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="34"/>
         <source>Show Applications</source>
-        <translation>Mostrar Aplicaciones</translation>
+        <translation>显示进程</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="39"/>
         <source>Sort by Name</source>
-        <translation>Ordenar por Nombre</translation>
+        <translation>按名称排序</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="45"/>
         <source>Sort by Memory Usage</source>
-        <translation>Ordenar por Uso de Memoria</translation>
+        <translation>按内存用量排序</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="51"/>
         <source>Sort by CPU Usage</source>
-        <translation>Ordenar por uso de CPU</translation>
+        <translation>按CPU用量排序</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="85"/>
         <source>cpu: </source>
-        <translation>cpu:</translation>
+        <translation>cpu：</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="96"/>
         <source>mem: </source>
-        <translation>mem:</translation>
+        <translation>内存：</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="167"/>
         <source>Kill</source>
-        <translation>Matar</translation>
+        <translation>结束</translation>
     </message>
 </context>
 <context>
@@ -229,12 +227,12 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="29"/>
         <source>Settings</source>
-        <translation>Configuración</translation>
+        <translation>设置</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="38"/>
         <source>Update interval</source>
-        <translation>Actualizar intervalo</translation>
+        <translation>更新周期</translation>
     </message>
 </context>
 <context>
@@ -242,47 +240,47 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="30"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation>关于</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="34"/>
         <source>Phone Controls</source>
-        <translation>Controles de teléfono</translation>
+        <translation>控制</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="38"/>
         <source>Settings</source>
-        <translation>Configuración</translation>
+        <translation>设置</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="51"/>
         <source>Summary</source>
-        <translation>Resumen</translation>
+        <translation>总结</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="62"/>
         <source>Uptime: </source>
-        <translation>Tiempo prendido:</translation>
+        <translation>已使用时间：</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="72"/>
         <source>CPUs: </source>
-        <translation>CPUs:</translation>
+        <translation>CPU：</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="82"/>
         <source>Memory: </source>
-        <translation>Memoria:</translation>
+        <translation>内存：</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="91"/>
         <source>Processes: </source>
-        <translation>Procesos</translation>
+        <translation>进程：</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="100"/>
         <source>Battery: </source>
-        <translation>Batería</translation>
+        <translation>电池：</translation>
     </message>
 </context>
 </TS>
