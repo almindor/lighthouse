@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh_TW" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="zh_TW">
 <context>
     <name>About</name>
     <message>
@@ -217,9 +219,8 @@
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../src/lighthouse.cpp" line="77"/>
         <source>Lighthouse</source>
-        <translation>Lighthouse</translation>
+        <translation type="vanished">Lighthouse</translation>
     </message>
 </context>
 <context>
