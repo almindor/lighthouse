@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="cs" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="cs">
 <context>
     <name>About</name>
     <message>
@@ -14,27 +16,27 @@
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
         <source>Translators</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="42"/>
         <source>Lighthouse v1.4 by Aleš Katona and Lavaux Gilles.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
         <source>Czech translation by by &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="81"/>
         <source>Russian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="97"/>
         <source>Spanish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -217,9 +219,8 @@
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../src/lighthouse.cpp" line="77"/>
         <source>Lighthouse</source>
-        <translation>Maják</translation>
+        <translation type="vanished">Maják</translation>
     </message>
 </context>
 <context>

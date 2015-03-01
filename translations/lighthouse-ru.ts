@@ -219,9 +219,8 @@
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../src/lighthouse.cpp" line="77"/>
         <source>Lighthouse</source>
-        <translation>Lighthouse</translation>
+        <translation type="vanished">Lighthouse</translation>
     </message>
 </context>
 <context>

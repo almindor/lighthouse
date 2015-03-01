@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
     QObject::connect(&appsWatch, &QFileSystemWatcher::directoryChanged,
                      &monitor, &Monitor::updateApplicationMap);
 
-    QString qml = QString("qml/%1.qml").arg(QGuiApplication::tr("Lighthouse"));
+    QString qml = QString("qml/%1.qml").arg("Lighthouse");
     view->rootContext()->setContextProperty("cpu", &cpu);
     view->rootContext()->setContextProperty("memory", &memory);
     view->rootContext()->setContextProperty("monitor", &monitor);

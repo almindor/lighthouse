@@ -10,10 +10,14 @@ TARGET = lighthouse
 
 TRANSLATIONS = \
     translations/lighthouse.ts \
-    translations/lighthouse-cz.ts \
+    translations/lighthouse-cs.ts \
+    translations/lighthouse-fr.ts \
     translations/lighthouse-ru.ts \
     translations/lighthouse-es.ts \
-    translations/lighthouse-es_AR.ts
+    translations/lighthouse-es_AR.ts \
+    translations/lighthouse-sw.ts \
+    translations/lighthouse-zh_CN.ts \
+    translations/lighthouse-zh_TN.ts
 
 CONFIG += \
     sailfishapp \
