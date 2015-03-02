@@ -9,6 +9,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../qml/pages/About.qml" line="42"/>
+        <source>Lighthouse v1.4.1 by Aleš Katona and Lavaux Gilles.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/About.qml" line="113"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</source>
         <translation type="unfinished"></translation>
@@ -16,11 +21,6 @@
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
         <source>Translators</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/About.qml" line="42"/>
-        <source>Lighthouse v1.4 by Aleš Katona and Lavaux Gilles.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -91,6 +91,15 @@
     <message>
         <location filename="../src/cpu.cpp" line="50"/>
         <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Lighthouse::Languages</name>
+    <message>
+        <location filename="../src/languages.cpp" line="71"/>
+        <source>Unknown</source>
+        <comment>language</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -217,23 +226,25 @@
     </message>
 </context>
 <context>
-    <name>QGuiApplication</name>
-    <message>
-        <location filename="../src/lighthouse.cpp" line="77"/>
-        <source>Lighthouse</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="29"/>
+        <location filename="../qml/pages/Settings.qml" line="28"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="38"/>
         <source>Update interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="51"/>
+        <source>Languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="84"/>
+        <source>App Restart Required</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

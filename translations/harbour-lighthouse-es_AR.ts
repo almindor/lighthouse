@@ -9,12 +9,9 @@
         <translation>Acerca de</translation>
     </message>
     <message>
-        <source>Copyright 2014 © by Aleš Katona.</source>
-        <translation type="vanished">Copyright 2014 © por Aleš Katona.</translation>
-    </message>
-    <message>
-        <source>Battery monitoring code by Lavaux Gilles.</source>
-        <translation type="vanished">Código de monitoreo de batería por Lavaux Gilles.</translation>
+        <location filename="../qml/pages/About.qml" line="42"/>
+        <source>Lighthouse v1.4.1 by Aleš Katona and Lavaux Gilles.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="113"/>
@@ -24,11 +21,6 @@
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
         <source>Translators</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/About.qml" line="42"/>
-        <source>Lighthouse v1.4 by Aleš Katona and Lavaux Gilles.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -100,6 +92,15 @@
         <location filename="../src/cpu.cpp" line="50"/>
         <source>Description</source>
         <translation>Descripción</translation>
+    </message>
+</context>
+<context>
+    <name>Lighthouse::Languages</name>
+    <message>
+        <location filename="../src/languages.cpp" line="71"/>
+        <source>Unknown</source>
+        <comment>language</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -227,15 +228,14 @@
 <context>
     <name>QGuiApplication</name>
     <message>
-        <location filename="../src/lighthouse.cpp" line="77"/>
         <source>Lighthouse</source>
-        <translation>Lighthouse</translation>
+        <translation type="vanished">Lighthouse</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="29"/>
+        <location filename="../qml/pages/Settings.qml" line="28"/>
         <source>Settings</source>
         <translation>Configuración</translation>
     </message>
@@ -243,6 +243,16 @@
         <location filename="../qml/pages/Settings.qml" line="38"/>
         <source>Update interval</source>
         <translation>Actualizar intervalo</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="51"/>
+        <source>Languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="84"/>
+        <source>App Restart Required</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

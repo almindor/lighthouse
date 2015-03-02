@@ -27,6 +27,7 @@
 #include <QGuiApplication>
 #include <QFileSystemWatcher>
 #include "types.h"
+#include "languages.h"
 #include "monitor.h"
 #include "cpu.h"
 #include "memory.h"
@@ -43,8 +44,7 @@ int main(int argc, char *argv[])
     qRegisterMetaType< ProcMap >( "ProcMap" );
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
-    QQuickView *view = SailfishApp::createView();
-
+    Languages languages(app);
     Monitor monitor;
     CPU cpu;
     Process process;
@@ -52,6 +52,8 @@ int main(int argc, char *argv[])
     Battery battery;
     QFileSystemWatcher appsWatch;
     appsWatch.addPath("/usr/share/applications");
+
+    QQuickView *view = SailfishApp::createView();
 
     QObject::connect(&monitor, &Monitor::CPUUsageChanged,
                      &cpu, &CPU::setUsage);
@@ -74,7 +76,8 @@ int main(int argc, char *argv[])
     QObject::connect(&appsWatch, &QFileSystemWatcher::directoryChanged,
                      &monitor, &Monitor::updateApplicationMap);
 
-    QString qml = QString("qml/%1.qml").arg(QGuiApplication::tr("Lighthouse"));
+    QString qml = QString("qml/%1.qml").arg(ANAME);
+    view->rootContext()->setContextProperty("languages", &languages);
     view->rootContext()->setContextProperty("cpu", &cpu);
     view->rootContext()->setContextProperty("memory", &memory);
     view->rootContext()->setContextProperty("monitor", &monitor);

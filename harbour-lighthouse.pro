@@ -10,10 +10,15 @@ TARGET = harbour-lighthouse
 
 TRANSLATIONS = \
     translations/harbour-lighthouse.ts \
-    translations/harbour-lighthouse-cz.ts \
+    translations/harbour-lighthouse-cs.ts \
+    translations/harbour-lighthouse-fr.ts \
     translations/harbour-lighthouse-ru.ts \
     translations/harbour-lighthouse-es.ts \
-    translations/harbour-lighthouse-es_AR.ts
+    translations/harbour-lighthouse-es_AR.ts \
+    translations/harbour-lighthouse-sv.ts \
+    translations/harbour-lighthouse-it.ts \
+    translations/harbour-lighthouse-zh_CN.ts \
+    translations/harbour-lighthouse-zh_TW.ts
 
 CONFIG += \
     sailfishapp \
@@ -30,7 +35,8 @@ SOURCES += \
     src/process.cpp \
     src/monitor.cpp \
     src/lighthouse.cpp \
-    src/battery.cpp
+    src/battery.cpp \
+    src/languages.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
@@ -56,7 +62,8 @@ HEADERS += \
     src/types.h \
     src/process.h \
     src/monitor.h \
-    src/battery.h
+    src/battery.h \
+    src/languages.h
 
 lupdate_only {
 SOURCES += \
