@@ -30,7 +30,7 @@ namespace Lighthouse {
         QStringList files = dir.entryList();
         fList.append(QLocale::system());
         foreach ( QString f, files ) {
-            const int n = f.indexOf('-');
+            const int n = f.lastIndexOf('-');
             if ( n < 0 ) {
                 continue;
             }
