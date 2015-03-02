@@ -62,7 +62,7 @@ Page {
             color: Theme.secondaryColor
             font.pointSize: 16
             wrapMode: Text.WordWrap
-            text: qsTr("Czech translation by by <a href='https://www.transifex.com/accounts/profile/fri/'>fri</a>.")
+            text: qsTr("Czech translation by <a href='https://www.transifex.com/accounts/profile/fri/'>fri</a>.")
             linkColor: Theme.secondaryHighlightColor
             onLinkActivated: {
                  Qt.openUrlExternally(link);
@@ -95,6 +95,86 @@ Page {
             font.pointSize: 16
             wrapMode: Text.WordWrap
             text: qsTr("Spanish translation by <a href='https://www.transifex.com/accounts/profile/hobarrera/'>Hugo Osvaldo Barrera (hobarrera)</a>.")
+            linkColor: Theme.secondaryHighlightColor
+            onLinkActivated: {
+                 Qt.openUrlExternally(link);
+            }
+        }
+
+        Text {
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: Theme.paddingLarge
+            }
+            color: Theme.secondaryColor
+            font.pointSize: 16
+            wrapMode: Text.WordWrap
+            text: qsTr("Taiwanese translation by <a href='https://www.transifex.com/accounts/profile/hanhsuan/'>hanhsuan</a>.")
+            linkColor: Theme.secondaryHighlightColor
+            onLinkActivated: {
+                 Qt.openUrlExternally(link);
+            }
+        }
+
+        Text {
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: Theme.paddingLarge
+            }
+            color: Theme.secondaryColor
+            font.pointSize: 16
+            wrapMode: Text.WordWrap
+            text: qsTr("Chinese translation by <a href='https://www.transifex.com/accounts/profile/TylerTemp/'>TylerTemp</a>.")
+            linkColor: Theme.secondaryHighlightColor
+            onLinkActivated: {
+                 Qt.openUrlExternally(link);
+            }
+        }
+
+        Text {
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: Theme.paddingLarge
+            }
+            color: Theme.secondaryColor
+            font.pointSize: 16
+            wrapMode: Text.WordWrap
+            text: qsTr("French translation by <a href='https://www.transifex.com/accounts/profile/Nerfiaux/'>Guillaume ARIAUX (Nerfiaux)</a>.")
+            linkColor: Theme.secondaryHighlightColor
+            onLinkActivated: {
+                 Qt.openUrlExternally(link);
+            }
+        }
+
+        Text {
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: Theme.paddingLarge
+            }
+            color: Theme.secondaryColor
+            font.pointSize: 16
+            wrapMode: Text.WordWrap
+            text: qsTr("Italian translation by <a href='https://www.transifex.com/accounts/profile/ghostofasmile/'>Francesco Vaccaro (ghostofasmile)</a>.")
+            linkColor: Theme.secondaryHighlightColor
+            onLinkActivated: {
+                 Qt.openUrlExternally(link);
+            }
+        }
+
+        Text {
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: Theme.paddingLarge
+            }
+            color: Theme.secondaryColor
+            font.pointSize: 16
+            wrapMode: Text.WordWrap
+            text: qsTr("Swedish translation by <a href='https://www.transifex.com/accounts/profile/AsavarTzeth/'>Patrik Nilsson (AsavarTzeth)</a>.")
             linkColor: Theme.secondaryHighlightColor
             onLinkActivated: {
                  Qt.openUrlExternally(link);
