@@ -34,7 +34,7 @@ namespace Lighthouse {
             if ( n < 0 ) {
                 continue;
             }
-            const int m = f.indexOf('.');
+            const int m = f.lastIndexOf('.');
             QStringRef locstr(&f, n + 1, m - n - 1);
             QLocale locale = QLocale(locstr.toString());
             if ( locale.name() != QLocale::system().name() ) {
