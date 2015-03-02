@@ -22,28 +22,68 @@ import Sailfish.Silica 1.0
 Page {
     id: page
 
-    Column {
-        width: page.width
-        spacing: Theme.paddingLarge
-        PageHeader {
-            title: qsTr("Settings")
+    PageHeader {
+        id: pageHeader
+        anchors.top: parent.top
+        title: qsTr("Settings")
+    }
+
+    Slider {
+        id: slider
+        minimumValue: 1
+        maximumValue: 10
+        stepSize: 1
+        value: monitor.interval
+        valueText: value + 's'
+        label: qsTr("Update interval")
+        onValueChanged: monitor.interval = value
+        anchors {
+            top: pageHeader.bottom
+            left: parent.left
+            right: parent.right
+            margins: Theme.paddingLarge
+        }
+    }
+
+    PageHeader {
+        id: langHeader
+        anchors.top: slider.bottom
+        title: qsTr("Languages")
+    }
+
+    SilicaListView {
+        id: languageList
+        spacing: 2
+        anchors {
+            top: langHeader.bottom
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            margins: Theme.paddingLarge
         }
 
-        Slider {
-            minimumValue: 1
-            maximumValue: 10
-            stepSize: 1
-            value: monitor.interval
-            valueText: value + 's'
-            label: qsTr("Update interval")
-            onValueChanged: monitor.interval = value
+        VerticalScrollDecorator {}
+
+        model: languages
+
+        delegate: BackgroundItem {
+            id: languageDelegate
             anchors {
                 left: parent.left
                 right: parent.right
-                margins: Theme.paddingLarge
+                margins: Theme.paddingSmall
+            }
+
+            Label {
+                anchors.centerIn: parent
+                text: language + " [" + country + "]"
+            }
+
+            onClicked: {
+                languages.selectLanguage(index)
+                applicationWindow.infoPopupRef.show("Info", qsTr("App Restart Required"), 2000, true)
             }
         }
-
     }
 
 }

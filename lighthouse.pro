@@ -15,7 +15,8 @@ TRANSLATIONS = \
     translations/lighthouse-ru.ts \
     translations/lighthouse-es.ts \
     translations/lighthouse-es_AR.ts \
-    translations/lighthouse-sw.ts \
+    translations/lighthouse-sv.ts \
+    translations/lighthouse-it.ts \
     translations/lighthouse-zh_CN.ts \
     translations/lighthouse-zh_TW.ts
 
@@ -34,7 +35,8 @@ SOURCES += \
     src/process.cpp \
     src/monitor.cpp \
     src/lighthouse.cpp \
-    src/battery.cpp
+    src/battery.cpp \
+    src/languages.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
@@ -60,7 +62,8 @@ HEADERS += \
     src/types.h \
     src/process.h \
     src/monitor.h \
-    src/battery.h
+    src/battery.h \
+    src/languages.h
 
 lupdate_only {
 SOURCES += \

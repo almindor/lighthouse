@@ -24,6 +24,8 @@
 
 namespace Lighthouse {
 
+    const QString ANAME = QStringLiteral("Lighthouse");
+    const QString LNAME = QStringLiteral("lighthouse");
     typedef QList<int> IntList;
     typedef QList<pid_t> PIDList;
     typedef QVector<unsigned long long> QLLVector;

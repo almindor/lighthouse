@@ -95,6 +95,15 @@
     </message>
 </context>
 <context>
+    <name>Lighthouse::Languages</name>
+    <message>
+        <location filename="../src/languages.cpp" line="71"/>
+        <source>Unknown</source>
+        <comment>language</comment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Lighthouse::Monitor</name>
     <message>
         <location filename="../src/monitor.cpp" line="120"/>
@@ -219,13 +228,23 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="29"/>
+        <location filename="../qml/pages/Settings.qml" line="28"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="38"/>
         <source>Update interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="51"/>
+        <source>Languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="84"/>
+        <source>App Restart Required</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
