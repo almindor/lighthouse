@@ -30,10 +30,10 @@ namespace Lighthouse {
         QStringList files = dir.entryList();
         fList.append(QLocale::system());
         foreach ( QString f, files ) {
-            const int n = f.lastIndexOf('-');
-            if ( n < 0 ) {
+            if ( f.endsWith("lighthouse.qm") ) {
                 continue;
             }
+            const int n = f.lastIndexOf('-');
             const int m = f.lastIndexOf('.');
             QStringRef locstr(&f, n + 1, m - n - 1);
             QLocale locale = QLocale(locstr.toString());
