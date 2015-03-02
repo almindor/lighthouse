@@ -9,6 +9,11 @@
         <translation>À propos</translation>
     </message>
     <message>
+        <location filename="../qml/pages/About.qml" line="42"/>
+        <source>Lighthouse v1.4.1 by Aleš Katona and Lavaux Gilles.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/About.qml" line="113"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</source>
         <translation>Lighthouse est un logiciel libre sous licences GPL v3 disponible sur &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Le code DBus des contrôles du téléphone sont inspirés de &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Le composant InfoPopup est repris de &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; par Marko Koschak.</translation>
@@ -16,11 +21,6 @@
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
         <source>Translators</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/About.qml" line="42"/>
-        <source>Lighthouse v1.4 by Aleš Katona and Lavaux Gilles.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
