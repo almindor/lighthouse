@@ -9,7 +9,7 @@
 TARGET = harbour-lighthouse
 
 TRANSLATIONS = \
-    translations/harbour-lighthouse.ts \
+    translations/harbour-lighthouse-en.ts \
     translations/harbour-lighthouse-cs.ts \
     translations/harbour-lighthouse-fr.ts \
     translations/harbour-lighthouse-ru.ts \

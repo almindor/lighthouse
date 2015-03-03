@@ -28,18 +28,15 @@ namespace Lighthouse {
         dir.setFilter(QDir::Files);
         //dir.setNameFilters(); // TODO to make sure
         QStringList files = dir.entryList();
-        fList.append(QLocale::system());
         foreach ( QString f, files ) {
             if ( f.endsWith("lighthouse.qm") ) {
                 continue;
             }
             const int n = f.lastIndexOf('-');
             const int m = f.lastIndexOf('.');
-            QStringRef locstr(&f, n + 1, m - n - 1);
-            QLocale locale = QLocale(locstr.toString());
-            if ( locale.name() != QLocale::system().name() ) {
-                fList.append(locale);
-            }
+            const QStringRef locstr(&f, n + 1, m - n - 1);
+            const QLocale locale = QLocale(locstr.toString());
+            fList.append(locale);
         }
     }
 
