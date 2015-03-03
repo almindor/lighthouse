@@ -122,7 +122,7 @@
 <context>
     <name>Lighthouse::Languages</name>
     <message>
-        <location filename="../src/languages.cpp" line="71"/>
+        <location filename="../src/languages.cpp" line="68"/>
         <source>Unknown</source>
         <comment>language</comment>
         <translation type="unfinished"></translation>

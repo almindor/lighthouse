@@ -9,7 +9,7 @@
 TARGET = lighthouse
 
 TRANSLATIONS = \
-    translations/lighthouse.ts \
+    translations/lighthouse-en.ts \
     translations/lighthouse-cs.ts \
     translations/lighthouse-fr.ts \
     translations/lighthouse-ru.ts \
