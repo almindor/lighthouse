@@ -1,3 +1,5 @@
+1.4.2 - make english language explicitly selectable
+
 1.4.1 - add language choice to settings
 
 1.4 - fix thread sleeping using QWaitLock (saves battery), add czech translation and translators credits.
