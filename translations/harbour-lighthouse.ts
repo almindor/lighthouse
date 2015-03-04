@@ -10,7 +10,7 @@
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="42"/>
-        <source>Lighthouse v1.4.1 by Aleš Katona and Lavaux Gilles.</source>
+        <source>Lighthouse v1.4.2 by Aleš Katona and Lavaux Gilles.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

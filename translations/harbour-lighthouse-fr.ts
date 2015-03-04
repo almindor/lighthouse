@@ -9,11 +9,6 @@
         <translation>À propos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="42"/>
-        <source>Lighthouse v1.4.1 by Aleš Katona and Lavaux Gilles.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../qml/pages/About.qml" line="65"/>
         <source>Czech translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
@@ -51,6 +46,11 @@
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
         <source>Translators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="42"/>
+        <source>Lighthouse v1.4.2 by Aleš Katona and Lavaux Gilles.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

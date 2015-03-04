@@ -39,7 +39,7 @@ Page {
             }
             wrapMode: Text.WordWrap
             color: Theme.primaryColor
-            text: qsTr("Lighthouse v1.4.1 by Aleš Katona and Lavaux Gilles.")
+            text: qsTr("Lighthouse v1.4.2 by Aleš Katona and Lavaux Gilles.")
         }
 
         Label {

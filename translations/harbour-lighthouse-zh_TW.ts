@@ -9,9 +9,13 @@
         <translation>關於</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="42"/>
         <source>Lighthouse v1.4.1 by Aleš Katona and Lavaux Gilles.</source>
-        <translation type="unfinished">Lighthouse v1.4由 Aleš Katona and Lavaux Gilles所開發 {1.4.1 ?}</translation>
+        <translation type="obsolete">Lighthouse v1.4由 Aleš Katona and Lavaux Gilles所開發 {1.4.1 ?}</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="42"/>
+        <source>Lighthouse v1.4.2 by Aleš Katona and Lavaux Gilles.</source>
+        <translation type="unfinished">Lighthouse v1.4由 Aleš Katona and Lavaux Gilles所開發 {1.4.2 ?}</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
