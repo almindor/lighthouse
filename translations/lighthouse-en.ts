@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh_CN">
+<TS version="2.1">
 <context>
     <name>About</name>
     <message>
@@ -10,12 +10,32 @@
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="42"/>
-        <source>Lighthouse v1.4.1 by Aleš Katona and Lavaux Gilles.</source>
+        <source>Lighthouse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="42"/>
+        <source>by Aleš Katona and Lavaux Gilles.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="53"/>
+        <source>Translators</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
         <source>Czech translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="81"/>
+        <source>Russian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="97"/>
+        <source>Spanish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -46,21 +66,6 @@
     <message>
         <location filename="../qml/pages/About.qml" line="193"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/About.qml" line="53"/>
-        <source>Translators</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/About.qml" line="81"/>
-        <source>Russian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/About.qml" line="97"/>
-        <source>Spanish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -130,6 +135,30 @@
 </context>
 <context>
     <name>Lighthouse::Monitor</name>
+    <message>
+        <location filename="../src/monitor.cpp" line="95"/>
+        <source>cpu</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/monitor.cpp" line="96"/>
+        <source>memory</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/monitor.cpp" line="97"/>
+        <source>battery</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/monitor.cpp" line="98"/>
+        <source>unknown</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <location filename="../src/monitor.cpp" line="120"/>
         <source>CPU</source>

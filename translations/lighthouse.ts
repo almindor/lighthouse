@@ -10,7 +10,12 @@
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="42"/>
-        <source>Lighthouse v1.4.1 by Aleš Katona and Lavaux Gilles.</source>
+        <source>Lighthouse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="42"/>
+        <source>by Aleš Katona and Lavaux Gilles.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -130,6 +135,30 @@
 </context>
 <context>
     <name>Lighthouse::Monitor</name>
+    <message>
+        <location filename="../src/monitor.cpp" line="95"/>
+        <source>cpu</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/monitor.cpp" line="96"/>
+        <source>memory</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/monitor.cpp" line="97"/>
+        <source>battery</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/monitor.cpp" line="98"/>
+        <source>unknown</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <location filename="../src/monitor.cpp" line="120"/>
         <source>CPU</source>

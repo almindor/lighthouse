@@ -1,10 +1,10 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="es_AR" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nb" version="2.1">
 <context>
     <name>About</name>
     <message>
         <location filename="../qml/pages/About.qml" line="31"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation>Om</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="42"/>
@@ -14,52 +14,53 @@
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
         <source>Translators</source>
-        <translation>Traductores</translation>
+        <translation>Oversettere</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
         <source>Czech translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</source>
-        <translation>Traducción checa por &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</translation>
+        <translation>Tsjekkisk oversetting av &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="81"/>
         <source>Russian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</source>
-        <translation>Traducción rusa por &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</translation>
+        <translation>Russisk oversetting av &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="97"/>
         <source>Spanish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</source>
-        <translation>Traducción española por &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</translation>
+        <translation>Spansk oversetting av &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="113"/>
         <source>Taiwanese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;.</source>
-        <translation>Traducción taiwanesa por &lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;.</translation>
+        <translation>Taiwansk oversetting av &lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="129"/>
         <source>Chinese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;.</source>
-        <translation>Traducción china por &lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;.</translation>
+        <translation>Kinesisk oversetting av &lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="145"/>
         <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</source>
-        <translation>Traducción francesa por &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</translation>
+        <translation>Fransk oversetting av &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="161"/>
         <source>Italian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/ghostofasmile/&apos;&gt;Francesco Vaccaro (ghostofasmile)&lt;/a&gt;.</source>
-        <translation>Traducción italiana por &lt;a href=&apos;https://www.transifex.com/accounts/profile/ghostofasmile/&apos;&gt;Francesco Vaccaro (ghostofasmile)&lt;/a&gt;.</translation>
+        <translation>Italiensk oversetting av &lt;a href=&apos;https://www.transifex.com/accounts/profile/ghostofasmile/&apos;&gt;Francesco Vaccaro (ghostofasmile)&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="177"/>
         <source>Swedish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/AsavarTzeth/&apos;&gt;Patrik Nilsson (AsavarTzeth)&lt;/a&gt;.</source>
-        <translation>Traducción suiza por &lt;a href=&apos;https://www.transifex.com/accounts/profile/AsavarTzeth/&apos;&gt;Patrik Nilsson (AsavarTzeth)&lt;/a&gt;.</translation>
+        <translation>Svensk oversetting av &lt;a href=&apos;https://www.transifex.com/accounts/profile/AsavarTzeth/&apos;&gt;Patrik Nilsson (AsavarTzeth)&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="193"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</source>
-        <translation>Lighthouse es software libre licensiado bajo la GPL v3 disponible en &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Código de los controles de teléfono inspirado por &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Componente InfoPopup sacado de &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; por Marko Koschak.</translation>
+        <translation>Lighthouse er fri programvare lisensiert under GPL v3 som er tilgjengelig på &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. DBus-kode for telefonkontroller inspirert av &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup-komponent tatt fra &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; av Marko Koschak.
+</translation>
     </message>
 </context>
 <context>
@@ -67,17 +68,17 @@
     <message>
         <location filename="../qml/pages/Battery.qml" line="29"/>
         <source>Battery Usage</source>
-        <translation>Uso de batería</translation>
+        <translation>Batteribruk</translation>
     </message>
     <message>
         <location filename="../qml/pages/Battery.qml" line="75"/>
         <source>Health: </source>
-        <translation>Salud:</translation>
+        <translation>Helse:</translation>
     </message>
     <message>
         <location filename="../qml/pages/Battery.qml" line="83"/>
         <source>Technology: </source>
-        <translation>Tecnología</translation>
+        <translation>Teknologi:</translation>
     </message>
 </context>
 <context>
@@ -85,7 +86,7 @@
     <message>
         <location filename="../qml/pages/CPU.qml" line="29"/>
         <source>CPU Usage</source>
-        <translation>Uso de CPU</translation>
+        <translation>CPU-bruk</translation>
     </message>
     <message>
         <location filename="../qml/pages/CPU.qml" line="78"/>
@@ -101,7 +102,7 @@
         <location filename="../src/battery.cpp" line="11"/>
         <source>Unavailable</source>
         <comment>battery status</comment>
-        <translation>No disponible</translation>
+        <translation>Utilgjengelig</translation>
     </message>
 </context>
 <context>
@@ -109,12 +110,12 @@
     <message>
         <location filename="../src/cpu.cpp" line="46"/>
         <source>Data</source>
-        <translation>Datos</translation>
+        <translation>Data</translation>
     </message>
     <message>
         <location filename="../src/cpu.cpp" line="50"/>
         <source>Description</source>
-        <translation>Descripción</translation>
+        <translation>Beskrivelse</translation>
     </message>
 </context>
 <context>
@@ -123,7 +124,7 @@
         <location filename="../src/languages.cpp" line="68"/>
         <source>Unknown</source>
         <comment>language</comment>
-        <translation type="unfinished"/>
+        <translation>Ukjent</translation>
     </message>
 </context>
 <context>
@@ -136,18 +137,18 @@
     <message>
         <location filename="../src/monitor.cpp" line="121"/>
         <source>Memory</source>
-        <translation>Memoria</translation>
+        <translation>Minne</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="122"/>
         <source>Battery</source>
-        <translation>Batería</translation>
+        <translation>Batteri</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="123"/>
         <source>Unknown</source>
         <comment>Cover label in summary page</comment>
-        <translation type="unfinished"/>
+        <translation>Ukjent</translation>
     </message>
 </context>
 <context>
@@ -156,7 +157,7 @@
         <location filename="../src/process.cpp" line="75"/>
         <source>Unknown</source>
         <comment>Process name</comment>
-        <translation type="unfinished"/>
+        <translation>Ukjent</translation>
     </message>
 </context>
 <context>
@@ -164,17 +165,17 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="29"/>
         <source>Memory Usage</source>
-        <translation>Uso de memoria</translation>
+        <translation>Minnebruk</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="74"/>
         <source> kB free out of </source>
-        <translation>kB disponible de</translation>
+        <translation>kB ledig av</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="74"/>
         <source> kB total</source>
-        <translation>kB total</translation>
+        <translation>kB totalt</translation>
     </message>
 </context>
 <context>
@@ -182,17 +183,17 @@
     <message>
         <location filename="../qml/pages/Phone.qml" line="27"/>
         <source>Phone Controls</source>
-        <translation>Controles del teléfono</translation>
+        <translation>Telefonkontroller</translation>
     </message>
     <message>
         <location filename="../qml/pages/Phone.qml" line="36"/>
         <source>Reboot</source>
-        <translation>Reiniciar</translation>
+        <translation>Start om</translation>
     </message>
     <message>
         <location filename="../qml/pages/Phone.qml" line="45"/>
         <source>Shutdown</source>
-        <translation>Apagar</translation>
+        <translation>Slå av</translation>
     </message>
 </context>
 <context>
@@ -200,37 +201,37 @@
     <message>
         <location filename="../qml/pages/Process.qml" line="29"/>
         <source>Applications</source>
-        <translation>Aplicaciones</translation>
+        <translation>Programmer</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="29"/>
         <source>Processes</source>
-        <translation>Procesos</translation>
+        <translation>Prosesser</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="34"/>
         <source>Show Processes</source>
-        <translation>Mostrar Procesos</translation>
+        <translation>Vis prosesser</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="34"/>
         <source>Show Applications</source>
-        <translation>Mostrar Aplicaciones</translation>
+        <translation>Vis programmer</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="39"/>
         <source>Sort by Name</source>
-        <translation>Ordenar por Nombre</translation>
+        <translation>Sorter etter navn</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="45"/>
         <source>Sort by Memory Usage</source>
-        <translation>Ordenar por Uso de Memoria</translation>
+        <translation>Sorter etter minnebruk</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="51"/>
         <source>Sort by CPU Usage</source>
-        <translation>Ordenar por uso de CPU</translation>
+        <translation>Sorter etter CPU-bruk</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="85"/>
@@ -240,12 +241,12 @@
     <message>
         <location filename="../qml/pages/Process.qml" line="96"/>
         <source>mem: </source>
-        <translation>mem:</translation>
+        <translation>minne:</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="167"/>
         <source>Kill</source>
-        <translation>Matar</translation>
+        <translation>Drep</translation>
     </message>
 </context>
 <context>
@@ -253,22 +254,22 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="28"/>
         <source>Settings</source>
-        <translation>Configuración</translation>
+        <translation>Innstillinger</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="38"/>
         <source>Update interval</source>
-        <translation>Actualizar intervalo</translation>
+        <translation>Oppdateringsintervall</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="51"/>
         <source>Languages</source>
-        <translation>Idiomas</translation>
+        <translation>Språk</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="84"/>
         <source>App Restart Required</source>
-        <translation>Reinicio de la app necesario</translation>
+        <translation>Omstart av programmet kreves</translation>
     </message>
 </context>
 <context>
@@ -276,47 +277,47 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="30"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation>Om</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="34"/>
         <source>Phone Controls</source>
-        <translation>Controles de teléfono</translation>
+        <translation>Telefonkontroller</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="38"/>
         <source>Settings</source>
-        <translation>Configuración</translation>
+        <translation>Innstillinger</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="51"/>
         <source>Summary</source>
-        <translation>Resumen</translation>
+        <translation>Oppsummering</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="62"/>
         <source>Uptime: </source>
-        <translation>Tiempo prendido:</translation>
+        <translation>Oppetid:</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="72"/>
         <source>CPUs: </source>
-        <translation>CPUs:</translation>
+        <translation>CPU-er:</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="82"/>
         <source>Memory: </source>
-        <translation>Memoria:</translation>
+        <translation>Minne:</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="91"/>
         <source>Processes: </source>
-        <translation>Procesos</translation>
+        <translation>Prosesser:</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="100"/>
         <source>Battery: </source>
-        <translation>Batería</translation>
+        <translation>Batteri:</translation>
     </message>
 </context>
 </TS>
