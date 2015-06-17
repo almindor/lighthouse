@@ -17,6 +17,8 @@ TRANSLATIONS = \
     translations/lighthouse-es_AR.ts \
     translations/lighthouse-sv.ts \
     translations/lighthouse-it.ts \
+    translations/lighthouse-nb.ts \
+    translations/lighthouse-nl.ts \
     translations/lighthouse-zh_CN.ts \
     translations/lighthouse-zh_TW.ts
 

@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="sv">
 <context>
     <name>About</name>
     <message>
@@ -8,8 +10,13 @@
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="42"/>
-        <source>Lighthouse v1.4.1 by Aleš Katona and Lavaux Gilles.</source>
-        <translation type="unfinished"/>
+        <source>Lighthouse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="42"/>
+        <source>by Aleš Katona and Lavaux Gilles.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
@@ -19,7 +26,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
         <source>Czech translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="81"/>
@@ -34,27 +41,27 @@
     <message>
         <location filename="../qml/pages/About.qml" line="113"/>
         <source>Taiwanese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="129"/>
         <source>Chinese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="145"/>
         <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="161"/>
         <source>Italian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/ghostofasmile/&apos;&gt;Francesco Vaccaro (ghostofasmile)&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="177"/>
         <source>Swedish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/AsavarTzeth/&apos;&gt;Patrik Nilsson (AsavarTzeth)&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="193"/>
@@ -123,11 +130,35 @@
         <location filename="../src/languages.cpp" line="68"/>
         <source>Unknown</source>
         <comment>language</comment>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Okänd</translation>
     </message>
 </context>
 <context>
     <name>Lighthouse::Monitor</name>
+    <message>
+        <location filename="../src/monitor.cpp" line="95"/>
+        <source>cpu</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/monitor.cpp" line="96"/>
+        <source>memory</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/monitor.cpp" line="97"/>
+        <source>battery</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/monitor.cpp" line="98"/>
+        <source>unknown</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <location filename="../src/monitor.cpp" line="120"/>
         <source>CPU</source>
@@ -263,12 +294,12 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="51"/>
         <source>Languages</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="84"/>
         <source>App Restart Required</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

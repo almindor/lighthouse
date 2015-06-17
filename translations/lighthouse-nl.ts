@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="nl">
 <context>
     <name>About</name>
     <message>
@@ -7,9 +9,18 @@
         <translation>Over</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="42"/>
         <source>Lighthouse v1.4.1 by Aleš Katona and Lavaux Gilles.</source>
-        <translation>Lighthouse v1.4.1 - door Aleš Katona en Lavaux Gilles.</translation>
+        <translation type="vanished">Lighthouse v1.4.1 - door Aleš Katona en Lavaux Gilles.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="42"/>
+        <source>Lighthouse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="42"/>
+        <source>by Aleš Katona and Lavaux Gilles.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
@@ -128,6 +139,30 @@
 </context>
 <context>
     <name>Lighthouse::Monitor</name>
+    <message>
+        <location filename="../src/monitor.cpp" line="95"/>
+        <source>cpu</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/monitor.cpp" line="96"/>
+        <source>memory</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/monitor.cpp" line="97"/>
+        <source>battery</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/monitor.cpp" line="98"/>
+        <source>unknown</source>
+        <comment>cover label</comment>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <location filename="../src/monitor.cpp" line="120"/>
         <source>CPU</source>
