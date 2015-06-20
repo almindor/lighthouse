@@ -274,7 +274,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="167"/>
+        <location filename="../qml/pages/Process.qml" line="172"/>
         <source>Kill</source>
         <translation type="unfinished"></translation>
     </message>

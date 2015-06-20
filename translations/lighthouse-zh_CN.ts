@@ -274,7 +274,7 @@
         <translation>内存：</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="167"/>
+        <location filename="../qml/pages/Process.qml" line="172"/>
         <source>Kill</source>
         <translation>结束</translation>
     </message>

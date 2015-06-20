@@ -278,7 +278,7 @@
         <translation>mem : </translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="167"/>
+        <location filename="../qml/pages/Process.qml" line="172"/>
         <source>Kill</source>
         <translation>Terminer</translation>
     </message>
