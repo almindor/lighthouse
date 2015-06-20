@@ -142,15 +142,20 @@ Page {
             }
 
             onPressAndHold: {
-                if ( process.isKillable(processID) ) {
+                processDock.show()
+                /*if ( process.isKillable(processID) ) {
                     process.selectPID(processID) // just in case it somehow sliped since onPressed
                     killMenu.show(myListItem)
                 } else {
                     applicationWindow.infoPopupRef.show("Info", "Permission denied", 2000, true)
-                }
+                }*/
             }
 
             onPressed: {
+                if ( processDock.open ) {
+                    processDock.hide();
+                }
+
                 process.selectPID(processID) // pauses the list updates
             }
 
@@ -172,6 +177,22 @@ Page {
 
             onClosed: {
                 process.selectPID(0) // deselect/depause
+            }
+        }
+
+        DockedPanel {
+            id: processDock
+
+            width: parent.width
+            height: parent.height / 2
+
+            dock: Dock.Bottom
+
+            Row {
+                anchors.centerIn: parent
+                Switch { icon.source: "image://theme/icon-l-shuffle" }
+                Switch { icon.source: "image://theme/icon-l-repeat" }
+                Switch { icon.source: "image://theme/icon-l-share" }
             }
         }
     }
