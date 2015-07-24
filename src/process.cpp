@@ -139,7 +139,7 @@ namespace Lighthouse {
     }
 
     void Process::setProcesses(const ProcMap* procMap, const PIDList& adds, const PIDList& deletes) {
-        qDebug() << "setProcesses: " << procMap->size() << " Adds: " << adds.size() << "Deletes: " << deletes.size() << "\n";
+        //qDebug() << "setProcesses: " << procMap->size() << " Adds: " << adds.size() << "Deletes: " << deletes.size() << "\n";
         fProcMap = procMap;
         fCPUComparer.setProcMap(fProcMap);
         fMemoryComparer.setProcMap(fProcMap);
@@ -158,6 +158,10 @@ namespace Lighthouse {
         if ( fProcCount != keySize ) {
             fProcCount = keySize;
             emit summaryValueChanged();
+        }
+
+        if ( fSelectedPID > 0 ) {
+            emit selectedChanged();
         }
     }
 
@@ -265,12 +269,29 @@ namespace Lighthouse {
         emit selectedPIDChanged();
     }
 
-    void Process::killPID(int pid) {
-        if ( pid > 0 ) {
-            if ( kill(pid, SIGKILL) != 0 ) {
-                qCritical() << "Unable to kill process: " << pid << " error: " << strerror(errno) << "\n";
+    int Process::killSelected() {
+        int result = -1;
+        if ( fSelectedPID > 0 ) {
+            result = kill(fSelectedPID, SIGKILL);
+
+            if ( result != 0 ) {
+                qCritical() << "Unable to kill process: " << fSelectedPID << " error: " << strerror(errno) << "\n";
             }
         }
+
+        return result;
+    }
+
+    const QString Process::getSelectedName() const {
+        return fSelectedPID > 0 ? fProcMap->value(fSelectedPID).getName() : "Invalid process";
+    }
+
+    int Process::getSelectedCPUUsage() const {
+        return fSelectedPID > 0 ? fProcMap->value(fSelectedPID).getCPUUsage() : 0;
+    }
+
+    int Process::getSelectedMemoryUsage() const {
+        return fSelectedPID > 0 ? fProcMap->value(fSelectedPID).getMemoryUsage() : 0;
     }
 
 }

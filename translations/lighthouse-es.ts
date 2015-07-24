@@ -101,6 +101,24 @@
     </message>
 </context>
 <context>
+    <name>Details</name>
+    <message>
+        <location filename="../qml/pages/Details.qml" line="33"/>
+        <source>CPU: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Details.qml" line="40"/>
+        <source>Memory: </source>
+        <translation type="unfinished">Memoria:</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Details.qml" line="47"/>
+        <source>Kill</source>
+        <translation type="unfinished">Matar</translation>
+    </message>
+</context>
+<context>
     <name>Indicator</name>
     <message>
         <location filename="../qml/components/Indicator.qml" line="22"/>
@@ -242,37 +260,37 @@
 <context>
     <name>Process</name>
     <message>
-        <location filename="../qml/pages/Process.qml" line="29"/>
+        <location filename="../qml/pages/Process.qml" line="36"/>
         <source>Applications</source>
         <translation>Aplicaciones</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="29"/>
+        <location filename="../qml/pages/Process.qml" line="36"/>
         <source>Processes</source>
         <translation>Procesos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="34"/>
+        <location filename="../qml/pages/Process.qml" line="41"/>
         <source>Show Processes</source>
         <translation>Mostrar Procesos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="34"/>
+        <location filename="../qml/pages/Process.qml" line="41"/>
         <source>Show Applications</source>
         <translation>Mostrar Aplicaciones</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="39"/>
+        <location filename="../qml/pages/Process.qml" line="46"/>
         <source>Sort by Name</source>
         <translation>Ordenar por Nombre</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="45"/>
+        <location filename="../qml/pages/Process.qml" line="52"/>
         <source>Sort by Memory Usage</source>
         <translation>Ordenar por Uso de Memoria</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="51"/>
+        <location filename="../qml/pages/Process.qml" line="58"/>
         <source>Sort by CPU Usage</source>
         <translation>Ordenar por Uso de Procesador</translation>
     </message>
@@ -285,9 +303,8 @@
         <translation type="vanished">mem:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="96"/>
         <source>Kill</source>
-        <translation>Matar</translation>
+        <translation type="vanished">Matar</translation>
     </message>
 </context>
 <context>

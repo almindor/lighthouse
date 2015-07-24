@@ -24,7 +24,7 @@
 
 namespace Lighthouse {
     const int CPU_FLAGS_ACTIVE = 1;
-    const int CPU_FLAGS_INACTIVE = 2;
+    const int CPU_FLAGS_INACTIV = 2;
     const int CPU_PART_COUNT = 10;
     const int CPU_PART_DEF[CPU_PART_COUNT] = {0, 1, 1, 1, 2, 2, 0, 0, 0, 0};
 
@@ -42,7 +42,7 @@ namespace Lighthouse {
         fPaused = false;
         fGotBatteryInfo = false;
         fApplicationActive = false;
-        fProcessDetails = false;
+        fProcessDetails = 0;
     }
 
     Monitor::~Monitor() {
@@ -147,7 +147,7 @@ namespace Lighthouse {
         fDBus->call("req_shutdown");
     }
 
-    void Monitor::setProcessDetails(bool active) {
+    void Monitor::setProcessDetails(int active) {
         fProcessDetails = active;
     }
 
@@ -177,7 +177,7 @@ namespace Lighthouse {
 
                 if ( fApplicationActive || iteration == 0 ) {
                     procUptime();
-                    if ( fProcessDetails || iteration == 0 ) {
+                    if ( fProcessDetails != 0 || iteration == 0 ) {
                         procProcesses();
                     } else {
                         procProcessCount();
@@ -233,7 +233,15 @@ namespace Lighthouse {
         emit processCountChanged(count);
     }
 
-    void Monitor::procProcesses() {       
+    pid_t Monitor::getNextPID(QStringListIterator& iterator, int iteration) {
+        if ( fProcessDetails > 0 ) {
+            return iteration == 0 ? fProcessDetails : 0;
+        }
+
+        return iterator.hasNext() ? iterator.next().toInt() : 0;
+    }
+
+    void Monitor::procProcesses() {
         PIDList deletes;
         PIDList adds;
         unsigned long long totalTicks = 0;
@@ -248,8 +256,11 @@ namespace Lighthouse {
 
         QStringList procList = fProcReader.getProcList();
         QStringListIterator slIterator(procList);
-        while ( slIterator.hasNext() ) {
-            const pid_t pid = slIterator.next().toInt();
+        pid_t pid;
+        int iteration = 0;
+
+        while ( (pid = getNextPID(slIterator, iteration)) != 0 ) {
+            iteration++;
             const QString pidStr = QString::number(pid);
             QString pathStatM("/proc/" + pidStr + "/statm");
             QString pathCmdLine("/proc/" + pidStr + "/cmdline");
@@ -303,7 +314,6 @@ namespace Lighthouse {
             }
         }
 
-        qDebug() << "processChanged: " << fProcMap.size() << " Adds: " << adds.size() << "Deletes: " << deletes.size() << "\n";
         emit processChanged(&fProcMap, adds, deletes);
     }
 

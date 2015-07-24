@@ -20,8 +20,15 @@ import Sailfish.Silica 1.0
 import "../components"
 
 Page {
-    id: page
-    onStatusChanged: monitor.setProcessDetails( status !== 0 )
+    id: page    
+    onStatusChanged: {
+        if ( status === PageStatus.Active ) {
+            process.selectedPID = 0
+            monitor.setProcessDetails( -1 ) // monitor all
+        } else if ( status === PageStatus.Inactive ) {
+            monitor.setProcessDetails( process.selectedPID ) // monitor pid or nothing if going back
+        }
+    }
 
     SilicaListView {
         id: listView
@@ -32,7 +39,7 @@ Page {
         PullDownMenu {
             MenuItem {
                 text: (process.applicationsOnly ? qsTr("Show Processes") : qsTr("Show Applications"))
-                onClicked: process.nextApplicationsOnly();
+                onClicked: process.nextApplicationsOnly()
             }
 
             MenuItem {
@@ -62,38 +69,8 @@ Page {
         delegate: Indicator {
             onPressAndHold: {
                 if ( process.selectedPID == 0 ) {
-                    processDock.show()
                     process.selectedPID = processID
-                }
-            }
-
-            onPressed: {
-                if ( process.selectedPID > 0 ) {
-                    processDock.hide()
-                    process.selectedPID = 0
-                }
-            }
-
-            onPressedChanged: {
-
-            }
-        }
-
-        OpaquePanel {
-            id: processDock
-
-            width: parent.width
-            height: parent.height / 2
-
-            dock: Dock.Bottom
-
-            Column {
-                anchors.centerIn: parent
-                Text {
-                    text: "PID: " + process.selectedPID
-                }
-                Button {
-                    text: qsTr("Kill")
+                    pageStack.push(Qt.resolvedUrl("Details.qml"))
                 }
             }
         }

@@ -29,10 +29,15 @@ namespace Lighthouse {
     class Process : public QAbstractListModel
     {
         Q_OBJECT
+        // processes
         Q_PROPERTY(int selectedPID READ getSelectedPID WRITE selectPID NOTIFY selectedPIDChanged)
         Q_PROPERTY(int summaryValue READ getSummaryValue NOTIFY summaryValueChanged)
         Q_PROPERTY(int sortBy READ getSortBy NOTIFY sortByChanged)
         Q_PROPERTY(bool applicationsOnly READ getApplicationsOnly NOTIFY applicationsOnlyChanged)
+        // details
+        Q_PROPERTY(int selectedCPUUsage READ getSelectedCPUUsage NOTIFY selectedChanged)
+        Q_PROPERTY(int selectedMemoryUsage READ getSelectedMemoryUsage NOTIFY selectedChanged)
+        Q_PROPERTY(const QString selectedName READ getSelectedName NOTIFY selectedChanged)
     public:
         enum ProcessRoles {
             PIDRole = Qt::UserRole + 1,
@@ -56,7 +61,7 @@ namespace Lighthouse {
         Q_INVOKABLE bool isKillable(int pid) const;
         Q_INVOKABLE void setSortBy(int sb);
         Q_INVOKABLE void nextApplicationsOnly();
-        Q_INVOKABLE void killPID(int pid);
+        Q_INVOKABLE int killSelected();
     private:
         uid_t fUID;
         int fSortBy;
@@ -82,11 +87,16 @@ namespace Lighthouse {
         void endRR(bool really);
         void beginIR(bool really, int first, int last);
         void endIR(bool really);
+
+        const QString getSelectedName() const;
+        int getSelectedCPUUsage() const;
+        int getSelectedMemoryUsage() const;
     signals:
         void summaryValueChanged();
         void sortByChanged();
         void selectedPIDChanged();
         void applicationsOnlyChanged();
+        void selectedChanged();
     public slots:
         void setProcesses(const ProcMap* procMap, const PIDList& adds, const PIDList& deletes);
         void setProcessCount(int count);

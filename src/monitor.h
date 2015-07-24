@@ -47,7 +47,7 @@ namespace Lighthouse {
             const QString& getCoverImageRight() const;
             Q_INVOKABLE void reboot();
             Q_INVOKABLE void shutdown();
-            Q_INVOKABLE void setProcessDetails(bool active);
+            Q_INVOKABLE void setProcessDetails(int active);
             Q_INVOKABLE void setApplicationActive(bool active);
 
             Q_PROPERTY(int interval READ getInterval WRITE setInterval NOTIFY intervalChanged)
@@ -77,7 +77,7 @@ namespace Lighthouse {
             QDBusInterface* fDBus;
             AppNameMap fAppNameMap;
             bool fApplicationActive;
-            bool fProcessDetails;
+            int fProcessDetails;
             QWaitCondition fPauser;
             QMutex fMutex;
 
@@ -86,6 +86,7 @@ namespace Lighthouse {
             void procMemory();
             void procBattery();
             void procProcessCount();
+            pid_t getNextPID(QStringListIterator& iterator, int activePID);
             void procProcesses();
             void procUptime();
             void procTemperature();
