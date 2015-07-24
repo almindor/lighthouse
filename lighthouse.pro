@@ -54,7 +54,9 @@ OTHER_FILES += \
     lighthouse.desktop \
     qml/Lighthouse.qml \
     qml/pages/Battery.qml \
-    qml/InfoPopup.qml
+    qml/InfoPopup.qml \
+    qml/components/Indicator.qml \
+    qml/components/OpaquePanel.qml
 
 HEADERS += \
     src/cpu.h \

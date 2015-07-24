@@ -48,7 +48,6 @@ namespace Lighthouse {
         roles[NameRole] = "name";
         roles[CPUUsageRole] = "cpuUsage";
         roles[MemoryUsageRole] = "memoryUsage";
-        roles[SelectedRole] = "selected";
         return roles;
     }
 
@@ -66,7 +65,6 @@ namespace Lighthouse {
                 case NameRole: return fProcMap->value(key).getName();
                 case CPUUsageRole: return fProcMap->value(key).getCPUUsage();
                 case MemoryUsageRole: return fProcMap->value(key).getMemoryUsage();
-                case SelectedRole: return (fSelectedPID == fProcMap->value(key).getPID());
             }
         }
 
@@ -75,7 +73,6 @@ namespace Lighthouse {
             case NameRole: return tr("Unknown", "Process name");
             case CPUUsageRole: return 0;
             case MemoryUsageRole: return 0;
-            case SelectedRole: return false;
         }
 
         return 0;
@@ -142,10 +139,7 @@ namespace Lighthouse {
     }
 
     void Process::setProcesses(const ProcMap* procMap, const PIDList& adds, const PIDList& deletes) {
-        if ( fSelectedPID > 0 ) {
-            return; // don't update if we're selecting to kill
-        }
-
+        qDebug() << "setProcesses: " << procMap->size() << " Adds: " << adds.size() << "Deletes: " << deletes.size() << "\n";
         fProcMap = procMap;
         fCPUComparer.setProcMap(fProcMap);
         fMemoryComparer.setProcMap(fProcMap);
@@ -239,10 +233,6 @@ namespace Lighthouse {
         return false;
     }
 
-    int Process::getSelectedPID() const {
-        return fSelectedPID;
-    }
-
     bool Process::getApplicationsOnly() const {
         return fApplicationsOnly;
     }
@@ -266,27 +256,19 @@ namespace Lighthouse {
         emit applicationsOnlyChanged();
     }
 
-    void Process::selectPID(int pid) {
-        if ( fSelectedPID != pid ) {
-            fSelectedPID = pid;
-            emit selectedPIDChanged();
-
-            const PIDList& keys = getKeys();
-            const int size = keys.size();
-
-            for ( int i = 0; i < size; i++ ) {
-                if ( fProcMap->value(keys.at(i)).getPID() == pid ) {
-                    emit dataChanged(createIndex(i, 0), createIndex(i, 0));
-                    return;
-                }
-            }
-        }
+    int Process::getSelectedPID() const {
+        return fSelectedPID;
     }
 
-    void Process::killSelectedProcess() {
-        if ( fSelectedPID > 0 ) {
-            if ( kill(fSelectedPID, SIGKILL) != 0 ) {
-                qCritical() << "Unable to kill process: " << fSelectedPID << " error: " << strerror(errno) << "\n";
+    void Process::selectPID(int pid) {
+        fSelectedPID = pid;
+        emit selectedPIDChanged();
+    }
+
+    void Process::killPID(int pid) {
+        if ( pid > 0 ) {
+            if ( kill(pid, SIGKILL) != 0 ) {
+                qCritical() << "Unable to kill process: " << pid << " error: " << strerror(errno) << "\n";
             }
         }
     }

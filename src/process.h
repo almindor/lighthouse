@@ -29,17 +29,16 @@ namespace Lighthouse {
     class Process : public QAbstractListModel
     {
         Q_OBJECT
+        Q_PROPERTY(int selectedPID READ getSelectedPID WRITE selectPID NOTIFY selectedPIDChanged)
         Q_PROPERTY(int summaryValue READ getSummaryValue NOTIFY summaryValueChanged)
         Q_PROPERTY(int sortBy READ getSortBy NOTIFY sortByChanged)
-        Q_PROPERTY(int selectedPID READ getSelectedPID NOTIFY selectedPIDChanged)
         Q_PROPERTY(bool applicationsOnly READ getApplicationsOnly NOTIFY applicationsOnlyChanged)
     public:
         enum ProcessRoles {
             PIDRole = Qt::UserRole + 1,
             NameRole,
             CPUUsageRole,
-            MemoryUsageRole,
-            SelectedRole
+            MemoryUsageRole
         };
 
         explicit Process(QObject *parent = 0);
@@ -51,13 +50,13 @@ namespace Lighthouse {
         int rowCount(const QModelIndex & parent = QModelIndex()) const;
         int getSortBy() const;
         int getSummaryValue() const;
-        int getSelectedPID() const;
         bool getApplicationsOnly() const;
+        int getSelectedPID() const;
+        void selectPID(int pid);
         Q_INVOKABLE bool isKillable(int pid) const;
         Q_INVOKABLE void setSortBy(int sb);
         Q_INVOKABLE void nextApplicationsOnly();
-        Q_INVOKABLE void selectPID(int pid);
-        Q_INVOKABLE void killSelectedProcess();
+        Q_INVOKABLE void killPID(int pid);
     private:
         uid_t fUID;
         int fSortBy;

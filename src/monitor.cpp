@@ -43,7 +43,6 @@ namespace Lighthouse {
         fGotBatteryInfo = false;
         fApplicationActive = false;
         fProcessDetails = false;
-        start();
     }
 
     Monitor::~Monitor() {
@@ -304,6 +303,7 @@ namespace Lighthouse {
             }
         }
 
+        qDebug() << "processChanged: " << fProcMap.size() << " Adds: " << adds.size() << "Deletes: " << deletes.size() << "\n";
         emit processChanged(&fProcMap, adds, deletes);
     }
 

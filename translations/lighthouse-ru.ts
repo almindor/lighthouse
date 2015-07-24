@@ -105,6 +105,19 @@
     </message>
 </context>
 <context>
+    <name>Indicator</name>
+    <message>
+        <location filename="../qml/components/Indicator.qml" line="22"/>
+        <source>cpu: </source>
+        <translation type="unfinished">процессор: </translation>
+    </message>
+    <message>
+        <location filename="../qml/components/Indicator.qml" line="33"/>
+        <source>mem: </source>
+        <translation type="unfinished">память: </translation>
+    </message>
+</context>
+<context>
     <name>Lighthouse::Battery</name>
     <message>
         <location filename="../src/battery.cpp" line="9"/>
@@ -140,46 +153,46 @@
 <context>
     <name>Lighthouse::Monitor</name>
     <message>
-        <location filename="../src/monitor.cpp" line="95"/>
+        <location filename="../src/monitor.cpp" line="94"/>
         <source>cpu</source>
         <comment>cover label</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="96"/>
+        <location filename="../src/monitor.cpp" line="95"/>
         <source>memory</source>
         <comment>cover label</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="97"/>
+        <location filename="../src/monitor.cpp" line="96"/>
         <source>battery</source>
         <comment>cover label</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="98"/>
+        <location filename="../src/monitor.cpp" line="97"/>
         <source>unknown</source>
         <comment>cover label</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="120"/>
+        <location filename="../src/monitor.cpp" line="119"/>
         <source>CPU</source>
         <translation>Процессор</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="121"/>
+        <location filename="../src/monitor.cpp" line="120"/>
         <source>Memory</source>
         <translation>Память</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="122"/>
+        <location filename="../src/monitor.cpp" line="121"/>
         <source>Battery</source>
         <translation>Батарея</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="123"/>
+        <location filename="../src/monitor.cpp" line="122"/>
         <source>Unknown</source>
         <comment>Cover label in summary page</comment>
         <translation>Неизвестный</translation>
@@ -188,7 +201,7 @@
 <context>
     <name>Lighthouse::Process</name>
     <message>
-        <location filename="../src/process.cpp" line="75"/>
+        <location filename="../src/process.cpp" line="73"/>
         <source>Unknown</source>
         <comment>Process name</comment>
         <translation>Неизвестный</translation>
@@ -268,17 +281,15 @@
         <translation>По использованию процессора</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="85"/>
         <source>cpu: </source>
-        <translation>процессор: </translation>
+        <translation type="vanished">процессор: </translation>
+    </message>
+    <message>
+        <source>mem: </source>
+        <translation type="vanished">память: </translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="96"/>
-        <source>mem: </source>
-        <translation>память: </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Process.qml" line="172"/>
         <source>Kill</source>
         <translation>Убить</translation>
     </message>
