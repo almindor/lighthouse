@@ -76,17 +76,17 @@
 <context>
     <name>Battery</name>
     <message>
-        <location filename="../qml/pages/Battery.qml" line="29"/>
+        <location filename="../qml/pages/Battery.qml" line="30"/>
         <source>Battery Usage</source>
         <translation>Batterijverbruik</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Battery.qml" line="75"/>
+        <location filename="../qml/pages/Battery.qml" line="53"/>
         <source>Health: </source>
         <translation>Gezondheid:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Battery.qml" line="83"/>
+        <location filename="../qml/pages/Battery.qml" line="61"/>
         <source>Technology: </source>
         <translation>Technologie:</translation>
     </message>
@@ -99,7 +99,7 @@
         <translation>CPU-verbruik</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="78"/>
+        <location filename="../qml/pages/CPU.qml" line="56"/>
         <source>CPU</source>
         <translation>CPU</translation>
     </message>
@@ -107,17 +107,11 @@
 <context>
     <name>Details</name>
     <message>
-        <location filename="../qml/pages/Details.qml" line="33"/>
-        <source>CPU: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Details.qml" line="40"/>
         <source>Memory: </source>
-        <translation type="unfinished">Geheugen:</translation>
+        <translation type="obsolete">Geheugen:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="47"/>
+        <location filename="../qml/pages/Details.qml" line="39"/>
         <source>Kill</source>
         <translation type="unfinished">Vernietigen</translation>
     </message>
@@ -125,14 +119,12 @@
 <context>
     <name>Indicator</name>
     <message>
-        <location filename="../qml/components/Indicator.qml" line="22"/>
         <source>cpu: </source>
-        <translation type="unfinished">cpu:</translation>
+        <translation type="obsolete">cpu:</translation>
     </message>
     <message>
-        <location filename="../qml/components/Indicator.qml" line="33"/>
         <source>mem: </source>
-        <translation type="unfinished">geh:</translation>
+        <translation type="obsolete">geh:</translation>
     </message>
 </context>
 <context>
@@ -233,12 +225,12 @@
         <translation>Geheugengebruik</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="74"/>
+        <location filename="../qml/pages/Memory.qml" line="52"/>
         <source> kB free out of </source>
         <translation>kB vrij van de</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="74"/>
+        <location filename="../qml/pages/Memory.qml" line="52"/>
         <source> kB total</source>
         <translation>kB in totaal</translation>
     </message>
@@ -259,6 +251,19 @@
         <location filename="../qml/pages/Phone.qml" line="45"/>
         <source>Shutdown</source>
         <translation>Uitschakelen</translation>
+    </message>
+</context>
+<context>
+    <name>ProcIndicator</name>
+    <message>
+        <location filename="../qml/components/ProcIndicator.qml" line="27"/>
+        <source>cpu: </source>
+        <translation type="unfinished">cpu:</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ProcIndicator.qml" line="38"/>
+        <source>mem: </source>
+        <translation type="unfinished">geh:</translation>
     </message>
 </context>
 <context>

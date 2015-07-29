@@ -58,7 +58,7 @@ namespace Lighthouse {
         bool getApplicationsOnly() const;
         int getSelectedPID() const;
         void selectPID(int pid);
-        Q_INVOKABLE bool isKillable(int pid) const;
+        Q_INVOKABLE bool isKillable() const;
         Q_INVOKABLE void setSortBy(int sb);
         Q_INVOKABLE void nextApplicationsOnly();
         Q_INVOKABLE int killSelected();

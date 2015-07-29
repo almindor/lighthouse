@@ -2,6 +2,11 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 BackgroundItem {
+
+    property int cpuUse
+    property int memUse
+    property string procName
+
     anchors {
         left: parent.left
         right: parent.right
@@ -14,12 +19,12 @@ BackgroundItem {
         }
 
         id: itemLabel
-        text: name
+        text: procName
     }
 
     Text {
         id: cpuLabel
-        text: qsTr("cpu: ") + cpuUsage + "%"
+        text: qsTr("cpu: ") + cpuUse + "%"
         color: Theme.highlightColor
         font.pointSize: 12
         anchors {
@@ -30,7 +35,7 @@ BackgroundItem {
 
     Text {
         id: memLabel
-        text: qsTr("mem: ") + memoryUsage + "%"
+        text: qsTr("mem: ") + memUse + "%"
         color: Theme.secondaryHighlightColor
         font.pointSize: 12
         anchors {
@@ -60,7 +65,7 @@ BackgroundItem {
             top: parent.top
         }
 
-        width: cpuUsage * 2
+        width: cpuUse * 2
         height: cpuLabel.height
         color: Theme.highlightColor
     }
@@ -73,7 +78,7 @@ BackgroundItem {
             topMargin: cpuBar.height + 1
         }
 
-        width: memoryUsage * 2
+        width: memUse * 2
         height: memLabel.height
         color: Theme.secondaryHighlightColor
     }

@@ -72,17 +72,17 @@
 <context>
     <name>Battery</name>
     <message>
-        <location filename="../qml/pages/Battery.qml" line="29"/>
+        <location filename="../qml/pages/Battery.qml" line="30"/>
         <source>Battery Usage</source>
         <translation>电池使用情况</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Battery.qml" line="75"/>
+        <location filename="../qml/pages/Battery.qml" line="53"/>
         <source>Health: </source>
         <translation>健康状况：</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Battery.qml" line="83"/>
+        <location filename="../qml/pages/Battery.qml" line="61"/>
         <source>Technology: </source>
         <translation>技术：</translation>
     </message>
@@ -95,7 +95,7 @@
         <translation>CPU使用情况</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="78"/>
+        <location filename="../qml/pages/CPU.qml" line="56"/>
         <source>CPU</source>
         <translation>CPU</translation>
     </message>
@@ -103,17 +103,11 @@
 <context>
     <name>Details</name>
     <message>
-        <location filename="../qml/pages/Details.qml" line="33"/>
-        <source>CPU: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Details.qml" line="40"/>
         <source>Memory: </source>
-        <translation type="unfinished">内存：</translation>
+        <translation type="obsolete">内存：</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="47"/>
+        <location filename="../qml/pages/Details.qml" line="39"/>
         <source>Kill</source>
         <translation type="unfinished">结束</translation>
     </message>
@@ -121,14 +115,12 @@
 <context>
     <name>Indicator</name>
     <message>
-        <location filename="../qml/components/Indicator.qml" line="22"/>
         <source>cpu: </source>
-        <translation type="unfinished">cpu：</translation>
+        <translation type="obsolete">cpu：</translation>
     </message>
     <message>
-        <location filename="../qml/components/Indicator.qml" line="33"/>
         <source>mem: </source>
-        <translation type="unfinished">内存：</translation>
+        <translation type="obsolete">内存：</translation>
     </message>
 </context>
 <context>
@@ -229,12 +221,12 @@
         <translation>内存使用情况</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="74"/>
+        <location filename="../qml/pages/Memory.qml" line="52"/>
         <source> kB free out of </source>
         <translation>kB未使用；</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="74"/>
+        <location filename="../qml/pages/Memory.qml" line="52"/>
         <source> kB total</source>
         <translation>kB总共</translation>
     </message>
@@ -255,6 +247,19 @@
         <location filename="../qml/pages/Phone.qml" line="45"/>
         <source>Shutdown</source>
         <translation>关机</translation>
+    </message>
+</context>
+<context>
+    <name>ProcIndicator</name>
+    <message>
+        <location filename="../qml/components/ProcIndicator.qml" line="27"/>
+        <source>cpu: </source>
+        <translation type="unfinished">cpu：</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/ProcIndicator.qml" line="38"/>
+        <source>mem: </source>
+        <translation type="unfinished">内存：</translation>
     </message>
 </context>
 <context>

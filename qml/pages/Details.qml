@@ -24,23 +24,15 @@ Page {
 
     Column {
         PageHeader {
-            title: process.selectedName
+            title: "Details"
         }
 
         anchors.fill: parent
 
-        Label {
-            text: qsTr("CPU: ") + process.selectedCPUUsage + "%"
-            anchors {
-                horizontalCenter: parent.horizontalCenter
-            }
-        }
-
-        Label {
-            text: qsTr("Memory: ") + process.selectedMemoryUsage + "%"
-            anchors {
-                horizontalCenter: parent.horizontalCenter
-            }
+        ProcIndicator {
+            procName: process.selectedName
+            cpuUse: process.selectedCPUUsage
+            memUse: process.selectedMemoryUsage
         }
 
         Button {
@@ -48,6 +40,8 @@ Page {
             anchors {
                 horizontalCenter: parent.horizontalCenter
             }
+
+            visible: process.isKillable()
 
             onClicked: {
                 if ( process.killSelected() === 0 ) {

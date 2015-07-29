@@ -17,6 +17,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../components"
 
 Page {
     id: page
@@ -37,34 +38,11 @@ Page {
             borderWidth: 2
             progressColor: Theme.highlightColor
 
-            Column {
-                width: parent.width * 0.7
-                anchors.centerIn: parent
-
-                Text {
-                    width: parent.width
-                    color: Theme.highlightColor
-                    //opacity: 0.9
-                    font.pixelSize: Theme.fontSizeMedium
-                    horizontalAlignment: Text.AlignHCenter
-                    text: battery.status
-                }
-                Rectangle {
-                    color: Theme.highlightColor
-                    width: parent.width
-                    height: 2
-                    opacity: 0.4
-                }
-                Text {
-                    width: parent.width
-                    color: Theme.highlightColor
-                    //opacity: 0.9
-                    font.pixelSize: Theme.fontSizeMedium
-                    horizontalAlignment: Text.AlignHCenter
-                    text: battery.level
-                }
+            DoubleIndicator {
+                topVal: battery.level
+                topUnit: "%"
+                botVal: battery.status
             }
-
         }
 
         Text {

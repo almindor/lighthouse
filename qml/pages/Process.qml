@@ -66,7 +66,11 @@ Page {
         model: process
         VerticalScrollDecorator {}
 
-        delegate: Indicator {
+        delegate: ProcIndicator {
+            procName: name
+            cpuUse: cpuUsage
+            memUse: memoryUsage
+
             onPressAndHold: {
                 if ( process.selectedPID == 0 ) {
                     process.selectedPID = processID

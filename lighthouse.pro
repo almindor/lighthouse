@@ -55,8 +55,9 @@ OTHER_FILES += \
     qml/Lighthouse.qml \
     qml/pages/Battery.qml \
     qml/InfoPopup.qml \
-    qml/components/Indicator.qml \
-    qml/pages/Details.qml
+    qml/pages/Details.qml \
+    qml/components/ProcIndicator.qml \
+    qml/components/DoubleIndicator.qml
 
 HEADERS += \
     src/cpu.h \
@@ -81,6 +82,5 @@ SOURCES += \
     qml/pages/Phone.qml \
     qml/Lighthouse.qml \
     qml/pages/Battery.qml \
-    qml/InfoPopup.qml \
-    qml/components/Indicator.qml
+    qml/InfoPopup.qml
 }

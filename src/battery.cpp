@@ -23,6 +23,19 @@ namespace Lighthouse {
         return fStatus;
     }
 
+    const QString Battery::getStatusShort() const {
+        const unsigned short ss = fStatus.length() > 0 ? fStatus.at(0).unicode() : 'u';
+
+        switch (ss) {
+            case 'C':
+            case 'c': return "↑";
+            case 'D':
+            case 'd': return "↓";
+        }
+
+        return "~";
+    }
+
     int Battery::getLevel() const {
         return fLevel;
     }

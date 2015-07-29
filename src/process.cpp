@@ -222,9 +222,9 @@ namespace Lighthouse {
         return fSortBy;
     }
 
-    bool Process::isKillable(int pid) const {
+    bool Process::isKillable() const {
         struct stat fStat;
-        QString path = "/proc/" + QString::number(pid) + "/stat";
+        QString path = "/proc/" + QString::number(fSelectedPID) + "/stat";
         if ( stat(path.toLocal8Bit().data(), &fStat) != 0 ) {
             qCritical() << "Unable to stat file: " << path << ": " << strerror(errno) << "\n";
             return false;
