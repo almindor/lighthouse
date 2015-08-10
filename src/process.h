@@ -38,6 +38,7 @@ namespace Lighthouse {
         Q_PROPERTY(int selectedCPUUsage READ getSelectedCPUUsage NOTIFY selectedChanged)
         Q_PROPERTY(int selectedMemoryUsage READ getSelectedMemoryUsage NOTIFY selectedChanged)
         Q_PROPERTY(const QString selectedName READ getSelectedName NOTIFY selectedChanged)
+        Q_PROPERTY(int selectedTick READ getSelectedTick NOTIFY selectedChanged)
     public:
         enum ProcessRoles {
             PIDRole = Qt::UserRole + 1,
@@ -66,6 +67,7 @@ namespace Lighthouse {
         uid_t fUID;
         int fSortBy;
         int fSelectedPID;
+        int fSelectedTick;
         const ProcMap* fProcMap;
         PIDList fProcKeys;
         PIDList fAppKeys;
@@ -91,6 +93,7 @@ namespace Lighthouse {
         const QString getSelectedName() const;
         int getSelectedCPUUsage() const;
         int getSelectedMemoryUsage() const;
+        int getSelectedTick() const;
     signals:
         void summaryValueChanged();
         void sortByChanged();

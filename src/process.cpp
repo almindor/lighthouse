@@ -36,6 +36,7 @@ namespace Lighthouse {
         fProcMap = 0;
         fSortBy = 0;
         fSelectedPID = 0;
+        fSelectedTick = 0;
         fApplicationsOnly = fSettings.value("proc/apponly", false).toBool();
         fPageStatus = 0;
         fApplicationActive = false;
@@ -161,6 +162,7 @@ namespace Lighthouse {
         }
 
         if ( fSelectedPID > 0 ) {
+            fSelectedTick++;
             emit selectedChanged();
         }
     }
@@ -292,6 +294,10 @@ namespace Lighthouse {
 
     int Process::getSelectedMemoryUsage() const {
         return fSelectedPID > 0 ? fProcMap->value(fSelectedPID).getMemoryUsage() : 0;
+    }
+
+    int Process::getSelectedTick() const {
+        return fSelectedTick;
     }
 
 }

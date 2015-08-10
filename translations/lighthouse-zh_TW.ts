@@ -111,7 +111,19 @@
         <translation type="obsolete">記憶體：</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="39"/>
+        <location filename="../qml/pages/Details.qml" line="40"/>
+        <source>CPU</source>
+        <comment>details CPU indicator name</comment>
+        <translation type="unfinished">CPU</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Details.qml" line="46"/>
+        <source>Memory</source>
+        <comment>details Memory indicator name</comment>
+        <translation type="unfinished">記憶體</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Details.qml" line="52"/>
         <source>Kill</source>
         <translation type="unfinished">中止</translation>
     </message>
@@ -211,7 +223,7 @@
 <context>
     <name>Lighthouse::Process</name>
     <message>
-        <location filename="../src/process.cpp" line="73"/>
+        <location filename="../src/process.cpp" line="74"/>
         <source>Unknown</source>
         <comment>Process name</comment>
         <translation>未知</translation>

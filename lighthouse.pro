@@ -57,7 +57,9 @@ OTHER_FILES += \
     qml/InfoPopup.qml \
     qml/pages/Details.qml \
     qml/components/ProcIndicator.qml \
-    qml/components/DoubleIndicator.qml
+    qml/components/DoubleIndicator.qml \
+    qml/components/UsageGraph.qml \
+    qml/components/UsageHelper.js
 
 HEADERS += \
     src/cpu.h \

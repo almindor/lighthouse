@@ -28,11 +28,24 @@ Page {
         }
 
         anchors.fill: parent
+        spacing: 10
 
         ProcIndicator {
             procName: process.selectedName
             cpuUse: process.selectedCPUUsage
             memUse: process.selectedMemoryUsage
+        }
+
+        UsageGraph {
+            indicatorName: qsTr("CPU", "details CPU indicator name")
+            dataSource: process.selectedCPUUsage
+            tickSource: process.selectedTick
+        }
+
+        UsageGraph {
+            indicatorName: qsTr("Memory", "details Memory indicator name")
+            dataSource: process.selectedMemoryUsage
+            tickSource: process.selectedTick
         }
 
         Button {
