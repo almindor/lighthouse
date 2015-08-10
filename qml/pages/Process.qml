@@ -17,11 +17,18 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-
+import "../components"
 
 Page {
-    id: page
-    onStatusChanged: monitor.setProcessDetails( status !== 0 )
+    id: page    
+    onStatusChanged: {
+        if ( status === PageStatus.Active ) {
+            process.selectedPID = 0
+            monitor.setProcessDetails( -1 ) // monitor all
+        } else if ( status === PageStatus.Inactive ) {
+            monitor.setProcessDetails( process.selectedPID ) // monitor pid or nothing if going back
+        }
+    }
 
     SilicaListView {
         id: listView
@@ -29,10 +36,12 @@ Page {
             title: process.applicationsOnly ? qsTr("Applications") : qsTr("Processes")
         }
 
+        property int preSelectedPID : 0
+
         PullDownMenu {
             MenuItem {
                 text: (process.applicationsOnly ? qsTr("Show Processes") : qsTr("Show Applications"))
-                onClicked: process.nextApplicationsOnly();
+                onClicked: process.nextApplicationsOnly()
             }
 
             MenuItem {
@@ -52,10 +61,6 @@ Page {
                 onClicked: process.setSortBy(0)
                 visible: (process.sortBy !== 0)
             }
-
-            onActiveChanged: {
-                process.selectPID(0); // deselect and unpause
-            }
         }
 
         anchors.fill: parent
@@ -63,115 +68,21 @@ Page {
         model: process
         VerticalScrollDecorator {}
 
-        delegate: BackgroundItem {
-            id: myListItem
-            anchors {
-                left: parent.left
-                right: parent.right
-                margins: Theme.paddingLarge
-            }
-            height: selected ? greyBar.height + killMenu.height : greyBar.height
-            Label {
-                anchors {
-                    left: parent.left
-                }
+        delegate: ProcIndicator {
+            procName: name
+            cpuUse: cpuUsage
+            memUse: memoryUsage
 
-                id: itemLabel
-                text: name
-            }
-
-            Text {
-                id: cpuLabel
-                text: qsTr("cpu: ") + cpuUsage + "%"
-                color: Theme.highlightColor
-                font.pointSize: 12
-                anchors {
-                    horizontalCenter: parent.horizontalCenter
-                    top: parent.top
-                }
-            }
-
-            Text {
-                id: memLabel
-                text: qsTr("mem: ") + memoryUsage + "%"
-                color: Theme.secondaryHighlightColor
-                font.pointSize: 12
-                anchors {
-                    horizontalCenter: parent.horizontalCenter
-                    top: parent.top
-                    topMargin: cpuLabel.height + 1
-                }
-            }
-
-            Rectangle {
-                id: greyBar
-                anchors {
-                    right: parent.right
-                    top: parent.top
-                }
-
-                opacity: 0.5
-                width: 200
-                height: cpuLabel.height + memLabel.height + 1
-                color: "dimgrey"
-            }
-
-            Rectangle {
-                id: cpuBar
-                anchors {
-                    right: parent.right
-                    top: parent.top
-                }
-
-                width: cpuUsage * 2
-                height: cpuLabel.height
-                color: Theme.highlightColor
-            }
-
-            Rectangle {
-                id: memBar
-                anchors {
-                    right: parent.right
-                    top: parent.top
-                    topMargin: cpuBar.height + 1
-                }
-
-                width: memoryUsage * 2
-                height: memLabel.height
-                color: Theme.secondaryHighlightColor
+            onPressed: {
+                listView.preSelectedPID = processID
             }
 
             onPressAndHold: {
-                if ( process.isKillable(processID) ) {
-                    process.selectPID(processID) // just in case it somehow sliped since onPressed
-                    killMenu.show(myListItem)
-                } else {
-                    applicationWindow.infoPopupRef.show("Info", "Permission denied", 2000, true)
+                if ( process.selectedPID == 0 && listView.preSelectedPID > 0 ) {
+                    process.selectedPID = listView.preSelectedPID
                 }
-            }
 
-            onPressed: {
-                process.selectPID(processID) // pauses the list updates
-            }
-
-            onPressedChanged: {
-                if ( !pressed && !killMenu.active ) {
-                    process.selectPID(0) // unpauses
-                }
-            }
-        }
-
-        ContextMenu {
-            id: killMenu
-            MenuItem {
-                text: qsTr("Kill")
-                onClicked: {
-                    process.killSelectedProcess()
-                }
-            }
-
-            onClosed: {
-                process.selectPID(0) // deselect/depause
+                pageStack.push(Qt.resolvedUrl("Details.qml"))
             }
         }
     }

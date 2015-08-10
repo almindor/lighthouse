@@ -1,0 +1,4 @@
+//.pragma library
+
+var history = [];
+

@@ -17,7 +17,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-
+import "../components"
 
 Page {
     id: page
@@ -37,34 +37,12 @@ Page {
             borderWidth: 2
             progressColor: Theme.highlightColor
 
-            Column {
-                width: parent.width * 0.7
-                anchors.centerIn: parent
-
-                Text {
-                    width: parent.width
-                    color: Theme.highlightColor
-                    font.pixelSize: Theme.fontSizeExtraLarge
-                    horizontalAlignment: Text.AlignHCenter
-                    text: (memory.total - memory.free) + " kB"
-                }
-                Rectangle {
-                    color: Theme.highlightColor
-                    width: parent.width
-                    height: 2
-                    opacity: 0.4
-                }
-                Text {
-                    width: parent.width
-                    color: Theme.highlightColor
-                    opacity: 0.6
-                    font.pixelSize: Theme.fontSizeExtraLarge
-                    horizontalAlignment: Text.AlignHCenter
-                    text: memory.total + " kB"
-                }
+            DoubleIndicator {
+                topVal: (memory.total - memory.free)
+                topUnit: "kB"
+                botVal: memory.total
+                botUnit: "kB"
             }
-
-
         }
 
         ProgressBar {

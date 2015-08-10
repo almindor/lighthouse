@@ -17,6 +17,8 @@ TRANSLATIONS = \
     translations/harbour-lighthouse-es_AR.ts \
     translations/harbour-lighthouse-sv.ts \
     translations/harbour-lighthouse-it.ts \
+    translations/harbour-lighthouse-nb.ts \
+    translations/harbour-lighthouse-nl.ts \
     translations/harbour-lighthouse-zh_CN.ts \
     translations/harbour-lighthouse-zh_TW.ts
 
@@ -52,7 +54,12 @@ OTHER_FILES += \
     harbour-lighthouse.desktop \
     qml/Lighthouse.qml \
     qml/pages/Battery.qml \
-    qml/InfoPopup.qml
+    qml/InfoPopup.qml \
+    qml/pages/Details.qml \
+    qml/components/ProcIndicator.qml \
+    qml/components/DoubleIndicator.qml \
+    qml/components/UsageGraph.qml \
+    qml/components/UsageHelper.js
 
 HEADERS += \
     src/cpu.h \
@@ -77,5 +84,10 @@ SOURCES += \
     qml/pages/Phone.qml \
     qml/Lighthouse.qml \
     qml/pages/Battery.qml \
-    qml/InfoPopup.qml
+    qml/InfoPopup.qml \
+    qml/pages/Details.qml \
+    qml/components/ProcIndicator.qml \
+    qml/components/DoubleIndicator.qml \
+    qml/components/UsageGraph.qml \
+    qml/components/UsageHelper.js
 }

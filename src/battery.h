@@ -10,6 +10,7 @@ namespace Lighthouse {
 		Q_OBJECT
         Q_PROPERTY(int level READ getLevel NOTIFY levelChanged)
         Q_PROPERTY(QString status READ getStatus NOTIFY statusChanged)
+        Q_PROPERTY(QString statusShort READ getStatusShort NOTIFY statusChanged)
         Q_PROPERTY(int summaryValue READ getSummaryValue NOTIFY summaryValueChanged)
         Q_PROPERTY(QString health READ getHealth NOTIFY healthChanged)
         Q_PROPERTY(QString technology READ getTechnology NOTIFY technologyChanged)
@@ -18,6 +19,7 @@ namespace Lighthouse {
 
         int getLevel() const;
         const QString& getStatus() const;
+        const QString getStatusShort() const;
         int getSummaryValue() const;
         const QString& getHealth() const;
         const QString& getTechnology() const;

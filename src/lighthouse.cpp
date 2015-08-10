@@ -86,6 +86,8 @@ int main(int argc, char *argv[])
     view->setSource(SailfishApp::pathTo(qml));
     view->show();
 
+    monitor.start(); // start thread after all receivers are connected
+
     result = app->exec();
 
     delete view;

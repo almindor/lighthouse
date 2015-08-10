@@ -36,6 +36,7 @@ namespace Lighthouse {
         fProcMap = 0;
         fSortBy = 0;
         fSelectedPID = 0;
+        fSelectedTick = 0;
         fApplicationsOnly = fSettings.value("proc/apponly", false).toBool();
         fPageStatus = 0;
         fApplicationActive = false;
@@ -48,7 +49,6 @@ namespace Lighthouse {
         roles[NameRole] = "name";
         roles[CPUUsageRole] = "cpuUsage";
         roles[MemoryUsageRole] = "memoryUsage";
-        roles[SelectedRole] = "selected";
         return roles;
     }
 
@@ -66,7 +66,6 @@ namespace Lighthouse {
                 case NameRole: return fProcMap->value(key).getName();
                 case CPUUsageRole: return fProcMap->value(key).getCPUUsage();
                 case MemoryUsageRole: return fProcMap->value(key).getMemoryUsage();
-                case SelectedRole: return (fSelectedPID == fProcMap->value(key).getPID());
             }
         }
 
@@ -75,7 +74,6 @@ namespace Lighthouse {
             case NameRole: return tr("Unknown", "Process name");
             case CPUUsageRole: return 0;
             case MemoryUsageRole: return 0;
-            case SelectedRole: return false;
         }
 
         return 0;
@@ -142,10 +140,7 @@ namespace Lighthouse {
     }
 
     void Process::setProcesses(const ProcMap* procMap, const PIDList& adds, const PIDList& deletes) {
-        if ( fSelectedPID > 0 ) {
-            return; // don't update if we're selecting to kill
-        }
-
+        //qDebug() << "setProcesses: " << procMap->size() << " Adds: " << adds.size() << "Deletes: " << deletes.size() << "\n";
         fProcMap = procMap;
         fCPUComparer.setProcMap(fProcMap);
         fMemoryComparer.setProcMap(fProcMap);
@@ -164,6 +159,11 @@ namespace Lighthouse {
         if ( fProcCount != keySize ) {
             fProcCount = keySize;
             emit summaryValueChanged();
+        }
+
+        if ( fSelectedPID > 0 ) {
+            fSelectedTick++;
+            emit selectedChanged();
         }
     }
 
@@ -224,9 +224,9 @@ namespace Lighthouse {
         return fSortBy;
     }
 
-    bool Process::isKillable(int pid) const {
+    bool Process::isKillable() const {
         struct stat fStat;
-        QString path = "/proc/" + QString::number(pid) + "/stat";
+        QString path = "/proc/" + QString::number(fSelectedPID) + "/stat";
         if ( stat(path.toLocal8Bit().data(), &fStat) != 0 ) {
             qCritical() << "Unable to stat file: " << path << ": " << strerror(errno) << "\n";
             return false;
@@ -237,10 +237,6 @@ namespace Lighthouse {
         }
 
         return false;
-    }
-
-    int Process::getSelectedPID() const {
-        return fSelectedPID;
     }
 
     bool Process::getApplicationsOnly() const {
@@ -266,29 +262,42 @@ namespace Lighthouse {
         emit applicationsOnlyChanged();
     }
 
-    void Process::selectPID(int pid) {
-        if ( fSelectedPID != pid ) {
-            fSelectedPID = pid;
-            emit selectedPIDChanged();
-
-            const PIDList& keys = getKeys();
-            const int size = keys.size();
-
-            for ( int i = 0; i < size; i++ ) {
-                if ( fProcMap->value(keys.at(i)).getPID() == pid ) {
-                    emit dataChanged(createIndex(i, 0), createIndex(i, 0));
-                    return;
-                }
-            }
-        }
+    int Process::getSelectedPID() const {
+        return fSelectedPID;
     }
 
-    void Process::killSelectedProcess() {
+    void Process::selectPID(int pid) {
+        fSelectedPID = pid;
+        emit selectedPIDChanged();
+    }
+
+    int Process::killSelected() {
+        int result = -1;
         if ( fSelectedPID > 0 ) {
-            if ( kill(fSelectedPID, SIGKILL) != 0 ) {
+            result = kill(fSelectedPID, SIGKILL);
+
+            if ( result != 0 ) {
                 qCritical() << "Unable to kill process: " << fSelectedPID << " error: " << strerror(errno) << "\n";
             }
         }
+
+        return result;
+    }
+
+    const QString Process::getSelectedName() const {
+        return fSelectedPID > 0 ? fProcMap->value(fSelectedPID).getName() : "Invalid process";
+    }
+
+    int Process::getSelectedCPUUsage() const {
+        return fSelectedPID > 0 ? fProcMap->value(fSelectedPID).getCPUUsage() : 0;
+    }
+
+    int Process::getSelectedMemoryUsage() const {
+        return fSelectedPID > 0 ? fProcMap->value(fSelectedPID).getMemoryUsage() : 0;
+    }
+
+    int Process::getSelectedTick() const {
+        return fSelectedTick;
     }
 
 }

@@ -30,17 +30,38 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../components"
 
 CoverBackground {
 
-    function coverValue(cp) {
+    function getTopVal(cp) {
         switch ( cp ) {
-            case 0: return cpu.summaryValue;
-            case 1: return memory.summaryValue;
-            case 2: return battery.summaryValue;
+            case 0: return cpu.summaryValue
+            case 1: return memory.summaryValue
+            case 2: return battery.summaryValue
         }
 
-        return -1;
+        return -1
+    }
+
+    function getBotVal(cp) {
+        switch ( cp ) {
+            case 0: return cpu.temperature
+            case 1: return Math.round(memory.free / 1000)
+            case 2: return battery.statusShort
+        }
+
+        return ""
+    }
+
+    function getBotUnit(cp) {
+        switch ( cp ) {
+            case 0: return "C°"
+            case 1: return "MB"
+            case 2: return ""
+        }
+
+        return ""
     }
 
     Image {
@@ -68,18 +89,15 @@ CoverBackground {
             horizontalCenter: parent.horizontalCenter
             centerIn: parent
         }
-        value: coverValue(monitor.coverPage) / 100.0
+        value: getTopVal(monitor.coverPage) / 100.0
         borderWidth: 2
         progressColor: Theme.highlightColor
 
-        Text {
-            width: parent.width
-            anchors.centerIn: parent
-            color: Theme.highlightColor
-            font.pixelSize: Theme.fontSizeHuge
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
-            text: coverValue(monitor.coverPage) + '%'
+        DoubleIndicator {
+            topVal: getTopVal(monitor.coverPage)
+            topUnit: "%"
+            botVal: getBotVal(monitor.coverPage)
+            botUnit: getBotUnit(monitor.coverPage)
         }
     }
 
