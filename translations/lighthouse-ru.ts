@@ -291,27 +291,27 @@
         <translation>Процессы</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="41"/>
+        <location filename="../qml/pages/Process.qml" line="43"/>
         <source>Show Processes</source>
         <translation>Показать процессы</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="41"/>
+        <location filename="../qml/pages/Process.qml" line="43"/>
         <source>Show Applications</source>
         <translation>Показать приложения</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="46"/>
+        <location filename="../qml/pages/Process.qml" line="48"/>
         <source>Sort by Name</source>
         <translation>По названию</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="52"/>
+        <location filename="../qml/pages/Process.qml" line="54"/>
         <source>Sort by Memory Usage</source>
         <translation>По использованию памяти</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="58"/>
+        <location filename="../qml/pages/Process.qml" line="60"/>
         <source>Sort by CPU Usage</source>
         <translation>По использованию процессора</translation>
     </message>

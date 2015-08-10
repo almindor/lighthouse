@@ -75,6 +75,7 @@ namespace Lighthouse {
         int fPageStatus;
         bool fApplicationActive;
         int fProcCount;
+        bool fPauseUpdates;
         CPUComparer fCPUComparer;
         MemoryComparer fMemoryComparer;
         NameComparer fNameComparer;

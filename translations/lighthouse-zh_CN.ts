@@ -287,27 +287,27 @@
         <translation>进程</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="41"/>
+        <location filename="../qml/pages/Process.qml" line="43"/>
         <source>Show Processes</source>
         <translation>显示进程</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="41"/>
+        <location filename="../qml/pages/Process.qml" line="43"/>
         <source>Show Applications</source>
         <translation>显示进程</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="46"/>
+        <location filename="../qml/pages/Process.qml" line="48"/>
         <source>Sort by Name</source>
         <translation>按名称排序</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="52"/>
+        <location filename="../qml/pages/Process.qml" line="54"/>
         <source>Sort by Memory Usage</source>
         <translation>按内存用量排序</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="58"/>
+        <location filename="../qml/pages/Process.qml" line="60"/>
         <source>Sort by CPU Usage</source>
         <translation>按CPU用量排序</translation>
     </message>

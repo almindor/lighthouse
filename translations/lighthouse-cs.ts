@@ -287,27 +287,27 @@
         <translation>Procesy</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="41"/>
+        <location filename="../qml/pages/Process.qml" line="43"/>
         <source>Show Processes</source>
         <translation>Ukázat procesy</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="41"/>
+        <location filename="../qml/pages/Process.qml" line="43"/>
         <source>Show Applications</source>
         <translation>Ukázat programy</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="46"/>
+        <location filename="../qml/pages/Process.qml" line="48"/>
         <source>Sort by Name</source>
         <translation>Třídit podle názvu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="52"/>
+        <location filename="../qml/pages/Process.qml" line="54"/>
         <source>Sort by Memory Usage</source>
         <translation>Třídit podle používání paměti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="58"/>
+        <location filename="../qml/pages/Process.qml" line="60"/>
         <source>Sort by CPU Usage</source>
         <translation>Třídit podle používání procesoru</translation>
     </message>

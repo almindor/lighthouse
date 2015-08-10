@@ -36,6 +36,8 @@ Page {
             title: process.applicationsOnly ? qsTr("Applications") : qsTr("Processes")
         }
 
+        property int preSelectedPID : 0
+
         PullDownMenu {
             MenuItem {
                 text: (process.applicationsOnly ? qsTr("Show Processes") : qsTr("Show Applications"))
@@ -71,11 +73,16 @@ Page {
             cpuUse: cpuUsage
             memUse: memoryUsage
 
+            onPressed: {
+                listView.preSelectedPID = processID
+            }
+
             onPressAndHold: {
-                if ( process.selectedPID == 0 ) {
-                    process.selectedPID = processID
-                    pageStack.push(Qt.resolvedUrl("Details.qml"))
+                if ( process.selectedPID == 0 && listView.preSelectedPID > 0 ) {
+                    process.selectedPID = listView.preSelectedPID
                 }
+
+                pageStack.push(Qt.resolvedUrl("Details.qml"))
             }
         }
     }

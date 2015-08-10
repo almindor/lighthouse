@@ -291,27 +291,27 @@
         <translation>Processus</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="41"/>
+        <location filename="../qml/pages/Process.qml" line="43"/>
         <source>Show Processes</source>
         <translation>Afficher les processus</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="41"/>
+        <location filename="../qml/pages/Process.qml" line="43"/>
         <source>Show Applications</source>
         <translation>Afficher les applications</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="46"/>
+        <location filename="../qml/pages/Process.qml" line="48"/>
         <source>Sort by Name</source>
         <translation>Trier par Nom</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="52"/>
+        <location filename="../qml/pages/Process.qml" line="54"/>
         <source>Sort by Memory Usage</source>
         <translation>Trier par utilisation Mémoire</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="58"/>
+        <location filename="../qml/pages/Process.qml" line="60"/>
         <source>Sort by CPU Usage</source>
         <translation>Trier par uilisation Processeur</translation>
     </message>
