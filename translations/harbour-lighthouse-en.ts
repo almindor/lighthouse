@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ar_EG">
+<TS version="2.1">
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/pages/About.qml" line="35"/>
+        <location filename="../qml/pages/About.qml" line="43"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="46"/>
+        <location filename="../qml/pages/About.qml" line="54"/>
         <source>Lighthouse</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="46"/>
+        <location filename="../qml/pages/About.qml" line="54"/>
         <source>by Aleš Katona and Lavaux Gilles.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="57"/>
+        <location filename="../qml/pages/About.qml" line="65"/>
         <source>Translators</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="69"/>
+        <location filename="../qml/pages/About.qml" line="77"/>
         <source>Czech translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="85"/>
+        <location filename="../qml/pages/About.qml" line="93"/>
         <source>Russian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="101"/>
+        <location filename="../qml/pages/About.qml" line="109"/>
         <source>Spanish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="117"/>
+        <location filename="../qml/pages/About.qml" line="125"/>
         <source>Taiwanese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="133"/>
+        <location filename="../qml/pages/About.qml" line="141"/>
         <source>Chinese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="149"/>
+        <location filename="../qml/pages/About.qml" line="157"/>
         <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="165"/>
+        <location filename="../qml/pages/About.qml" line="173"/>
         <source>Italian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/ghostofasmile/&apos;&gt;Francesco Vaccaro (ghostofasmile)&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="181"/>
+        <location filename="../qml/pages/About.qml" line="189"/>
         <source>Swedish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/AsavarTzeth/&apos;&gt;Patrik Nilsson (AsavarTzeth)&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="197"/>
-        <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</source>
+        <location filename="../qml/pages/About.qml" line="205"/>
+        <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -302,22 +302,22 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="30"/>
+        <location filename="../qml/pages/Settings.qml" line="31"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="40"/>
+        <location filename="../qml/pages/Settings.qml" line="54"/>
         <source>Update interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="53"/>
+        <location filename="../qml/pages/Settings.qml" line="67"/>
         <source>Languages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="86"/>
+        <location filename="../qml/pages/Settings.qml" line="100"/>
         <source>App Restart Required</source>
         <translation type="unfinished"></translation>
     </message>

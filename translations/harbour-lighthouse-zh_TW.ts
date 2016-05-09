@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ar_EG">
+<TS version="2.1" language="zh_TW">
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/pages/About.qml" line="35"/>
+        <location filename="../qml/pages/About.qml" line="43"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>關於</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="46"/>
+        <location filename="../qml/pages/About.qml" line="54"/>
         <source>Lighthouse</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="46"/>
+        <location filename="../qml/pages/About.qml" line="54"/>
         <source>by Aleš Katona and Lavaux Gilles.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="57"/>
+        <location filename="../qml/pages/About.qml" line="65"/>
         <source>Translators</source>
-        <translation type="unfinished"></translation>
+        <translation>翻譯者</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="69"/>
+        <location filename="../qml/pages/About.qml" line="77"/>
         <source>Czech translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>捷克文由 &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a所翻譯</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="85"/>
+        <location filename="../qml/pages/About.qml" line="93"/>
         <source>Russian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>俄文由&lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="101"/>
+        <location filename="../qml/pages/About.qml" line="109"/>
         <source>Spanish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>西班牙文由&lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="117"/>
+        <location filename="../qml/pages/About.qml" line="125"/>
         <source>Taiwanese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>正體中文由&lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;所翻譯</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="133"/>
+        <location filename="../qml/pages/About.qml" line="141"/>
         <source>Chinese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>簡體中文由&lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;所翻譯</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="149"/>
+        <location filename="../qml/pages/About.qml" line="157"/>
         <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>法文由 &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;所翻譯</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="165"/>
+        <location filename="../qml/pages/About.qml" line="173"/>
         <source>Italian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/ghostofasmile/&apos;&gt;Francesco Vaccaro (ghostofasmile)&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>義大利文由 &lt;a href=&apos;https://www.transifex.com/accounts/profile/ghostofasmile/&apos;&gt;Francesco Vaccaro (ghostofasmile)&lt;/a&gt;所翻譯</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="181"/>
+        <location filename="../qml/pages/About.qml" line="189"/>
         <source>Swedish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/AsavarTzeth/&apos;&gt;Patrik Nilsson (AsavarTzeth)&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>瑞士文由 &lt;a href=&apos;https://www.transifex.com/accounts/profile/AsavarTzeth/&apos;&gt;Patrik Nilsson (AsavarTzeth)&lt;/a&gt;所翻譯</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="197"/>
-        <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</source>
+        <location filename="../qml/pages/About.qml" line="205"/>
+        <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -74,17 +74,17 @@
     <message>
         <location filename="../qml/pages/Battery.qml" line="32"/>
         <source>Battery Usage</source>
-        <translation type="unfinished"></translation>
+        <translation>電池使用量</translation>
     </message>
     <message>
         <location filename="../qml/pages/Battery.qml" line="55"/>
         <source>Health: </source>
-        <translation type="unfinished"></translation>
+        <translation>健康狀態：</translation>
     </message>
     <message>
         <location filename="../qml/pages/Battery.qml" line="63"/>
         <source>Technology: </source>
-        <translation type="unfinished"></translation>
+        <translation>電池種類：</translation>
     </message>
 </context>
 <context>
@@ -93,13 +93,13 @@
         <location filename="../qml/pages/CPU.qml" line="32"/>
         <location filename="../qml/pages/CPU.qml" line="70"/>
         <source>CPU Usage</source>
-        <translation type="unfinished"></translation>
+        <translation>CPU使用量</translation>
     </message>
     <message>
         <location filename="../qml/pages/CPU.qml" line="59"/>
         <location filename="../qml/pages/CPU.qml" line="104"/>
         <source>CPU</source>
-        <translation type="unfinished"></translation>
+        <translation>CPU</translation>
     </message>
 </context>
 <context>
@@ -108,18 +108,18 @@
         <location filename="../qml/pages/Details.qml" line="42"/>
         <source>CPU</source>
         <comment>details CPU indicator name</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">CPU</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="48"/>
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">記憶體</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="54"/>
         <source>Kill</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">中止</translation>
     </message>
 </context>
 <context>
@@ -130,7 +130,7 @@
         <location filename="../src/battery.cpp" line="11"/>
         <source>Unavailable</source>
         <comment>battery status</comment>
-        <translation type="unfinished"></translation>
+        <translation>無法取得</translation>
     </message>
 </context>
 <context>
@@ -138,12 +138,12 @@
     <message>
         <location filename="../src/cpu.cpp" line="46"/>
         <source>Data</source>
-        <translation type="unfinished"></translation>
+        <translation>資料</translation>
     </message>
     <message>
         <location filename="../src/cpu.cpp" line="50"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>說明</translation>
     </message>
 </context>
 <context>
@@ -152,7 +152,7 @@
         <location filename="../src/languages.cpp" line="68"/>
         <source>Unknown</source>
         <comment>language</comment>
-        <translation type="unfinished"></translation>
+        <translation>未知</translation>
     </message>
 </context>
 <context>
@@ -184,23 +184,23 @@
     <message>
         <location filename="../src/monitor.cpp" line="119"/>
         <source>CPU</source>
-        <translation type="unfinished"></translation>
+        <translation>CPU</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="120"/>
         <source>Memory</source>
-        <translation type="unfinished"></translation>
+        <translation>記憶體</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="121"/>
         <source>Battery</source>
-        <translation type="unfinished"></translation>
+        <translation>電池</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="122"/>
         <source>Unknown</source>
         <comment>Cover label in summary page</comment>
-        <translation type="unfinished"></translation>
+        <translation>未知</translation>
     </message>
 </context>
 <context>
@@ -209,7 +209,7 @@
         <location filename="../src/process.cpp" line="74"/>
         <source>Unknown</source>
         <comment>Process name</comment>
-        <translation type="unfinished"></translation>
+        <translation>未知</translation>
     </message>
 </context>
 <context>
@@ -217,17 +217,17 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="31"/>
         <source>Memory Usage</source>
-        <translation type="unfinished"></translation>
+        <translation>記憶體使用量</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="54"/>
         <source> kB free out of </source>
-        <translation type="unfinished"></translation>
+        <translation>kB未使用於</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="54"/>
         <source> kB total</source>
-        <translation type="unfinished"></translation>
+        <translation>kB中</translation>
     </message>
 </context>
 <context>
@@ -240,12 +240,12 @@
     <message>
         <location filename="../qml/pages/Phone.qml" line="38"/>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>重新啟動</translation>
     </message>
     <message>
         <location filename="../qml/pages/Phone.qml" line="47"/>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>關機</translation>
     </message>
 </context>
 <context>
@@ -253,12 +253,12 @@
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="29"/>
         <source>cpu: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">cpu：</translation>
     </message>
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="40"/>
         <source>mem: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">記憶體：</translation>
     </message>
 </context>
 <context>
@@ -266,60 +266,60 @@
     <message>
         <location filename="../qml/pages/Process.qml" line="38"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>應用程式</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="38"/>
         <source>Processes</source>
-        <translation type="unfinished"></translation>
+        <translation>程序</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="45"/>
         <source>Show Processes</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示程序</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="45"/>
         <source>Show Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示應用程式</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="50"/>
         <source>Sort by Name</source>
-        <translation type="unfinished"></translation>
+        <translation>依名稱排序</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="56"/>
         <source>Sort by Memory Usage</source>
-        <translation type="unfinished"></translation>
+        <translation>依記憶體使用量排序</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="62"/>
         <source>Sort by CPU Usage</source>
-        <translation type="unfinished"></translation>
+        <translation>依CPU使用量排序</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="30"/>
+        <location filename="../qml/pages/Settings.qml" line="31"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>設定</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="40"/>
+        <location filename="../qml/pages/Settings.qml" line="54"/>
         <source>Update interval</source>
-        <translation type="unfinished"></translation>
+        <translation>更新頻率</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="53"/>
+        <location filename="../qml/pages/Settings.qml" line="67"/>
         <source>Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>語言</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="86"/>
+        <location filename="../qml/pages/Settings.qml" line="100"/>
         <source>App Restart Required</source>
-        <translation type="unfinished"></translation>
+        <translation>應用程式必須重新啟動</translation>
     </message>
 </context>
 <context>
@@ -327,7 +327,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="32"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>關於</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="36"/>
@@ -337,37 +337,37 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="40"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>設定</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="53"/>
         <source>Summary</source>
-        <translation type="unfinished"></translation>
+        <translation>摘要</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="64"/>
         <source>Uptime: </source>
-        <translation type="unfinished"></translation>
+        <translation>執行時間：</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="74"/>
         <source>CPUs: </source>
-        <translation type="unfinished"></translation>
+        <translation>CPUs：</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="84"/>
         <source>Memory: </source>
-        <translation type="unfinished"></translation>
+        <translation>記憶體：</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="93"/>
         <source>Processes: </source>
-        <translation type="unfinished"></translation>
+        <translation>程序：</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="102"/>
         <source>Battery: </source>
-        <translation type="unfinished"></translation>
+        <translation>電池：</translation>
     </message>
 </context>
 </TS>
