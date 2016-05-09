@@ -21,183 +21,195 @@ import Sailfish.Silica 1.0
 
 Page {
     id: page
+    allowedOrientations: Orientation.Portrait | Orientation.Landscape
+    | Orientation.LandscapeInverted
+    property bool largeScreen: Screen.sizeCategory === Screen.Large ||
+    Screen.sizeCategory === Screen.ExtraLarge
 
-    Column {
-        width: page.width
-        spacing: Theme.paddingLarge
+    SilicaFlickable {
+        anchors.fill: parent
+        contentWidth: parent.width
+        contentHeight: col.height
 
-        PageHeader {
-            id: header
-            title: qsTr("About")
+        VerticalScrollDecorator {}
+
+        Column {
+            id: col
+            width: page.width
+            spacing: Theme.paddingLarge
+
+            PageHeader {
+                id: header
+                title: qsTr("About")
+            }
+
+            Label {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+                wrapMode: Text.WordWrap
+                color: Theme.primaryColor
+                text: qsTr("Lighthouse") + " v1.5.0 " + qsTr("by Aleš Katona and Lavaux Gilles.")
+            }
+
+            Label {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+                wrapMode: Text.WordWrap
+                color: Theme.primaryColor
+                text: qsTr("Translators")
+            }
+
+            Text {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+                color: Theme.secondaryColor
+                font.pointSize: largeScreen ? 30 : 16
+                wrapMode: Text.WordWrap
+                text: qsTr("Czech translation by <a href='https://www.transifex.com/accounts/profile/fri/'>fri</a>.")
+                linkColor: Theme.secondaryHighlightColor
+                onLinkActivated: {
+                    Qt.openUrlExternally(link);
+                }
+            }
+
+            Text {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+                color: Theme.secondaryColor
+                font.pointSize: largeScreen ? 30 : 16
+                wrapMode: Text.WordWrap
+                text: qsTr("Russian translation by <a href='https://www.transifex.com/accounts/profile/lewa/'>Alexey (lewa)</a>.")
+                linkColor: Theme.secondaryHighlightColor
+                onLinkActivated: {
+                    Qt.openUrlExternally(link);
+                }
+            }
+
+            Text {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+                color: Theme.secondaryColor
+                font.pointSize: largeScreen ? 30 : 16
+                wrapMode: Text.WordWrap
+                text: qsTr("Spanish translation by <a href='https://www.transifex.com/accounts/profile/hobarrera/'>Hugo Osvaldo Barrera (hobarrera)</a>.")
+                linkColor: Theme.secondaryHighlightColor
+                onLinkActivated: {
+                    Qt.openUrlExternally(link);
+                }
+            }
+
+            Text {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+                color: Theme.secondaryColor
+                font.pointSize: largeScreen ? 30 : 16
+                wrapMode: Text.WordWrap
+                text: qsTr("Taiwanese translation by <a href='https://www.transifex.com/accounts/profile/hanhsuan/'>hanhsuan</a>.")
+                linkColor: Theme.secondaryHighlightColor
+                onLinkActivated: {
+                    Qt.openUrlExternally(link);
+                }
+            }
+
+            Text {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+                color: Theme.secondaryColor
+                font.pointSize: largeScreen ? 30 : 16
+                wrapMode: Text.WordWrap
+                text: qsTr("Chinese translation by <a href='https://www.transifex.com/accounts/profile/TylerTemp/'>TylerTemp</a>.")
+                linkColor: Theme.secondaryHighlightColor
+                onLinkActivated: {
+                    Qt.openUrlExternally(link);
+                }
+            }
+
+            Text {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+                color: Theme.secondaryColor
+                font.pointSize: largeScreen ? 30 : 16
+                wrapMode: Text.WordWrap
+                text: qsTr("French translation by <a href='https://www.transifex.com/accounts/profile/Nerfiaux/'>Guillaume ARIAUX (Nerfiaux)</a>.")
+                linkColor: Theme.secondaryHighlightColor
+                onLinkActivated: {
+                    Qt.openUrlExternally(link);
+                }
+            }
+
+            Text {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+                color: Theme.secondaryColor
+                font.pointSize: largeScreen ? 30 : 16
+                wrapMode: Text.WordWrap
+                text: qsTr("Italian translation by <a href='https://www.transifex.com/accounts/profile/ghostofasmile/'>Francesco Vaccaro (ghostofasmile)</a>.")
+                linkColor: Theme.secondaryHighlightColor
+                onLinkActivated: {
+                    Qt.openUrlExternally(link);
+                }
+            }
+
+            Text {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+                color: Theme.secondaryColor
+                font.pointSize: largeScreen ? 30 : 16
+                wrapMode: Text.WordWrap
+                text: qsTr("Swedish translation by <a href='https://www.transifex.com/accounts/profile/AsavarTzeth/'>Patrik Nilsson (AsavarTzeth)</a>.")
+                linkColor: Theme.secondaryHighlightColor
+                onLinkActivated: {
+                    Qt.openUrlExternally(link);
+                }
+            }
+
+            Text {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+                color: Theme.secondaryColor
+                font.pointSize: largeScreen ? 30 : 16
+                wrapMode: Text.WordWrap
+                text: qsTr("Lighthouse is free software licensed under the GPL v3 available at <a href='https://github.com/almindor/lighthouse'>github</a>.\
+                Device controls DBus code inspired by <a href='https://github.com/ejjoman/SailfishReboot'>SailfishReboot</a>.")
+                linkColor: Theme.secondaryHighlightColor
+                onLinkActivated: {
+                    Qt.openUrlExternally(link);
+                }
+            }
+
         }
-
-        Label {
-            anchors {
-                left: parent.left
-                right: parent.right
-                margins: Theme.paddingLarge
-            }
-            wrapMode: Text.WordWrap
-            color: Theme.primaryColor
-            text: qsTr("Lighthouse") + " v1.4.2 " + qsTr("by Aleš Katona and Lavaux Gilles.")
-        }
-
-        Label {
-            anchors {
-                left: parent.left
-                right: parent.right
-                margins: Theme.paddingLarge
-            }
-            wrapMode: Text.WordWrap
-            color: Theme.primaryColor
-            text: qsTr("Translators")
-        }
-
-        Text {
-            anchors {
-                left: parent.left
-                right: parent.right
-                margins: Theme.paddingLarge
-            }
-            color: Theme.secondaryColor
-            font.pointSize: 16
-            wrapMode: Text.WordWrap
-            text: qsTr("Czech translation by <a href='https://www.transifex.com/accounts/profile/fri/'>fri</a>.")
-            linkColor: Theme.secondaryHighlightColor
-            onLinkActivated: {
-                 Qt.openUrlExternally(link);
-            }
-        }
-
-        Text {
-            anchors {
-                left: parent.left
-                right: parent.right
-                margins: Theme.paddingLarge
-            }
-            color: Theme.secondaryColor
-            font.pointSize: 16
-            wrapMode: Text.WordWrap
-            text: qsTr("Russian translation by <a href='https://www.transifex.com/accounts/profile/lewa/'>Alexey (lewa)</a>.")
-            linkColor: Theme.secondaryHighlightColor
-            onLinkActivated: {
-                 Qt.openUrlExternally(link);
-            }
-        }
-
-        Text {
-            anchors {
-                left: parent.left
-                right: parent.right
-                margins: Theme.paddingLarge
-            }
-            color: Theme.secondaryColor
-            font.pointSize: 16
-            wrapMode: Text.WordWrap
-            text: qsTr("Spanish translation by <a href='https://www.transifex.com/accounts/profile/hobarrera/'>Hugo Osvaldo Barrera (hobarrera)</a>.")
-            linkColor: Theme.secondaryHighlightColor
-            onLinkActivated: {
-                 Qt.openUrlExternally(link);
-            }
-        }
-
-        Text {
-            anchors {
-                left: parent.left
-                right: parent.right
-                margins: Theme.paddingLarge
-            }
-            color: Theme.secondaryColor
-            font.pointSize: 16
-            wrapMode: Text.WordWrap
-            text: qsTr("Taiwanese translation by <a href='https://www.transifex.com/accounts/profile/hanhsuan/'>hanhsuan</a>.")
-            linkColor: Theme.secondaryHighlightColor
-            onLinkActivated: {
-                 Qt.openUrlExternally(link);
-            }
-        }
-
-        Text {
-            anchors {
-                left: parent.left
-                right: parent.right
-                margins: Theme.paddingLarge
-            }
-            color: Theme.secondaryColor
-            font.pointSize: 16
-            wrapMode: Text.WordWrap
-            text: qsTr("Chinese translation by <a href='https://www.transifex.com/accounts/profile/TylerTemp/'>TylerTemp</a>.")
-            linkColor: Theme.secondaryHighlightColor
-            onLinkActivated: {
-                 Qt.openUrlExternally(link);
-            }
-        }
-
-        Text {
-            anchors {
-                left: parent.left
-                right: parent.right
-                margins: Theme.paddingLarge
-            }
-            color: Theme.secondaryColor
-            font.pointSize: 16
-            wrapMode: Text.WordWrap
-            text: qsTr("French translation by <a href='https://www.transifex.com/accounts/profile/Nerfiaux/'>Guillaume ARIAUX (Nerfiaux)</a>.")
-            linkColor: Theme.secondaryHighlightColor
-            onLinkActivated: {
-                 Qt.openUrlExternally(link);
-            }
-        }
-
-        Text {
-            anchors {
-                left: parent.left
-                right: parent.right
-                margins: Theme.paddingLarge
-            }
-            color: Theme.secondaryColor
-            font.pointSize: 16
-            wrapMode: Text.WordWrap
-            text: qsTr("Italian translation by <a href='https://www.transifex.com/accounts/profile/ghostofasmile/'>Francesco Vaccaro (ghostofasmile)</a>.")
-            linkColor: Theme.secondaryHighlightColor
-            onLinkActivated: {
-                 Qt.openUrlExternally(link);
-            }
-        }
-
-        Text {
-            anchors {
-                left: parent.left
-                right: parent.right
-                margins: Theme.paddingLarge
-            }
-            color: Theme.secondaryColor
-            font.pointSize: 16
-            wrapMode: Text.WordWrap
-            text: qsTr("Swedish translation by <a href='https://www.transifex.com/accounts/profile/AsavarTzeth/'>Patrik Nilsson (AsavarTzeth)</a>.")
-            linkColor: Theme.secondaryHighlightColor
-            onLinkActivated: {
-                 Qt.openUrlExternally(link);
-            }
-        }
-
-        Text {
-            anchors {
-                left: parent.left
-                right: parent.right
-                margins: Theme.paddingLarge
-            }
-            color: Theme.secondaryColor
-            font.pointSize: 16
-            wrapMode: Text.WordWrap
-            text: qsTr("Lighthouse is free software licensed under the GPL v3 available at <a href='https://github.com/almindor/lighthouse'>github</a>.\
- Phone controls DBus code inspired by <a href='https://github.com/ejjoman/SailfishReboot'>SailfishReboot</a>.\
- InfoPopup component taken from <a href='https://github.com/jobe-m/ownkeepass'>ownKeepass</a> by Marko Koschak.")
-            linkColor: Theme.secondaryHighlightColor
-            onLinkActivated: {
-                 Qt.openUrlExternally(link);
-            }
-        }
-
     }
 }

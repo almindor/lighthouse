@@ -21,6 +21,8 @@ import "../components"
 
 Page {
     id: page
+    allowedOrientations: Orientation.Portrait | Orientation.Landscape
+                         | Orientation.LandscapeInverted
 
 
     Column {
@@ -31,7 +33,7 @@ Page {
         }
 
         ProgressCircleBase {
-            width: parent.width / 2
+            width: isPortrait ? parent.width / 2 : parent.width / 3.5
             height: width
             anchors.horizontalCenter: parent.horizontalCenter
             value: battery.level/100.1

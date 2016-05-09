@@ -4,67 +4,67 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/pages/About.qml" line="31"/>
+        <location filename="../qml/pages/About.qml" line="35"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="42"/>
+        <location filename="../qml/pages/About.qml" line="46"/>
         <source>Lighthouse</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="42"/>
+        <location filename="../qml/pages/About.qml" line="46"/>
         <source>by Aleš Katona and Lavaux Gilles.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="53"/>
+        <location filename="../qml/pages/About.qml" line="57"/>
         <source>Translators</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="65"/>
+        <location filename="../qml/pages/About.qml" line="69"/>
         <source>Czech translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="81"/>
+        <location filename="../qml/pages/About.qml" line="85"/>
         <source>Russian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="97"/>
+        <location filename="../qml/pages/About.qml" line="101"/>
         <source>Spanish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="113"/>
+        <location filename="../qml/pages/About.qml" line="117"/>
         <source>Taiwanese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="129"/>
+        <location filename="../qml/pages/About.qml" line="133"/>
         <source>Chinese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="145"/>
+        <location filename="../qml/pages/About.qml" line="149"/>
         <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="161"/>
+        <location filename="../qml/pages/About.qml" line="165"/>
         <source>Italian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/ghostofasmile/&apos;&gt;Francesco Vaccaro (ghostofasmile)&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="177"/>
+        <location filename="../qml/pages/About.qml" line="181"/>
         <source>Swedish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/AsavarTzeth/&apos;&gt;Patrik Nilsson (AsavarTzeth)&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="193"/>
+        <location filename="../qml/pages/About.qml" line="197"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -72,17 +72,17 @@
 <context>
     <name>Battery</name>
     <message>
-        <location filename="../qml/pages/Battery.qml" line="30"/>
+        <location filename="../qml/pages/Battery.qml" line="32"/>
         <source>Battery Usage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Battery.qml" line="53"/>
+        <location filename="../qml/pages/Battery.qml" line="55"/>
         <source>Health: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Battery.qml" line="61"/>
+        <location filename="../qml/pages/Battery.qml" line="63"/>
         <source>Technology: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -90,12 +90,14 @@
 <context>
     <name>CPU</name>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="29"/>
+        <location filename="../qml/pages/CPU.qml" line="32"/>
+        <location filename="../qml/pages/CPU.qml" line="70"/>
         <source>CPU Usage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="56"/>
+        <location filename="../qml/pages/CPU.qml" line="59"/>
+        <location filename="../qml/pages/CPU.qml" line="104"/>
         <source>CPU</source>
         <translation type="unfinished"></translation>
     </message>
@@ -103,19 +105,19 @@
 <context>
     <name>Details</name>
     <message>
-        <location filename="../qml/pages/Details.qml" line="40"/>
+        <location filename="../qml/pages/Details.qml" line="42"/>
         <source>CPU</source>
         <comment>details CPU indicator name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="46"/>
+        <location filename="../qml/pages/Details.qml" line="48"/>
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="52"/>
+        <location filename="../qml/pages/Details.qml" line="54"/>
         <source>Kill</source>
         <translation type="unfinished"></translation>
     </message>
@@ -213,17 +215,17 @@
 <context>
     <name>Memory</name>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="29"/>
+        <location filename="../qml/pages/Memory.qml" line="31"/>
         <source>Memory Usage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="52"/>
+        <location filename="../qml/pages/Memory.qml" line="54"/>
         <source> kB free out of </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="52"/>
+        <location filename="../qml/pages/Memory.qml" line="54"/>
         <source> kB total</source>
         <translation type="unfinished"></translation>
     </message>
@@ -231,17 +233,17 @@
 <context>
     <name>Phone</name>
     <message>
-        <location filename="../qml/pages/Phone.qml" line="27"/>
-        <source>Phone Controls</source>
+        <location filename="../qml/pages/Phone.qml" line="29"/>
+        <source>Device Controls</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Phone.qml" line="36"/>
+        <location filename="../qml/pages/Phone.qml" line="38"/>
         <source>Reboot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Phone.qml" line="45"/>
+        <location filename="../qml/pages/Phone.qml" line="47"/>
         <source>Shutdown</source>
         <translation type="unfinished"></translation>
     </message>
@@ -249,12 +251,12 @@
 <context>
     <name>ProcIndicator</name>
     <message>
-        <location filename="../qml/components/ProcIndicator.qml" line="27"/>
+        <location filename="../qml/components/ProcIndicator.qml" line="29"/>
         <source>cpu: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/components/ProcIndicator.qml" line="38"/>
+        <location filename="../qml/components/ProcIndicator.qml" line="40"/>
         <source>mem: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -262,37 +264,37 @@
 <context>
     <name>Process</name>
     <message>
-        <location filename="../qml/pages/Process.qml" line="36"/>
+        <location filename="../qml/pages/Process.qml" line="38"/>
         <source>Applications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="36"/>
+        <location filename="../qml/pages/Process.qml" line="38"/>
         <source>Processes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="43"/>
+        <location filename="../qml/pages/Process.qml" line="45"/>
         <source>Show Processes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="43"/>
+        <location filename="../qml/pages/Process.qml" line="45"/>
         <source>Show Applications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="48"/>
+        <location filename="../qml/pages/Process.qml" line="50"/>
         <source>Sort by Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="54"/>
+        <location filename="../qml/pages/Process.qml" line="56"/>
         <source>Sort by Memory Usage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="60"/>
+        <location filename="../qml/pages/Process.qml" line="62"/>
         <source>Sort by CPU Usage</source>
         <translation type="unfinished"></translation>
     </message>
@@ -300,22 +302,22 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="28"/>
+        <location filename="../qml/pages/Settings.qml" line="30"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="38"/>
+        <location filename="../qml/pages/Settings.qml" line="40"/>
         <source>Update interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="51"/>
+        <location filename="../qml/pages/Settings.qml" line="53"/>
         <source>Languages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="84"/>
+        <location filename="../qml/pages/Settings.qml" line="86"/>
         <source>App Restart Required</source>
         <translation type="unfinished"></translation>
     </message>
@@ -323,47 +325,47 @@
 <context>
     <name>Summary</name>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="30"/>
+        <location filename="../qml/pages/Summary.qml" line="32"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="34"/>
-        <source>Phone Controls</source>
+        <location filename="../qml/pages/Summary.qml" line="36"/>
+        <source>Device Controls</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="38"/>
+        <location filename="../qml/pages/Summary.qml" line="40"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="51"/>
+        <location filename="../qml/pages/Summary.qml" line="53"/>
         <source>Summary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="62"/>
+        <location filename="../qml/pages/Summary.qml" line="64"/>
         <source>Uptime: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="72"/>
+        <location filename="../qml/pages/Summary.qml" line="74"/>
         <source>CPUs: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="82"/>
+        <location filename="../qml/pages/Summary.qml" line="84"/>
         <source>Memory: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="91"/>
+        <location filename="../qml/pages/Summary.qml" line="93"/>
         <source>Processes: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="100"/>
+        <location filename="../qml/pages/Summary.qml" line="102"/>
         <source>Battery: </source>
         <translation type="unfinished"></translation>
     </message>

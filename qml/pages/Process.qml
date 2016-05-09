@@ -20,7 +20,9 @@ import Sailfish.Silica 1.0
 import "../components"
 
 Page {
-    id: page    
+    id: page
+    allowedOrientations: Orientation.Portrait | Orientation.Landscape
+                         | Orientation.LandscapeInverted
     onStatusChanged: {
         if ( status === PageStatus.Active ) {
             process.selectedPID = 0

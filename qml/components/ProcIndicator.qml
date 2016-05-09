@@ -6,6 +6,8 @@ BackgroundItem {
     property int cpuUse
     property int memUse
     property string procName
+    property bool largeScreen: Screen.sizeCategory === Screen.Large ||
+                               Screen.sizeCategory === Screen.ExtraLarge
 
     anchors {
         left: parent.left
@@ -19,14 +21,14 @@ BackgroundItem {
         }
 
         id: itemLabel
-        text: procName
+        text: largeScreen ? procName : (isPortrait ? procName.substring(0,12) : procName)
     }
 
     Text {
         id: cpuLabel
         text: qsTr("cpu: ") + cpuUse + "%"
         color: Theme.highlightColor
-        font.pointSize: 12
+        font.pointSize: largeScreen ? 28 : 12
         anchors {
             horizontalCenter: parent.horizontalCenter
             top: parent.top
@@ -37,7 +39,7 @@ BackgroundItem {
         id: memLabel
         text: qsTr("mem: ") + memUse + "%"
         color: Theme.secondaryHighlightColor
-        font.pointSize: 12
+        font.pointSize: largeScreen ? 28 : 12
         anchors {
             horizontalCenter: parent.horizontalCenter
             top: parent.top
@@ -53,7 +55,7 @@ BackgroundItem {
         }
 
         opacity: 0.5
-        width: 200
+        width: largeScreen ? 400 : 200
         height: cpuLabel.height + memLabel.height + 1
         color: "dimgrey"
     }

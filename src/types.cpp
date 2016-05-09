@@ -110,7 +110,7 @@ namespace Lighthouse {
     }
 
     static const QRegExp BRACES_REGEXP("[()]*");
-    static const int MAX_SHOW_NAME_SIZE = 13;
+    static const int MAX_SHOW_NAME_SIZE = 28;
 
     void ProcInfo::setShowName(QString& source, int nameState) {
         if ( fNameState > nameState ) {

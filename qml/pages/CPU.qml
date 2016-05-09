@@ -21,8 +21,11 @@ import "../components"
 
 Page {
     id: page
+    allowedOrientations: Orientation.Portrait | Orientation.Landscape
+                         | Orientation.LandscapeInverted
 
     Column {
+        visible: isPortrait
         width: page.width
         spacing: Theme.paddingLarge
         PageHeader {
@@ -61,6 +64,50 @@ Page {
                 }
             }
         }
+    }
+    PageHeader {
+        visible: isLandscape
+        title: qsTr("CPU Usage")
+    }
 
+    ProgressCircleBase {
+        visible: isLandscape
+        id: circle
+        x: Theme.paddingLarge
+        width: parent.width / 3.5
+        height: width
+        anchors.verticalCenter: parent.verticalCenter
+        value: cpu.summaryValue / 100
+        borderWidth: 2
+        progressColor: Theme.highlightColor
+
+        DoubleIndicator {
+            topVal: cpu.summaryValue
+            topUnit: "%"
+            botVal: cpu.temperature
+            botUnit: "C°"
+        }
+    }
+    Column {
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: circle.right
+        visible: isLandscape
+        width: parent.width - circle.width
+        Repeater {
+            model: cpu
+
+            ProgressBar {
+                minimumValue: 0
+                maximumValue: 100
+                value: cpuUsage
+                valueText: value + '%'
+                label: qsTr("CPU") + (index + 1);
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+            }
+        }
     }
 }
