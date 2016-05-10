@@ -22,9 +22,11 @@ import Sailfish.Silica 1.0
 Page {
     id: page
 
+    allowedOrientations: Orientation.Portrait | Orientation.Landscape
+                         | Orientation.LandscapeInverted
     PageHeader {
         id: header
-        title: qsTr("Phone Controls")
+        title: qsTr("Device Controls")
     }
 
     Column {
