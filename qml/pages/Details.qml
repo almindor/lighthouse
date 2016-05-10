@@ -21,6 +21,8 @@ import "../components"
 
 Page {
     id: page
+    allowedOrientations: Orientation.Portrait | Orientation.Landscape
+                         | Orientation.LandscapeInverted
 
     Column {
         PageHeader {

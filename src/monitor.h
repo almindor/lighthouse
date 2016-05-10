@@ -18,6 +18,7 @@
 #ifndef PROC_H
 #define PROC_H
 
+#include <unistd.h>
 #include <QThread>
 #include <QMutex>
 #include <QWaitCondition>
@@ -84,7 +85,7 @@ namespace Lighthouse {
             void run() Q_DECL_OVERRIDE;
             void procCPUActivity();
             void procMemory();
-            void procBattery();
+            void procBattery(const QString& fileName);
             void procProcessCount();
             pid_t getNextPID(QStringListIterator& iterator, int activePID);
             void procProcesses();

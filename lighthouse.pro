@@ -54,7 +54,6 @@ OTHER_FILES += \
     lighthouse.desktop \
     qml/Lighthouse.qml \
     qml/pages/Battery.qml \
-    qml/InfoPopup.qml \
     qml/pages/Details.qml \
     qml/components/ProcIndicator.qml \
     qml/components/DoubleIndicator.qml \
@@ -71,6 +70,20 @@ HEADERS += \
     src/monitor.h \
     src/battery.h \
     src/languages.h
+
+icon86.files += icons/86x86/lighthouse.png
+icon86.path = /usr/share/icons/hicolor/86x86/apps
+
+icon108.files += icons/108x108/lighthouse.png
+icon108.path = /usr/share/icons/hicolor/108x108/apps
+
+icon128.files += icons/128x128/lighthouse.png
+icon128.path = /usr/share/icons/hicolor/128x128/apps
+
+icon256.files += icons/256x256/lighthouse.png
+icon256.path = /usr/share/icons/hicolor/256x256/apps
+
+INSTALLS += icon86 icon108 icon128 icon256
 
 lupdate_only {
 SOURCES += \
