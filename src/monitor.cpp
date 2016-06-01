@@ -16,6 +16,7 @@
 */
 
 #include "monitor.h"
+#include <unistd.h>
 #include <QDebug>
 #include <QFile>
 #include <QTextStream>
