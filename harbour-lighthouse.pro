@@ -6,21 +6,21 @@
 #         - desktop icon filename must be changed
 #         - desktop filename must be changed
 #         - icon definition filename in desktop file must be changed
-TARGET = lighthouse
+TARGET = harbour-lighthouse
 
 TRANSLATIONS = \
-    translations/lighthouse-en.ts \
-    translations/lighthouse-cs.ts \
-    translations/lighthouse-fr.ts \
-    translations/lighthouse-ru.ts \
-    translations/lighthouse-es.ts \
-    translations/lighthouse-es_AR.ts \
-    translations/lighthouse-sv.ts \
-    translations/lighthouse-it.ts \
-    translations/lighthouse-nb.ts \
-    translations/lighthouse-nl.ts \
-    translations/lighthouse-zh_CN.ts \
-    translations/lighthouse-zh_TW.ts
+    translations/harbour-lighthouse-en.ts \
+    translations/harbour-lighthouse-cs.ts \
+    translations/harbour-lighthouse-fr.ts \
+    translations/harbour-lighthouse-ru.ts \
+    translations/harbour-lighthouse-es.ts \
+    translations/harbour-lighthouse-es_AR.ts \
+    translations/harbour-lighthouse-sv.ts \
+    translations/harbour-lighthouse-it.ts \
+    translations/harbour-lighthouse-nb.ts \
+    translations/harbour-lighthouse-nl.ts \
+    translations/harbour-lighthouse-zh_CN.ts \
+    translations/harbour-lighthouse-zh_TW.ts
 
 CONFIG += \
     sailfishapp \
@@ -42,16 +42,16 @@ SOURCES += \
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
-    rpm/lighthouse.yaml \
+    rpm/harbour-lighthouse.yaml \
     qml/pages/Summary.qml \
     qml/pages/CPU.qml \
     qml/pages/Settings.qml \
     qml/pages/Memory.qml \
     qml/pages/About.qml \
     qml/pages/Process.qml \
-    rpm/lighthouse.spec \
+    rpm/harbour-lighthouse.spec \
     qml/pages/Phone.qml \
-    lighthouse.desktop \
+    harbour-lighthouse.desktop \
     qml/Lighthouse.qml \
     qml/pages/Battery.qml \
     qml/InfoPopup.qml \
@@ -84,5 +84,10 @@ SOURCES += \
     qml/pages/Phone.qml \
     qml/Lighthouse.qml \
     qml/pages/Battery.qml \
-    qml/InfoPopup.qml
+    qml/InfoPopup.qml \
+    qml/pages/Details.qml \
+    qml/components/ProcIndicator.qml \
+    qml/components/DoubleIndicator.qml \
+    qml/components/UsageGraph.qml \
+    qml/components/UsageHelper.js
 }
