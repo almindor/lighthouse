@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="zh_CN">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh_CN" version="2.1">
 <context>
     <name>About</name>
     <message>
@@ -11,12 +9,12 @@
     <message>
         <location filename="../qml/pages/About.qml" line="42"/>
         <source>Lighthouse</source>
-        <translation type="unfinished"></translation>
+        <translation>Lighthouse</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="42"/>
         <source>by Aleš Katona and Lavaux Gilles.</source>
-        <translation type="unfinished"></translation>
+        <translation>作者Aleš Katona和Lavaux Gilles。</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
@@ -103,36 +101,21 @@
 <context>
     <name>Details</name>
     <message>
-        <source>Memory: </source>
-        <translation type="obsolete">内存：</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/Details.qml" line="40"/>
         <source>CPU</source>
         <comment>details CPU indicator name</comment>
-        <translation type="unfinished">CPU</translation>
+        <translation>CPU</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="46"/>
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
-        <translation type="unfinished">内存</translation>
+        <translation>内存</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="52"/>
         <source>Kill</source>
-        <translation type="unfinished">结束</translation>
-    </message>
-</context>
-<context>
-    <name>Indicator</name>
-    <message>
-        <source>cpu: </source>
-        <translation type="obsolete">cpu：</translation>
-    </message>
-    <message>
-        <source>mem: </source>
-        <translation type="obsolete">内存：</translation>
+        <translation>结束</translation>
     </message>
 </context>
 <context>
@@ -174,25 +157,25 @@
         <location filename="../src/monitor.cpp" line="94"/>
         <source>cpu</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>cpu</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="95"/>
         <source>memory</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>内存</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="96"/>
         <source>battery</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>电池</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="97"/>
         <source>unknown</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>未知</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="119"/>
@@ -266,12 +249,12 @@
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="27"/>
         <source>cpu: </source>
-        <translation type="unfinished">cpu：</translation>
+        <translation>cpu：</translation>
     </message>
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="38"/>
         <source>mem: </source>
-        <translation type="unfinished">内存：</translation>
+        <translation>内存：</translation>
     </message>
 </context>
 <context>
@@ -310,18 +293,6 @@
         <location filename="../qml/pages/Process.qml" line="60"/>
         <source>Sort by CPU Usage</source>
         <translation>按CPU用量排序</translation>
-    </message>
-    <message>
-        <source>cpu: </source>
-        <translation type="vanished">cpu：</translation>
-    </message>
-    <message>
-        <source>mem: </source>
-        <translation type="vanished">内存：</translation>
-    </message>
-    <message>
-        <source>Kill</source>
-        <translation type="vanished">结束</translation>
     </message>
 </context>
 <context>

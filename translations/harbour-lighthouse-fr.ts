@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
 <context>
     <name>About</name>
     <message>
@@ -9,18 +7,14 @@
         <translation>À propos</translation>
     </message>
     <message>
-        <source>Lighthouse v1.4.1 by Aleš Katona and Lavaux Gilles.</source>
-        <translation type="vanished">Lighthouse v1.4.1 par Aleš Katona et Lavaux Gilles.</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/About.qml" line="42"/>
         <source>Lighthouse</source>
-        <translation type="unfinished"></translation>
+        <translation>Lighthouse</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="42"/>
         <source>by Aleš Katona and Lavaux Gilles.</source>
-        <translation type="unfinished"></translation>
+        <translation>par Aleš Katona et Lavaux Gilles.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
@@ -107,36 +101,21 @@
 <context>
     <name>Details</name>
     <message>
-        <source>Memory: </source>
-        <translation type="obsolete">Mémoire : </translation>
-    </message>
-    <message>
         <location filename="../qml/pages/Details.qml" line="40"/>
         <source>CPU</source>
         <comment>details CPU indicator name</comment>
-        <translation type="unfinished">Processeur</translation>
+        <translation>Processeur</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="46"/>
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
-        <translation type="unfinished">Mémoire</translation>
+        <translation>Mémoire</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="52"/>
         <source>Kill</source>
-        <translation type="unfinished">Terminer</translation>
-    </message>
-</context>
-<context>
-    <name>Indicator</name>
-    <message>
-        <source>cpu: </source>
-        <translation type="obsolete">cpu : </translation>
-    </message>
-    <message>
-        <source>mem: </source>
-        <translation type="obsolete">mem : </translation>
+        <translation>Terminer </translation>
     </message>
 </context>
 <context>
@@ -178,25 +157,25 @@
         <location filename="../src/monitor.cpp" line="94"/>
         <source>cpu</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>cpu</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="95"/>
         <source>memory</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>mémoire</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="96"/>
         <source>battery</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>batterie</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="97"/>
         <source>unknown</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>inconnu</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="119"/>
@@ -239,12 +218,12 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="52"/>
         <source> kB free out of </source>
-        <translation>kB libre sur </translation>
+        <translation>ko libre sur </translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="52"/>
         <source> kB total</source>
-        <translation>kB total</translation>
+        <translation>ko total</translation>
     </message>
 </context>
 <context>
@@ -270,12 +249,12 @@
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="27"/>
         <source>cpu: </source>
-        <translation type="unfinished">cpu : </translation>
+        <translation>cpu :</translation>
     </message>
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="38"/>
         <source>mem: </source>
-        <translation type="unfinished">mem : </translation>
+        <translation>mém. :</translation>
     </message>
 </context>
 <context>
@@ -314,18 +293,6 @@
         <location filename="../qml/pages/Process.qml" line="60"/>
         <source>Sort by CPU Usage</source>
         <translation>Trier par uilisation Processeur</translation>
-    </message>
-    <message>
-        <source>cpu: </source>
-        <translation type="vanished">cpu : </translation>
-    </message>
-    <message>
-        <source>mem: </source>
-        <translation type="vanished">mem : </translation>
-    </message>
-    <message>
-        <source>Kill</source>
-        <translation type="vanished">Terminer</translation>
     </message>
 </context>
 <context>

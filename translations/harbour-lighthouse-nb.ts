@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nb">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nb" version="2.1">
 <context>
     <name>About</name>
     <message>
@@ -11,12 +9,12 @@
     <message>
         <location filename="../qml/pages/About.qml" line="42"/>
         <source>Lighthouse</source>
-        <translation type="unfinished"></translation>
+        <translation>Fyrlykt</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="42"/>
         <source>by Aleš Katona and Lavaux Gilles.</source>
-        <translation type="unfinished"></translation>
+        <translation>av Aleš Katona og Lavaux Gilles.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
@@ -104,36 +102,21 @@
 <context>
     <name>Details</name>
     <message>
-        <source>Memory: </source>
-        <translation type="obsolete">Minne:</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/Details.qml" line="40"/>
         <source>CPU</source>
         <comment>details CPU indicator name</comment>
-        <translation type="unfinished">CPU</translation>
+        <translation>CPU</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="46"/>
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
-        <translation type="unfinished">Minne</translation>
+        <translation>Minne</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="52"/>
         <source>Kill</source>
-        <translation type="unfinished">Drep</translation>
-    </message>
-</context>
-<context>
-    <name>Indicator</name>
-    <message>
-        <source>cpu: </source>
-        <translation type="obsolete">cpu:</translation>
-    </message>
-    <message>
-        <source>mem: </source>
-        <translation type="obsolete">minne:</translation>
+        <translation>Drep</translation>
     </message>
 </context>
 <context>
@@ -175,25 +158,25 @@
         <location filename="../src/monitor.cpp" line="94"/>
         <source>cpu</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>cpu</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="95"/>
         <source>memory</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>minne</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="96"/>
         <source>battery</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>batteri</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="97"/>
         <source>unknown</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>ukjent</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="119"/>
@@ -267,12 +250,12 @@
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="27"/>
         <source>cpu: </source>
-        <translation type="unfinished">cpu:</translation>
+        <translation>cpu:</translation>
     </message>
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="38"/>
         <source>mem: </source>
-        <translation type="unfinished">minne:</translation>
+        <translation>minne:</translation>
     </message>
 </context>
 <context>
@@ -311,18 +294,6 @@
         <location filename="../qml/pages/Process.qml" line="60"/>
         <source>Sort by CPU Usage</source>
         <translation>Sorter etter CPU-bruk</translation>
-    </message>
-    <message>
-        <source>cpu: </source>
-        <translation type="vanished">cpu:</translation>
-    </message>
-    <message>
-        <source>mem: </source>
-        <translation type="vanished">minne:</translation>
-    </message>
-    <message>
-        <source>Kill</source>
-        <translation type="vanished">Drep</translation>
     </message>
 </context>
 <context>
