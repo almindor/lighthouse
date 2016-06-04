@@ -42,19 +42,18 @@ SOURCES += \
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
-    rpm/harbour-lighthouse.yaml \
+    rpm/lighthouse.yaml \
     qml/pages/Summary.qml \
     qml/pages/CPU.qml \
     qml/pages/Settings.qml \
     qml/pages/Memory.qml \
     qml/pages/About.qml \
     qml/pages/Process.qml \
-    rpm/harbour-lighthouse.spec \
+    rpm/lighthouse.spec \
     qml/pages/Phone.qml \
     harbour-lighthouse.desktop \
     qml/Lighthouse.qml \
     qml/pages/Battery.qml \
-    qml/InfoPopup.qml \
     qml/pages/Details.qml \
     qml/components/ProcIndicator.qml \
     qml/components/DoubleIndicator.qml \
@@ -72,6 +71,20 @@ HEADERS += \
     src/battery.h \
     src/languages.h
 
+icon86.files += icons/86x86/harbour-lighthouse.png
+icon86.path = /usr/share/icons/hicolor/86x86/apps
+
+icon108.files += icons/108x108/harbour-lighthouse.png
+icon108.path = /usr/share/icons/hicolor/108x108/apps
+
+icon128.files += icons/128x128/harbour-lighthouse.png
+icon128.path = /usr/share/icons/hicolor/128x128/apps
+
+icon256.files += icons/256x256/harbour-lighthouse.png
+icon256.path = /usr/share/icons/hicolor/256x256/apps
+
+INSTALLS += icon86 icon108 icon128 icon256
+
 lupdate_only {
 SOURCES += \
     qml/cover/CoverPage.qml \
@@ -83,11 +96,5 @@ SOURCES += \
     qml/pages/Process.qml \
     qml/pages/Phone.qml \
     qml/Lighthouse.qml \
-    qml/pages/Battery.qml \
-    qml/InfoPopup.qml \
-    qml/pages/Details.qml \
-    qml/components/ProcIndicator.qml \
-    qml/components/DoubleIndicator.qml \
-    qml/components/UsageGraph.qml \
-    qml/components/UsageHelper.js
+    qml/pages/Battery.qml
 }

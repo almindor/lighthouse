@@ -17,15 +17,31 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import org.nemomobile.notifications 1.0
 
 
 Page {
     id: page
+    allowedOrientations: Orientation.Portrait | Orientation.Landscape
+                         | Orientation.LandscapeInverted
 
     PageHeader {
         id: pageHeader
         anchors.top: parent.top
         title: qsTr("Settings")
+    }
+
+    Component.onDestruction: notification.close()
+
+    Notification {
+        id: notification
+        appName: "lighthouse"
+    }
+    function banner(category, message) {
+        notification.close()
+        notification.previewBody = message
+        notification.previewSummary = "lighthouse"
+        notification.publish()
     }
 
     Slider {
@@ -81,7 +97,8 @@ Page {
 
             onClicked: {
                 languages.selectLanguage(index)
-                applicationWindow.infoPopupRef.show("Info", qsTr("App Restart Required"), 2000, true)
+                banner("INFO", qsTr("App Restart Required"))
+                // applicationWindow.infoPopupRef.show("Info", qsTr("App Restart Required"), 2000, true)
             }
         }
     }

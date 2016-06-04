@@ -21,6 +21,8 @@ import Sailfish.Silica 1.0
 
 Page {
     id: page
+    allowedOrientations: Orientation.Portrait | Orientation.Landscape
+                         | Orientation.LandscapeInverted
 
     SilicaFlickable {
         anchors.fill: parent
@@ -31,7 +33,7 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
             }
             MenuItem {
-                text: qsTr("Phone Controls")
+                text: qsTr("Device Controls")
                 onClicked: pageStack.push(Qt.resolvedUrl("Phone.qml"))
             }
             MenuItem {

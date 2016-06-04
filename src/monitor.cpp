@@ -16,7 +16,6 @@
 */
 
 #include "monitor.h"
-#include <unistd.h>
 #include <QDebug>
 #include <QFile>
 #include <QTextStream>
@@ -74,7 +73,7 @@ namespace Lighthouse {
 
     bool Monitor::getPaused() const {
         return fPaused;
-    }    
+    }
 
     void Monitor::setCoverPage(int page) {
         if ( page < 0 ) {
@@ -170,11 +169,24 @@ namespace Lighthouse {
         }
 
         unsigned long iteration = 0;
+
+        QDir battery("/sys/class/power_supply");
+        QStringList filters;
+        filters << "*battery";
+        battery.setNameFilters(filters);
+
+        const QStringList files = battery.entryList();
+        QStringListIterator iterator(files);
+        QString fileName;
+        if ( iterator.hasNext() ) {
+            fileName = battery.absoluteFilePath(iterator.next());
+            qDebug() << "Found battery root: " << fileName;
+        }
         while (!fQuit) {
             if ( !fPaused ) {
                 procCPUActivity();
                 procMemory();
-                procBattery();
+                procBattery(fileName);
 
                 if ( fApplicationActive || iteration == 0 ) {
                     procUptime();
@@ -318,10 +330,10 @@ namespace Lighthouse {
         emit processChanged(&fProcMap, adds, deletes);
     }
 
-    void Monitor::procBattery() {
+    void Monitor::procBattery(const QString& fileName) {
         QString value;
         if ( !fGotBatteryInfo ){
-            QFile f("/sys/class/power_supply/battery/health");
+            QFile f(fileName + "/health");
             if (f.open(QFile::ReadOnly)){
                 QByteArray content = f.readAll();
                 value = QString(content).replace(QString("\n"), QString(""));
@@ -329,7 +341,7 @@ namespace Lighthouse {
                 emit batteryHealthChanged(value);
             }
 
-            QFile f1("/sys/class/power_supply/battery/technology");
+            QFile f1(fileName + "/technology");
             if (f1.open(QFile::ReadOnly)){
                 QByteArray content = f1.readAll();
                 value = QString(content).replace(QString("\n"), QString(""));
@@ -339,14 +351,14 @@ namespace Lighthouse {
             fGotBatteryInfo = true;
         }
 
-        QFile f2("/sys/class/power_supply/battery/capacity");
+        QFile f2(fileName + "/capacity");
         if (f2.open(QFile::ReadOnly)){
             QByteArray content = f2.readAll();
             int v = QString(content).toInt();
             f2.close();
             emit batteryLevelChanged(v);
         }
-        QFile f3("/sys/class/power_supply/battery/status");
+        QFile f3(fileName + "/status");
         if (f3.open(QFile::ReadOnly)){
             QByteArray content = f3.readAll();
             value = QString(content).replace(QString("\n"), QString(""));
@@ -359,7 +371,7 @@ namespace Lighthouse {
         QFile f("/sys/class/thermal/thermal_zone0/temp");
         if ( f.open(QFile::ReadOnly) ) {
             QByteArray content = f.readAll();
-            QString value = QString(content).replace("\n", "");
+            QString value = QString(content).replace("\n", "").left(2);
             emit temperatureChanged(value.toInt());
         }
     }
