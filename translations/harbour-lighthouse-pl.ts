@@ -77,12 +77,12 @@
     <message>
         <location filename="../qml/pages/Battery.qml" line="53"/>
         <source>Health: </source>
-        <translation type="unfinished"/>
+        <translation>Zdrowie:</translation>
     </message>
     <message>
         <location filename="../qml/pages/Battery.qml" line="61"/>
         <source>Technology: </source>
-        <translation type="unfinished"/>
+        <translation>Technologia:</translation>
     </message>
 </context>
 <context>
@@ -154,46 +154,46 @@
 <context>
     <name>Lighthouse::Monitor</name>
     <message>
-        <location filename="../src/monitor.cpp" line="94"/>
+        <location filename="../src/monitor.cpp" line="95"/>
         <source>cpu</source>
         <comment>cover label</comment>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="95"/>
+        <location filename="../src/monitor.cpp" line="96"/>
         <source>memory</source>
         <comment>cover label</comment>
         <translation>pamięć</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="96"/>
+        <location filename="../src/monitor.cpp" line="97"/>
         <source>battery</source>
         <comment>cover label</comment>
         <translation>bateria</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="97"/>
+        <location filename="../src/monitor.cpp" line="98"/>
         <source>unknown</source>
         <comment>cover label</comment>
         <translation>nieznane</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="119"/>
+        <location filename="../src/monitor.cpp" line="120"/>
         <source>CPU</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="120"/>
+        <location filename="../src/monitor.cpp" line="121"/>
         <source>Memory</source>
         <translation>Pamięć</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="121"/>
+        <location filename="../src/monitor.cpp" line="122"/>
         <source>Battery</source>
         <translation>Bateria</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="122"/>
+        <location filename="../src/monitor.cpp" line="123"/>
         <source>Unknown</source>
         <comment>Cover label in summary page</comment>
         <translation>Nieznane</translation>
@@ -223,7 +223,7 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="52"/>
         <source> kB total</source>
-        <translation type="unfinished"/>
+        <translation>kB w sumie</translation>
     </message>
 </context>
 <context>
@@ -287,7 +287,7 @@
     <message>
         <location filename="../qml/pages/Process.qml" line="54"/>
         <source>Sort by Memory Usage</source>
-        <translation type="unfinished"/>
+        <translation>Sortuj po użyciu pamięci</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="60"/>
@@ -348,7 +348,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="72"/>
         <source>CPUs: </source>
-        <translation type="unfinished"/>
+        <translation>Procesory:</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="82"/>

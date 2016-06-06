@@ -1,8 +1,8 @@
 #!/bin/bash
 
-for file in *_*.ts
+for file in lighthousets_*.ts
 do
-    nf=`echo $file | sed 's/for_use_lighthouse_lighthousets_//g'`
-    mv "$file" "lighthouse-$nf"
+    nf=`echo $file | sed 's/lighthousets_/harbour-lighthouse-/g'`
+    mv "$file" "$nf"
 done
 
