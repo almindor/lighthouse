@@ -51,7 +51,7 @@ Page {
                 }
                 wrapMode: Text.WordWrap
                 color: Theme.primaryColor
-                text: qsTr("Lighthouse") + " v1.5.0 " + qsTr("by Aleš Katona and Lavaux Gilles.")
+                text: qsTr("Lighthouse") + " v1.6.0 " + qsTr("by Aleš Katona and Lavaux Gilles.")
             }
 
             Label {

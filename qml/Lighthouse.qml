@@ -22,11 +22,6 @@ import "pages"
 ApplicationWindow
 {
     id: applicationWindow
-    property InfoPopup infoPopupRef: infoPopup
-
-    InfoPopup {
-        id: infoPopup
-    }
 
     initialPage: Component { Summary { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")

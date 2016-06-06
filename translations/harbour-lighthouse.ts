@@ -121,6 +121,11 @@
         <source>Kill</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../qml/pages/Details.qml" line="65"/>
+        <source>Permission denied</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Lighthouse::Battery</name>

@@ -98,7 +98,6 @@ Page {
             onClicked: {
                 languages.selectLanguage(index)
                 banner("INFO", qsTr("App Restart Required"))
-                // applicationWindow.infoPopupRef.show("Info", qsTr("App Restart Required"), 2000, true)
             }
         }
     }

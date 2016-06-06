@@ -62,7 +62,7 @@ Page {
                 if ( process.killSelected() === 0 ) {
                     pageStack.navigateBack(PageStackAction.Animated);
                 } else {
-                    applicationWindow.infoPopupRef.show("Info", "Permission denied", 2000, true)
+                    banner("INFO", qsTr("Permission denied"))
                 }
             }
         }

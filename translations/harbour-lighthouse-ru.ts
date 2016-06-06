@@ -1,86 +1,88 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ru">
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/pages/About.qml" line="31"/>
+        <location filename="../qml/pages/About.qml" line="43"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="42"/>
+        <location filename="../qml/pages/About.qml" line="54"/>
         <source>Lighthouse</source>
         <translation>Lighthouse</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="42"/>
+        <location filename="../qml/pages/About.qml" line="54"/>
         <source>by Aleš Katona and Lavaux Gilles.</source>
         <translation>by Aleš Katona and Lavaux Gilles.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="53"/>
+        <location filename="../qml/pages/About.qml" line="65"/>
         <source>Translators</source>
         <translation>Переводчики</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="65"/>
+        <location filename="../qml/pages/About.qml" line="77"/>
         <source>Czech translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</source>
         <translation>Чешский перевод &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="81"/>
+        <location filename="../qml/pages/About.qml" line="93"/>
         <source>Russian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</source>
         <translation>Русский перевод &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="97"/>
+        <location filename="../qml/pages/About.qml" line="109"/>
         <source>Spanish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</source>
         <translation>Испанский перевод &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="113"/>
+        <location filename="../qml/pages/About.qml" line="125"/>
         <source>Taiwanese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;.</source>
         <translation>Тайваньский перевод &lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="129"/>
+        <location filename="../qml/pages/About.qml" line="141"/>
         <source>Chinese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;.</source>
         <translation>Китайский перевод &lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="145"/>
+        <location filename="../qml/pages/About.qml" line="157"/>
         <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</source>
         <translation>Французский перевод by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="161"/>
+        <location filename="../qml/pages/About.qml" line="173"/>
         <source>Italian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/ghostofasmile/&apos;&gt;Francesco Vaccaro (ghostofasmile)&lt;/a&gt;.</source>
         <translation>Итальянский перевод &lt;a href=&apos;https://www.transifex.com/accounts/profile/ghostofasmile/&apos;&gt;Francesco Vaccaro (ghostofasmile)&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="177"/>
+        <location filename="../qml/pages/About.qml" line="189"/>
         <source>Swedish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/AsavarTzeth/&apos;&gt;Patrik Nilsson (AsavarTzeth)&lt;/a&gt;.</source>
         <translation>Шведский перевод  &lt;a href=&apos;https://www.transifex.com/accounts/profile/AsavarTzeth/&apos;&gt;Patrik Nilsson (AsavarTzeth)&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="193"/>
-        <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</source>
-        <translation>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</translation>
+        <location filename="../qml/pages/About.qml" line="205"/>
+        <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Battery</name>
     <message>
-        <location filename="../qml/pages/Battery.qml" line="30"/>
+        <location filename="../qml/pages/Battery.qml" line="32"/>
         <source>Battery Usage</source>
         <translation>Использование батареи</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Battery.qml" line="53"/>
+        <location filename="../qml/pages/Battery.qml" line="55"/>
         <source>Health: </source>
         <translation>Состояние: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/Battery.qml" line="61"/>
+        <location filename="../qml/pages/Battery.qml" line="63"/>
         <source>Technology: </source>
         <translation>Технология: </translation>
     </message>
@@ -88,12 +90,14 @@
 <context>
     <name>CPU</name>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="29"/>
+        <location filename="../qml/pages/CPU.qml" line="32"/>
+        <location filename="../qml/pages/CPU.qml" line="70"/>
         <source>CPU Usage</source>
         <translation>Использование процессора</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="56"/>
+        <location filename="../qml/pages/CPU.qml" line="59"/>
+        <location filename="../qml/pages/CPU.qml" line="104"/>
         <source>CPU</source>
         <translation>Процессор</translation>
     </message>
@@ -101,21 +105,26 @@
 <context>
     <name>Details</name>
     <message>
-        <location filename="../qml/pages/Details.qml" line="40"/>
+        <location filename="../qml/pages/Details.qml" line="42"/>
         <source>CPU</source>
         <comment>details CPU indicator name</comment>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Процессор</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="46"/>
+        <location filename="../qml/pages/Details.qml" line="48"/>
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Память</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="52"/>
+        <location filename="../qml/pages/Details.qml" line="54"/>
         <source>Kill</source>
         <translation>Завершить</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Details.qml" line="65"/>
+        <source>Permission denied</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -154,46 +163,46 @@
 <context>
     <name>Lighthouse::Monitor</name>
     <message>
-        <location filename="../src/monitor.cpp" line="95"/>
+        <location filename="../src/monitor.cpp" line="94"/>
         <source>cpu</source>
         <comment>cover label</comment>
         <translation>процессор</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="96"/>
+        <location filename="../src/monitor.cpp" line="95"/>
         <source>memory</source>
         <comment>cover label</comment>
         <translation>память</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="97"/>
+        <location filename="../src/monitor.cpp" line="96"/>
         <source>battery</source>
         <comment>cover label</comment>
         <translation>батарея</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="98"/>
+        <location filename="../src/monitor.cpp" line="97"/>
         <source>unknown</source>
         <comment>cover label</comment>
         <translation>неизвестный</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="120"/>
+        <location filename="../src/monitor.cpp" line="119"/>
         <source>CPU</source>
         <translation>Процессор</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="121"/>
+        <location filename="../src/monitor.cpp" line="120"/>
         <source>Memory</source>
         <translation>Память</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="122"/>
+        <location filename="../src/monitor.cpp" line="121"/>
         <source>Battery</source>
         <translation>Батарея</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="123"/>
+        <location filename="../src/monitor.cpp" line="122"/>
         <source>Unknown</source>
         <comment>Cover label in summary page</comment>
         <translation>Неизвестный</translation>
@@ -211,17 +220,17 @@
 <context>
     <name>Memory</name>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="29"/>
+        <location filename="../qml/pages/Memory.qml" line="31"/>
         <source>Memory Usage</source>
         <translation>Использование памяти</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="52"/>
+        <location filename="../qml/pages/Memory.qml" line="54"/>
         <source> kB free out of </source>
         <translation> kB свободно из </translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="52"/>
+        <location filename="../qml/pages/Memory.qml" line="54"/>
         <source> kB total</source>
         <translation> kB всего</translation>
     </message>
@@ -229,17 +238,17 @@
 <context>
     <name>Phone</name>
     <message>
-        <location filename="../qml/pages/Phone.qml" line="27"/>
-        <source>Phone Controls</source>
-        <translation>Управление телефоном</translation>
+        <location filename="../qml/pages/Phone.qml" line="29"/>
+        <source>Device Controls</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Phone.qml" line="36"/>
+        <location filename="../qml/pages/Phone.qml" line="38"/>
         <source>Reboot</source>
         <translation>Перезагрузка</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Phone.qml" line="45"/>
+        <location filename="../qml/pages/Phone.qml" line="47"/>
         <source>Shutdown</source>
         <translation>Выключение</translation>
     </message>
@@ -247,12 +256,12 @@
 <context>
     <name>ProcIndicator</name>
     <message>
-        <location filename="../qml/components/ProcIndicator.qml" line="27"/>
+        <location filename="../qml/components/ProcIndicator.qml" line="29"/>
         <source>cpu: </source>
         <translation>процессор: </translation>
     </message>
     <message>
-        <location filename="../qml/components/ProcIndicator.qml" line="38"/>
+        <location filename="../qml/components/ProcIndicator.qml" line="40"/>
         <source>mem: </source>
         <translation>память: </translation>
     </message>
@@ -260,37 +269,37 @@
 <context>
     <name>Process</name>
     <message>
-        <location filename="../qml/pages/Process.qml" line="36"/>
+        <location filename="../qml/pages/Process.qml" line="38"/>
         <source>Applications</source>
         <translation>Приложения</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="36"/>
+        <location filename="../qml/pages/Process.qml" line="38"/>
         <source>Processes</source>
         <translation>Процессы</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="43"/>
+        <location filename="../qml/pages/Process.qml" line="45"/>
         <source>Show Processes</source>
         <translation>Показать процессы</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="43"/>
+        <location filename="../qml/pages/Process.qml" line="45"/>
         <source>Show Applications</source>
         <translation>Показать приложения</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="48"/>
+        <location filename="../qml/pages/Process.qml" line="50"/>
         <source>Sort by Name</source>
         <translation>Сортировать по названию</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="54"/>
+        <location filename="../qml/pages/Process.qml" line="56"/>
         <source>Sort by Memory Usage</source>
         <translation>Сортировать по использованию озу</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="60"/>
+        <location filename="../qml/pages/Process.qml" line="62"/>
         <source>Sort by CPU Usage</source>
         <translation>Сортировать по использованию цп</translation>
     </message>
@@ -298,22 +307,22 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="28"/>
+        <location filename="../qml/pages/Settings.qml" line="31"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="38"/>
+        <location filename="../qml/pages/Settings.qml" line="54"/>
         <source>Update interval</source>
         <translation>Интервал обновления</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="51"/>
+        <location filename="../qml/pages/Settings.qml" line="67"/>
         <source>Languages</source>
         <translation>Языки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="84"/>
+        <location filename="../qml/pages/Settings.qml" line="100"/>
         <source>App Restart Required</source>
         <translation>Приложению требуется перезагрузка </translation>
     </message>
@@ -321,47 +330,47 @@
 <context>
     <name>Summary</name>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="30"/>
+        <location filename="../qml/pages/Summary.qml" line="32"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="34"/>
-        <source>Phone Controls</source>
-        <translation>Управление телефоном</translation>
+        <location filename="../qml/pages/Summary.qml" line="36"/>
+        <source>Device Controls</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="38"/>
+        <location filename="../qml/pages/Summary.qml" line="40"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="51"/>
+        <location filename="../qml/pages/Summary.qml" line="53"/>
         <source>Summary</source>
         <translation>Сводка</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="62"/>
+        <location filename="../qml/pages/Summary.qml" line="64"/>
         <source>Uptime: </source>
         <translation>Время работы: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="72"/>
+        <location filename="../qml/pages/Summary.qml" line="74"/>
         <source>CPUs: </source>
         <translation>Процессоры: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="82"/>
+        <location filename="../qml/pages/Summary.qml" line="84"/>
         <source>Memory: </source>
         <translation>Память: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="91"/>
+        <location filename="../qml/pages/Summary.qml" line="93"/>
         <source>Processes: </source>
         <translation>Процессы: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="100"/>
+        <location filename="../qml/pages/Summary.qml" line="102"/>
         <source>Battery: </source>
         <translation>Батарея: </translation>
     </message>
