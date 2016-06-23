@@ -17,6 +17,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import org.nemomobile.notifications 1.0
 import "../components"
 
 Page {
@@ -24,45 +25,67 @@ Page {
     allowedOrientations: Orientation.Portrait | Orientation.Landscape
                          | Orientation.LandscapeInverted
 
-    Column {
-        PageHeader {
-            title: "Details"
-        }
+    Notification {
+        id: notification
+        appName: "lighthouse"
+    }
 
+    function banner(category, message) {
+        notification.close()
+        notification.previewBody = message
+        notification.previewSummary = "lighthouse"
+        notification.publish()
+    }
+
+    SilicaFlickable {
         anchors.fill: parent
-        spacing: 10
+        contentWidth: parent.width
+        contentHeight: col.height
 
-        ProcIndicator {
-            procName: process.selectedName
-            cpuUse: process.selectedCPUUsage
-            memUse: process.selectedMemoryUsage
+        VerticalScrollDecorator {
         }
 
-        UsageGraph {
-            indicatorName: qsTr("CPU", "details CPU indicator name")
-            dataSource: process.selectedCPUUsage
-            tickSource: process.selectedTick
-        }
-
-        UsageGraph {
-            indicatorName: qsTr("Memory", "details Memory indicator name")
-            dataSource: process.selectedMemoryUsage
-            tickSource: process.selectedTick
-        }
-
-        Button {
-            text: qsTr("Kill")
-            anchors {
-                horizontalCenter: parent.horizontalCenter
+        Column {
+            id: col
+            PageHeader {
+                title: "Details"
             }
 
-            visible: process.isKillable()
+            width: page.width
+            spacing: 10
 
-            onClicked: {
-                if ( process.killSelected() === 0 ) {
-                    pageStack.navigateBack(PageStackAction.Animated);
-                } else {
-                    banner("INFO", qsTr("Permission denied"))
+            ProcIndicator {
+                procName: process.selectedName
+                cpuUse: process.selectedCPUUsage
+                memUse: process.selectedMemoryUsage
+            }
+
+            UsageGraph {
+                indicatorName: qsTr("CPU", "details CPU indicator name")
+                dataSource: process.selectedCPUUsage
+                tickSource: process.selectedTick
+            }
+
+            UsageGraph {
+                indicatorName: qsTr("Memory", "details Memory indicator name")
+                dataSource: process.selectedMemoryUsage
+                tickSource: process.selectedTick
+            }
+
+            Button {
+                text: qsTr("Kill")
+                anchors {
+                    horizontalCenter: parent.horizontalCenter
+                }
+
+                visible: process.isKillable()
+
+                onClicked: {
+                    if (process.killSelected() === 0) {
+                        pageStack.navigateBack(PageStackAction.Animated)
+                    } else {
+                        banner("INFO", qsTr("Permission denied"))
+                    }
                 }
             }
         }
