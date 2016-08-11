@@ -203,7 +203,7 @@ Page {
                 font.pointSize: largeScreen ? 30 : 16
                 wrapMode: Text.WordWrap
                 text: qsTr("Lighthouse is free software licensed under the GPL v3 available at <a href='https://github.com/almindor/lighthouse'>github</a>.\
-                Device controls DBus code inspired by <a href='https://github.com/ejjoman/SailfishReboot'>SailfishReboot</a>.")
+                Device controls DBus code inspired by <a href='https://github.com/ejjoman/SailfishReboot'>SailfishReboot</a>. Tablet support by <a href='https://github.com/a-dekker'>a-dekker</a>")
                 linkColor: Theme.secondaryHighlightColor
                 onLinkActivated: {
                     Qt.openUrlExternally(link);
