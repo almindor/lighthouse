@@ -105,24 +105,24 @@
 <context>
     <name>Details</name>
     <message>
-        <location filename="../qml/pages/Details.qml" line="42"/>
+        <location filename="../qml/pages/Details.qml" line="64"/>
         <source>CPU</source>
         <comment>details CPU indicator name</comment>
         <translation>CPU</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="48"/>
+        <location filename="../qml/pages/Details.qml" line="70"/>
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
         <translation>Paměť</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="54"/>
+        <location filename="../qml/pages/Details.qml" line="76"/>
         <source>Kill</source>
         <translation>Ukončit</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="65"/>
+        <location filename="../qml/pages/Details.qml" line="87"/>
         <source>Permission denied</source>
         <translation type="unfinished"></translation>
     </message>
