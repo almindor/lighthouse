@@ -24,47 +24,58 @@ Page {
     allowedOrientations: Orientation.Portrait | Orientation.Landscape
                          | Orientation.LandscapeInverted
 
-    Column {
+    PageHeader {
+        id: headerP
         visible: isPortrait
-        width: page.width
-        spacing: Theme.paddingLarge
-        PageHeader {
-            title: qsTr("CPU Usage")
+        title: qsTr("CPU Usage")
+    }
+
+    ProgressCircleBase {
+        visible: isPortrait
+        id: circleP
+        anchors.top: headerP.bottom
+        width: parent.width / 2
+        height: width
+        anchors.horizontalCenter: parent.horizontalCenter
+        value: cpu.summaryValue / 100
+        borderWidth: 2
+        progressColor: Theme.highlightColor
+
+        DoubleIndicator {
+          topVal: cpu.summaryValue
+          topUnit: "%"
+          botVal: cpu.temperature
+          botUnit: "C°"
+        }
+    }
+
+    SilicaListView {
+        visible: isPortrait
+        id: listViewP
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: circleP.bottom
+        anchors.bottom: parent.bottom
+        width: parent.width * 0.9
+
+        model: cpu
+        VerticalScrollDecorator {
+            flickable: listViewP
         }
 
-        ProgressCircleBase {
-            width: parent.width / 2
-            height: width
-            anchors.horizontalCenter: parent.horizontalCenter
-            value: cpu.summaryValue / 100
-            borderWidth: 2
-            progressColor: Theme.highlightColor
-
-            DoubleIndicator {
-              topVal: cpu.summaryValue
-              topUnit: "%"
-              botVal: cpu.temperature
-              botUnit: "C°"
-            }
-        }
-
-        Repeater {
-            model: cpu
-
-            ProgressBar {
-                minimumValue: 0
-                maximumValue: 100
-                value: cpuUsage
-                valueText: value + '%'
-                label: qsTr("CPU") + (index + 1);
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                    margins: Theme.paddingLarge
-                }
+        delegate: ProgressBar {
+            minimumValue: 0
+            maximumValue: 100
+            value: cpuUsage
+            valueText: value + '%'
+            label: qsTr("CPU") + (index + 1);
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: Theme.paddingLarge
             }
         }
     }
+
     PageHeader {
         visible: isLandscape
         title: qsTr("CPU Usage")
@@ -88,6 +99,7 @@ Page {
             botUnit: "C°"
         }
     }
+
     Column {
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: circle.right

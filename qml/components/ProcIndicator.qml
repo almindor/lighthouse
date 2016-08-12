@@ -14,7 +14,9 @@ BackgroundItem {
         right: parent.right
         margins: Theme.paddingLarge
     }
+
     height: greyBar.height
+
     Label {
         anchors {
             left: parent.left
@@ -26,11 +28,12 @@ BackgroundItem {
 
     Text {
         id: cpuLabel
+        z: 99
         text: qsTr("cpu: ") + cpuUse + "%"
-        color: Theme.highlightColor
-        font.pointSize: largeScreen ? 28 : 12
+        color: Theme.primaryColor
+        font.pointSize: largeScreen ? Theme.fontSizeSmall : Theme.fontSizeExtraSmall
         anchors {
-            horizontalCenter: parent.horizontalCenter
+            horizontalCenter: greyBar.horizontalCenter
             top: parent.top
         }
     }
@@ -38,10 +41,11 @@ BackgroundItem {
     Text {
         id: memLabel
         text: qsTr("mem: ") + memUse + "%"
-        color: Theme.secondaryHighlightColor
-        font.pointSize: largeScreen ? 28 : 12
+        z: 99
+        color: Theme.secondaryColor
+        font.pointSize: largeScreen ? Theme.fontSizeSmall : Theme.fontSizeExtraSmall
         anchors {
-            horizontalCenter: parent.horizontalCenter
+            horizontalCenter: greyBar.horizontalCenter
             top: parent.top
             topMargin: cpuLabel.height + 1
         }
@@ -55,7 +59,7 @@ BackgroundItem {
         }
 
         opacity: 0.5
-        width: largeScreen ? 400 : 200
+        width: page.width / 2.0
         height: cpuLabel.height + memLabel.height + 1
         color: "dimgrey"
     }
@@ -67,7 +71,7 @@ BackgroundItem {
             top: parent.top
         }
 
-        width: cpuUse * 2
+        width: cpuUse / 100.0 * greyBar.width
         height: cpuLabel.height
         color: Theme.highlightColor
     }
@@ -80,7 +84,7 @@ BackgroundItem {
             topMargin: cpuBar.height + 1
         }
 
-        width: memUse * 2
+        width: memUse / 100.0 * greyBar.width
         height: memLabel.height
         color: Theme.secondaryHighlightColor
     }

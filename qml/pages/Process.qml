@@ -68,7 +68,9 @@ Page {
         anchors.fill: parent
         spacing: 2
         model: process
-        VerticalScrollDecorator {}
+        VerticalScrollDecorator {
+            flickable: listView
+        }
 
         delegate: ProcIndicator {
             procName: name

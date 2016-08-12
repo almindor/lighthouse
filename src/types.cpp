@@ -141,11 +141,11 @@ namespace Lighthouse {
     }
 
     int ProcInfo::getCPUUsage() const {
-        return fCPUUsage;
+        return fCPUUsage > 100 ? 100 : fCPUUsage; // TODO: fix > 100 error at source
     }
 
     int ProcInfo::getMemoryUsage() const {
-        return fMemoryUsage;
+        return fMemoryUsage > 100 ? 100 : fMemoryUsage; // TODO: fix > 100 error at source
     }
 
     int ProcInfo::getNameState() const {

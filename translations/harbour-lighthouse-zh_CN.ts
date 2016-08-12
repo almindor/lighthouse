@@ -90,14 +90,14 @@
 <context>
     <name>CPU</name>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="32"/>
-        <location filename="../qml/pages/CPU.qml" line="70"/>
+        <location filename="../qml/pages/CPU.qml" line="30"/>
+        <location filename="../qml/pages/CPU.qml" line="81"/>
         <source>CPU Usage</source>
         <translation>CPU使用情况</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="59"/>
-        <location filename="../qml/pages/CPU.qml" line="104"/>
+        <location filename="../qml/pages/CPU.qml" line="70"/>
+        <location filename="../qml/pages/CPU.qml" line="116"/>
         <source>CPU</source>
         <translation>CPU</translation>
     </message>
@@ -256,12 +256,12 @@
 <context>
     <name>ProcIndicator</name>
     <message>
-        <location filename="../qml/components/ProcIndicator.qml" line="29"/>
+        <location filename="../qml/components/ProcIndicator.qml" line="32"/>
         <source>cpu: </source>
         <translation>cpu：</translation>
     </message>
     <message>
-        <location filename="../qml/components/ProcIndicator.qml" line="40"/>
+        <location filename="../qml/components/ProcIndicator.qml" line="43"/>
         <source>mem: </source>
         <translation>内存：</translation>
     </message>
