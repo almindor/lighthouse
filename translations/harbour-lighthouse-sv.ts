@@ -124,7 +124,7 @@
     <message>
         <location filename="../qml/pages/Details.qml" line="87"/>
         <source>Permission denied</source>
-        <translation type="unfinished"></translation>
+        <translation>Åtkomst nekad</translation>
     </message>
 </context>
 <context>
@@ -240,7 +240,7 @@
     <message>
         <location filename="../qml/pages/Phone.qml" line="29"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Enhetskontroller</translation>
     </message>
     <message>
         <location filename="../qml/pages/Phone.qml" line="38"/>
@@ -324,7 +324,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="100"/>
         <source>App Restart Required</source>
-        <translation>Omstart av app krävs</translation>
+        <translation>Omstart av appen krävs</translation>
     </message>
 </context>
 <context>
@@ -337,7 +337,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="36"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Enhetskontroller</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="40"/>
