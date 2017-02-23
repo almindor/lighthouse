@@ -60,12 +60,12 @@
     <message>
         <location filename="../qml/pages/About.qml" line="177"/>
         <source>Swedish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/AsavarTzeth/&apos;&gt;Patrik Nilsson (AsavarTzeth)&lt;/a&gt;.</source>
-        <translation>Swedische Übersetzung von &lt;a href=&apos;https://www.transifex.com/accounts/profile/AsavarTzeth/&apos;&gt;Patrik Nilsson (AsavarTzeth)&lt;/a&gt;.</translation>
+        <translation>Schwedische Übersetzung von &lt;a href=&apos;https://www.transifex.com/accounts/profile/AsavarTzeth/&apos;&gt;Patrik Nilsson (AsavarTzeth)&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="193"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</source>
-        <translation>Lighthouse ist eine Frei Software, lizenziert unter der GPL v3 mehr unter &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Das Telefon nutzt DBus, mit Codeinspiration  von &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Das InfoPopup Kompotent stammt aus &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; von Marko Koschak.</translation>
+        <translation>Lighthouse ist Freie Software, lizenziert unter der GPL v3, verfügbar unter &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Die DBus-Schnittstelle ist von &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt; inspiriert. Die InfoPopup-Komponente stammt von &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; Marko Koschak.</translation>
     </message>
 </context>
 <context>
@@ -214,17 +214,17 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="29"/>
         <source>Memory Usage</source>
-        <translation>Speicher-Auslastung</translation>
+        <translation>Speicherauslastung</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="52"/>
         <source> kB free out of </source>
-        <translation>kB frei von </translation>
+        <translation> kB frei von </translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="52"/>
         <source> kB total</source>
-        <translation> kb gesamt</translation>
+        <translation> kB gesamt</translation>
     </message>
 </context>
 <context>
@@ -232,7 +232,7 @@
     <message>
         <location filename="../qml/pages/Phone.qml" line="27"/>
         <source>Phone Controls</source>
-        <translation>Geräte-Steuerung</translation>
+        <translation>Gerätesteuerung</translation>
     </message>
     <message>
         <location filename="../qml/pages/Phone.qml" line="36"/>
@@ -306,7 +306,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="38"/>
         <source>Update interval</source>
-        <translation>Update-Intervall</translation>
+        <translation>Aktualisierungsintervall</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="51"/>
@@ -344,7 +344,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="62"/>
         <source>Uptime: </source>
-        <translation>Uptime: </translation>
+        <translation>Betriebszeit: </translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="72"/>
