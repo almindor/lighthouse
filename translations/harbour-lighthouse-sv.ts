@@ -105,24 +105,29 @@
 <context>
     <name>Details</name>
     <message>
-        <location filename="../qml/pages/Details.qml" line="64"/>
+        <location filename="../qml/pages/Details.qml" line="76"/>
         <source>CPU</source>
         <comment>details CPU indicator name</comment>
         <translation>CPU</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="70"/>
+        <location filename="../qml/pages/Details.qml" line="82"/>
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
         <translation>Minne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="76"/>
+        <location filename="../qml/pages/Details.qml" line="88"/>
         <source>Kill</source>
         <translation>Avsluta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="87"/>
+        <location filename="../qml/pages/Details.qml" line="88"/>
+        <source>Unable to kill android processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Details.qml" line="99"/>
         <source>Permission denied</source>
         <translation>Åtkomst nekad</translation>
     </message>
@@ -256,12 +261,12 @@
 <context>
     <name>ProcIndicator</name>
     <message>
-        <location filename="../qml/components/ProcIndicator.qml" line="32"/>
+        <location filename="../qml/components/ProcIndicator.qml" line="34"/>
         <source>cpu: </source>
         <translation>cpu: </translation>
     </message>
     <message>
-        <location filename="../qml/components/ProcIndicator.qml" line="43"/>
+        <location filename="../qml/components/ProcIndicator.qml" line="45"/>
         <source>mem: </source>
         <translation>minne: </translation>
     </message>
