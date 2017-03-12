@@ -42,23 +42,23 @@ SOURCES += \
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
-    rpm/lighthouse.yaml \
     qml/pages/Summary.qml \
     qml/pages/CPU.qml \
     qml/pages/Settings.qml \
     qml/pages/Memory.qml \
     qml/pages/About.qml \
     qml/pages/Process.qml \
-    rpm/lighthouse.spec \
     qml/pages/Phone.qml \
-    harbour-lighthouse.desktop \
     qml/Lighthouse.qml \
     qml/pages/Battery.qml \
     qml/pages/Details.qml \
     qml/components/ProcIndicator.qml \
     qml/components/DoubleIndicator.qml \
     qml/components/UsageGraph.qml \
-    qml/components/UsageHelper.js
+    qml/components/UsageHelper.js \
+    rpm/lighthouse.yaml \
+    rpm/lighthouse.spec \
+    harbour-lighthouse.desktop
 
 HEADERS += \
     src/cpu.h \
@@ -96,5 +96,10 @@ SOURCES += \
     qml/pages/Process.qml \
     qml/pages/Phone.qml \
     qml/Lighthouse.qml \
-    qml/pages/Battery.qml
+    qml/pages/Battery.qml \
+    qml/pages/Details.qml \
+    qml/components/ProcIndicator.qml \
+    qml/components/DoubleIndicator.qml \
+    qml/components/UsageGraph.qml \
+    qml/components/UsageHelper.js
 }
