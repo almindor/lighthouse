@@ -38,6 +38,7 @@ namespace Lighthouse {
         Q_PROPERTY(int selectedCPUUsage READ getSelectedCPUUsage NOTIFY selectedChanged)
         Q_PROPERTY(int selectedMemoryUsage READ getSelectedMemoryUsage NOTIFY selectedChanged)
         Q_PROPERTY(const QString selectedName READ getSelectedName NOTIFY selectedChanged)
+        Q_PROPERTY(const QString selectedProcName READ getSelectedProcName NOTIFY selectedChanged)
         Q_PROPERTY(int selectedTick READ getSelectedTick NOTIFY selectedChanged)
     public:
         enum ProcessRoles {
@@ -92,6 +93,7 @@ namespace Lighthouse {
         void endIR(bool really);
 
         const QString getSelectedName() const;
+        const QString getSelectedProcName() const;
         int getSelectedCPUUsage() const;
         int getSelectedMemoryUsage() const;
         int getSelectedTick() const;

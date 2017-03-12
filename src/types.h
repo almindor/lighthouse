@@ -42,6 +42,7 @@ namespace Lighthouse {
 
         const QString& getName() const;
         const QString& getStatName() const;
+        const QString& getProcName() const;
         pid_t getPID() const;
         int getCPUUsage() const;
         int getMemoryUsage() const;
@@ -51,6 +52,7 @@ namespace Lighthouse {
         bool operator ==(const ProcInfo& other) const;
     private:
         QString fApplicationName;
+        QString fProcName;
         QString fStatName;
         QString fShowName;
         pid_t fPID;

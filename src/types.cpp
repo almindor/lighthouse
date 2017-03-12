@@ -106,6 +106,8 @@ namespace Lighthouse {
     }
 
     void ProcInfo::updateName(QString& appName) {
+        fProcName = appName;
+
         setShowName(appName, 1);
     }
 
@@ -134,6 +136,10 @@ namespace Lighthouse {
 
     const QString& ProcInfo::getStatName() const {
         return fStatName;
+    }
+
+    const QString& ProcInfo::getProcName() const {
+        return fProcName;
     }
 
     pid_t ProcInfo::getPID() const {

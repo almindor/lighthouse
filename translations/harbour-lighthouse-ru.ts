@@ -105,29 +105,25 @@
 <context>
     <name>Details</name>
     <message>
-        <location filename="../qml/pages/Details.qml" line="76"/>
+        <location filename="../qml/pages/Details.qml" line="79"/>
         <source>CPU</source>
         <comment>details CPU indicator name</comment>
         <translation type="unfinished">Процессор</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="82"/>
+        <location filename="../qml/pages/Details.qml" line="85"/>
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
         <translation type="unfinished">Память</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="88"/>
+        <location filename="../qml/pages/Details.qml" line="91"/>
         <source>Kill</source>
         <translation>Завершить</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="88"/>
-        <source>Unable to kill android processes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Details.qml" line="99"/>
+        <location filename="../qml/pages/Details.qml" line="91"/>
+        <location filename="../qml/pages/Details.qml" line="102"/>
         <source>Permission denied</source>
         <translation type="unfinished"></translation>
     </message>

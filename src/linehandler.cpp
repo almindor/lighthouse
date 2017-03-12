@@ -211,11 +211,10 @@ namespace Lighthouse {
             baseName = baseName.right(n);
         }
 
+        fProcMap[index].updateName(baseName);
         if ( fAppNameMap.contains(baseName) ) {
             QString appName = fAppNameMap.value(baseName, baseName);
             fProcMap[index].updateApplicationName(appName);
-        } else {
-            fProcMap[index].updateName(baseName);
         }
         return 0;
     }

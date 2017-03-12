@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 
 BackgroundItem {
 
+    property bool withName: true
     property int cpuUse
     property int memUse
     property string procName
@@ -18,6 +19,7 @@ BackgroundItem {
     height: greyBar.height
 
     Label {
+        visible: withName
         anchors {
             left: parent.left
         }
@@ -59,7 +61,7 @@ BackgroundItem {
         }
 
         opacity: 0.5
-        width: page.width / 2.0
+        width: withName ? parent.width / 2.0 : parent.width
         height: cpuLabel.height + memLabel.height + 1
         color: "dimgrey"
     }

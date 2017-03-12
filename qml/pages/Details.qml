@@ -54,7 +54,22 @@ Page {
             width: page.width
             spacing: 10
 
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.margins: Theme.paddingLarge
+                text: process.selectedName
+                visible: process.selectedName !== process.selectedProcName
+            }
+
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.margins: Theme.paddingLarge
+                text: process.selectedProcName
+                color: Theme.highlightColor
+            }
+
             ProcIndicator {
+                withName: false
                 procName: process.selectedName
                 cpuUse: process.selectedCPUUsage
                 memUse: process.selectedMemoryUsage
@@ -73,12 +88,12 @@ Page {
             }
 
             Button {
-                text: qsTr("Kill")
+                text: process.isKillable() ? qsTr("Kill") : qsTr("Permission denied")
                 anchors {
                     horizontalCenter: parent.horizontalCenter
                 }
 
-                visible: process.isKillable()
+                enabled: process.isKillable()
 
                 onClicked: {
                     if (process.killSelected() === 0) {

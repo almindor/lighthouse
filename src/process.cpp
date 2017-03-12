@@ -288,6 +288,11 @@ namespace Lighthouse {
         return fSelectedPID > 0 ? fProcMap->value(fSelectedPID).getName() : "Invalid process";
     }
 
+    const QString Process::getSelectedProcName() const
+    {
+        return fSelectedPID > 0 ? fProcMap->value(fSelectedPID).getProcName() : "Invalid process";
+    }
+
     int Process::getSelectedCPUUsage() const {
         return fSelectedPID > 0 ? fProcMap->value(fSelectedPID).getCPUUsage() : 0;
     }
