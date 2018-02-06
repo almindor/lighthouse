@@ -12,7 +12,6 @@ TRANSLATIONS = \
     translations/harbour-lighthouse-ar.ts \
     translations/harbour-lighthouse-cs.ts \
     translations/harbour-lighthouse-da.ts \
-    translations/harbour-lighthouse-de.ts \
     translations/harbour-lighthouse-de_DE.ts \
     translations/harbour-lighthouse-de_CH.ts \
     translations/harbour-lighthouse-el.ts \
