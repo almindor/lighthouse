@@ -66,7 +66,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="205"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tablet support by &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Lighthouse är fri programvara licensierad under GPL v3, tillgänglig på  &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Enhetskontrollernas DBus-kod inspirerad av &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tablet-stöd av &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -325,7 +325,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="100"/>
         <source>App Restart Required</source>
-        <translation>Omstart av appen krävs</translation>
+        <translation>Appen måste startas om</translation>
     </message>
 </context>
 <context>

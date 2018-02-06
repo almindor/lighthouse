@@ -108,13 +108,13 @@
         <location filename="../qml/pages/Details.qml" line="79"/>
         <source>CPU</source>
         <comment>details CPU indicator name</comment>
-        <translation type="unfinished">Процессор</translation>
+        <translation>Процессор</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="85"/>
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
-        <translation type="unfinished">Память</translation>
+        <translation>Память</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="91"/>
@@ -241,7 +241,7 @@
     <message>
         <location filename="../qml/pages/Phone.qml" line="29"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Управление устройством</translation>
     </message>
     <message>
         <location filename="../qml/pages/Phone.qml" line="38"/>
@@ -338,7 +338,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="36"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Управление устройством</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="40"/>

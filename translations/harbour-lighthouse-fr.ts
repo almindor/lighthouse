@@ -51,7 +51,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="157"/>
         <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</source>
-        <translation>Traduction française par &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</translation>
+        <translation>Traduction française par &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;, &lt;a href=&apos;https://www.transifex.com/user/profile/lutinotmalin/&apos;&gt;lutinotmalin&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="173"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="205"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tablet support by &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Lighthouse est un logiciel libre sous licence GPL v3 disponible sur &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;GitHub&lt;/a&gt;. Code de contrôle DBus de l&apos;appareil inspiré par &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Support de la tablette par &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -74,12 +74,12 @@
     <message>
         <location filename="../qml/pages/Battery.qml" line="32"/>
         <source>Battery Usage</source>
-        <translation>Utilisation de la batterie</translation>
+        <translation>Batterie</translation>
     </message>
     <message>
         <location filename="../qml/pages/Battery.qml" line="55"/>
         <source>Health: </source>
-        <translation>Niveau : </translation>
+        <translation>État : </translation>
     </message>
     <message>
         <location filename="../qml/pages/Battery.qml" line="63"/>
@@ -93,7 +93,7 @@
         <location filename="../qml/pages/CPU.qml" line="30"/>
         <location filename="../qml/pages/CPU.qml" line="81"/>
         <source>CPU Usage</source>
-        <translation>Utilisation processeurs</translation>
+        <translation>Processeurs</translation>
     </message>
     <message>
         <location filename="../qml/pages/CPU.qml" line="70"/>
@@ -119,13 +119,13 @@
     <message>
         <location filename="../qml/pages/Details.qml" line="91"/>
         <source>Kill</source>
-        <translation>Terminer </translation>
+        <translation>Forcer l&apos;arrêt</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="91"/>
         <location filename="../qml/pages/Details.qml" line="102"/>
         <source>Permission denied</source>
-        <translation type="unfinished"></translation>
+        <translation>Autorisation non accordée</translation>
     </message>
 </context>
 <context>
@@ -223,17 +223,17 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="31"/>
         <source>Memory Usage</source>
-        <translation>Utilisation mémoire</translation>
+        <translation>Mémoire</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="54"/>
         <source> kB free out of </source>
-        <translation>ko libre sur </translation>
+        <translation> Ko libres sur </translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="54"/>
         <source> kB total</source>
-        <translation>ko total</translation>
+        <translation> Ko au total</translation>
     </message>
 </context>
 <context>
@@ -241,7 +241,7 @@
     <message>
         <location filename="../qml/pages/Phone.qml" line="29"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Commandes de l&apos;appareil</translation>
     </message>
     <message>
         <location filename="../qml/pages/Phone.qml" line="38"/>
@@ -259,12 +259,12 @@
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="34"/>
         <source>cpu: </source>
-        <translation>cpu :</translation>
+        <translation>cpu : </translation>
     </message>
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="45"/>
         <source>mem: </source>
-        <translation>mém. :</translation>
+        <translation>mém. : </translation>
     </message>
 </context>
 <context>
@@ -292,17 +292,17 @@
     <message>
         <location filename="../qml/pages/Process.qml" line="50"/>
         <source>Sort by Name</source>
-        <translation>Trier par Nom</translation>
+        <translation>Trier par nom</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="56"/>
         <source>Sort by Memory Usage</source>
-        <translation>Trier par utilisation Mémoire</translation>
+        <translation>Trier par utilisation RAM</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="62"/>
         <source>Sort by CPU Usage</source>
-        <translation>Trier par uilisation Processeur</translation>
+        <translation>Trier par utilisation CPU</translation>
     </message>
 </context>
 <context>
@@ -325,7 +325,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="100"/>
         <source>App Restart Required</source>
-        <translation>Redémarrage de l&apos;application requis</translation>
+        <translation>Redémarrage de l&apos;application nécessaire</translation>
     </message>
 </context>
 <context>
@@ -338,7 +338,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="36"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Commandes de l&apos;appareil</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="40"/>
@@ -353,7 +353,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="64"/>
         <source>Uptime: </source>
-        <translation>Durée de fonctionnement : </translation>
+        <translation>Démarré il y a </translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="74"/>

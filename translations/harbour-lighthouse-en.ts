@@ -66,7 +66,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="205"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tablet support by &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tablet support by &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -125,7 +125,7 @@
         <location filename="../qml/pages/Details.qml" line="91"/>
         <location filename="../qml/pages/Details.qml" line="102"/>
         <source>Permission denied</source>
-        <translation type="unfinished"></translation>
+        <translation>Permission denied</translation>
     </message>
 </context>
 <context>
@@ -241,7 +241,7 @@
     <message>
         <location filename="../qml/pages/Phone.qml" line="29"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Device Controls</translation>
     </message>
     <message>
         <location filename="../qml/pages/Phone.qml" line="38"/>
@@ -338,7 +338,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="36"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Device Controls</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="40"/>

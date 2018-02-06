@@ -66,7 +66,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="205"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tablet support by &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Lighthouse is vrije software gelicentieerd onder de GPLv3-licentie, beschikbaar op &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;GitHub&lt;/a&gt;. DBus-code van de apparaatbesturing is geïnspireerd door &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tabletondersteuning door &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -108,13 +108,13 @@
         <location filename="../qml/pages/Details.qml" line="79"/>
         <source>CPU</source>
         <comment>details CPU indicator name</comment>
-        <translation type="unfinished">CPU</translation>
+        <translation>CPU</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="85"/>
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
-        <translation type="unfinished">Geheugen</translation>
+        <translation>Geheugen</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="91"/>
@@ -125,7 +125,7 @@
         <location filename="../qml/pages/Details.qml" line="91"/>
         <location filename="../qml/pages/Details.qml" line="102"/>
         <source>Permission denied</source>
-        <translation type="unfinished"></translation>
+        <translation>Toegang geweigerd</translation>
     </message>
 </context>
 <context>
@@ -241,7 +241,7 @@
     <message>
         <location filename="../qml/pages/Phone.qml" line="29"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Apparaatbesturing</translation>
     </message>
     <message>
         <location filename="../qml/pages/Phone.qml" line="38"/>
@@ -272,7 +272,7 @@
     <message>
         <location filename="../qml/pages/Process.qml" line="38"/>
         <source>Applications</source>
-        <translation>Applicaties</translation>
+        <translation>Apps</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="38"/>
@@ -287,7 +287,7 @@
     <message>
         <location filename="../qml/pages/Process.qml" line="45"/>
         <source>Show Applications</source>
-        <translation>Applicaties weergeven</translation>
+        <translation>Apps weergeven</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="50"/>
@@ -315,7 +315,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="54"/>
         <source>Update interval</source>
-        <translation>Bijwerk-tussenpose</translation>
+        <translation>Update-interval</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="67"/>
@@ -325,7 +325,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="100"/>
         <source>App Restart Required</source>
-        <translation>Dit vereist een herstart van de applicatie</translation>
+        <translation>Dit vereist een herstart van de app</translation>
     </message>
 </context>
 <context>
@@ -338,7 +338,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="36"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Apparaatbesturing</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="40"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="74"/>
         <source>CPUs: </source>
-        <translation>CPU&apos;s:</translation>
+        <translation>CPU’s:</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="84"/>

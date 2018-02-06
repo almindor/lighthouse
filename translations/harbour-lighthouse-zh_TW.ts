@@ -66,7 +66,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="205"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tablet support by &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Lighthouse 為以GPL v3授權的自由軟體，可於此處&lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;下載. 由此處&lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;獲得手機控制DBus碼的靈感。平板由&lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;獲得支援。</translation>
     </message>
 </context>
 <context>
@@ -125,7 +125,7 @@
         <location filename="../qml/pages/Details.qml" line="91"/>
         <location filename="../qml/pages/Details.qml" line="102"/>
         <source>Permission denied</source>
-        <translation type="unfinished"></translation>
+        <translation>沒有權限</translation>
     </message>
 </context>
 <context>
@@ -241,7 +241,7 @@
     <message>
         <location filename="../qml/pages/Phone.qml" line="29"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>裝置控制</translation>
     </message>
     <message>
         <location filename="../qml/pages/Phone.qml" line="38"/>
@@ -338,7 +338,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="36"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>裝置控制</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="40"/>

@@ -11,12 +11,12 @@
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
         <source>Lighthouse</source>
-        <translation type="unfinished"></translation>
+        <translation>Faro</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
         <source>by Aleš Katona and Lavaux Gilles.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por Aleš Katona y Lavaux Gilles.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="205"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tablet support by &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Lighthouse es software libre licensiado bajo la GPL v3 disponible en &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Código de los controles DBus para teléfono inspirado por &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Soporte para tablet por &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -108,24 +108,24 @@
         <location filename="../qml/pages/Details.qml" line="79"/>
         <source>CPU</source>
         <comment>details CPU indicator name</comment>
-        <translation type="unfinished">Procesador</translation>
+        <translation>Procesador</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="85"/>
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
-        <translation type="unfinished">Memoria</translation>
+        <translation>Memoria</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="91"/>
         <source>Kill</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminar</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="91"/>
         <location filename="../qml/pages/Details.qml" line="102"/>
         <source>Permission denied</source>
-        <translation type="unfinished"></translation>
+        <translation>Permiso denegado</translation>
     </message>
 </context>
 <context>
@@ -158,7 +158,7 @@
         <location filename="../src/languages.cpp" line="68"/>
         <source>Unknown</source>
         <comment>language</comment>
-        <translation type="unfinished"></translation>
+        <translation>Desconocido</translation>
     </message>
 </context>
 <context>
@@ -167,25 +167,25 @@
         <location filename="../src/monitor.cpp" line="94"/>
         <source>cpu</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>procesador</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="95"/>
         <source>memory</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>memoria</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="96"/>
         <source>battery</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>batería</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="97"/>
         <source>unknown</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation>desconocido</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="119"/>
@@ -206,7 +206,7 @@
         <location filename="../src/monitor.cpp" line="122"/>
         <source>Unknown</source>
         <comment>Cover label in summary page</comment>
-        <translation type="unfinished"></translation>
+        <translation>Desconocido</translation>
     </message>
 </context>
 <context>
@@ -215,7 +215,7 @@
         <location filename="../src/process.cpp" line="74"/>
         <source>Unknown</source>
         <comment>Process name</comment>
-        <translation type="unfinished"></translation>
+        <translation>Desconocido</translation>
     </message>
 </context>
 <context>
@@ -241,7 +241,7 @@
     <message>
         <location filename="../qml/pages/Phone.qml" line="29"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Controles de teléfono</translation>
     </message>
     <message>
         <location filename="../qml/pages/Phone.qml" line="38"/>
@@ -259,12 +259,12 @@
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="34"/>
         <source>cpu: </source>
-        <translation type="unfinished"></translation>
+        <translation>procesador</translation>
     </message>
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="45"/>
         <source>mem: </source>
-        <translation type="unfinished"></translation>
+        <translation>mem:</translation>
     </message>
 </context>
 <context>
@@ -338,7 +338,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="36"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Controles de teléfono</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="40"/>

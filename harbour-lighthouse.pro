@@ -9,16 +9,28 @@
 TARGET = harbour-lighthouse
 
 TRANSLATIONS = \
-    translations/harbour-lighthouse-en.ts \
+    translations/harbour-lighthouse-ar.ts \
     translations/harbour-lighthouse-cs.ts \
-    translations/harbour-lighthouse-fr.ts \
-    translations/harbour-lighthouse-ru.ts \
+    translations/harbour-lighthouse-da.ts \
+    translations/harbour-lighthouse-de.ts \
+    translations/harbour-lighthouse-de_DE.ts \
+    translations/harbour-lighthouse-de_CH.ts \
+    translations/harbour-lighthouse-el.ts \
+    translations/harbour-lighthouse-en.ts \
     translations/harbour-lighthouse-es.ts \
     translations/harbour-lighthouse-es_AR.ts \
-    translations/harbour-lighthouse-sv.ts \
+    translations/harbour-lighthouse-fi_FI.ts \
+    translations/harbour-lighthouse-fr.ts \
+    translations/harbour-lighthouse-gl.ts \
+    translations/harbour-lighthouse-hu.ts \
     translations/harbour-lighthouse-it.ts \
     translations/harbour-lighthouse-nb.ts \
     translations/harbour-lighthouse-nl.ts \
+    translations/harbour-lighthouse-pl.ts \
+    translations/harbour-lighthouse-ru.ts \
+    translations/harbour-lighthouse-sr.ts \
+    translations/harbour-lighthouse-sv.ts \
+    translations/harbour-lighthouse-tr.ts \
     translations/harbour-lighthouse-zh_CN.ts \
     translations/harbour-lighthouse-zh_TW.ts
 

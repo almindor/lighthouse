@@ -1,121 +1,131 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ar" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ar">
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/pages/About.qml" line="31"/>
+        <location filename="../qml/pages/About.qml" line="43"/>
         <source>About</source>
-        <translation type="unfinished"/>
+        <translation>حول</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="42"/>
+        <location filename="../qml/pages/About.qml" line="54"/>
         <source>Lighthouse</source>
-        <translation type="unfinished"/>
+        <translation>لايت هاوس</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="42"/>
+        <location filename="../qml/pages/About.qml" line="54"/>
         <source>by Aleš Katona and Lavaux Gilles.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../qml/pages/About.qml" line="53"/>
-        <source>Translators</source>
-        <translation type="unfinished"/>
+        <translation>يقدمه أليس كاتونا  ولافو جيل</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
+        <source>Translators</source>
+        <translation>مترجمون</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="77"/>
         <source>Czech translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation>الترجمة التشيكية بواسطة &lt;a href=&apos;https://www.transifex.com/accounts/profile/fri/&apos;&gt;fri&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="81"/>
+        <location filename="../qml/pages/About.qml" line="93"/>
         <source>Russian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation>الترجمة الروسية بواسطة &lt;a href=&apos;https://www.transifex.com/accounts/profile/lewa/&apos;&gt;Alexey (lewa)&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="97"/>
+        <location filename="../qml/pages/About.qml" line="109"/>
         <source>Spanish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation>الترجمة الإسبانية بواسطة &lt;a href=&apos;https://www.transifex.com/accounts/profile/hobarrera/&apos;&gt;Hugo Osvaldo Barrera (hobarrera)&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="113"/>
+        <location filename="../qml/pages/About.qml" line="125"/>
         <source>Taiwanese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation>الترجمة التايوانية بواسطة &lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="129"/>
+        <location filename="../qml/pages/About.qml" line="141"/>
         <source>Chinese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation>الترجمة الصينية بواسطة &lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="145"/>
+        <location filename="../qml/pages/About.qml" line="157"/>
         <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation>الترجمة الفرنسية بواسطة &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="161"/>
+        <location filename="../qml/pages/About.qml" line="173"/>
         <source>Italian translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/ghostofasmile/&apos;&gt;Francesco Vaccaro (ghostofasmile)&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation>الترجمة الإيطالية بواسطة &lt;a href=&apos;https://www.transifex.com/accounts/profile/ghostofasmile/&apos;&gt;Francesco Vaccaro (ghostofasmile)&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="177"/>
+        <location filename="../qml/pages/About.qml" line="189"/>
         <source>Swedish translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/AsavarTzeth/&apos;&gt;Patrik Nilsson (AsavarTzeth)&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation>الترجمة السويدية بواسطة &lt;a href=&apos;https://www.transifex.com/accounts/profile/AsavarTzeth/&apos;&gt;Patrik Nilsson (AsavarTzeth)&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="193"/>
-        <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;. Phone controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. InfoPopup component taken from &lt;a href=&apos;https://github.com/jobe-m/ownkeepass&apos;&gt;ownKeepass&lt;/a&gt; by Marko Koschak.</source>
-        <translation type="unfinished"/>
+        <location filename="../qml/pages/About.qml" line="205"/>
+        <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tablet support by &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</source>
+        <translation>لايت هاوس هو برنامج مجاني مرخص من  GPL v3 ومتاح في &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.  كود تحكم الجهاز DBus مستوحى من &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;.  دعم اللوح بواسطة &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
     <name>Battery</name>
     <message>
-        <location filename="../qml/pages/Battery.qml" line="30"/>
+        <location filename="../qml/pages/Battery.qml" line="32"/>
         <source>Battery Usage</source>
-        <translation type="unfinished"/>
+        <translation>استخدام البطارية</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Battery.qml" line="53"/>
+        <location filename="../qml/pages/Battery.qml" line="55"/>
         <source>Health: </source>
-        <translation type="unfinished"/>
+        <translation>الصحة:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Battery.qml" line="61"/>
+        <location filename="../qml/pages/Battery.qml" line="63"/>
         <source>Technology: </source>
-        <translation type="unfinished"/>
+        <translation>التكنولوجيا:</translation>
     </message>
 </context>
 <context>
     <name>CPU</name>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="29"/>
+        <location filename="../qml/pages/CPU.qml" line="30"/>
+        <location filename="../qml/pages/CPU.qml" line="81"/>
         <source>CPU Usage</source>
-        <translation type="unfinished"/>
+        <translation>استخدام وحدة المعالجة المركزية</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="56"/>
+        <location filename="../qml/pages/CPU.qml" line="70"/>
+        <location filename="../qml/pages/CPU.qml" line="116"/>
         <source>CPU</source>
-        <translation type="unfinished"/>
+        <translation>وحدة المعالجة المركزية</translation>
     </message>
 </context>
 <context>
     <name>Details</name>
     <message>
-        <location filename="../qml/pages/Details.qml" line="40"/>
+        <location filename="../qml/pages/Details.qml" line="79"/>
         <source>CPU</source>
         <comment>details CPU indicator name</comment>
-        <translation type="unfinished"/>
+        <translation>وحدة المعالجة المركزية</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="46"/>
+        <location filename="../qml/pages/Details.qml" line="85"/>
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
-        <translation type="unfinished"/>
+        <translation>الذاكرة</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="52"/>
+        <location filename="../qml/pages/Details.qml" line="91"/>
         <source>Kill</source>
-        <translation type="unfinished"/>
+        <translation>إلغاء</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Details.qml" line="91"/>
+        <location filename="../qml/pages/Details.qml" line="102"/>
+        <source>Permission denied</source>
+        <translation>إلغاء الأمر</translation>
     </message>
 </context>
 <context>
@@ -126,7 +136,7 @@
         <location filename="../src/battery.cpp" line="11"/>
         <source>Unavailable</source>
         <comment>battery status</comment>
-        <translation type="unfinished"/>
+        <translation>غير متاح</translation>
     </message>
 </context>
 <context>
@@ -134,12 +144,12 @@
     <message>
         <location filename="../src/cpu.cpp" line="46"/>
         <source>Data</source>
-        <translation type="unfinished"/>
+        <translation>البيانات</translation>
     </message>
     <message>
         <location filename="../src/cpu.cpp" line="50"/>
         <source>Description</source>
-        <translation type="unfinished"/>
+        <translation>وصف</translation>
     </message>
 </context>
 <context>
@@ -148,55 +158,55 @@
         <location filename="../src/languages.cpp" line="68"/>
         <source>Unknown</source>
         <comment>language</comment>
-        <translation type="unfinished"/>
+        <translation>غير معروف</translation>
     </message>
 </context>
 <context>
     <name>Lighthouse::Monitor</name>
     <message>
-        <location filename="../src/monitor.cpp" line="95"/>
+        <location filename="../src/monitor.cpp" line="94"/>
         <source>cpu</source>
         <comment>cover label</comment>
-        <translation type="unfinished"/>
+        <translation>وحدة المعالجة المركزية</translation>
+    </message>
+    <message>
+        <location filename="../src/monitor.cpp" line="95"/>
+        <source>memory</source>
+        <comment>cover label</comment>
+        <translation>الذاكرة</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="96"/>
-        <source>memory</source>
+        <source>battery</source>
         <comment>cover label</comment>
-        <translation type="unfinished"/>
+        <translation>البطارية</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="97"/>
-        <source>battery</source>
-        <comment>cover label</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/monitor.cpp" line="98"/>
         <source>unknown</source>
         <comment>cover label</comment>
-        <translation type="unfinished"/>
+        <translation>غير معروف</translation>
+    </message>
+    <message>
+        <location filename="../src/monitor.cpp" line="119"/>
+        <source>CPU</source>
+        <translation>وحدة المعالجة المركزية</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="120"/>
-        <source>CPU</source>
-        <translation type="unfinished"/>
+        <source>Memory</source>
+        <translation>الذاكرة</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="121"/>
-        <source>Memory</source>
-        <translation type="unfinished"/>
+        <source>Battery</source>
+        <translation>البطارية</translation>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="122"/>
-        <source>Battery</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/monitor.cpp" line="123"/>
         <source>Unknown</source>
         <comment>Cover label in summary page</comment>
-        <translation type="unfinished"/>
+        <translation>غير معروف</translation>
     </message>
 </context>
 <context>
@@ -205,165 +215,165 @@
         <location filename="../src/process.cpp" line="74"/>
         <source>Unknown</source>
         <comment>Process name</comment>
-        <translation type="unfinished"/>
+        <translation>غير معروف</translation>
     </message>
 </context>
 <context>
     <name>Memory</name>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="29"/>
+        <location filename="../qml/pages/Memory.qml" line="31"/>
         <source>Memory Usage</source>
-        <translation type="unfinished"/>
+        <translation>استخدام الذاكرة</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="52"/>
+        <location filename="../qml/pages/Memory.qml" line="54"/>
         <source> kB free out of </source>
-        <translation type="unfinished"/>
+        <translation>كيلو بايت غير مستخدمة</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="52"/>
+        <location filename="../qml/pages/Memory.qml" line="54"/>
         <source> kB total</source>
-        <translation type="unfinished"/>
+        <translation>إجمالي الكيلو بايت</translation>
     </message>
 </context>
 <context>
     <name>Phone</name>
     <message>
-        <location filename="../qml/pages/Phone.qml" line="27"/>
-        <source>Phone Controls</source>
-        <translation type="unfinished"/>
+        <location filename="../qml/pages/Phone.qml" line="29"/>
+        <source>Device Controls</source>
+        <translation>تحكمات الجهاز</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Phone.qml" line="36"/>
+        <location filename="../qml/pages/Phone.qml" line="38"/>
         <source>Reboot</source>
-        <translation type="unfinished"/>
+        <translation>إعادة التشغيل</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Phone.qml" line="45"/>
+        <location filename="../qml/pages/Phone.qml" line="47"/>
         <source>Shutdown</source>
-        <translation type="unfinished"/>
+        <translation>إغلاق</translation>
     </message>
 </context>
 <context>
     <name>ProcIndicator</name>
     <message>
-        <location filename="../qml/components/ProcIndicator.qml" line="27"/>
+        <location filename="../qml/components/ProcIndicator.qml" line="34"/>
         <source>cpu: </source>
-        <translation type="unfinished"/>
+        <translation>وحدة المعالجة المركزية:</translation>
     </message>
     <message>
-        <location filename="../qml/components/ProcIndicator.qml" line="38"/>
+        <location filename="../qml/components/ProcIndicator.qml" line="45"/>
         <source>mem: </source>
-        <translation type="unfinished"/>
+        <translation>الذاكرة:</translation>
     </message>
 </context>
 <context>
     <name>Process</name>
     <message>
-        <location filename="../qml/pages/Process.qml" line="36"/>
+        <location filename="../qml/pages/Process.qml" line="38"/>
         <source>Applications</source>
-        <translation type="unfinished"/>
+        <translation>تطبيقات</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="36"/>
+        <location filename="../qml/pages/Process.qml" line="38"/>
         <source>Processes</source>
-        <translation type="unfinished"/>
+        <translation>العمليات</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="43"/>
+        <location filename="../qml/pages/Process.qml" line="45"/>
         <source>Show Processes</source>
-        <translation type="unfinished"/>
+        <translation>عمليات العرض</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="43"/>
+        <location filename="../qml/pages/Process.qml" line="45"/>
         <source>Show Applications</source>
-        <translation type="unfinished"/>
+        <translation>تطبيقات العرض</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="48"/>
+        <location filename="../qml/pages/Process.qml" line="50"/>
         <source>Sort by Name</source>
-        <translation type="unfinished"/>
+        <translation>ترتيب حسب الإسم</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="54"/>
+        <location filename="../qml/pages/Process.qml" line="56"/>
         <source>Sort by Memory Usage</source>
-        <translation type="unfinished"/>
+        <translation>ترتيب حسب استخدام الذاكرة</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="60"/>
+        <location filename="../qml/pages/Process.qml" line="62"/>
         <source>Sort by CPU Usage</source>
-        <translation type="unfinished"/>
+        <translation>ترتيب حسب استخدام وحدة المعالجة المركزية</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="28"/>
+        <location filename="../qml/pages/Settings.qml" line="31"/>
         <source>Settings</source>
-        <translation type="unfinished"/>
+        <translation>إعدادات</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="38"/>
+        <location filename="../qml/pages/Settings.qml" line="54"/>
         <source>Update interval</source>
-        <translation type="unfinished"/>
+        <translation>فترة التحديث</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="51"/>
+        <location filename="../qml/pages/Settings.qml" line="67"/>
         <source>Languages</source>
-        <translation type="unfinished"/>
+        <translation>لغات</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="84"/>
+        <location filename="../qml/pages/Settings.qml" line="100"/>
         <source>App Restart Required</source>
-        <translation type="unfinished"/>
+        <translation>يجب إعادة تشغيل التطبيق</translation>
     </message>
 </context>
 <context>
     <name>Summary</name>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="30"/>
+        <location filename="../qml/pages/Summary.qml" line="32"/>
         <source>About</source>
-        <translation type="unfinished"/>
+        <translation>حول</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="34"/>
-        <source>Phone Controls</source>
-        <translation type="unfinished"/>
+        <location filename="../qml/pages/Summary.qml" line="36"/>
+        <source>Device Controls</source>
+        <translation>تحكمات الجهاز</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="38"/>
+        <location filename="../qml/pages/Summary.qml" line="40"/>
         <source>Settings</source>
-        <translation type="unfinished"/>
+        <translation>إعدادات</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="51"/>
+        <location filename="../qml/pages/Summary.qml" line="53"/>
         <source>Summary</source>
-        <translation type="unfinished"/>
+        <translation>ملخص:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="62"/>
+        <location filename="../qml/pages/Summary.qml" line="64"/>
         <source>Uptime: </source>
-        <translation type="unfinished"/>
+        <translation>مدة التشغيل:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="72"/>
+        <location filename="../qml/pages/Summary.qml" line="74"/>
         <source>CPUs: </source>
-        <translation type="unfinished"/>
+        <translation>وحدات المعالجة المركزية:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="82"/>
+        <location filename="../qml/pages/Summary.qml" line="84"/>
         <source>Memory: </source>
-        <translation type="unfinished"/>
+        <translation>الذاكرة:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="91"/>
+        <location filename="../qml/pages/Summary.qml" line="93"/>
         <source>Processes: </source>
-        <translation type="unfinished"/>
+        <translation>العمليات:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="100"/>
+        <location filename="../qml/pages/Summary.qml" line="102"/>
         <source>Battery: </source>
-        <translation type="unfinished"/>
+        <translation>البطارية:</translation>
     </message>
 </context>
 </TS>
