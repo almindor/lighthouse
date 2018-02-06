@@ -155,7 +155,7 @@ namespace Lighthouse {
         fApplicationActive = active;
     }
 
-    void Monitor::run() Q_DECL_OVERRIDE {
+    void Monitor::run() {
         updateApplicationMap("/usr/share/applications");
         procProcessorCount();
         fCPUActiveTicks.resize(fCPUCount + 1); // room for "total"
