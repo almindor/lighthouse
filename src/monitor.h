@@ -25,6 +25,7 @@
 #include <QVector>
 #include <QSettings>
 #include <QtDBus/QDBusInterface>
+#include <QFile>
 #include "types.h"
 #include "procreader.h"
 
@@ -81,6 +82,7 @@ namespace Lighthouse {
             int fProcessDetails;
             QWaitCondition fPauser;
             QMutex fMutex;
+            QFile fTemperatureFile;
 
             void run() Q_DECL_OVERRIDE;
             void procCPUActivity();

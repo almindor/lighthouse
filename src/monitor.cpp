@@ -28,7 +28,8 @@ namespace Lighthouse {
     const int CPU_PART_COUNT = 10;
     const int CPU_PART_DEF[CPU_PART_COUNT] = {0, 1, 1, 1, 2, 2, 0, 0, 0, 0};
 
-    Monitor::Monitor() : fSettings(), fProcMap(), fAppNameMap()
+    Monitor::Monitor() : fSettings(), fProcMap(), fAppNameMap(),
+        fTemperatureFile("/sys/class/thermal/thermal_zone0/temp")
     {
         fDBus = new QDBusInterface("com.nokia.dsme", "/com/nokia/dsme/request", "com.nokia.dsme.request", QDBusConnection::systemBus(), this);
         static QDBusConnection mceSignalconn = QDBusConnection::systemBus();
@@ -368,9 +369,9 @@ namespace Lighthouse {
     }
 
     void Monitor::procTemperature() {
-        QFile f("/sys/class/thermal/thermal_zone0/temp");
-        if ( f.open(QFile::ReadOnly) ) {
-            QByteArray content = f.readAll();
+        if ( fTemperatureFile.isOpen() || fTemperatureFile.open(QFile::ReadOnly) ) {
+            fTemperatureFile.reset();
+            QByteArray content = fTemperatureFile.readAll();
             QString value = QString(content).replace("\n", "").left(2);
             emit temperatureChanged(value.toInt());
         }
