@@ -187,6 +187,7 @@ namespace Lighthouse {
                 procCPUActivity();
                 procMemory();
                 procBattery(fileName);
+                procTemperature();
 
                 if ( fApplicationActive || iteration == 0 ) {
                     procUptime();
@@ -195,7 +196,6 @@ namespace Lighthouse {
                     } else {
                         procProcessCount();
                     }
-                    procTemperature();
                 }
                 iteration++;
                 sleep(fInterval);
