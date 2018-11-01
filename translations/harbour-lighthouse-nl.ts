@@ -221,19 +221,14 @@
 <context>
     <name>Memory</name>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="31"/>
+        <location filename="../qml/pages/Memory.qml" line="40"/>
         <source>Memory Usage</source>
         <translation>Geheugengebruik</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="54"/>
-        <source> kB free out of </source>
-        <translation>kB vrij van de</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Memory.qml" line="54"/>
-        <source> kB total</source>
-        <translation>kB in totaal</translation>
+        <location filename="../qml/pages/Memory.qml" line="63"/>
+        <source>%1 MiB free out of %2 MiB total</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
