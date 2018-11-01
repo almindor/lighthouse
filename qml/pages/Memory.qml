@@ -24,6 +24,15 @@ Page {
 
     allowedOrientations: Orientation.Portrait | Orientation.Landscape
                          | Orientation.LandscapeInverted
+
+    function kiBToMiB(size){
+        if (size < 100){
+            return Math.round(size*10 / 1024) / 10;
+        }else{
+            return Math.round(size / 1024);
+        }
+    }
+
     Column {
         width: page.width
         spacing: Theme.paddingLarge
@@ -40,10 +49,10 @@ Page {
             progressColor: Theme.highlightColor
 
             DoubleIndicator {
-                topVal: (memory.total - memory.free)
-                topUnit: "kB"
-                botVal: memory.total
-                botUnit: "kB"
+                topVal: kiBToMiB(memory.total - memory.free) + " "
+                topUnit: "MiB"
+                botVal: kiBToMiB(memory.total) + " "
+                botUnit: "MiB"
             }
         }
 
@@ -51,7 +60,7 @@ Page {
             minimumValue: 0
             maximumValue: 100
             value: (100 - memory.summaryValue)
-            label: memory.free + qsTr(" kB free out of ") + memory.total + qsTr(" kB total")
+            label: qsTr("%1 MiB free out of %2 MiB total").arg(kiBToMiB(memory.free)).arg(kiBToMiB(memory.total))
             anchors {
                 left: parent.left
                 right: parent.right
