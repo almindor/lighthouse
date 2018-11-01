@@ -228,7 +228,7 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="63"/>
         <source>%1 MiB free out of %2 MiB total</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 MiB volné z %2 MiB celkem</translation>
     </message>
 </context>
 <context>
