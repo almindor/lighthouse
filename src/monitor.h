@@ -87,6 +87,7 @@ namespace Lighthouse {
             void run() Q_DECL_OVERRIDE;
             void procCPUActivity();
             void procMemory();
+            void procZRam();
             void procBattery(const QString& fileName);
             void procProcessCount();
             pid_t getNextPID(QStringListIterator& iterator, int activePID);
@@ -103,6 +104,7 @@ namespace Lighthouse {
         signals:
             void CPUUsageChanged(const IntList& usage);
             void memoryChanged(unsigned long total, unsigned long free);
+            void zramChanged(qint64 disksize, qint64 data, qint64 compr);
             void intervalChanged(int interval);
             void pausedChanged(bool paused);
             void coverPageChanged(int page);

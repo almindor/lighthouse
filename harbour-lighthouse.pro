@@ -49,7 +49,8 @@ SOURCES += \
     src/monitor.cpp \
     src/lighthouse.cpp \
     src/battery.cpp \
-    src/languages.cpp
+    src/languages.cpp \
+    src/zram.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
@@ -80,7 +81,8 @@ HEADERS += \
     src/process.h \
     src/monitor.h \
     src/battery.h \
-    src/languages.h
+    src/languages.h \
+    src/zram.h
 
 icon86.files += icons/86x86/harbour-lighthouse.png
 icon86.path = /usr/share/icons/hicolor/86x86/apps

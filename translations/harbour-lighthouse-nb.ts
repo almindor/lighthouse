@@ -164,46 +164,46 @@
 <context>
     <name>Lighthouse::Monitor</name>
     <message>
-        <location filename="../src/monitor.cpp" line="95"/>
+        <location filename="../src/monitor.cpp" line="96"/>
         <source>cpu</source>
         <comment>cover label</comment>
         <translation>cpu</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="96"/>
+        <location filename="../src/monitor.cpp" line="97"/>
         <source>memory</source>
         <comment>cover label</comment>
         <translation>minne</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="97"/>
+        <location filename="../src/monitor.cpp" line="98"/>
         <source>battery</source>
         <comment>cover label</comment>
         <translation>batteri</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="98"/>
+        <location filename="../src/monitor.cpp" line="99"/>
         <source>unknown</source>
         <comment>cover label</comment>
         <translation>ukjent</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="120"/>
+        <location filename="../src/monitor.cpp" line="121"/>
         <source>CPU</source>
         <translation>CPU</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="121"/>
+        <location filename="../src/monitor.cpp" line="122"/>
         <source>Memory</source>
         <translation>Minne</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="122"/>
+        <location filename="../src/monitor.cpp" line="123"/>
         <source>Battery</source>
         <translation>Batteri</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="123"/>
+        <location filename="../src/monitor.cpp" line="124"/>
         <source>Unknown</source>
         <comment>Cover label in summary page</comment>
         <translation>Ukjent</translation>
@@ -228,6 +228,16 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="63"/>
         <source>%1 MiB free out of %2 MiB total</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Memory.qml" line="71"/>
+        <source>zRam swap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Memory.qml" line="78"/>
+        <source>%1 MiB from %2 MiB used (compression %3 %)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

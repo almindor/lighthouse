@@ -31,6 +31,7 @@
 #include "monitor.h"
 #include "cpu.h"
 #include "memory.h"
+#include "zram.h"
 #include "process.h"
 #include "battery.h"
 
@@ -49,6 +50,7 @@ int main(int argc, char *argv[])
     CPU cpu;
     Process process;
     Memory memory;
+    Zram zram;
     Battery battery;
     QFileSystemWatcher appsWatch;
     appsWatch.addPath("/usr/share/applications");
@@ -61,6 +63,8 @@ int main(int argc, char *argv[])
                      &cpu, &CPU::setTemperature);
     QObject::connect(&monitor, &Monitor::memoryChanged,
                      &memory, &Memory::setMemory);
+    QObject::connect(&monitor, &Monitor::zramChanged,
+                     &zram, &Zram::onZramChanged);
     QObject::connect(&monitor, &Monitor::processChanged,
                      &process, &Process::setProcesses);
     QObject::connect(&monitor, &Monitor::processCountChanged,
@@ -80,6 +84,7 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("languages", &languages);
     view->rootContext()->setContextProperty("cpu", &cpu);
     view->rootContext()->setContextProperty("memory", &memory);
+    view->rootContext()->setContextProperty("zram", &zram);
     view->rootContext()->setContextProperty("monitor", &monitor);
     view->rootContext()->setContextProperty("process", &process);
     view->rootContext()->setContextProperty("battery", &battery);
