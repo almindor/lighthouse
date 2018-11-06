@@ -21,6 +21,7 @@
 #include <QTextStream>
 #include <QStringList>
 #include <QDir>
+#include <QProcess>
 
 namespace Lighthouse {
     const int CPU_FLAGS_ACTIVE = 1;
@@ -187,6 +188,7 @@ namespace Lighthouse {
             if ( !fPaused ) {
                 procCPUActivity();
                 procMemory();
+                procZRam();
                 procBattery(fileName);
                 procTemperature();
 
@@ -230,6 +232,36 @@ namespace Lighthouse {
         if ( fProcReader.readProcFile(path, handler, 4, -1) == 0 ) {
             emit memoryChanged(fTotalMemory, free);
         }
+    }
+
+    void Monitor::procZRam() {
+        QProcess zramctl;
+        zramctl.start("/sbin/zramctl", QStringList() << "-b" << "--raw" << "--noheadings" << "--output=DISKSIZE,DATA,COMPR");
+        if (!zramctl.waitForStarted(500 /*ms*/)){
+            qWarning() << "zramctl execution failed";
+            return;
+        }
+        if (!zramctl.waitForFinished(500 /*ms*/)){
+            qWarning() << "zramctl process failed:" << zramctl.errorString();
+            return;
+        }
+        qint64 disksize{0}; // limit on the uncompressed amount of data
+        qint64 data{0}; // uncompressed size of stored data
+        qint64 compr{0}; // compressed size of stored data
+
+        QString stdout = zramctl.readAllStandardOutput();
+        QStringList stdoutLines = stdout.split("\n", QString::SkipEmptyParts);
+        for (const auto &line:stdoutLines){
+            QStringList columns = line.split(" ", QString::SkipEmptyParts);
+            if (columns.size()<3){
+                qWarning() << "Invalid zramctl output:" << line;
+                continue;
+            }
+            disksize += columns[0].toLong();
+            data += columns[1].toLong();
+            compr += columns[2].toLong();
+        }
+        emit zramChanged(disksize / 1024, data / 1024, compr / 1024);
     }
 
     void Monitor::procUptime() {
