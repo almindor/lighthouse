@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
         <source>Lighthouse</source>
-        <translation>Faro</translation>
+        <translation>Lighthouse</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
@@ -228,7 +228,7 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="63"/>
         <source>%1 MiB free out of %2 MiB total</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 MiB liberado de %2 MiB total</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="71"/>
