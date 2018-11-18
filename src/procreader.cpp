@@ -28,7 +28,7 @@ namespace Lighthouse {
         fProcNameFilter << "[0-9]*";
     }
 
-    int ProcReader::readProcFile(QString& path, LineHandler& handler, int count, int index) const {
+    int ProcReader::readProcFile(const QString& path, LineHandler& handler, int count, int index) const {
         QFile file(path);
         if ( !file.open(QIODevice::ReadOnly) ) {
             qCritical() << "Unable to open proc file " << path << "\n";

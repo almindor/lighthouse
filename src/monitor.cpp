@@ -235,6 +235,10 @@ namespace Lighthouse {
     }
 
     void Monitor::procZRam() {
+        if ( fZramMissing ) {
+            return; // no need, we don't have zRam
+        }
+
         QProcess zramctl;
         zramctl.start("/sbin/zramctl", QStringList() << "-b" << "--raw" << "--noheadings" << "--output=DISKSIZE,DATA,COMPR");
         if (!zramctl.waitForStarted(500 /*ms*/)){
@@ -260,6 +264,10 @@ namespace Lighthouse {
             disksize += columns[0].toLong();
             data += columns[1].toLong();
             compr += columns[2].toLong();
+        }
+
+        if ( disksize == 0 ) {
+            fZramMissing = true;
         }
         emit zramChanged(disksize / 1024, data / 1024, compr / 1024);
     }

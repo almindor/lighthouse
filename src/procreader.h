@@ -28,7 +28,7 @@ namespace Lighthouse {
     {
     public:
         ProcReader();
-        int readProcFile(QString& path, LineHandler& handler, int count, int index) const;
+        int readProcFile(const QString& path, LineHandler& handler, int count, int index) const;
         int getProcCount() const;
         const QStringList getProcList() const;
     private:

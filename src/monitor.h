@@ -83,6 +83,7 @@ namespace Lighthouse {
             QWaitCondition fPauser;
             QMutex fMutex;
             QFile fTemperatureFile;
+            bool fZramMissing{false};
 
             void run() Q_DECL_OVERRIDE;
             void procCPUActivity();
