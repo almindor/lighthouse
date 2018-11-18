@@ -67,18 +67,21 @@ Page {
                 margins: Theme.paddingLarge
             }
         }
+
         SectionHeader{
             text: qsTr("zRam swap")
+            visible: zram.diskSize > 0
         }
 
         ProgressBar {
             minimumValue: 0
             maximumValue: zram.diskSize
             value: zram.data
+            visible: zram.diskSize > 0
             label: qsTr("%1 MiB from %2 MiB used (compression %3 %)")
                         .arg(kiBToMiB(zram.data))
                         .arg(kiBToMiB(zram.diskSize))
-                        .arg(zram.data == 0 ? "-" : Math.round((1-(zram.compressed / zram.data)) * 100))
+                        .arg(zram.data === 0 ? "-" : Math.round((1-(zram.compressed / zram.data)) * 100))
 
             anchors {
                 left: parent.left
