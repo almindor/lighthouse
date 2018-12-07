@@ -26,68 +26,16 @@ Page {
 
     PageHeader {
         id: headerP
-        visible: isPortrait
         title: qsTr("CPU Usage")
     }
 
     ProgressCircleBase {
-        visible: isPortrait
         id: circleP
         anchors.top: headerP.bottom
-        width: parent.width / 2
+        width: (isLandscape ? parent.height : parent.width) / 2
         height: width
-        anchors.horizontalCenter: parent.horizontalCenter
-        value: cpu.summaryValue / 100
-        borderWidth: 2
-        progressColor: Theme.highlightColor
-
-        DoubleIndicator {
-          topVal: cpu.summaryValue
-          topUnit: "%"
-          botVal: cpu.temperature
-          botUnit: "C°"
-        }
-    }
-
-    SilicaListView {
-        visible: isPortrait
-        id: listViewP
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.top: circleP.bottom
-        anchors.bottom: parent.bottom
-        width: parent.width * 0.9
-
-        model: cpu
-        VerticalScrollDecorator {
-            flickable: listViewP
-        }
-
-        delegate: ProgressBar {
-            minimumValue: 0
-            maximumValue: 100
-            value: cpuUsage
-            valueText: value + '%'
-            label: qsTr("CPU") + (index + 1);
-            anchors {
-                left: parent.left
-                right: parent.right
-                margins: Theme.paddingLarge
-            }
-        }
-    }
-
-    PageHeader {
-        visible: isLandscape
-        title: qsTr("CPU Usage")
-    }
-
-    ProgressCircleBase {
-        visible: isLandscape
-        id: circle
-        x: Theme.paddingLarge
-        width: parent.width / 3.5
-        height: width
-        anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenter: (isPortrait ? parent.horizontalCenter : undefined)
+        anchors.verticalCenter: (isLandscape ? parent.verticalCenter : undefined)
         value: cpu.summaryValue / 100
         borderWidth: 2
         progressColor: Theme.highlightColor
@@ -100,26 +48,30 @@ Page {
         }
     }
 
-    Column {
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.left: circle.right
-        visible: isLandscape
-        width: parent.width - circle.width
-        Repeater {
-            model: cpu
+    SilicaListView {
+        id: listViewP
+        anchors {
+            top: (isLandscape ? headerP.bottom : circleP.bottom)
+            bottom: parent.bottom
+            left: (isLandscape ? circleP.right : parent.left)
+            right: parent.right
+            leftMargin: (isLandscape ? 0 : Theme.horizontalPageMargin)
+            rightMargin: (isLandscape ? Theme.paddingLarge : Theme.horizontalPageMargin)
+        }
 
-            ProgressBar {
-                minimumValue: 0
-                maximumValue: 100
-                value: cpuUsage
-                valueText: value + '%'
-                label: qsTr("CPU") + (index + 1);
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                    margins: Theme.paddingLarge
-                }
-            }
+        model: cpu
+        VerticalScrollDecorator {
+            flickable: listViewP
+        }
+
+        clip: true
+        delegate: ProgressBar {
+            width: ListView.view.width
+            minimumValue: 0
+            maximumValue: 100
+            value: cpuUsage
+            valueText: value + '%'
+            label: qsTr("CPU") + (index + 1);
         }
     }
 }
