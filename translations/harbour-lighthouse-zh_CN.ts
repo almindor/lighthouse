@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="zh_CN">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh_CN" version="2.1">
 <context>
     <name>About</name>
     <message>
@@ -41,12 +39,12 @@
     <message>
         <location filename="../qml/pages/About.qml" line="125"/>
         <source>Taiwanese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;.</source>
-        <translation>台湾语由&lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;翻译。</translation>
+        <translation>中文繁体(台湾)由&lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;翻译。</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="141"/>
         <source>Chinese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;.</source>
-        <translation>中文由&lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;翻译。</translation>
+        <translation>中文简体由&lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;翻译。</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="157"/>
@@ -66,7 +64,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="205"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tablet support by &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</source>
-        <translation>Lighthouse是以GPL v3授权的自由软件，发布在&lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;上。设备控制DBus代码灵感来自&lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;。平板支持由&lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;提供</translation>
+        <translation>Lighthouse是以GPL v3授权的自由软件，发布在&lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;上。设备控制DBus代码灵感来自&lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;。平板支持由&lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;提供</translation>
     </message>
 </context>
 <context>
@@ -228,17 +226,17 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="63"/>
         <source>%1 MiB free out of %2 MiB total</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 MiB free out of %2 MiB total</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="71"/>
         <source>zRam swap</source>
-        <translation type="unfinished"></translation>
+        <translation>zRam 工作</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="78"/>
         <source>%1 MiB from %2 MiB used (compression %3 %)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 MiB from %2 MiB used (压缩1%3 %)</translation>
     </message>
 </context>
 <context>

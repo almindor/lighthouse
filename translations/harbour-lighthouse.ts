@@ -15,7 +15,7 @@
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
-        <source>by Aleš Katona and Lavaux Gilles.</source>
+        <source>by Aleš Katona, Lavaux Gilles, Lukáš Karas and Nils Fenner.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -90,14 +90,12 @@
 <context>
     <name>CPU</name>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="30"/>
-        <location filename="../qml/pages/CPU.qml" line="81"/>
+        <location filename="../qml/pages/CPU.qml" line="29"/>
         <source>CPU Usage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="70"/>
-        <location filename="../qml/pages/CPU.qml" line="116"/>
+        <location filename="../qml/pages/CPU.qml" line="74"/>
         <source>CPU</source>
         <translation type="unfinished"></translation>
     </message>
@@ -231,12 +229,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="71"/>
+        <location filename="../qml/pages/Memory.qml" line="72"/>
         <source>zRam swap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="78"/>
+        <location filename="../qml/pages/Memory.qml" line="81"/>
         <source>%1 MiB from %2 MiB used (compression %3 %)</source>
         <translation type="unfinished"></translation>
     </message>

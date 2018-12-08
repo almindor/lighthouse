@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" version="2.1">
 <context>
     <name>About</name>
     <message>
@@ -11,7 +9,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
         <source>Lighthouse</source>
-        <translation>Lighthouse</translation>
+        <translation>Faro</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
@@ -228,17 +226,17 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="63"/>
         <source>%1 MiB free out of %2 MiB total</source>
-        <translation>%1 MiB liberado de %2 MiB total</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="71"/>
         <source>zRam swap</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="78"/>
         <source>%1 MiB from %2 MiB used (compression %3 %)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

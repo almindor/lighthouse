@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
 <context>
     <name>About</name>
     <message>
@@ -16,7 +14,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
         <source>by Aleš Katona and Lavaux Gilles.</source>
-        <translation>par Aleš Katona et Lavaux Gilles.</translation>
+        <translation>par Aleš Katona et Gilles Lavaux.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
@@ -51,7 +49,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="157"/>
         <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</source>
-        <translation>Traduction française par &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;, &lt;a href=&apos;https://www.transifex.com/user/profile/lutinotmalin/&apos;&gt;lutinotmalin&lt;/a&gt;.</translation>
+        <translation>Traduction française par &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume Ariaux (Nerfiaux)&lt;/a&gt; et &lt;a href=&apos;https://www.transifex.com/user/profile/lutinotmalin/&apos;&gt;lutinotmalin&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="173"/>
@@ -66,7 +64,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="205"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tablet support by &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</source>
-        <translation>Lighthouse est un logiciel libre sous licence GPL v3 disponible sur &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;GitHub&lt;/a&gt;. Code de contrôle DBus de l&apos;appareil inspiré par &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Support de la tablette par &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</translation>
+        <translation>Lighthouse est un logiciel libre sous licence GNU GPLv3, disponible sur &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;GitHub&lt;/a&gt;. Code de contrôle DBus de l&apos;appareil inspiré par &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Support de la tablette par &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -99,7 +97,7 @@
         <location filename="../qml/pages/CPU.qml" line="70"/>
         <location filename="../qml/pages/CPU.qml" line="116"/>
         <source>CPU</source>
-        <translation>Processeur</translation>
+        <translation>Processeur </translation>
     </message>
 </context>
 <context>
@@ -228,17 +226,17 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="63"/>
         <source>%1 MiB free out of %2 MiB total</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="71"/>
         <source>zRam swap</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="78"/>
         <source>%1 MiB from %2 MiB used (compression %3 %)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -358,7 +356,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="64"/>
         <source>Uptime: </source>
-        <translation>Démarré il y a </translation>
+        <translation>Appareil démarré depuis </translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="74"/>

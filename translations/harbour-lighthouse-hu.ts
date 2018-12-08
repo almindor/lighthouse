@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="hu">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="hu" version="2.1">
 <context>
     <name>About</name>
     <message>
         <location filename="../qml/pages/About.qml" line="43"/>
         <source>About</source>
-        <translation>Rólunk</translation>
+        <translation>Névjegy</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
@@ -228,17 +226,17 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="63"/>
         <source>%1 MiB free out of %2 MiB total</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="71"/>
         <source>zRam swap</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="78"/>
         <source>%1 MiB from %2 MiB used (compression %3 %)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -282,7 +280,7 @@
     <message>
         <location filename="../qml/pages/Process.qml" line="38"/>
         <source>Processes</source>
-        <translation>Folyamat</translation>
+        <translation>Folyamatok</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="45"/>
@@ -338,7 +336,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="32"/>
         <source>About</source>
-        <translation>Rólunk</translation>
+        <translation>Névjegy</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="36"/>
@@ -358,7 +356,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="64"/>
         <source>Uptime: </source>
-        <translation>Üzemidő</translation>
+        <translation>Üzemidő:</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="74"/>
@@ -368,17 +366,17 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="84"/>
         <source>Memory: </source>
-        <translation>Memória:</translation>
+        <translation>Memória: </translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="93"/>
         <source>Processes: </source>
-        <translation>Folyamatok:</translation>
+        <translation>Folyamatok: </translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="102"/>
         <source>Battery: </source>
-        <translation>Akkumulátor:</translation>
+        <translation>Akkumulátor: </translation>
     </message>
 </context>
 </TS>

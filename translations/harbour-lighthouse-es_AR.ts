@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es_AR">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es_AR" version="2.1">
 <context>
     <name>About</name>
     <message>
@@ -11,12 +9,12 @@
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
         <source>Lighthouse</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
         <source>by Aleš Katona and Lavaux Gilles.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
@@ -66,7 +64,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="205"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tablet support by &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -108,24 +106,24 @@
         <location filename="../qml/pages/Details.qml" line="79"/>
         <source>CPU</source>
         <comment>details CPU indicator name</comment>
-        <translation type="unfinished">CPU</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="85"/>
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
-        <translation type="unfinished">Memoria</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="91"/>
         <source>Kill</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="91"/>
         <location filename="../qml/pages/Details.qml" line="102"/>
         <source>Permission denied</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -185,7 +183,7 @@
         <location filename="../src/monitor.cpp" line="99"/>
         <source>unknown</source>
         <comment>cover label</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/monitor.cpp" line="121"/>
@@ -206,7 +204,7 @@
         <location filename="../src/monitor.cpp" line="124"/>
         <source>Unknown</source>
         <comment>Cover label in summary page</comment>
-        <translation type="unfinished">Desconocida</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -215,7 +213,7 @@
         <location filename="../src/process.cpp" line="74"/>
         <source>Unknown</source>
         <comment>Process name</comment>
-        <translation type="unfinished">Desconocida</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -228,17 +226,17 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="63"/>
         <source>%1 MiB free out of %2 MiB total</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="71"/>
         <source>zRam swap</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="78"/>
         <source>%1 MiB from %2 MiB used (compression %3 %)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -246,7 +244,7 @@
     <message>
         <location filename="../qml/pages/Phone.qml" line="29"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/Phone.qml" line="38"/>
@@ -264,12 +262,12 @@
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="34"/>
         <source>cpu: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="45"/>
         <source>mem: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -343,7 +341,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="36"/>
         <source>Device Controls</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="40"/>
