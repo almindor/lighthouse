@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="sv">
 <context>
     <name>About</name>
     <message>
@@ -13,8 +15,8 @@
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
-        <source>by Aleš Katona and Lavaux Gilles.</source>
-        <translation>av  Aleš Katona och Lavaux Gilles.</translation>
+        <source>by Aleš Katona, Lavaux Gilles, Lukáš Karas and Nils Fenner.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
@@ -88,14 +90,12 @@
 <context>
     <name>CPU</name>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="30"/>
-        <location filename="../qml/pages/CPU.qml" line="81"/>
+        <location filename="../qml/pages/CPU.qml" line="29"/>
         <source>CPU Usage</source>
         <translation>CPU-användning</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="70"/>
-        <location filename="../qml/pages/CPU.qml" line="116"/>
+        <location filename="../qml/pages/CPU.qml" line="74"/>
         <source>CPU</source>
         <translation>CPU</translation>
     </message>
@@ -229,12 +229,12 @@
         <translation>%1 MiB ledigt av %2 MiB totalt</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="71"/>
+        <location filename="../qml/pages/Memory.qml" line="72"/>
         <source>zRam swap</source>
         <translation>zRam swap</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="78"/>
+        <location filename="../qml/pages/Memory.qml" line="81"/>
         <source>%1 MiB from %2 MiB used (compression %3 %)</source>
         <translation>%1 MiB använt av %2 MiB (komprimering %3 %)</translation>
     </message>

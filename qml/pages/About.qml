@@ -154,7 +154,7 @@ Page {
                 color: Theme.secondaryColor
                 font.pointSize: largeScreen ? 30 : 16
                 wrapMode: Text.WordWrap
-                text: qsTr("French translation by <a href='https://www.transifex.com/accounts/profile/Nerfiaux/'>Guillaume ARIAUX (Nerfiaux)</a>.")
+                text: qsTr("French translation by <a href='https://www.transifex.com/accounts/profile/Nerfiaux/'>Guillaume ARIAUX (Nerfiaux)</a> and <a href='https://www.transifex.com/user/profile/lutinotmalin/'>lutinotmalin</a>.")
                 linkColor: Theme.secondaryHighlightColor
                 onLinkActivated: {
                     Qt.openUrlExternally(link);
