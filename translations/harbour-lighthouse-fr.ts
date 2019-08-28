@@ -16,7 +16,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
         <source>by Aleš Katona, Lavaux Gilles, Lukáš Karas and Nils Fenner.</source>
-        <translation>par Aleš Katona, Lavaux Gilles, Lukáš Karas and Nils Fenner.</translation>
+        <translation>par Aleš Katona, Lavaux Gilles, Lukáš Karas et Nils Fenner.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
