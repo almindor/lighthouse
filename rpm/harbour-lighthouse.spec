@@ -16,7 +16,7 @@ Summary:    Lighthouse System Monitor
 Version:    1.6.5
 Release:    1
 Group:      Qt/Qt
-License:    LICENSE
+License:    GPLv3
 URL:        https://github.com/almindor/lighthouse
 Source0:    %{name}-%{version}.tar.bz2
 Requires:   sailfishsilica-qt5 >= 0.10.9
@@ -31,6 +31,16 @@ BuildRequires:  qt5-qttools-linguist
 %description
 Sailfish OS system monitor for system and per-processor CPU, memory usages with additional phone controls.
 
+%if "%{?vendor}" == "chum"
+PackageName: Lighthouse
+Type: desktop-application
+Categories:
+ - System
+ - Utility
+Custom:
+  Repo: https://github.com/almindor/lighthouse
+Icon: https://raw.githubusercontent.com/almindor/lighthouse/master/svg/icon-lighthouse.svg
+%endif
 
 %prep
 %setup -q -n %{name}-%{version}
