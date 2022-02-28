@@ -231,12 +231,12 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="72"/>
         <source>zRam swap</source>
-        <translation type="unfinished"></translation>
+        <translation>Intercambio zRAM</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="81"/>
         <source>%1 MiB from %2 MiB used (compression %3 %)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 MiB de %2 MiB usado (compresion %3 %)</translation>
     </message>
 </context>
 <context>
