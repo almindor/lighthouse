@@ -24,10 +24,10 @@
 #include <QProcess>
 
 namespace Lighthouse {
-    const int CPU_FLAGS_ACTIVE = 1;
-    const int CPU_FLAGS_INACTIV = 2;
-    const int CPU_PART_COUNT = 10;
-    const int CPU_PART_DEF[CPU_PART_COUNT] = {0, 1, 1, 1, 2, 2, 0, 0, 0, 0};
+//    const int CPU_FLAGS_ACTIVE = 1;
+//    const int CPU_FLAGS_INACTIV = 2;
+//    const int CPU_PART_COUNT = 10;
+//    const int CPU_PART_DEF[CPU_PART_COUNT] = {0, 1, 1, 1, 2, 2, 0, 0, 0, 0};
 
     Monitor::Monitor() : fSettings(), fProcMap(), fAppNameMap(),
         fTemperatureFile("/sys/class/thermal/thermal_zone0/temp")

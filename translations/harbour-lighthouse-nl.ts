@@ -114,6 +114,17 @@
         <comment>details Memory indicator name</comment>
         <translation>Geheugen</translation>
     </message>
+    <message>
+        <location filename="../qml/pages/Details.qml" line="92"/>
+        <source>Kill</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Details.qml" line="92"/>
+        <location filename="../qml/pages/Details.qml" line="103"/>
+        <source>Permission denied</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Lighthouse::Battery</name>
@@ -326,6 +337,11 @@
         <location filename="../qml/pages/Summary.qml" line="32"/>
         <source>About</source>
         <translation>Over</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Summary.qml" line="37"/>
+        <source>Device Controls</source>
+        <translation type="unfinished">Apparaatbesturing</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="41"/>
