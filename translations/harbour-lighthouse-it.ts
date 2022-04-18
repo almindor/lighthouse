@@ -50,8 +50,8 @@
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="157"/>
-        <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</source>
-        <translation>Traduzione francese di &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</translation>
+        <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt; and &lt;a href=&apos;https://www.transifex.com/user/profile/lutinotmalin/&apos;&gt;lutinotmalin&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="173"/>
@@ -113,17 +113,6 @@
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
         <translation>Memoria</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Details.qml" line="91"/>
-        <source>Kill</source>
-        <translation>Termina</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Details.qml" line="91"/>
-        <location filename="../qml/pages/Details.qml" line="102"/>
-        <source>Permission denied</source>
-        <translation>Permesso negato</translation>
     </message>
 </context>
 <context>
@@ -339,42 +328,37 @@
         <translation>Info</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="36"/>
-        <source>Device Controls</source>
-        <translation>Controlli Dispositivo</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Summary.qml" line="40"/>
+        <location filename="../qml/pages/Summary.qml" line="41"/>
         <source>Settings</source>
         <translation>Impostazioni</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="53"/>
+        <location filename="../qml/pages/Summary.qml" line="54"/>
         <source>Summary</source>
         <translation>Panoramica</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="64"/>
+        <location filename="../qml/pages/Summary.qml" line="65"/>
         <source>Uptime: </source>
         <translation>Uptime:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="74"/>
+        <location filename="../qml/pages/Summary.qml" line="75"/>
         <source>CPUs: </source>
         <translation>CPU:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="84"/>
+        <location filename="../qml/pages/Summary.qml" line="85"/>
         <source>Memory: </source>
         <translation>Memoria:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="93"/>
+        <location filename="../qml/pages/Summary.qml" line="94"/>
         <source>Processes: </source>
         <translation>Processi:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="102"/>
+        <location filename="../qml/pages/Summary.qml" line="103"/>
         <source>Battery: </source>
         <translation>Batteria:</translation>
     </message>

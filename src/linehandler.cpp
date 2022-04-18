@@ -94,7 +94,6 @@ namespace Lighthouse {
         unsigned long long diffTotalTicks;
         unsigned long long oldActiveTicks;
         unsigned long long oldTotalTicks;
-        unsigned long long tmp;
         qreal usage;
 
         QStringList parts = line.split(" ", QString::SkipEmptyParts);
@@ -104,23 +103,18 @@ namespace Lighthouse {
         }
 
         QString type = parts.at(0);
+
+        // this should only happen when thread executors (virtual cores) are put to sleep
         if ( !type.contains("cpu") ) {
-            qWarning() << "Invalid CPU type indicator encountered: " << type;
-            return -1;
+            fCPUTotalTicks[i] = 0;
+            fCPUActiveTicks[i] = 0;
+            fCPUUsage[i] = 0;
+            return 101; // means continue with empty until count
         }
 
         oldTotalTicks = fCPUTotalTicks[i];
-        tmp = parseCPUParts(parts, -1);
+        fCPUTotalTicks[i] = parseCPUParts(parts, -1);
 
-        // debug
-        /*if ( tmp < oldTotalTicks ) { // bug introduced in Sailfish OS/Jolla 1.0.7.16 presumably fixed in update 9/10
-            qWarning() << "Bad total ticks:" << tmp << " < " << fCPUTotalTicks[i] << "\n";
-            qWarning() << "old: " << fLines[i] << "\n";
-            qWarning() << "new: " << line << "\n";
-        }
-        fLines[i] = line;*/
-
-        fCPUTotalTicks[i] = tmp;
         diffTotalTicks = fCPUTotalTicks[i] - oldTotalTicks;
 
         oldActiveTicks = fCPUActiveTicks[i];

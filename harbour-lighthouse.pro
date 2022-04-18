@@ -37,6 +37,8 @@ CONFIG += \
     sailfishapp \
     sailfishapp_i18n
 
+CONFIG += c++17
+
 QT += dbus
 
 SOURCES += \

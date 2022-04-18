@@ -50,8 +50,8 @@
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="157"/>
-        <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</source>
-        <translation>法文由 &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;所翻譯</translation>
+        <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt; and &lt;a href=&apos;https://www.transifex.com/user/profile/lutinotmalin/&apos;&gt;lutinotmalin&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="173"/>
@@ -113,17 +113,6 @@
         <source>Memory</source>
         <comment>details Memory indicator name</comment>
         <translation>記憶體</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Details.qml" line="91"/>
-        <source>Kill</source>
-        <translation>中止</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Details.qml" line="91"/>
-        <location filename="../qml/pages/Details.qml" line="102"/>
-        <source>Permission denied</source>
-        <translation>沒有權限</translation>
     </message>
 </context>
 <context>
@@ -339,42 +328,37 @@
         <translation>關於</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="36"/>
-        <source>Device Controls</source>
-        <translation>裝置控制</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Summary.qml" line="40"/>
+        <location filename="../qml/pages/Summary.qml" line="41"/>
         <source>Settings</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="53"/>
+        <location filename="../qml/pages/Summary.qml" line="54"/>
         <source>Summary</source>
         <translation>摘要</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="64"/>
+        <location filename="../qml/pages/Summary.qml" line="65"/>
         <source>Uptime: </source>
         <translation>執行時間：</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="74"/>
+        <location filename="../qml/pages/Summary.qml" line="75"/>
         <source>CPUs: </source>
         <translation>CPUs：</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="84"/>
+        <location filename="../qml/pages/Summary.qml" line="85"/>
         <source>Memory: </source>
         <translation>記憶體：</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="93"/>
+        <location filename="../qml/pages/Summary.qml" line="94"/>
         <source>Processes: </source>
         <translation>程序：</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="102"/>
+        <location filename="../qml/pages/Summary.qml" line="103"/>
         <source>Battery: </source>
         <translation>電池：</translation>
     </message>

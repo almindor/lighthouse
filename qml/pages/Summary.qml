@@ -32,10 +32,11 @@ Page {
                 text: qsTr("About")
                 onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
             }
-            MenuItem {
-                text: qsTr("Device Controls")
-                onClicked: pageStack.push(Qt.resolvedUrl("Phone.qml"))
-            }
+            // impossible in sailjail
+//            MenuItem {
+//                text: qsTr("Device Controls")
+//                onClicked: pageStack.push(Qt.resolvedUrl("Phone.qml"))
+//            }
             MenuItem {
                 text: qsTr("Settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"))

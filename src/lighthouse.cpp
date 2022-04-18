@@ -45,6 +45,9 @@ int main(int argc, char *argv[])
     qRegisterMetaType< ProcMap >( "ProcMap" );
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
+    app->setOrganizationName(QStringLiteral("ltd.bitsmart"));
+    app->setApplicationName(QStringLiteral("Lighthouse"));
+
     Languages languages(app);
     Monitor monitor;
     CPU cpu;

@@ -87,22 +87,23 @@ Page {
                 tickSource: process.selectedTick
             }
 
-            Button {
-                text: process.isKillable() ? qsTr("Kill") : qsTr("Permission denied")
-                anchors {
-                    horizontalCenter: parent.horizontalCenter
-                }
+            // impossible in sailjail
+//            Button {
+//                text: process.isKillable() ? qsTr("Kill") : qsTr("Permission denied")
+//                anchors {
+//                    horizontalCenter: parent.horizontalCenter
+//                }
 
-                enabled: process.isKillable()
+//                enabled: process.isKillable()
 
-                onClicked: {
-                    if (process.killSelected() === 0) {
-                        pageStack.navigateBack(PageStackAction.Animated)
-                    } else {
-                        banner("INFO", qsTr("Permission denied"))
-                    }
-                }
-            }
+//                onClicked: {
+//                    if (process.killSelected() === 0) {
+//                        pageStack.navigateBack(PageStackAction.Animated)
+//                    } else {
+//                        banner("INFO", qsTr("Permission denied"))
+//                    }
+//                }
+//            }
         }
     }
 }
