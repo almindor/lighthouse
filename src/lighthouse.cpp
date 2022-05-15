@@ -25,7 +25,10 @@
 #include <QQuickView>
 #include <QQmlContext>
 #include <QGuiApplication>
+#include <QSettings>
+#include <QStandardPaths>
 #include <QFileSystemWatcher>
+#include <QDebug>
 #include "types.h"
 #include "languages.h"
 #include "monitor.h"
@@ -37,6 +40,8 @@
 
 using namespace Lighthouse;
 
+void migrateSettings();
+
 int main(int argc, char *argv[])
 {
     int result = 0;
@@ -47,6 +52,7 @@ int main(int argc, char *argv[])
     QGuiApplication *app = SailfishApp::application(argc, argv);
     app->setOrganizationName(QStringLiteral("ltd.bitsmart"));
     app->setApplicationName(QStringLiteral("Lighthouse"));
+    migrateSettings();
 
     Languages languages(app);
     Monitor monitor;
@@ -104,3 +110,20 @@ int main(int argc, char *argv[])
     return result;
 }
 
+void migrateSettings()
+{
+    // The new location of config file
+    QSettings settings;
+
+    if (settings.contains("migrated"))
+        return;
+
+    QSettings oldSettings(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/harbour-lighthouse/harbour-lighthouse.conf", QSettings::NativeFormat);
+    qDebug() << "migrating settings from: " << oldSettings.fileName() << " to: " << settings.fileName() << "\n";
+
+    for (const QString& key : oldSettings.allKeys()) {
+        settings.setValue(key, oldSettings.value(key));
+    }
+
+    settings.setValue("migrated", "true");
+}
