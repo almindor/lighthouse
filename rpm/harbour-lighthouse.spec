@@ -14,7 +14,7 @@ Name:       harbour-lighthouse
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Lighthouse System Monitor
 Version:    1.7.0
-Release:    1
+Release:    2
 Group:      Qt/Qt
 License:    GPLv3
 URL:        https://github.com/almindor/lighthouse
