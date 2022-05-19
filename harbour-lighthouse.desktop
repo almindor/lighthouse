@@ -5,10 +5,5 @@ Name=Lighthouse
 Icon=harbour-lighthouse
 Exec=harbour-lighthouse
 
-# [X-Sailjail]
-# Sandboxing=Disabled
-
 [X-Sailjail]
-Permissions=Base
-OrganizationName=ltd.bitsmart
-ApplicationName=jTox
+Sandboxing=Disabled
