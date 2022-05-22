@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="zh_CN">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="zh_CN">
 <context>
     <name>About</name>
     <message>
@@ -16,7 +14,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
         <source>by Aleš Katona, Lavaux Gilles, Lukáš Karas and Nils Fenner.</source>
-        <translation type="unfinished"></translation>
+        <translation>by Aleš Katona, Lavaux Gilles, Lukáš Karas and Nils Fenner.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
@@ -41,17 +39,17 @@
     <message>
         <location filename="../qml/pages/About.qml" line="125"/>
         <source>Taiwanese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;.</source>
-        <translation>中文繁体(台湾)由&lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;翻译。</translation>
+        <translation>繁体中文(台湾)由&lt;a href=&apos;https://www.transifex.com/accounts/profile/hanhsuan/&apos;&gt;hanhsuan&lt;/a&gt;翻译。</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="141"/>
         <source>Chinese translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;.</source>
-        <translation>中文简体由&lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;翻译。</translation>
+        <translation>简体中文由&lt;a href=&apos;https://www.transifex.com/accounts/profile/TylerTemp/&apos;&gt;TylerTemp&lt;/a&gt;翻译。</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="157"/>
         <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt; and &lt;a href=&apos;https://www.transifex.com/user/profile/lutinotmalin/&apos;&gt;lutinotmalin&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="173"/>
@@ -66,7 +64,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="205"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tablet support by &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</source>
-        <translation>Lighthouse是以GPL v3授权的自由软件，发布在&lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;上。设备控制DBus代码灵感来自&lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;。平板支持由&lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;提供</translation>
+        <translation>Lighthouse是在GPL v3许可下的自由软件，发布在&lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;上。设备控制DBus代码启发自&lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;。平板支持由&lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;提供</translation>
     </message>
 </context>
 <context>
@@ -123,7 +121,7 @@
         <location filename="../qml/pages/Details.qml" line="92"/>
         <location filename="../qml/pages/Details.qml" line="103"/>
         <source>Permission denied</source>
-        <translation>权限禁止</translation>
+        <translation>权限被拒绝</translation>
     </message>
 </context>
 <context>
@@ -226,7 +224,7 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="63"/>
         <source>%1 MiB free out of %2 MiB total</source>
-        <translation>%1 MiB free out of %2 MiB total</translation>
+        <translation>%1 MiB 空闲，共%2 MiB</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="72"/>
@@ -236,7 +234,7 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="81"/>
         <source>%1 MiB from %2 MiB used (compression %3 %)</source>
-        <translation>%1 MiB from %2 MiB used (压缩1%3 %)</translation>
+        <translation>%1 MiB 已用，共%2 MiB (%3 %压缩)</translation>
     </message>
 </context>
 <context>
@@ -328,7 +326,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="100"/>
         <source>App Restart Required</source>
-        <translation>需要重启应用</translation>
+        <translation>应用需要重启</translation>
     </message>
 </context>
 <context>
