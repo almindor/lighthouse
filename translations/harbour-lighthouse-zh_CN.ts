@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh_CN" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="zh_CN">
 <context>
     <name>About</name>
     <message>
@@ -13,8 +15,8 @@
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
-        <source>by Aleš Katona and Lavaux Gilles.</source>
-        <translation>作者Aleš Katona和Lavaux Gilles。</translation>
+        <source>by Aleš Katona, Lavaux Gilles, Lukáš Karas and Nils Fenner.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
@@ -48,8 +50,8 @@
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="157"/>
-        <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;.</source>
-        <translation>法语由&lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt;翻译。</translation>
+        <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt; and &lt;a href=&apos;https://www.transifex.com/user/profile/lutinotmalin/&apos;&gt;lutinotmalin&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="173"/>
@@ -64,7 +66,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="205"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tablet support by &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</source>
-        <translation>Lighthouse是以GPL v3授权的自由软件，发布在&lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;上。设备控制DBus代码灵感来自&lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;。平板支持由&lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;提供</translation>
+        <translation>Lighthouse是以GPL v3授权的自由软件，发布在&lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;上。设备控制DBus代码灵感来自&lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;。平板支持由&lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;提供</translation>
     </message>
 </context>
 <context>
@@ -88,14 +90,12 @@
 <context>
     <name>CPU</name>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="30"/>
-        <location filename="../qml/pages/CPU.qml" line="81"/>
+        <location filename="../qml/pages/CPU.qml" line="29"/>
         <source>CPU Usage</source>
         <translation>CPU使用情况</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CPU.qml" line="70"/>
-        <location filename="../qml/pages/CPU.qml" line="116"/>
+        <location filename="../qml/pages/CPU.qml" line="74"/>
         <source>CPU</source>
         <translation>CPU</translation>
     </message>
@@ -115,13 +115,13 @@
         <translation>内存</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="91"/>
+        <location filename="../qml/pages/Details.qml" line="92"/>
         <source>Kill</source>
         <translation>结束</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Details.qml" line="91"/>
-        <location filename="../qml/pages/Details.qml" line="102"/>
+        <location filename="../qml/pages/Details.qml" line="92"/>
+        <location filename="../qml/pages/Details.qml" line="103"/>
         <source>Permission denied</source>
         <translation>权限禁止</translation>
     </message>
@@ -229,12 +229,12 @@
         <translation>%1 MiB free out of %2 MiB total</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="71"/>
+        <location filename="../qml/pages/Memory.qml" line="72"/>
         <source>zRam swap</source>
         <translation>zRam 工作</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Memory.qml" line="78"/>
+        <location filename="../qml/pages/Memory.qml" line="81"/>
         <source>%1 MiB from %2 MiB used (compression %3 %)</source>
         <translation>%1 MiB from %2 MiB used (压缩1%3 %)</translation>
     </message>
@@ -339,42 +339,42 @@
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="36"/>
+        <location filename="../qml/pages/Summary.qml" line="37"/>
         <source>Device Controls</source>
         <translation>设备控制</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="40"/>
+        <location filename="../qml/pages/Summary.qml" line="41"/>
         <source>Settings</source>
         <translation>设置</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="53"/>
+        <location filename="../qml/pages/Summary.qml" line="54"/>
         <source>Summary</source>
         <translation>总结</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="64"/>
+        <location filename="../qml/pages/Summary.qml" line="65"/>
         <source>Uptime: </source>
         <translation>已使用时间：</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="74"/>
+        <location filename="../qml/pages/Summary.qml" line="75"/>
         <source>CPUs: </source>
         <translation>CPU：</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="84"/>
+        <location filename="../qml/pages/Summary.qml" line="85"/>
         <source>Memory: </source>
         <translation>内存：</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="93"/>
+        <location filename="../qml/pages/Summary.qml" line="94"/>
         <source>Processes: </source>
         <translation>进程：</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Summary.qml" line="102"/>
+        <location filename="../qml/pages/Summary.qml" line="103"/>
         <source>Battery: </source>
         <translation>电池：</translation>
     </message>
