@@ -55,6 +55,7 @@ SOURCES += \
     src/zram.cpp
 
 OTHER_FILES += \
+    qml/Lighthouse.qml \
     qml/cover/CoverPage.qml \
     qml/pages/Summary.qml \
     qml/pages/CPU.qml \
@@ -63,7 +64,6 @@ OTHER_FILES += \
     qml/pages/About.qml \
     qml/pages/Process.qml \
     qml/pages/Phone.qml \
-    qml/Lighthouse.qml \
     qml/pages/Battery.qml \
     qml/pages/Details.qml \
     qml/components/ProcIndicator.qml \
@@ -105,6 +105,7 @@ INSTALLS += icon86 icon108 icon128 icon172 icon256
 
 lupdate_only {
 SOURCES += \
+    qml/Lighthouse.qml \
     qml/cover/CoverPage.qml \
     qml/pages/Summary.qml \
     qml/pages/CPU.qml \
@@ -113,7 +114,6 @@ SOURCES += \
     qml/pages/About.qml \
     qml/pages/Process.qml \
     qml/pages/Phone.qml \
-    qml/Lighthouse.qml \
     qml/pages/Battery.qml \
     qml/pages/Details.qml \
     qml/components/ProcIndicator.qml \
