@@ -28,16 +28,25 @@
 
 namespace Lighthouse {
 
+    const int KEY_APPS = 0;
+    const int KEY_PROC_NOSYS = 1;
+    const int KEY_PROC_ALL = 2;
+
     // ProcessModel
 
-    Process::Process(QObject *parent) : QAbstractListModel(parent), fProcKeys(), fAppKeys(),
+    Process::Process(QObject *parent) : QAbstractListModel(parent), fPidKeys(),
                      fCPUComparer(), fMemoryComparer(), fNameComparer(), fSettings() {
         fUID = getuid();
         fProcMap = 0;
         fSortBy = 0;
         fSelectedPID = 0;
         fSelectedTick = 0;
-        fApplicationsOnly = fSettings.value("proc/apponly", false).toBool();
+        fPidKey = fSettings.value("proc/pidkey", -1).toInt();
+        if ( fPidKey < 0 ) {
+            // legacy
+            bool appsOnly = fSettings.value("proc/apponly", false).toBool();
+            fPidKey = appsOnly ? KEY_APPS : KEY_PROC_NOSYS;
+        }
         fPageStatus = 0;
         fApplicationActive = false;
         fProcCount = 0;
@@ -80,7 +89,7 @@ namespace Lighthouse {
     }
 
     QVariant Process::headerData(int section, Qt::Orientation orientation, int role) const {
-        return "Description: " + section + orientation + role;
+        return "Description: " + QString::number(section) + orientation + QString::number(role);
     }
 
     int Process::rowCount(const QModelIndex & parent __attribute__ ((unused)) ) const {
@@ -91,16 +100,16 @@ namespace Lighthouse {
         return fProcCount;
     }
 
-    void Process::removeKeys(const PIDList &deletes, PIDList& list, bool really) {
+    void Process::removeKeys(const PIDList &deletes, PIDList& list, int pidKey) {
         if ( deletes.size() > 0 ) {
             foreach ( pid_t pid, deletes ) {
                 const ProcInfo info = fProcMap->value(pid);
                 for ( int i = 0; i < list.size(); i++ ) {
                     const pid_t key = list.at(i);
                     if ( key == pid ) {
-                        beginRR(really, i, i);
+                        beginRR(pidKey == fPidKey, i, i);
                         list.removeAt(i);
-                        endRR(really);
+                        endRR(pidKey == fPidKey);
                         break;
                     }
                 }
@@ -108,31 +117,37 @@ namespace Lighthouse {
         }
     }
 
-    void Process::appendKeys(const PIDList &adds, PIDList& list, bool really, bool appsOnly) {
+    void Process::appendKeys(const PIDList &adds, PIDList& list, int pidKey) {
         if ( adds.size() > 0 ) {
             const BaseComparer* compare = getComparer();
             foreach ( pid_t pid, adds ) {
                 const ProcInfo info = fProcMap->value(pid);
-                if ( appsOnly && !info.isApplication() ) {
+                // skip non apps for app map
+                if ( pidKey == KEY_APPS && !info.isApplication() ) {
                     continue;
                 }
+                // skip system process for non system map
+                if ( pidKey == KEY_PROC_NOSYS && info.isSystemProc() ) {
+                    continue;
+                }
+
                 bool done = false;
                 int i;
                 for ( i = 0; i < list.size(); i++ ) {
                     const pid_t key = list.at(i);
                     if ( compare->operator ()(key, pid) ) {
-                        beginIR(really, i, i);
+                        beginIR(pidKey == fPidKey, i, i);
                         list.insert(i, pid);
-                        endIR(really);
+                        endIR(pidKey == fPidKey);
                         done = true;
                         break;
                     }
                 }
 
                 if ( !done ) {
-                    beginIR(really, i, i);
+                    beginIR(pidKey == fPidKey, i, i);
                     list.insert(i, pid);
-                    endIR(really);
+                    endIR(pidKey == fPidKey);
                 }
             }
         }
@@ -146,16 +161,22 @@ namespace Lighthouse {
         fMemoryComparer.setProcMap(fProcMap);
         fNameComparer.setProcMap(fProcMap);
 
-        removeKeys(deletes, fProcKeys, !fApplicationsOnly);
-        removeKeys(deletes, fAppKeys, fApplicationsOnly);
-        appendKeys(adds, fProcKeys, !fApplicationsOnly, false);
-        appendKeys(adds, fAppKeys, fApplicationsOnly, true);
+        PIDList& procKeys = fPidKeys[KEY_PROC_ALL];
+        PIDList& procKeysNoSys = fPidKeys[KEY_PROC_NOSYS];
+        PIDList& appKeys = fPidKeys[KEY_APPS];
 
-        sort(fProcKeys);
-        sort(fAppKeys);
+        removeKeys(deletes, procKeys, KEY_PROC_ALL);
+        removeKeys(deletes, procKeysNoSys, KEY_PROC_NOSYS);
+        removeKeys(deletes, appKeys, KEY_APPS);
+        appendKeys(adds, procKeys, KEY_PROC_ALL);
+        appendKeys(adds, procKeysNoSys, KEY_PROC_NOSYS);
+        appendKeys(adds, appKeys, KEY_APPS);
+
+        sort(procKeys);
+        sort(appKeys);
         emit dataChanged(createIndex(0, 0), createIndex(getKeys().size(), 0));
 
-        const int keySize = fProcKeys.size();
+        const int keySize = procKeys.size();
         if ( fProcCount != keySize ) {
             fProcCount = keySize;
             emit summaryValueChanged();
@@ -217,7 +238,9 @@ namespace Lighthouse {
     }
 
     const PIDList& Process::getKeys() const {
-        return fApplicationsOnly ? fAppKeys : fProcKeys;
+        const PIDList& result = fPidKeys[fPidKey];
+
+        return result;
     }
 
     int Process::getSortBy() const {
@@ -239,8 +262,8 @@ namespace Lighthouse {
         return false;
     }
 
-    bool Process::getApplicationsOnly() const {
-        return fApplicationsOnly;
+    int Process::getPidKey() const {
+        return fPidKey;
     }
 
     void Process::setSortBy(int sb) {
@@ -248,18 +271,22 @@ namespace Lighthouse {
             fSortBy = sb;
             emit sortByChanged();
 
-            PIDList& keys = fApplicationsOnly ? fAppKeys : fProcKeys;
+            PIDList& keys = fPidKeys[fPidKey];
             sort(keys);
             emit dataChanged(createIndex(0, 0), createIndex(keys.size(), 0));
         }
     }
 
-    void Process::nextApplicationsOnly() {
+    void Process::setPidKey(int pidKey) {
+        if ( pidKey == fPidKey ) {
+            return;
+        }
+
         beginResetModel();
-        fApplicationsOnly = !fApplicationsOnly;
-        fSettings.setValue("proc/apponly", fApplicationsOnly);
+        fPidKey = pidKey;
+        fSettings.setValue("proc/pidkey", fPidKey);
         endResetModel();
-        emit applicationsOnlyChanged();
+        emit pidKeyChanged();
     }
 
     int Process::getSelectedPID() const {

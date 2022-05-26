@@ -35,15 +35,30 @@ Page {
     SilicaListView {
         id: listView
         header: PageHeader {
-            title: process.applicationsOnly ? qsTr("Applications") : qsTr("Processes")
+            title: switch (process.pidKey) {
+                    case 0: qsTr("Applications"); break
+                    case 1: qsTr("User Processes"); break
+                    case 2: qsTr("All Processes"); break
+                    default: "unknown"
+                  }
         }
 
         property int preSelectedPID : 0
 
         PullDownMenu {
             MenuItem {
-                text: (process.applicationsOnly ? qsTr("Show Processes") : qsTr("Show Applications"))
-                onClicked: process.nextApplicationsOnly()
+                text: qsTr("Show All Processes")
+                onClicked: process.setPidKey(2)
+            }
+
+            MenuItem {
+                text: qsTr("Show User Processes")
+                onClicked: process.setPidKey(1)
+            }
+
+            MenuItem {
+                text: qsTr("Show Applications")
+                onClicked: process.setPidKey(0)
             }
 
             MenuItem {
@@ -82,7 +97,7 @@ Page {
             }
 
             onPressAndHold: {
-                if ( process.selectedPID == 0 && listView.preSelectedPID > 0 ) {
+                if ( process.selectedPID === 0 && listView.preSelectedPID > 0 ) {
                     process.selectedPID = listView.preSelectedPID
                 }
 

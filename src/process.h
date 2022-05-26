@@ -33,7 +33,7 @@ namespace Lighthouse {
         Q_PROPERTY(int selectedPID READ getSelectedPID WRITE selectPID NOTIFY selectedPIDChanged)
         Q_PROPERTY(int summaryValue READ getSummaryValue NOTIFY summaryValueChanged)
         Q_PROPERTY(int sortBy READ getSortBy NOTIFY sortByChanged)
-        Q_PROPERTY(bool applicationsOnly READ getApplicationsOnly NOTIFY applicationsOnlyChanged)
+        Q_PROPERTY(int pidKey READ getPidKey NOTIFY pidKeyChanged)
         // details
         Q_PROPERTY(int selectedCPUUsage READ getSelectedCPUUsage NOTIFY selectedChanged)
         Q_PROPERTY(int selectedMemoryUsage READ getSelectedMemoryUsage NOTIFY selectedChanged)
@@ -57,12 +57,12 @@ namespace Lighthouse {
         int rowCount(const QModelIndex & parent = QModelIndex()) const;
         int getSortBy() const;
         int getSummaryValue() const;
-        bool getApplicationsOnly() const;
+        int getPidKey() const;
         int getSelectedPID() const;
         void selectPID(int pid);
         Q_INVOKABLE bool isKillable() const;
         Q_INVOKABLE void setSortBy(int sb);
-        Q_INVOKABLE void nextApplicationsOnly();
+        Q_INVOKABLE void setPidKey(int pidKey);
         Q_INVOKABLE int killSelected();
     private:
         uid_t fUID;
@@ -70,9 +70,8 @@ namespace Lighthouse {
         int fSelectedPID;
         int fSelectedTick;
         const ProcMap* fProcMap;
-        PIDList fProcKeys;
-        PIDList fAppKeys;
-        bool fApplicationsOnly;
+        PIDList fPidKeys[3];
+        int fPidKey;
         int fPageStatus;
         bool fApplicationActive;
         int fProcCount;
@@ -82,8 +81,8 @@ namespace Lighthouse {
         NameComparer fNameComparer;
         QSettings fSettings;
 
-        void removeKeys(const PIDList &deletes, PIDList& list, bool really);
-        void appendKeys(const PIDList &adds, PIDList& list, bool really, bool appsOnly);
+        void removeKeys(const PIDList &deletes, PIDList& list, int pidKey);
+        void appendKeys(const PIDList &adds, PIDList& list, int pidKey);
         void sort(PIDList& list);
         const PIDList& getKeys() const;
         const BaseComparer* getComparer() const;
@@ -101,7 +100,7 @@ namespace Lighthouse {
         void summaryValueChanged();
         void sortByChanged();
         void selectedPIDChanged();
-        void applicationsOnlyChanged();
+        void pidKeyChanged();
         void selectedChanged();
     public slots:
         void setProcesses(const ProcMap* procMap, const PIDList& adds, const PIDList& deletes);

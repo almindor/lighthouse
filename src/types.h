@@ -48,6 +48,7 @@ namespace Lighthouse {
         int getMemoryUsage() const;
         int getNameState() const;
         bool isApplication() const;
+        bool isSystemProc() const;
 
         bool operator ==(const ProcInfo& other) const;
     private:

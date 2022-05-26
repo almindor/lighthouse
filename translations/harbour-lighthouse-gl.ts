@@ -210,7 +210,7 @@
 <context>
     <name>Lighthouse::Process</name>
     <message>
-        <location filename="../src/process.cpp" line="74"/>
+        <location filename="../src/process.cpp" line="83"/>
         <source>Unknown</source>
         <comment>Process name</comment>
         <translation>Descoñecido</translation>
@@ -273,39 +273,49 @@
 <context>
     <name>Process</name>
     <message>
-        <location filename="../qml/pages/Process.qml" line="38"/>
+        <location filename="../qml/pages/Process.qml" line="39"/>
         <source>Applications</source>
-        <translation>Aplicacións</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="38"/>
-        <source>Processes</source>
-        <translation>Procesos</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Process.qml" line="45"/>
-        <source>Show Processes</source>
-        <translation>Amosar procesos</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Process.qml" line="45"/>
+        <location filename="../qml/pages/Process.qml" line="60"/>
         <source>Show Applications</source>
-        <translation>Amosar aplicacións</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Process.qml" line="55"/>
+        <source>Show User Processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Process.qml" line="40"/>
+        <source>User Processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Process.qml" line="41"/>
+        <source>All Processes</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="50"/>
+        <source>Show All Processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Process.qml" line="65"/>
         <source>Sort by Name</source>
-        <translation>Ordear por nome</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="56"/>
+        <location filename="../qml/pages/Process.qml" line="71"/>
         <source>Sort by Memory Usage</source>
-        <translation>Ordear por uso da memoria</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="62"/>
+        <location filename="../qml/pages/Process.qml" line="77"/>
         <source>Sort by CPU Usage</source>
-        <translation>Ordear por uso de CPU</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

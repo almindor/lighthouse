@@ -162,6 +162,11 @@ namespace Lighthouse {
         return !fApplicationName.isEmpty();
     }
 
+    bool ProcInfo::isSystemProc() const
+    {
+        return fNameState == 0; // if we couldn't get cmdline it's probably a kernel process
+    }
+
     QString getTimePart(QString key, int value) {
         if ( value == 0 ) {
             return "";
