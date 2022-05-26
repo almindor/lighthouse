@@ -1,6 +1,4 @@
-1.7.2 - add system proc filter
-
-1.7.1 - fix translation build bug
+1.7.1 - fix translation build bug + add system proc filter
 
 1.7.0 - aarch64 support
 
