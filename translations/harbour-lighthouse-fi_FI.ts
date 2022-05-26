@@ -278,12 +278,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="60"/>
+        <location filename="../qml/pages/Process.qml" line="63"/>
         <source>Show Applications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="55"/>
+        <location filename="../qml/pages/Process.qml" line="57"/>
         <source>Show User Processes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -298,22 +298,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="50"/>
+        <location filename="../qml/pages/Process.qml" line="51"/>
         <source>Show All Processes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="65"/>
+        <location filename="../qml/pages/Process.qml" line="68"/>
         <source>Sort by Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="71"/>
+        <location filename="../qml/pages/Process.qml" line="74"/>
         <source>Sort by Memory Usage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="77"/>
+        <location filename="../qml/pages/Process.qml" line="80"/>
         <source>Sort by CPU Usage</source>
         <translation type="unfinished"></translation>
     </message>

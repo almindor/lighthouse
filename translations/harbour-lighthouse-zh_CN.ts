@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="zh_CN">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="zh_CN">
 <context>
     <name>About</name>
     <message>
@@ -49,7 +51,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="157"/>
         <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt; and &lt;a href=&apos;https://www.transifex.com/user/profile/lutinotmalin/&apos;&gt;lutinotmalin&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="173"/>
@@ -64,7 +66,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="205"/>
         <source>Lighthouse is free software licensed under the GPL v3 available at &lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;.                Device controls DBus code inspired by &lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;. Tablet support by &lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;</source>
-        <translation>Lighthouse是在GPL v3许可下的自由软件，发布在&lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;上。设备控制DBus代码启发自&lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;。平板支持由&lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;提供</translation>
+        <translation>Lighthouse是在GPL v3许可下的自由软件，发布在&lt;a href=&apos;https://github.com/almindor/lighthouse&apos;&gt;github&lt;/a&gt;上。设备控制DBus代码启发自&lt;a href=&apos;https://github.com/ejjoman/SailfishReboot&apos;&gt;SailfishReboot&lt;/a&gt;。平板支持由&lt;a href=&apos;https://github.com/a-dekker&apos;&gt;a-dekker&lt;/a&gt;提供</translation>
     </message>
 </context>
 <context>
@@ -208,7 +210,7 @@
 <context>
     <name>Lighthouse::Process</name>
     <message>
-        <location filename="../src/process.cpp" line="74"/>
+        <location filename="../src/process.cpp" line="83"/>
         <source>Unknown</source>
         <comment>Process name</comment>
         <translation>未知</translation>
@@ -271,37 +273,47 @@
 <context>
     <name>Process</name>
     <message>
-        <location filename="../qml/pages/Process.qml" line="38"/>
+        <location filename="../qml/pages/Process.qml" line="39"/>
         <source>Applications</source>
         <translation>应用</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="38"/>
-        <source>Processes</source>
-        <translation>进程</translation>
+        <location filename="../qml/pages/Process.qml" line="40"/>
+        <source>User Processes</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="45"/>
-        <source>Show Processes</source>
-        <translation>显示进程</translation>
+        <location filename="../qml/pages/Process.qml" line="41"/>
+        <source>All Processes</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="45"/>
+        <location filename="../qml/pages/Process.qml" line="51"/>
+        <source>Show All Processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Process.qml" line="57"/>
+        <source>Show User Processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Process.qml" line="63"/>
         <source>Show Applications</source>
         <translation>显示进程</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="50"/>
+        <location filename="../qml/pages/Process.qml" line="68"/>
         <source>Sort by Name</source>
         <translation>按名称排序</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="56"/>
+        <location filename="../qml/pages/Process.qml" line="74"/>
         <source>Sort by Memory Usage</source>
         <translation>按内存用量排序</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Process.qml" line="62"/>
+        <location filename="../qml/pages/Process.qml" line="80"/>
         <source>Sort by CPU Usage</source>
         <translation>按CPU用量排序</translation>
     </message>

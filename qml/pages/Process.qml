@@ -47,16 +47,19 @@ Page {
 
         PullDownMenu {
             MenuItem {
+                visible: process.pidKey !== 2
                 text: qsTr("Show All Processes")
                 onClicked: process.setPidKey(2)
             }
 
             MenuItem {
+                visible: process.pidKey !== 1
                 text: qsTr("Show User Processes")
                 onClicked: process.setPidKey(1)
             }
 
             MenuItem {
+                visible: process.pidKey !== 0
                 text: qsTr("Show Applications")
                 onClicked: process.setPidKey(0)
             }
