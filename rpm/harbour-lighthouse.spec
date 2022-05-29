@@ -14,7 +14,7 @@ Name:       harbour-lighthouse
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Lighthouse System Monitor
 Version:    1.7.1
-Release:    1
+Release:    2
 Group:      Qt/Qt
 License:    GPLv3
 URL:        https://github.com/almindor/lighthouse
@@ -68,5 +68,6 @@ desktop-file-install --delete-original       \
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
+%{_datadir}/%{name}/translations
 # >> files
 # << files
