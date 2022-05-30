@@ -27,6 +27,10 @@ PkgConfigBR:
   - Qt5Quick
   - Qt5DBus
 
+# translation support on OBS needs to be explicit
+PkgBR:
+  - qt5-qttools-linguist
+
 # Build dependencies without a pkgconfig setup can be listed here
 # PkgBR:
 #   - package-needed-to-build
