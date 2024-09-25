@@ -16,7 +16,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
         <source>by Aleš Katona, Lavaux Gilles, Lukáš Karas and Nils Fenner.</source>
-        <translation type="unfinished"></translation>
+        <translation>par Aleš Katona, Lavaux Gilles, Lukáš Karas et Nils Fenner.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
@@ -79,12 +79,12 @@
     <message>
         <location filename="../qml/pages/Battery.qml" line="55"/>
         <source>Health: </source>
-        <translation>État : </translation>
+        <translation>État : </translation>
     </message>
     <message>
         <location filename="../qml/pages/Battery.qml" line="63"/>
         <source>Technology: </source>
-        <translation>Technologie : </translation>
+        <translation>Technologie : </translation>
     </message>
 </context>
 <context>
@@ -226,17 +226,17 @@
     <message>
         <location filename="../qml/pages/Memory.qml" line="63"/>
         <source>%1 MiB free out of %2 MiB total</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Mio libre sur %2 Mio</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="72"/>
         <source>zRam swap</source>
-        <translation type="unfinished"></translation>
+        <translation>Mémoire d’échange zRam</translation>
     </message>
     <message>
         <location filename="../qml/pages/Memory.qml" line="81"/>
         <source>%1 MiB from %2 MiB used (compression %3 %)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Mio sur %2 MiB utilisés (compression %3 %)</translation>
     </message>
 </context>
 <context>
@@ -262,12 +262,12 @@
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="34"/>
         <source>cpu: </source>
-        <translation>cpu : </translation>
+        <translation>cpu : </translation>
     </message>
     <message>
         <location filename="../qml/components/ProcIndicator.qml" line="45"/>
         <source>mem: </source>
-        <translation>mém. : </translation>
+        <translation>mém. : </translation>
     </message>
 </context>
 <context>
@@ -371,22 +371,22 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="75"/>
         <source>CPUs: </source>
-        <translation>Processeurs : </translation>
+        <translation>Processeurs : </translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="85"/>
         <source>Memory: </source>
-        <translation>Mémoire : </translation>
+        <translation>Mémoire : </translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="94"/>
         <source>Processes: </source>
-        <translation>Processus : </translation>
+        <translation>Processus : </translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="103"/>
         <source>Battery: </source>
-        <translation>Batterie : </translation>
+        <translation>Batterie : </translation>
     </message>
 </context>
 </TS>
