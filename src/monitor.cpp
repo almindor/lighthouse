@@ -22,6 +22,7 @@
 #include <QStringList>
 #include <QDir>
 #include <QProcess>
+#include <QStandardPaths>
 
 namespace Lighthouse {
 //    const int CPU_FLAGS_ACTIVE = 1;
@@ -158,7 +159,9 @@ namespace Lighthouse {
     }
 
     void Monitor::run() {
-        updateApplicationMap("/usr/share/applications");
+        for (const QString &location : QStandardPaths::standardLocations(QStandardPaths::ApplicationsLocation)) {
+            updateApplicationMap(location);
+        }
         procProcessorCount();
         fCPUActiveTicks.resize(fCPUCount + 1); // room for "total"
         fCPUTotalTicks.resize(fCPUCount + 1); // room for "total"
@@ -417,8 +420,7 @@ namespace Lighthouse {
         }
     }
 
-    void Monitor::updateAppName(const QString& fileName) {
-        const QString fullName = "/usr/share/applications/" + fileName;
+    void Monitor::updateAppName(const QString& fileName, const QString& fullName) {
         if ( !QFile::exists(fullName) ) {
             qWarning() << "File not found: " << fullName << "\n";
             return;
@@ -445,17 +447,16 @@ namespace Lighthouse {
     }
 
     void Monitor::updateApplicationMap(const QString& path) {
-        QDir apps(path); // "/usr/share/applications"
+        QDir apps(path); // any launcher directory
         QStringList filters;
         filters << "*.desktop";
         apps.setNameFilters(filters);
 
         const QStringList files = apps.entryList();
         QStringListIterator iterator(files);
-        fAppNameMap.clear();
         while ( iterator.hasNext() ) {
             const QString& fileName = iterator.next();
-            updateAppName(fileName);
+            updateAppName(fileName, apps.filePath(fileName));
         }
     }
 

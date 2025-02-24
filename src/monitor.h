@@ -97,7 +97,7 @@ namespace Lighthouse {
             void procTemperature();
             void procProcessorCount();
             void fillProcMap(ProcMap& procMap, IntList* deletes);
-            void updateAppName(const QString& fileName);
+            void updateAppName(const QString& fileName, const QString& fullName);
             int getInterval() const;
         public slots:
             void updateApplicationMap(const QString& path);
