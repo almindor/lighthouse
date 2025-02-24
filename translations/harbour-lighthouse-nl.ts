@@ -162,46 +162,46 @@
 <context>
     <name>Lighthouse::Monitor</name>
     <message>
-        <location filename="../src/monitor.cpp" line="96"/>
+        <location filename="../src/monitor.cpp" line="97"/>
         <source>cpu</source>
         <comment>cover label</comment>
         <translation>cpu</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="97"/>
+        <location filename="../src/monitor.cpp" line="98"/>
         <source>memory</source>
         <comment>cover label</comment>
         <translation>geheugen</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="98"/>
+        <location filename="../src/monitor.cpp" line="99"/>
         <source>battery</source>
         <comment>cover label</comment>
         <translation>batterij</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="99"/>
+        <location filename="../src/monitor.cpp" line="100"/>
         <source>unknown</source>
         <comment>cover label</comment>
         <translation>onbekend</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="121"/>
+        <location filename="../src/monitor.cpp" line="122"/>
         <source>CPU</source>
         <translation>CPU</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="122"/>
+        <location filename="../src/monitor.cpp" line="123"/>
         <source>Memory</source>
         <translation>Geheugen</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="123"/>
+        <location filename="../src/monitor.cpp" line="124"/>
         <source>Battery</source>
         <translation>Batterij</translation>
     </message>
     <message>
-        <location filename="../src/monitor.cpp" line="124"/>
+        <location filename="../src/monitor.cpp" line="125"/>
         <source>Unknown</source>
         <comment>Cover label in summary page</comment>
         <translation>Onbekend</translation>
