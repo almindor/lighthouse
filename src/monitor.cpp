@@ -243,9 +243,9 @@ namespace Lighthouse {
         }
 
         QProcess zramctl;
-        zramctl.start("/sbin/zramctl", QStringList() << "-b" << "--raw" << "--noheadings" << "--output=DISKSIZE,DATA,COMPR");
+        zramctl.start("/usr/sbin/zramctl", QStringList() << "-b" << "--raw" << "--noheadings" << "--output=DISKSIZE,DATA,COMPR");
         if (!zramctl.waitForStarted(500 /*ms*/)){
-            qWarning() << "zramctl execution failed";
+            qWarning() << "zramctl execution failed " << zramctl.errorString();
             return;
         }
         if (!zramctl.waitForFinished(500 /*ms*/)){
