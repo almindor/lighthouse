@@ -6,4 +6,5 @@ Icon=harbour-lighthouse
 Exec=harbour-lighthouse
 
 [X-Sailjail]
-Sandboxing=Disabled
+OrganizationName=ltd.bitsmart
+ApplicationName=Lighthouse
