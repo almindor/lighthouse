@@ -44,27 +44,36 @@ namespace Lighthouse {
         return 0;
     }
 
-    MemoryHandler::MemoryHandler(unsigned long& total, unsigned long& free) : fTotal(total), fFree(free) {
+    MemoryHandler::MemoryHandler(unsigned long& total, unsigned long& free) : fTotal(total), fFree(free), fUsesAvailableMem(false) {
         total = 0;
         free = 0;
     }
 
     int MemoryHandler::onLine(QString &line, int i) {
-        if ( i > 4 ) {
+        if ( i > 4 || fUsesAvailableMem ) {
             return 100; // don't do anything for the rest
         }
 
+        bool ok = false;
         QStringList parts = line.split(" ", QString::SkipEmptyParts);
         if ( parts.size() < 2 ) {
             qCritical() << "Contents of /proc/meminfo invalid on line " << i << "\n";
             return -1;
         }
 
-        switch ( i ) {
-            case 0: fTotal = parts[1].toULong(); break;
-            case 1: fFree = parts[1].toULong(); break; // free
-            case 2: fFree += parts[1].toULong(); break; // buffers
-            case 3: fFree += parts[1].toULong(); break; // cached
+        // if we're newer kernel, use memavailable
+        if (parts[0] == "MemAvailable:") {
+            fFree = parts[1].toULong(&ok);
+            fUsesAvailableMem = true;
+        } else switch ( i ) {
+            case 0: fTotal = parts[1].toULong(&ok); break;
+            case 1: fFree = parts[1].toULong(&ok); break; // free
+            case 2: fFree += parts[1].toULong(&ok); break; // buffers
+            case 3: fFree += parts[1].toULong(&ok); break; // cached
+        }
+
+        if (!ok) {
+            qWarning() << "unable to convert memory value " << parts[1] << "\n";
         }
 
         return 0;

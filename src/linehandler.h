@@ -47,6 +47,7 @@ namespace Lighthouse {
     private:
         unsigned long& fTotal;
         unsigned long& fFree;
+        bool fUsesAvailableMem;
     };
 
     class CPUCountHandler: public LineHandler
