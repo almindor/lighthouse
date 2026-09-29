@@ -16,7 +16,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="54"/>
         <source>by Aleš Katona, Lavaux Gilles, Lukáš Karas and Nils Fenner.</source>
-        <translation type="unfinished"></translation>
+        <translation>av Aleš Katona, Lavaux Gilles, Lukáš Karas och Nils Fenner.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="157"/>
         <source>French translation by &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt; and &lt;a href=&apos;https://www.transifex.com/user/profile/lutinotmalin/&apos;&gt;lutinotmalin&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fransk översättning avy &lt;a href=&apos;https://www.transifex.com/accounts/profile/Nerfiaux/&apos;&gt;Guillaume ARIAUX (Nerfiaux)&lt;/a&gt; och &lt;a href=&apos;https://www.transifex.com/user/profile/lutinotmalin/&apos;&gt;lutinotmalin&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="173"/>
@@ -117,13 +117,13 @@
     <message>
         <location filename="../qml/pages/Details.qml" line="92"/>
         <source>Kill</source>
-        <translation type="unfinished"></translation>
+        <translation>Döda</translation>
     </message>
     <message>
         <location filename="../qml/pages/Details.qml" line="92"/>
         <location filename="../qml/pages/Details.qml" line="103"/>
         <source>Permission denied</source>
-        <translation type="unfinished"></translation>
+        <translation>Åtkomst nekad</translation>
     </message>
 </context>
 <context>
@@ -275,47 +275,47 @@
     <message>
         <location filename="../qml/pages/Process.qml" line="39"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Appar</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="63"/>
         <source>Show Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa appar</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="57"/>
         <source>Show User Processes</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa användarprocesser</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="40"/>
         <source>User Processes</source>
-        <translation type="unfinished"></translation>
+        <translation>Användarprocesser</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="41"/>
         <source>All Processes</source>
-        <translation type="unfinished"></translation>
+        <translation>Alla processer</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="51"/>
         <source>Show All Processes</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa alla processer</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="68"/>
         <source>Sort by Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortera efter namn</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="74"/>
         <source>Sort by Memory Usage</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortera efter minnesanvändning</translation>
     </message>
     <message>
         <location filename="../qml/pages/Process.qml" line="80"/>
         <source>Sort by CPU Usage</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortera efter CPU-användning</translation>
     </message>
 </context>
 <context>
@@ -351,7 +351,7 @@
     <message>
         <location filename="../qml/pages/Summary.qml" line="37"/>
         <source>Device Controls</source>
-        <translation type="unfinished">Enhetskontroller</translation>
+        <translation>Enhetskontroller</translation>
     </message>
     <message>
         <location filename="../qml/pages/Summary.qml" line="41"/>
